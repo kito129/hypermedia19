@@ -1,0 +1,32 @@
+EXAM HYPERMEDIA 2020
+
+DELIVERBALE
+
+	D0: the web application accessible over a public addres ADDR.
+
+	D1: a main documentation page available online at url ADDR/backend/main.html. 
+	 	This page must contain links to D2-D5
+
+	D2: the OpenAPI specification of your Backend (in the form of a Y AML file) available at ADDR/backend/spec.yaml. 
+
+	D3: a SwaggerUI page available online at ADDR/backend/swaggerui.
+
+ 	D4: the source code of D0 as a zip file available at ADDR/backend/app.zip
+
+	D5: the address of the online source control repository containing D4 (GITHUB PRIVATE RESPOSITORY) 
+
+
+
+TODO:
+
+	-site schema with alla pages and dependencies
+	-create boostap templete for all pages
+	-create DB
+	-create RESTAPI for all service of the site
+	-create all JS for use update DOM from API
+	-animation
+	-login
+	-cart and shop page
+	
+
+

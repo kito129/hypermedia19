@@ -20,13 +20,16 @@ DELIVERBALE
 TODO:
 
 	-site schema with alla pages and dependencies
+	- DB SCHEMA
+	- API SCHEMA
 	-create boostap templete for all pages
-	-create DB
+	- create DB
 	-create RESTAPI for all service of the site
-	-create all JS for use update DOM from API
-	-animation
+	-create all JS for all template for update DOM with data recived from API
 	-login
 	-cart and shop page
+	-animation and beauty
+	-DOCUMENTATION
 	
 
 

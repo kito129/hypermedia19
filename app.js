@@ -1,15 +1,13 @@
 const PORT = 3000;
 
-//impport and create express server 
+/* -------- IMPORT  -------- */
+//impport and create express server as an app
 const express = require('express');
-
 const app = express();
 //import morgan for log in the terminal
 const morgan = require('morgan');
 //body-parser for parsin json res
 const bodyParser = require ('body-parser');
-
-
 
 /* -------- MAIN  -------- */
 //import artist Route
@@ -47,7 +45,7 @@ app.use((req,res,next)=>{
     
 })
 
-//catch alla error of app, or general 500 error
+//catch alla error from app, or general 500 error
 app.use((error,req,res,next)=>{
     res.status(error.status || 500);
     res.json ({

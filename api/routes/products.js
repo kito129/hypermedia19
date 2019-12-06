@@ -1,11 +1,9 @@
-//import dependencies
 const express = require("express");
 const router = express.Router();
 const multer = require('multer');
 const checkAuth = require('../middleware/check-auth');
-const ArtistsController = require('../controllers/artists');
+const ProductsController = require('../controllers/products');
 
-//create  artist function for uplad immage
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
     cb(null, './uploads/');
@@ -32,16 +30,14 @@ const upload = multer({
   fileFilter: fileFilter
 });
 
-// Handle incoming  requests to /artist
-router.get("/", ArtistsController.artists_get_all);
+router.get("/", ProductsController.products_get_all);
 
-router.post("/", checkAuth, upload.single('artistImage'), ArtistsController.artists_create_artist);
+router.post("/", checkAuth, upload.single('productImage'), ProductsController.products_create_product);
 
-router.get("/:artistId", ArtistsController.artists_get_artist);
+router.get("/:productId", ProductsController.products_get_product);
 
-router.patch("/:artistId", checkAuth, ArtistsController.artists_update_artist);
+router.patch("/:productId", checkAuth, ProductsController.products_update_product);
 
-router.delete("/:artistId", checkAuth, ArtistsController.artists_delete);
+router.delete("/:productId", checkAuth, ProductsController.products_delete);
 
-//export module
 module.exports = router;

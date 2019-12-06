@@ -1,22 +1,22 @@
 const mongoose = require("mongoose");
-const artist = require("../models/artist");
+const Product = require("../models/product");
 
-exports.artists_get_all = (req, res, next) => {
-  artist.find()
-    .select("name birthday _id artistImage")
+exports.products_get_all = (req, res, next) => {
+  Product.find()
+    .select("name price _id productImage")
     .exec()
     .then(docs => {
       const response = {
         count: docs.length,
-        artists: docs.map(doc => {
+        products: docs.map(doc => {
           return {
             name: doc.name,
-            birthday: doc.birthday,
-            artistImage: doc.artistImage,
+            price: doc.price,
+            productImage: doc.productImage,
             _id: doc._id,
             request: {
               type: "GET",
-              url: "http://localhost:3000/artists/" + doc._id
+              url: "http://localhost:3000/products/" + doc._id
             }
           };
         })
@@ -37,26 +37,26 @@ exports.artists_get_all = (req, res, next) => {
     });
 };
 
-exports.artists_create_artist = (req, res, next) => {
-  const artist = new artist({
+exports.products_create_product = (req, res, next) => {
+  const product = new Product({
     _id: new mongoose.Types.ObjectId(),
     name: req.body.name,
-    birthday: req.body.birthday,
-    artistImage: req.file.path
+    price: req.body.price,
+    productImage: req.file.path
   });
-  artist
+  product
     .save()
     .then(result => {
       console.log(result);
       res.status(201).json({
-        message: "Created artist successfully",
-        createdartist: {
+        message: "Created product successfully",
+        createdProduct: {
           name: result.name,
-          birthday: result.birthday,
+          price: result.price,
           _id: result._id,
           request: {
             type: "GET",
-            url: "http://localhost:3000/artists/" + result._id
+            url: "http://localhost:3000/products/" + result._id
           }
         }
       });
@@ -69,19 +69,19 @@ exports.artists_create_artist = (req, res, next) => {
     });
 };
 
-exports.artists_get_artist = (req, res, next) => {
-  const id = req.params.artistId;
-  artist.findById(id)
-    .select("name birthday _id artistImage")
+exports.products_get_product = (req, res, next) => {
+  const id = req.params.productId;
+  Product.findById(id)
+    .select("name price _id productImage")
     .exec()
     .then(doc => {
       console.log("From database", doc);
       if (doc) {
         res.status(200).json({
-          artist: doc,
+          product: doc,
           request: {
             type: "GET",
-            url: "http://localhost:3000/artists"
+            url: "http://localhost:3000/products"
           }
         });
       } else {
@@ -96,20 +96,20 @@ exports.artists_get_artist = (req, res, next) => {
     });
 };
 
-exports.artists_update_artist = (req, res, next) => {
-  const id = req.params.artistId;
+exports.products_update_product = (req, res, next) => {
+  const id = req.params.productId;
   const updateOps = {};
   for (const ops of req.body) {
     updateOps[ops.propName] = ops.value;
   }
-  artist.update({ _id: id }, { $set: updateOps })
+  Product.update({ _id: id }, { $set: updateOps })
     .exec()
     .then(result => {
       res.status(200).json({
-        message: "artist updated",
+        message: "Product updated",
         request: {
           type: "GET",
-          url: "http://localhost:3000/artists/" + id
+          url: "http://localhost:3000/products/" + id
         }
       });
     })
@@ -121,17 +121,17 @@ exports.artists_update_artist = (req, res, next) => {
     });
 };
 
-exports.artists_delete = (req, res, next) => {
-  const id = req.params.artistId;
-  artist.remove({ _id: id })
+exports.products_delete = (req, res, next) => {
+  const id = req.params.productId;
+  Product.remove({ _id: id })
     .exec()
     .then(result => {
       res.status(200).json({
-        message: "artist deleted",
+        message: "Product deleted",
         request: {
           type: "POST",
-          url: "http://localhost:3000/artists",
-          body: { name: "String", birthday: "Number" }
+          url: "http://localhost:3000/products",
+          body: { name: "String", price: "Number" }
         }
       });
     })

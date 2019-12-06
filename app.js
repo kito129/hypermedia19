@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 //import router
 const artistRoutes = require("./api/routes/artists");
 const eventRoutes = require("./api/routes/events");
+const seminarRoutes = require('./api/routes/seminars');
 const userRoutes = require('./api/routes/user');
 
 //connect database
@@ -24,11 +25,13 @@ mongoose.Promise = global.Promise;
 
 //use parser
 app.use(morgan("dev"));
+//immage parser
 app.use('/uploads', express.static('uploads'));
+//body parser
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//CORS error correction
+//CORS error fix
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -54,6 +57,7 @@ app.use((req, res, next) => {
   error.status = 404;
   next(error);
 });
+
 //handler all error or generic 500 error
 app.use((error, req, res, next) => {
   res.status(error.status || 500);

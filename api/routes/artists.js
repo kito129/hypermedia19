@@ -1,9 +1,11 @@
+//import dependencies
 const express = require("express");
 const router = express.Router();
 const multer = require('multer');
 const checkAuth = require('../middleware/check-auth');
 const ArtistsController = require('../controllers/artists');
 
+//create  artist function for uplad immage
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
     cb(null, './uploads/');
@@ -30,6 +32,7 @@ const upload = multer({
   fileFilter: fileFilter
 });
 
+// Handle incoming  requests to /artist
 router.get("/", ArtistsController.artists_get_all);
 
 router.post("/", checkAuth, upload.single('artistImage'), ArtistsController.artists_create_artist);
@@ -40,4 +43,5 @@ router.patch("/:artistId", checkAuth, ArtistsController.artists_update_artist);
 
 router.delete("/:artistId", checkAuth, ArtistsController.artists_delete);
 
+//export module
 module.exports = router;

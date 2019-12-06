@@ -2,34 +2,49 @@ EXAM HYPERMEDIA 2020
 
 DELIVERBALE
 
-	D0: the web application accessible over a public addres ADDR.
+	BACKEND:
 
-	D1: a main documentation page available online at url ADDR/backend/main.html. 
-	 	This page must contain links to D2-D5
+		- D0: the web application accessible over a public addres ADDR.
 
-	D2: the OpenAPI specification of your Backend (in the form of a Y AML file) available at ADDR/backend/spec.yaml. 
+		- D1: a main documentation page available online at url ADDR/backend/main.html. 
+		 		This page must contain links to D2-D5
 
-	D3: a SwaggerUI page available online at ADDR/backend/swaggerui.
+		- D2: the OpenAPI specification of your Backend (in the form of a YAML file) available at ADDR/backend/spec.yaml. 
 
- 	D4: the source code of D0 as a zip file available at ADDR/backend/app.zip
+		- D3: a SwaggerUI page available online at ADDR/backend/swaggerui.
 
-	D5: the address of the online source control repository containing D4 (GITHUB PRIVATE RESPOSITORY) 
+	 	- D4: the source code of D0 as a zip file available at ADDR/backend/app.zip
 
+		- D5: the address of the online source control repository containing D4 (GITHUB PRIVATE RESPOSITORY) 
 
+	FRONTEND:
+		
+		- Design in-the-large: the graphical representations of C-IDM schema and L-IDM schemas. 
+		
+		- Design in-the-small: the specifications of the contents and links of the main pages of your application. 
+
+		- DB design: E-R diagram and relational tables for the content and navigational structures of your web site. 
+
+		- USABILITY REPORT
+
+			NB:
+				
+				Team-member names MUST appear in the footer or header for all pages;  
+				
+				The file MUST be named as follows:  Group-member1 surname, Group-member2 surname, Group-member3 surname-P1-delivery date 
+
+				
 
 TODO:
 
 	-site schema with alla pages and dependencies
-	- DB SCHEMA
-	- API SCHEMA
 	-create boostap templete for all pages
-	- create DB
+	-create DB
 	-create RESTAPI for all service of the site
-	-create all JS for all template for update DOM with data recived from API
+	-create all JS for use update DOM from API
+	-animation
 	-login
 	-cart and shop page
-	-animation and beauty
-	-DOCUMENTATION
-	
+
 
 

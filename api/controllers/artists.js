@@ -1,22 +1,22 @@
 const mongoose = require("mongoose");
-const Product = require("../models/product");
+const Product = require("../models/artist");
 
-exports.products_get_all = (req, res, next) => {
+exports.artists_get_all = (req, res, next) => {
   Product.find()
-    .select("name price _id productImage")
+    .select("name price _id artistImage")
     .exec()
     .then(docs => {
       const response = {
         count: docs.length,
-        products: docs.map(doc => {
+        artists: docs.map(doc => {
           return {
             name: doc.name,
             price: doc.price,
-            productImage: doc.productImage,
+            artistImage: doc.artistImage,
             _id: doc._id,
             request: {
               type: "GET",
-              url: "http://localhost:3000/products/" + doc._id
+              url: "http://localhost:3000/artists/" + doc._id
             }
           };
         })
@@ -37,26 +37,26 @@ exports.products_get_all = (req, res, next) => {
     });
 };
 
-exports.products_create_product = (req, res, next) => {
-  const product = new Product({
+exports.artists_create_artist = (req, res, next) => {
+  const artist = new Product({
     _id: new mongoose.Types.ObjectId(),
     name: req.body.name,
     price: req.body.price,
-    productImage: req.file.path
+    artistImage: req.file.path
   });
-  product
+  artist
     .save()
     .then(result => {
       console.log(result);
       res.status(201).json({
-        message: "Created product successfully",
+        message: "Created artist successfully",
         createdProduct: {
           name: result.name,
           price: result.price,
           _id: result._id,
           request: {
             type: "GET",
-            url: "http://localhost:3000/products/" + result._id
+            url: "http://localhost:3000/artists/" + result._id
           }
         }
       });
@@ -69,19 +69,19 @@ exports.products_create_product = (req, res, next) => {
     });
 };
 
-exports.products_get_product = (req, res, next) => {
-  const id = req.params.productId;
+exports.artists_get_artist = (req, res, next) => {
+  const id = req.params.artistId;
   Product.findById(id)
-    .select("name price _id productImage")
+    .select("name price _id artistImage")
     .exec()
     .then(doc => {
       console.log("From database", doc);
       if (doc) {
         res.status(200).json({
-          product: doc,
+          artist: doc,
           request: {
             type: "GET",
-            url: "http://localhost:3000/products"
+            url: "http://localhost:3000/artists"
           }
         });
       } else {
@@ -96,8 +96,8 @@ exports.products_get_product = (req, res, next) => {
     });
 };
 
-exports.products_update_product = (req, res, next) => {
-  const id = req.params.productId;
+exports.artists_update_artist = (req, res, next) => {
+  const id = req.params.artistId;
   const updateOps = {};
   for (const ops of req.body) {
     updateOps[ops.propName] = ops.value;
@@ -109,7 +109,7 @@ exports.products_update_product = (req, res, next) => {
         message: "Product updated",
         request: {
           type: "GET",
-          url: "http://localhost:3000/products/" + id
+          url: "http://localhost:3000/artists/" + id
         }
       });
     })
@@ -121,8 +121,8 @@ exports.products_update_product = (req, res, next) => {
     });
 };
 
-exports.products_delete = (req, res, next) => {
-  const id = req.params.productId;
+exports.artists_delete = (req, res, next) => {
+  const id = req.params.artistId;
   Product.remove({ _id: id })
     .exec()
     .then(result => {
@@ -130,7 +130,7 @@ exports.products_delete = (req, res, next) => {
         message: "Product deleted",
         request: {
           type: "POST",
-          url: "http://localhost:3000/products",
+          url: "http://localhost:3000/artists",
           body: { name: "String", price: "Number" }
         }
       });

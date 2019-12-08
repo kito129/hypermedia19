@@ -80,11 +80,30 @@ section.pricing {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.contact_us{
+.subtitle{
 	margin-left: 50px;
+	padding-top: 10px;
 }
 
-#textFooter{
+#footer{
 	color: white;
 }
 
+#subfooter{
+	margin-bottom: 0px;
+}
+
+.carta{
+	height: 300px;
+	width: 300px;
+	border-radius: 100%;
+}
+
+.images{
+	width: 250px;
+	border-radius: 100%;
+}
+
+.artists{
+	margin: auto;
+}

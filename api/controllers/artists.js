@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-const artist = require("../models/artist");
+const Product = require("../models/artist");
 
 exports.artists_get_all = (req, res, next) => {
-  artist.find()
-    .select("name birthday _id artistImage")
+  Product.find()
+    .select("name currentAffiliattion achivements isCompany companyMembers  photoGallery photoGallery _id")
     .exec()
     .then(docs => {
       const response = {
@@ -11,8 +11,11 @@ exports.artists_get_all = (req, res, next) => {
         artists: docs.map(doc => {
           return {
             name: doc.name,
-            birthday: doc.birthday,
-            artistImage: doc.artistImage,
+            currentAffiliattion: doc.currentAffiliattion,
+            achivements: doc.achivements,
+            isCompany: doc.isCompany,
+            companyMembers: doc.companyMembers,
+            photoGallery: doc.photoGallery,
             _id: doc._id,
             request: {
               type: "GET",
@@ -38,11 +41,15 @@ exports.artists_get_all = (req, res, next) => {
 };
 
 exports.artists_create_artist = (req, res, next) => {
-  const artist = new artist({
+  const artist = new Product({
     _id: new mongoose.Types.ObjectId(),
     name: req.body.name,
-    birthday: req.body.birthday,
-    artistImage: req.file.path
+    currentAffiliattion: req.body.currentAffiliattion,
+    achivements: req.body.achivements,
+    isCompany: req.body.isCompany,
+    companyMembers: req.body.companyMembers,
+    abstract: req.body.abstract,
+    //photoGallery: req.file.path
   });
   artist
     .save()
@@ -50,9 +57,12 @@ exports.artists_create_artist = (req, res, next) => {
       console.log(result);
       res.status(201).json({
         message: "Created artist successfully",
-        createdartist: {
+        createdProduct: {
           name: result.name,
-          birthday: result.birthday,
+          currentAffiliattion: result.currentAffiliattion,
+          isCompany: result.isCompany,
+          companyMembers: result.companyMembers,
+          abstract: result.abstract,
           _id: result._id,
           request: {
             type: "GET",
@@ -71,8 +81,8 @@ exports.artists_create_artist = (req, res, next) => {
 
 exports.artists_get_artist = (req, res, next) => {
   const id = req.params.artistId;
-  artist.findById(id)
-    .select("name birthday _id artistImage")
+  Product.findById(id)
+    .select("name currentAffiliattion achivements isCompany companyMembers  photoGallery photoGallery _id")
     .exec()
     .then(doc => {
       console.log("From database", doc);
@@ -102,11 +112,11 @@ exports.artists_update_artist = (req, res, next) => {
   for (const ops of req.body) {
     updateOps[ops.propName] = ops.value;
   }
-  artist.update({ _id: id }, { $set: updateOps })
+  Product.update({ _id: id }, { $set: updateOps })
     .exec()
     .then(result => {
       res.status(200).json({
-        message: "artist updated",
+        message: "Artist updated",
         request: {
           type: "GET",
           url: "http://localhost:3000/artists/" + id
@@ -123,15 +133,15 @@ exports.artists_update_artist = (req, res, next) => {
 
 exports.artists_delete = (req, res, next) => {
   const id = req.params.artistId;
-  artist.remove({ _id: id })
+  Product.remove({ _id: id })
     .exec()
     .then(result => {
       res.status(200).json({
-        message: "artist deleted",
+        message: "Artist deleted",
         request: {
           type: "POST",
           url: "http://localhost:3000/artists",
-          body: { name: "String", birthday: "Number" }
+          body: { name: "String",}
         }
       });
     })

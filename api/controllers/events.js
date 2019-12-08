@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
-const event = require("../models/event");
-const artist = require("../models/artist");
+const Events = require("../models/event");
+const Artist = require("../models/artist");
 
 exports.events_get_all = (req, res, next) => {
-  event.find()
-    .select("artist quantity _id")
-    .populate("artist", "name")
+  Events.find()
+    .select("artist date place relSeminar abstract photoGallery _id")
+    .populate("artist", "date", "place", "relSeminar", "abstract", "photoGallery")
     .exec()
     .then(docs => {
       res.status(200).json({
@@ -15,6 +15,11 @@ exports.events_get_all = (req, res, next) => {
           return {
             _id: doc._id,
             artist: doc.artist,
+            date: doc.date,
+            place: doc.place,
+            relSeminar: doc.relSeminar,
+            abstract: doc.abstract,
+            photoGallery: doc.photoGallery,
             request: {
               type: "GET",
               url: "http://localhost:3000/events/" + doc._id
@@ -31,26 +36,36 @@ exports.events_get_all = (req, res, next) => {
 };
 
 exports.events_create_event = (req, res, next) => {
-  artist.findById(req.body.artistId)
-    .then(artist => {
-      if (!artist) {
+  Artist.findById(req.body.productId)
+    .then(product => {
+      if (!product) {
         return res.status(404).json({
-          message: "artist not found"
+          message: "Product not found"
         });
       }
-      const event = new event({
+      const event = new Events({
         _id: mongoose.Types.ObjectId(),
-        artist: req.body.artistId
+        artist: req.body.artist,
+        date: req.body.date,
+        place: req.body.place,
+        relSeminar: req.body.relSeminar,
+        abstract: req.body.abstract,
+        photoGallery: req.body.photoGallery
       });
       return event.save();
     })
     .then(result => {
       console.log(result);
       res.status(201).json({
-        message: "event stored",
-        createdevent: {
+        message: "Event saved",
+        createdOrder: {
           _id: result._id,
           artist: result.artist,
+          date: result.date,
+          place: result.place,
+          relSeminar: result.relSeminar,
+          abstract: result.abstract,
+          photoGallery: result.photoGallery
         },
         request: {
           type: "GET",
@@ -67,13 +82,13 @@ exports.events_create_event = (req, res, next) => {
 };
 
 exports.events_get_event = (req, res, next) => {
-  event.findById(req.params.eventId)
+  Events.findById(req.params.eventId)
     .populate("artist")
     .exec()
     .then(event => {
       if (!event) {
         return res.status(404).json({
-          message: "event not found"
+          message: "Events not found"
         });
       }
       res.status(200).json({
@@ -92,15 +107,15 @@ exports.events_get_event = (req, res, next) => {
 };
 
 exports.events_delete_event = (req, res, next) => {
-  event.remove({ _id: req.params.eventId })
+  Events.remove({ _id: req.params.eventId })
     .exec()
     .then(result => {
       res.status(200).json({
-        message: "event deleted",
+        message: "Event deleted",
         request: {
           type: "POST",
           url: "http://localhost:3000/events",
-          body: { artistId: "ID"}
+          body: { eventId: "ID", name: "Name" }
         }
       });
     })

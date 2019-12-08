@@ -1,18 +1,16 @@
-//import dependencies
 const express = require("express");
 const router = express.Router();
 const checkAuth = require('../middleware/check-auth');
-//import controller
+
 const SeminarsController = require('../controllers/seminars');
 
-// Handle incoming requests to /seminars
-router.get("/",  SeminarsController.events_get_all);
+// Handle incoming GET requests to /seminars
+router.get("/", SeminarsController.seminars_get_all);
 
-router.post("/", checkAuth, SeminarsController.events_create_event);
+router.post("/", checkAuth, SeminarsController.seminars_create_seminar);
 
-router.get("/:eventId",  SeminarsController.events_get_event);
+router.get("/:seminarId", SeminarsController.seminars_get_seminar);
 
-router.delete("/:eventId", checkAuth, SeminarsController.events_delete_event);
+router.delete("/:seminarId", checkAuth, SeminarsController.seminars_delete_seminar);
 
-//import modules
 module.exports = router;

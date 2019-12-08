@@ -7,10 +7,10 @@ const SeminarsController = require('../controllers/seminars');
 // Handle incoming GET requests to /seminars
 router.get("/", SeminarsController.seminars_get_all);
 
-router.post("/", checkAuth, SeminarsController.seminars_create_order);
+router.post("/", checkAuth, SeminarsController.seminars_create_seminar);
 
-router.get("/:orderId", SeminarsController.seminars_get_order);
+router.get("/:seminarId", SeminarsController.seminars_get_seminar);
 
-router.delete("/:orderId", checkAuth, SeminarsController.seminars_delete_order);
+router.delete("/:seminarId", checkAuth, SeminarsController.seminars_delete_seminar);
 
 module.exports = router;

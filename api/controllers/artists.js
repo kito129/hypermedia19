@@ -49,7 +49,7 @@ exports.artists_create_artist = (req, res, next) => {
     isCompany: req.body.isCompany,
     companyMembers: req.body.companyMembers,
     abstract: req.body.abstract,
-    photoGallery: req.file.path
+    //photoGallery: req.file.path
   });
   artist
     .save()

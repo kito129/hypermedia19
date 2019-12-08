@@ -89,6 +89,10 @@ section.pricing {
 	color: white;
 }
 
+#foot{
+	margin: auto;
+}
+
 #subfooter{
 	margin-bottom: 0px;
 }

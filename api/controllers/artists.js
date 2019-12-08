@@ -3,7 +3,7 @@ const Product = require("../models/artist");
 
 exports.artists_get_all = (req, res, next) => {
   Product.find()
-    .select("name price _id artistImage")
+    .select("name currentAffiliattion achivements isCompany companyMembers  photoGallery photoGallery _id")
     .exec()
     .then(docs => {
       const response = {
@@ -11,8 +11,11 @@ exports.artists_get_all = (req, res, next) => {
         artists: docs.map(doc => {
           return {
             name: doc.name,
-            price: doc.price,
-            artistImage: doc.artistImage,
+            currentAffiliattion: doc.currentAffiliattion,
+            achivements: doc.achivements,
+            isCompany: doc.isCompany,
+            companyMembers: doc.companyMembers,
+            photoGallery: doc.photoGallery,
             _id: doc._id,
             request: {
               type: "GET",
@@ -41,8 +44,12 @@ exports.artists_create_artist = (req, res, next) => {
   const artist = new Product({
     _id: new mongoose.Types.ObjectId(),
     name: req.body.name,
-    price: req.body.price,
-    artistImage: req.file.path
+    currentAffiliattion: req.body.currentAffiliattion,
+    achivements: req.body.achivements,
+    isCompany: req.body.isCompany,
+    companyMembers: req.body.companyMembers,
+    abstract: req.body.abstract,
+    photoGallery: req.file.path
   });
   artist
     .save()
@@ -52,7 +59,10 @@ exports.artists_create_artist = (req, res, next) => {
         message: "Created artist successfully",
         createdProduct: {
           name: result.name,
-          price: result.price,
+          currentAffiliattion: result.currentAffiliattion,
+          isCompany: result.isCompany,
+          companyMembers: result.companyMembers,
+          abstract: result.abstract,
           _id: result._id,
           request: {
             type: "GET",
@@ -72,7 +82,7 @@ exports.artists_create_artist = (req, res, next) => {
 exports.artists_get_artist = (req, res, next) => {
   const id = req.params.artistId;
   Product.findById(id)
-    .select("name price _id artistImage")
+    .select("name currentAffiliattion achivements isCompany companyMembers  photoGallery photoGallery _id")
     .exec()
     .then(doc => {
       console.log("From database", doc);
@@ -106,7 +116,7 @@ exports.artists_update_artist = (req, res, next) => {
     .exec()
     .then(result => {
       res.status(200).json({
-        message: "Product updated",
+        message: "Artist updated",
         request: {
           type: "GET",
           url: "http://localhost:3000/artists/" + id
@@ -127,11 +137,11 @@ exports.artists_delete = (req, res, next) => {
     .exec()
     .then(result => {
       res.status(200).json({
-        message: "Product deleted",
+        message: "Artist deleted",
         request: {
           type: "POST",
           url: "http://localhost:3000/artists",
-          body: { name: "String", price: "Number" }
+          body: { name: "String",}
         }
       });
     })

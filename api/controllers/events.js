@@ -5,8 +5,8 @@ const Artist = require("../models/artist");
 
 exports.events_get_all = (req, res, next) => {
   Events.find()
-    .select("product quantity _id")
-    .populate("product", "name")
+    .select("artist date place relSeminar abstract photoGallery _id")
+    .populate("artist", "date", "place", "relSeminar", "abstract", "photoGallery")
     .exec()
     .then(docs => {
       res.status(200).json({
@@ -14,8 +14,12 @@ exports.events_get_all = (req, res, next) => {
         events: docs.map(doc => {
           return {
             _id: doc._id,
-            product: doc.product,
-            quantity: doc.quantity,
+            artist: doc.artist,
+            date: doc.date,
+            place: doc.place,
+            relSeminar: doc.relSeminar,
+            abstract: doc.abstract,
+            photoGallery: doc.photoGallery,
             request: {
               type: "GET",
               url: "http://localhost:3000/events/" + doc._id
@@ -41,19 +45,27 @@ exports.events_create_event = (req, res, next) => {
       }
       const event = new Events({
         _id: mongoose.Types.ObjectId(),
-        quantity: req.body.quantity,
-        product: req.body.productId
+        artist: req.body.artist,
+        date: req.body.date,
+        place: req.body.place,
+        relSeminar: req.body.relSeminar,
+        abstract: req.body.abstract,
+        photoGallery: req.body.photoGallery
       });
       return event.save();
     })
     .then(result => {
       console.log(result);
       res.status(201).json({
-        message: "Order stored",
+        message: "Event saved",
         createdOrder: {
           _id: result._id,
-          product: result.product,
-          quantity: result.quantity
+          artist: result.artist,
+          date: result.date,
+          place: result.place,
+          relSeminar: result.relSeminar,
+          abstract: result.abstract,
+          photoGallery: result.photoGallery
         },
         request: {
           type: "GET",
@@ -71,12 +83,12 @@ exports.events_create_event = (req, res, next) => {
 
 exports.events_get_event = (req, res, next) => {
   Events.findById(req.params.eventId)
-    .populate("product")
+    .populate("artist")
     .exec()
     .then(event => {
       if (!event) {
         return res.status(404).json({
-          message: "Order not found"
+          message: "Events not found"
         });
       }
       res.status(200).json({
@@ -99,11 +111,11 @@ exports.events_delete_event = (req, res, next) => {
     .exec()
     .then(result => {
       res.status(200).json({
-        message: "Order deleted",
+        message: "Event deleted",
         request: {
           type: "POST",
           url: "http://localhost:3000/events",
-          body: { productId: "ID", quantity: "Number" }
+          body: { eventId: "ID", name: "Name" }
         }
       });
     })

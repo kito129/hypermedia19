@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
+const Seminar = require("../models/seminar");
 const Event = require("../models/event");
-const Artist = require("../models/artist");
 
 exports.seminars_get_all = (req, res, next) => {
-  Event.find()
-    .select("product quantity _id")
-    .populate("product", "name")
+  Seminar.find()
+    .select("name relEvent date place _id")
+    .populate("name", "relEvent","date","place",)
     .exec()
     .then(docs => {
       res.status(200).json({
@@ -14,8 +14,10 @@ exports.seminars_get_all = (req, res, next) => {
         seminars: docs.map(doc => {
           return {
             _id: doc._id,
-            product: doc.product,
-            quantity: doc.quantity,
+            name: doc.name,
+            relEvent: doc.relEvent, 
+            date: doc.date,
+            place: doc.place,
             request: {
               type: "GET",
               url: "http://localhost:3000/seminars/" + doc._id
@@ -32,17 +34,19 @@ exports.seminars_get_all = (req, res, next) => {
 };
 
 exports.seminars_create_seminar = (req, res, next) => {
-  Artist.findById(req.body.productId)
+  Seminar.findById(req.body.artistId)
     .then(product => {
       if (!product) {
         return res.status(404).json({
-          message: "Product not found"
+          message: "Seminar not found"
         });
       }
-      const seminar = new Event({
+      const seminar = new Seminar({
         _id: mongoose.Types.ObjectId(),
-        quantity: req.body.quantity,
-        product: req.body.productId
+        name: req.body.name,
+        relEvent: req.body.relEvent, 
+        date: req.body.date,
+        place: req.body.place,
       });
       return seminar.save();
     })
@@ -52,8 +56,10 @@ exports.seminars_create_seminar = (req, res, next) => {
         message: "Seminar stored",
         createdSeminar: {
           _id: result._id,
-          product: result.product,
-          quantity: result.quantity
+          name: result.name,
+          relEvent: result.relEvent, 
+          date: result.date,
+          place: result.place,
         },
         request: {
           type: "GET",
@@ -70,8 +76,8 @@ exports.seminars_create_seminar = (req, res, next) => {
 };
 
 exports.seminars_get_seminar = (req, res, next) => {
-  Event.findById(req.params.seminarId)
-    .populate("product")
+  Seminar.findById(req.params.seminarId)
+    .populate("seminar")
     .exec()
     .then(seminar => {
       if (!seminar) {
@@ -95,7 +101,7 @@ exports.seminars_get_seminar = (req, res, next) => {
 };
 
 exports.seminars_delete_seminar = (req, res, next) => {
-  Event.remove({ _id: req.params.seminarId })
+  Seminar.remove({ _id: req.params.seminarId })
     .exec()
     .then(result => {
       res.status(200).json({
@@ -103,7 +109,7 @@ exports.seminars_delete_seminar = (req, res, next) => {
         request: {
           type: "POST",
           url: "http://localhost:3000/seminars",
-          body: { productId: "ID", quantity: "Number" }
+          body: { seminarId: "ID", name: "Name" }
         }
       });
     })

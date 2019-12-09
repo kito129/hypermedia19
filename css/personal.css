@@ -89,8 +89,8 @@ section.pricing {
 	color: white;
 }
 
-#foot{
-	margin: auto;
+.foot{
+	margin-left: 200px;
 }
 
 #subfooter{
@@ -110,4 +110,14 @@ section.pricing {
 
 .artists{
 	margin: auto;
+}
+
+.titleImages{
+	font-weight: bold;
+}
+
+#credit{
+	margin-right: 50px;
+	margin-bottom: 0px;
+	padding: 10px;
 }

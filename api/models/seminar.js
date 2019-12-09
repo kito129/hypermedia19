@@ -5,7 +5,8 @@ const seminarSchema = mongoose.Schema({
     name: { type: String, required: true },
     relEvent: { type: mongoose.Schema.Types.ObjectId, ref: 'Event', required: true },
     date: { type: String, required: true },
-    place: { type: String, required: true }
+    place: { type: String, required: true },
+    asbstarct: { type: String, required: true }
 });
 
 module.exports = mongoose.model('Seminar', seminarSchema);

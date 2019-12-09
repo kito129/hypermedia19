@@ -4,7 +4,7 @@ const artistSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     name: { type: String, required: true },
     currentAffiliattion: { type: String, required: true },
-    achivements: { type: String, required: true },
+    achivements: { type: [], required: true },
     isCompany: { type: Boolean, default: false },
     companyMembers: { type: [], required: false },
     abstract: { type: String, required: true },

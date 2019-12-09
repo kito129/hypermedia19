@@ -1,0 +1,36 @@
+DB
+
+	ARTIST
+
+		1 -
+
+			{
+				"name" : "",
+				"currentAffiliattion" : "",
+				"achivements" : "",
+				"isCompany" : "",
+				"companyMembers" : "",
+				"abstract" : ""
+			}
+
+	EVENT
+
+		1 -
+			{	
+				"name" : "",
+				"date" : "",
+				"place" : "",
+				"relSeminar" : "",
+				"abstract" : ""
+			}
+
+	SEMINAR
+
+		1 -
+			{	
+				"name" : "",
+				"date" : "",
+				"place" : "",
+				"relEvent" : "",
+				"abstract" : ""
+			}

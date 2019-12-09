@@ -49,6 +49,7 @@ exports.artists_create_artist = (req, res, next) => {
     isCompany: req.body.isCompany,
     companyMembers: req.body.companyMembers,
     abstract: req.body.abstract,
+    event: req.body.event
     //photoGallery: req.file.path
   });
   artist
@@ -63,6 +64,7 @@ exports.artists_create_artist = (req, res, next) => {
           isCompany: result.isCompany,
           companyMembers: result.companyMembers,
           abstract: result.abstract,
+          event: result.event,
           _id: result._id,
           request: {
             type: "GET",
@@ -82,7 +84,7 @@ exports.artists_create_artist = (req, res, next) => {
 exports.artists_get_artist = (req, res, next) => {
   const id = req.params.artistId;
   Product.findById(id)
-    .select("name currentAffiliattion achivements isCompany companyMembers  photoGallery photoGallery _id")
+    .select("name currentAffiliattion achivements isCompany companyMembers  photoGallery photoGallery event _id")
     .exec()
     .then(doc => {
       console.log("From database", doc);

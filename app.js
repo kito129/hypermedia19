@@ -50,6 +50,7 @@ app.use(bodyParser.json());
 
 // Routes which should be accepted requests
 app.use((req, res, next) => {
+  //CORS error fix in the header
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",

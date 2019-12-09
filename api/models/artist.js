@@ -8,6 +8,7 @@ const artistSchema = mongoose.Schema({
     isCompany: { type: Boolean, default: false },
     companyMembers: { type: [], required: false },
     abstract: { type: String, required: true },
+    event: { type: mongoose.Schema.Types.ObjectId, ref: 'Event', required: true },
     photoGallery: { type: [], required: true }
 });
 

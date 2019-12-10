@@ -98,7 +98,7 @@ DB
 				"name" : "Roberto Bolle and Friends",
 				"date" : "12/06/2020 - 15.00",
 				"place" : "padiglione 1",
-				"relSeminar" : "",
+				"relSeminar" : "Dancing in New York",
 				"abstract" : ""
 			}
 
@@ -118,7 +118,7 @@ DB
 				"name" : "Seven Days Walking Tour",
 				"date" : "12/06/2020 - 21.00",
 				"place" : "place of tree of life",
-				"relSeminar" : "",
+				"relSeminar" : "Piano and Music",
 				"abstract" : ""
 			}
 
@@ -128,7 +128,7 @@ DB
 				"name" : "Notre Dame de Paris",
 				"date" : "12/06/2020 - 21.00",
 				"place" : "padiglione 1",
-				"relSeminar" : "",
+				"relSeminar" : "Modern Musicals",
 				"abstract" : ""
 			}
 
@@ -168,7 +168,7 @@ DB
 				"name" : "Seven Days Walking Tour",
 				"date" : "13/06/2020 - 21.00",
 				"place" : "padiglione 1",
-				"relSeminar" : "",
+				"relSeminar" : "Piano and Music",
 				"abstract" : ""
 			}
 
@@ -199,7 +199,7 @@ DB
 				"name" : "Seven Days Walking Tour",
 				"date" : "14/06/2020 - 21.00",
 				"place" : "padiglione 1",
-				"relSeminar" : "",
+				"relSeminar" : "Piano and Music",
 				"abstract" : ""
 			}
 
@@ -211,7 +211,7 @@ DB
 				"name" : "Modern Musicals",
 				"date" : "12/06/2020 - 18.00",
 				"place" : "padiglione 2",
-				"relEvent" : "",
+				"relEvent" : "Notre Dame de Paris",
 				"abstract" : ""
 			}
 
@@ -221,7 +221,7 @@ DB
 				"name" : "Piano and Music",
 				"date" : "12/06/2020 - 20.00",
 				"place" : "padiglione 2",
-				"relEvent" : "",
+				"relEvent" : "Seven Days Walking Tour",
 				"abstract" : ""
 			}
 
@@ -231,6 +231,6 @@ DB
 				"name" : "Dancing in New York",
 				"date" : "12/06/2020 - 22.00",
 				"place" : "padiglione 2",
-				"relEvent" : "",
+				"relEvent" : "Roberto Bolle and Friends",
 				"abstract" : ""
 			}

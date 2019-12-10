@@ -5,11 +5,88 @@ DB
 		1 -
 
 			{
-				"name" : "",
+				"name" : "Roberto Bolle",
+				"currentAffiliattion" : "",
+				"achivements" : "Étoile and Principal Dancer",
+				"isCompany" : "false",
+				"companyMembers" : "",
+				"abstract" : ""
+			}
+
+		2 -
+
+			{
+				"name" : "Cirque du Soleil",
 				"currentAffiliattion" : "",
 				"achivements" : "",
-				"isCompany" : "",
+				"isCompany" : "true",
 				"companyMembers" : "",
+				"abstract" : ""
+			}
+
+		3 -
+
+			{
+				"name" : "Ludovico Einaudi",
+				"currentAffiliattion" : "",
+				"achivements" : "",
+				"isCompany" : "false",
+				"companyMembers" : "",
+				"abstract" : ""
+			}
+
+		4 -
+
+			{
+				"name" : "Vasco Rossi",
+				"currentAffiliattion" : "",
+				"achivements" : "disco di diamante",
+				"isCompany" : "false",
+				"companyMembers" : "",
+				"abstract" : ""
+			}
+
+		5 -
+
+			{
+				"name" : "Max Pezzali",
+				"currentAffiliattion" : "",
+				"achivements" : "disco di platino",
+				"isCompany" : "false",
+				"companyMembers" : "",
+				"abstract" : ""
+			}
+
+		6 -
+
+			{
+				"name" : "Riccardo Cocciante",
+				"currentAffiliattion" : "",
+				"achivements" : "sanremo 1991",
+				"isCompany" : "false",
+				"companyMembers" : "",
+				"abstract" : ""
+			}
+
+		7 -
+
+			{
+				"name" : "Dreamusical",
+				"currentAffiliattion" : "",
+				"achivements" : "",
+				"isCompany" : "true",
+				"companyMembers" : "Giò Di Tonno (quasimodo), Lola Ponce (emeralda)",
+				"abstract" : ""
+			}
+
+		8 -
+
+			{
+				"name" : "Negramaro",
+				"currentAffiliattion" : "",
+				"achivements" : "sanremo 1991",
+				"isCompany" : "true",
+				"companyMembers" : "Giuliano Sangiorgi, Emanuele "Lele" Spedicato, Ermanno Carlà, Andrea "Andro" Mariano, Andrea "Pupillo" De Rocco, Danilo Tasco",
 				"abstract" : ""
 			}
 
@@ -17,9 +94,111 @@ DB
 
 		1 -
 			{	
-				"name" : "",
-				"date" : "",
-				"place" : "",
+				"artist" : "Roberto Bolle",
+				"name" : "Roberto Bolle and Friends",
+				"date" : "12/06/2020 - 15.00",
+				"place" : "padiglione 1",
+				"relSeminar" : "",
+				"abstract" : ""
+			}
+
+		2 -
+			{	
+				"artist" : "Riccardo Cocciante",
+				"name" : "Best of Cocciante",
+				"date" : "12/06/2020 - 18.00",
+				"place" : "padiglione 1",
+				"relSeminar" : "",
+				"abstract" : ""
+			}
+
+		3 -
+			{	
+				"artist" : "Ludovico Einaudi",
+				"name" : "Seven Days Walking Tour",
+				"date" : "12/06/2020 - 21.00",
+				"place" : "place of tree of life",
+				"relSeminar" : "",
+				"abstract" : ""
+			}
+
+		4 -
+			{	
+				"artist" : "Dreamusical",
+				"name" : "Notre Dame de Paris",
+				"date" : "12/06/2020 - 21.00",
+				"place" : "padiglione 1",
+				"relSeminar" : "",
+				"abstract" : ""
+			}
+
+		5 -
+			{	
+				"artist" : "Vasco Rossi",
+				"name" : "vasco nonstoplive festival",
+				"date" : "13/06/2020 - 15.00",
+				"place" : "place of tree of life",
+				"relSeminar" : "",
+				"abstract" : ""
+			}
+
+		6 -
+			{	
+				"artist" : "Max Pezzali",
+				"name" : "cantamax",
+				"date" : "13/06/2020 - 18.00",
+				"place" : "place of tree of life",
+				"relSeminar" : "",
+				"abstract" : ""
+			}
+
+		7 -
+			{	
+				"artist" : "Negramaro",
+				"name" : "amore che torni tour 2020",
+				"date" : "13/06/2020 - 21.00",
+				"place" : "place of tree of life",
+				"relSeminar" : "",
+				"abstract" : ""
+			}
+
+		8 -
+			{	
+				"artist" : "Ludovico Einaudi",
+				"name" : "Seven Days Walking Tour",
+				"date" : "13/06/2020 - 21.00",
+				"place" : "padiglione 1",
+				"relSeminar" : "",
+				"abstract" : ""
+			}
+
+		9 -
+			{	
+				"artist" : "Vasco Rossi",
+				"name" : "vasco nonstoplive festival",
+				"date" : "14/06/2020 - 15.00",
+				"place" : "place of tree of life",
+				"relSeminar" : "",
+				"abstract" : ""
+			}
+
+
+		10 -
+			{	
+				"artist" : "Cirque du Soleil",
+				"name" : "Totem",
+				"date" : "14/06/2020 - 18.00",
+				"place" : "padiglione 1",
+				"relSeminar" : "",
+				"abstract" : ""
+			}
+
+		11 -
+			{	
+				"artist" : "Ludovico Einaudi",
+				"name" : "Seven Days Walking Tour",
+				"date" : "14/06/2020 - 21.00",
+				"place" : "padiglione 1",
 				"relSeminar" : "",
 				"abstract" : ""
 			}
@@ -28,12 +207,30 @@ DB
 
 		1 -
 			{	
-				"name" : "",
-				"date" : "",
-				"place" : "",
+				"seminarist" : "Riccardo Cocciante",
+				"name" : "Modern Musicals",
+				"date" : "12/06/2020 - 18.00",
+				"place" : "padiglione 2",
 				"relEvent" : "",
 				"abstract" : ""
 			}
 
+		2 -
+			{	
+				"seminarist" : "Ludovico Einaudi",
+				"name" : "Piano and Music",
+				"date" : "12/06/2020 - 20.00",
+				"place" : "padiglione 2",
+				"relEvent" : "",
+				"abstract" : ""
+			}
 
-			
+		3 -
+			{	
+				"seminarist" : "Roberto Bolle",
+				"name" : "Dancing in New York",
+				"date" : "12/06/2020 - 22.00",
+				"place" : "padiglione 2",
+				"relEvent" : "",
+				"abstract" : ""
+			}

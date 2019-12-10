@@ -116,7 +116,7 @@ section.pricing {
 	font-weight: bold;
 }
 
-#credit{
+.credit{
 	margin-right: 50px;
 	margin-bottom: 0px;
 	padding: 10px;
@@ -129,4 +129,33 @@ section.pricing {
 #imghome{
 	margin-bottom: 0px;
 	width: 100%;
+}
+
+#datahome{
+	position: absolute;
+	margin-top: 50px;
+	margin-left: 100px;
+	color: white;
+}
+
+.imagineRettang{
+	height: 350px;
+	width: 500px;
+	border-radius: 20px;
+	margin: 50px;
+}
+
+.colonna2{
+	width: auto;
+}
+
+.paragrafofullpagecenter{
+	margin-left: 50px;
+	margin-right: 50px;
+	font-size: 20px;
+}
+
+.paragrafofullpage{
+	margin-left: 50px;
+	margin-right: 50px;
 }

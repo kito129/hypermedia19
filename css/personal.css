@@ -97,3 +97,25 @@
 	margin-left: 50px;
 	margin-right: 50px;
 }
+
+.singleEvent{
+	margin-left: 50px;
+	font-size: 20px;
+}
+
+#relativeEvent{
+	margin-left: 50px;
+	background-color: #292b2c;
+	color: white;
+	font-size: 25px;
+}
+
+#imageSingleEvent{
+	width: 500px;
+	border-radius: 20px;
+}
+
+#imageSingleSeminar{
+	width: 200px;
+	border-radius: 100%;
+}

@@ -97,7 +97,9 @@ DB
 				"artist" : "Roberto Bolle",
 				"name" : "Roberto Bolle and Friends",
 				"date" : "12/06/2020 - 15.00",
-				"place" : "padiglione 1",
+				"place" : "Pavilion 1",
+				"price" : "35.00€",
+				"isSoldOut" : "false",
 				"relSeminar" : "Dancing in New York",
 				"abstract" : ""
 			}
@@ -107,7 +109,9 @@ DB
 				"artist" : "Riccardo Cocciante",
 				"name" : "Best of Cocciante",
 				"date" : "12/06/2020 - 18.00",
-				"place" : "padiglione 1",
+				"place" : "Pavilion 1",
+				"price" : "50.00€",
+				"isSoldOut" : "false",
 				"relSeminar" : "",
 				"abstract" : ""
 			}
@@ -117,8 +121,10 @@ DB
 				"artist" : "Ludovico Einaudi",
 				"name" : "Seven Days Walking Tour",
 				"date" : "12/06/2020 - 21.00",
-				"place" : "place of tree of life",
-				"relSeminar" : "Piano and Music",
+				"place" : "Place of Tree of Life",
+				"price" : "50.00€",
+				"isSoldOut" : "true",
+				"relSeminar" : "Piano & Music",
 				"abstract" : ""
 			}
 
@@ -127,7 +133,9 @@ DB
 				"artist" : "Dreamusical",
 				"name" : "Notre Dame de Paris",
 				"date" : "12/06/2020 - 21.00",
-				"place" : "padiglione 1",
+				"place" : "Pavilion 1",
+				"price" : "35.00€",
+				"isSoldOut" : "false",
 				"relSeminar" : "Modern Musicals",
 				"abstract" : ""
 			}
@@ -135,9 +143,11 @@ DB
 		5 -
 			{	
 				"artist" : "Vasco Rossi",
-				"name" : "vasco nonstoplive festival",
+				"name" : "Vasco NONSTOPLIVE Festival",
 				"date" : "13/06/2020 - 15.00",
-				"place" : "place of tree of life",
+				"place" : "Place of Tree of Life",
+				"price" : "50.00€",
+				"isSoldOut" : "true",
 				"relSeminar" : "",
 				"abstract" : ""
 			}
@@ -145,9 +155,11 @@ DB
 		6 -
 			{	
 				"artist" : "Max Pezzali",
-				"name" : "cantamax",
+				"name" : "CantaMax",
 				"date" : "13/06/2020 - 18.00",
-				"place" : "place of tree of life",
+				"place" : "Place of Tree of Life",
+				"price" : "50.00€",
+				"isSoldOut" : "false",
 				"relSeminar" : "",
 				"abstract" : ""
 			}
@@ -155,9 +167,11 @@ DB
 		7 -
 			{	
 				"artist" : "Negramaro",
-				"name" : "amore che torni tour 2020",
+				"name" : "Amore che torni Tour",
 				"date" : "13/06/2020 - 21.00",
-				"place" : "place of tree of life",
+				"place" : "Place of Tree of Life",
+				"price" : "50.00€",
+				"isSoldOut" : "false",
 				"relSeminar" : "",
 				"abstract" : ""
 			}
@@ -167,17 +181,21 @@ DB
 				"artist" : "Ludovico Einaudi",
 				"name" : "Seven Days Walking Tour",
 				"date" : "13/06/2020 - 21.00",
-				"place" : "padiglione 1",
-				"relSeminar" : "Piano and Music",
+				"place" : "Pavilion 1",
+				"price" : "50.00€",
+				"isSoldOut" : "true",
+				"relSeminar" : "Piano & Music",
 				"abstract" : ""
 			}
 
 		9 -
 			{	
 				"artist" : "Vasco Rossi",
-				"name" : "vasco nonstoplive festival",
+				"name" : "Vasco NONSTOPLIVE Festival",
 				"date" : "14/06/2020 - 15.00",
-				"place" : "place of tree of life",
+				"place" : "Place of Tree of Life",
+				"price" : "50.00€",
+				"isSoldOut" : "false",
 				"relSeminar" : "",
 				"abstract" : ""
 			}
@@ -188,7 +206,9 @@ DB
 				"artist" : "Cirque du Soleil",
 				"name" : "Totem",
 				"date" : "14/06/2020 - 18.00",
-				"place" : "padiglione 1",
+				"place" : "Pavilion 1",
+				"price" : "35.00€",
+				"isSoldOut" : "false",
 				"relSeminar" : "",
 				"abstract" : ""
 			}
@@ -198,8 +218,10 @@ DB
 				"artist" : "Ludovico Einaudi",
 				"name" : "Seven Days Walking Tour",
 				"date" : "14/06/2020 - 21.00",
-				"place" : "padiglione 1",
-				"relSeminar" : "Piano and Music",
+				"place" : "Pavilion 1",
+				"price" : "50.00€",
+				"isSoldOut" : "false",
+				"relSeminar" : "Piano & Music",
 				"abstract" : ""
 			}
 
@@ -207,30 +229,36 @@ DB
 
 		1 -
 			{	
-				"seminarist" : "Riccardo Cocciante",
-				"name" : "Modern Musicals",
+				"seminarist" : "Ludovico Einaudi",
+				"name" : "Piano & Music",
 				"date" : "12/06/2020 - 18.00",
-				"place" : "padiglione 2",
-				"relEvent" : "Notre Dame de Paris",
+				"place" : "Pavilion 2",
+				"price" : "free",
+				"isSoldOut" : "false",
+				"relEvent" : "Seven Days Walking Tour",
 				"abstract" : ""
 			}
 
 		2 -
 			{	
-				"seminarist" : "Ludovico Einaudi",
-				"name" : "Piano and Music",
+				"seminarist" : "Roberto Bolle",
+				"name" : "Dancing in New York",
 				"date" : "12/06/2020 - 20.00",
-				"place" : "padiglione 2",
-				"relEvent" : "Seven Days Walking Tour",
+				"place" : "Pavilion 2",
+				"price" : "free",
+				"isSoldOut" : "false",
+				"relEvent" : "Roberto Bolle and Friends",
 				"abstract" : ""
 			}
 
 		3 -
 			{	
-				"seminarist" : "Roberto Bolle",
-				"name" : "Dancing in New York",
+				"seminarist" : "Riccardo Cocciante",
+				"name" : "Modern Musicals",
 				"date" : "12/06/2020 - 22.00",
-				"place" : "padiglione 2",
-				"relEvent" : "Roberto Bolle and Friends",
+				"place" : "Pavilion 2",
+				"price" : "free",
+				"isSoldOut" : "false",
+				"relEvent" : "Notre Dame de Paris",
 				"abstract" : ""
 			}

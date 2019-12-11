@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CONTACT US</title>
+    <title>REGISTRATION</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.3.1.css" rel="stylesheet">
 	  <link href="css/personal.css" rel="stylesheet">
@@ -33,9 +33,9 @@
 				</li>				
 				<li class="nav-item"><a class="nav-link performers" href="artists.html"><h7>Artists</h7></a></li>
 				<li class="nav-item"><a class="nav-link calendar" href=""><h7>Calendar</h7></a></li>
-				<li class="nav-item active"><a class="nav-link contactus" href="contactus.html"><h7>Contact Us</h7></a></li>
+				<li class="nav-item"><a class="nav-link contactus" href="contactus.html"><h7>Contact Us</h7></a></li>
 				<li class="nav-item"><a class="nav-link login" href="log.html"><h7>Log In</h7></a></li>
-				<li class="nav-item"><a class="nav-link signup" href="registration.html"><h7>Sign Up</h7></a></li>
+				<li class="nav-item active"><a class="nav-link signup" href="registration.html"><h7>Sign Up</h7></a></li>
 			</ul>
 		</div>
 	</nav>
@@ -44,8 +44,7 @@
 	<br>
 	<br>
 	<div>
-		<h3 class="subtitle">CONTACT US</h3>
-		<p class="subtitle">If you need to talk to one of our operators for more info you can call us at 899.999.999<br>Alternatively you can send us an email by filling the following fields.</p>
+		<h3 class="subtitle">REGISTRATION</h3>
 	</div>
 	
 	<form class="subtitle" action="">
@@ -68,14 +67,20 @@
 			</div>
 		</div>
 		<div class="form-group row">
-			<label for="inputText" class="col-sm-2 col-form-label"></label>
+			<label for="inputPassword" class="col-sm-2 col-form-label">Password*</label>
 			<div class="col-sm-5">
-				<input type="text" class="textarea" id="inputText">
+				<input type="password" class="form-control" id="inputPassword" required>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputConfirmPassword" class="col-sm-2 col-form-label">Confirm Password*</label>
+			<div class="col-sm-5">
+				<input type="password" class="form-control" id="inputConfirmPassword" required>
 			</div>
 		</div>
 		<div class="form-group row">
 			<div class="col-sm-10">
-				<button type="button" class="btn btn-dark">Send</button>
+				<button type="button" class="btn btn-dark">Register</button>
 			</div>
 		</div>
 	</form>

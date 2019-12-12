@@ -1,94 +1,153 @@
 DB
 
 	ARTIST
-
-		1 -
-
-			{
-				"name" : "Roberto Bolle",
-				"currentAffiliattion" : "",
-				"achivements" : "Étoile and Principal Dancer",
-				"isCompany" : "false",
-				"companyMembers" : "",
-				"abstract" : ""
-			}
-
-		2 -
-
-			{
-				"name" : "Cirque du Soleil",
-				"currentAffiliattion" : "",
-				"achivements" : "",
-				"isCompany" : "true",
-				"companyMembers" : "",
-				"abstract" : ""
-			}
-
-		3 -
-
-			{
-				"name" : "Ludovico Einaudi",
-				"currentAffiliattion" : "",
-				"achivements" : "",
-				"isCompany" : "false",
-				"companyMembers" : "",
-				"abstract" : ""
-			}
-
-		4 -
-
-			{
-				"name" : "Vasco Rossi",
-				"currentAffiliattion" : "",
-				"achivements" : "disco di diamante",
-				"isCompany" : "false",
-				"companyMembers" : "",
-				"abstract" : ""
-			}
-
-		5 -
-
-			{
-				"name" : "Max Pezzali",
-				"currentAffiliattion" : "",
-				"achivements" : "disco di platino",
-				"isCompany" : "false",
-				"companyMembers" : "",
-				"abstract" : ""
-			}
-
-		6 -
-
-			{
-				"name" : "Riccardo Cocciante",
-				"currentAffiliattion" : "",
-				"achivements" : "sanremo 1991",
-				"isCompany" : "false",
-				"companyMembers" : "",
-				"abstract" : ""
-			}
-
-		7 -
-
-			{
-				"name" : "Dreamusical",
-				"currentAffiliattion" : "",
-				"achivements" : "",
-				"isCompany" : "true",
-				"companyMembers" : "Giò Di Tonno (quasimodo), Lola Ponce (emeralda)",
-				"abstract" : ""
-			}
-
-		8 -
-
-			{
-				"name" : "Negramaro",
-				"currentAffiliattion" : "",
-				"achivements" : "sanremo 1991",
-				"isCompany" : "true",
-				"companyMembers" : "Giuliano Sangiorgi, Emanuele "Lele" Spedicato, Ermanno Carlà, Andrea "Andro" Mariano, Andrea "Pupillo" De Rocco, Danilo Tasco",
-				"abstract" : ""
-			}
+		{
+			"count": 8,
+			"artists": [
+				{
+					"name": "Roberto Bolle",
+					"currentAffiliattion": "",
+					"achivements": [
+						"Étoile and Principal Dancer"
+					],
+					"isCompany": false,
+					"companyMembers": [
+						""
+					],
+					"photoGallery": [],
+					"_id": "5df12192927bae3ec066ceff",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artists/5df12192927bae3ec066ceff"
+					}
+				},
+				{
+					"name": "Cirque du Soleil",
+					"currentAffiliattion": "",
+					"achivements": [
+						""
+					],
+					"isCompany": true,
+					"companyMembers": [
+						""
+					],
+					"photoGallery": [],
+					"_id": "5df121a1927bae3ec066cf00",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artists/5df121a1927bae3ec066cf00"
+					}
+				},
+				{
+					"name": "Ludovico Einaudi",
+					"currentAffiliattion": "",
+					"achivements": [
+						""
+					],
+					"isCompany": false,
+					"companyMembers": [
+						""
+					],
+					"photoGallery": [],
+					"_id": "5df121a8927bae3ec066cf01",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artists/5df121a8927bae3ec066cf01"
+					}
+				},
+				{
+					"name": "Vasco Rossi",
+					"currentAffiliattion": "",
+					"achivements": [
+						"disco di diamante"
+					],
+					"isCompany": false,
+					"companyMembers": [
+						""
+					],
+					"photoGallery": [],
+					"_id": "5df121ae927bae3ec066cf02",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artists/5df121ae927bae3ec066cf02"
+					}
+				},
+				{
+					"name": "Max Pezzali",
+					"currentAffiliattion": "",
+					"achivements": [
+						"disco di platino"
+					],
+					"isCompany": false,
+					"companyMembers": [
+						""
+					],
+					"photoGallery": [],
+					"_id": "5df121b4927bae3ec066cf03",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artists/5df121b4927bae3ec066cf03"
+					}
+				},
+				{
+					"name": "Riccardo Cocciante",
+					"currentAffiliattion": "",
+					"achivements": [
+						"sanremo 1991"
+					],
+					"isCompany": false,
+					"companyMembers": [
+						""
+					],
+					"photoGallery": [],
+					"_id": "5df121b9927bae3ec066cf04",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artists/5df121b9927bae3ec066cf04"
+					}
+				},
+				{
+					"name": "Negramaro",
+					"currentAffiliattion": "",
+					"achivements": [
+						"sanremo 1991"
+					],
+					"isCompany": true,
+					"companyMembers": [
+						"Giuliano Sangiorgi",
+						"Emanuele Lele Spedicato",
+						"Ermanno Carlà",
+						"Andrea Andro Mariano",
+						"Andrea Pupillo De Rocco",
+						"Danilo Tasco"
+					],
+					"photoGallery": [],
+					"_id": "5df121ef927bae3ec066cf06",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artists/5df121ef927bae3ec066cf06"
+					}
+				},
+				{
+					"name": "Dreamusical",
+					"currentAffiliattion": "",
+					"achivements": [
+						""
+					],
+					"isCompany": true,
+					"companyMembers": [
+						"Giò Di Tonno (quasimodo)",
+						"Lola Ponce (emeralda)"
+					],
+					"photoGallery": [],
+					"_id": "5df12230927bae3ec066cf08",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artists/5df12230927bae3ec066cf08"
+					}
+				}
+			]
+		}
 
 	EVENT
 

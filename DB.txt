@@ -9,7 +9,7 @@ DB
 				"currentAffiliattion" : "",
 				"achivements" : "Étoile and Principal Dancer",
 				"isCompany" : "false",
-				"companyMembers" : "",
+				"companyMembers" : "-",
 				"abstract" : ""
 			}
 
@@ -18,9 +18,9 @@ DB
 			{
 				"name" : "Cirque du Soleil",
 				"currentAffiliattion" : "",
-				"achivements" : "",
+				"achivements" : "Theater company of the year (2012, 2015, 2016, 2019)",
 				"isCompany" : "true",
-				"companyMembers" : "",
+				"companyMembers" : "Guy Laliberté, Gilles Ste-Croix, Daniel Gauthier, Rachel Vertus",
 				"abstract" : ""
 			}
 
@@ -29,9 +29,9 @@ DB
 			{
 				"name" : "Ludovico Einaudi",
 				"currentAffiliattion" : "",
-				"achivements" : "",
+				"achivements" : "Best European composer (2008)",
 				"isCompany" : "false",
-				"companyMembers" : "",
+				"companyMembers" : "-",
 				"abstract" : ""
 			}
 
@@ -40,9 +40,9 @@ DB
 			{
 				"name" : "Vasco Rossi",
 				"currentAffiliattion" : "",
-				"achivements" : "disco di diamante",
+				"achivements" : "Disco di diamante (2003, 2014)",
 				"isCompany" : "false",
-				"companyMembers" : "",
+				"companyMembers" : "-",
 				"abstract" : ""
 			}
 
@@ -51,9 +51,9 @@ DB
 			{
 				"name" : "Max Pezzali",
 				"currentAffiliattion" : "",
-				"achivements" : "disco di platino",
+				"achivements" : "Disco di platino (2006)",
 				"isCompany" : "false",
-				"companyMembers" : "",
+				"companyMembers" : "-",
 				"abstract" : ""
 			}
 
@@ -62,9 +62,9 @@ DB
 			{
 				"name" : "Riccardo Cocciante",
 				"currentAffiliattion" : "",
-				"achivements" : "sanremo 1991",
+				"achivements" : "Sanremo (1991)",
 				"isCompany" : "false",
-				"companyMembers" : "",
+				"companyMembers" : "-",
 				"abstract" : ""
 			}
 
@@ -73,7 +73,7 @@ DB
 			{
 				"name" : "Dreamusical",
 				"currentAffiliattion" : "",
-				"achivements" : "",
+				"achivements" : "Theater company of the year (2010, 2011, 2014)",
 				"isCompany" : "true",
 				"companyMembers" : "Giò Di Tonno (quasimodo), Lola Ponce (emeralda)",
 				"abstract" : ""
@@ -84,7 +84,7 @@ DB
 			{
 				"name" : "Negramaro",
 				"currentAffiliattion" : "",
-				"achivements" : "sanremo 1991",
+				"achivements" : "Disco di platino (2010)",
 				"isCompany" : "true",
 				"companyMembers" : "Giuliano Sangiorgi, Emanuele "Lele" Spedicato, Ermanno Carlà, Andrea "Andro" Mariano, Andrea "Pupillo" De Rocco, Danilo Tasco",
 				"abstract" : ""
@@ -230,7 +230,7 @@ DB
 		1 -
 			{	
 				"seminarist" : "Ludovico Einaudi",
-				"name" : "Piano & Music",
+				"name" : "Piano & Music Seminar",
 				"date" : "12/06/2020 - 18.00",
 				"place" : "Pavilion 2",
 				"price" : "free",
@@ -242,7 +242,7 @@ DB
 		2 -
 			{	
 				"seminarist" : "Roberto Bolle",
-				"name" : "Dancing in New York",
+				"name" : "Dancing in New York Seminar",
 				"date" : "12/06/2020 - 20.00",
 				"place" : "Pavilion 2",
 				"price" : "free",
@@ -254,11 +254,11 @@ DB
 		3 -
 			{	
 				"seminarist" : "Riccardo Cocciante",
-				"name" : "Modern Musicals",
+				"name" : "Modern Musicals Seminar",
 				"date" : "12/06/2020 - 22.00",
 				"place" : "Pavilion 2",
 				"price" : "free",
 				"isSoldOut" : "false",
-				"relEvent" : "Notre Dame de Paris",
+				"relEvent" : "Notre Dame de Paris" , "Best of Cocciante",
 				"abstract" : ""
 			}

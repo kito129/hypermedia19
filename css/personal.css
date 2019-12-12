@@ -110,12 +110,18 @@
 	font-size: 25px;
 }
 
-#imageSingleEvent{
+.imageSingleEvent{
 	width: 500px;
 	border-radius: 20px;
+	margin-bottom: 10px;
 }
 
-#imageSingleSeminar{
+.imageSingleSeminar{
+	width: 200px;
+	border-radius: 100%;
+}
+
+.imageSingleArtist{
 	width: 200px;
 	border-radius: 100%;
 }

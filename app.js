@@ -12,11 +12,12 @@ const eventRoutes = require("./api/routes/events");
 const seminarRoutes = require("./api/routes/seminars");
 const userRoutes = require('./api/routes/user');
 
+
 //database setting
 const CONNECTION_URL = 
-  "mongodb+srv://shibbo:"+
+  "mongodb://shibbo:"+
   process.env.MONGO_ATLAS_PW +
-  "@hypermedia-pzrp3.mongodb.net/test?retryWrites=true&w=majority";
+  "@hypermedia-shard-00-00-pzrp3.mongodb.net:27017,hypermedia-shard-00-01-pzrp3.mongodb.net:27017,hypermedia-shard-00-02-pzrp3.mongodb.net:27017/test?ssl=true&replicaSet=hypermedia-shard-0&authSource=admin&retryWrites=true&w=majority";
 const DATABASE_NAME = "hypermedia";
 
 const options = {
@@ -36,7 +37,7 @@ if(mongoose.connect(CONNECTION_URL,options)){
   //handle error
   console.log("Connected to " + DATABASE_NAME + " database")
   mongoose.connection.on('error',console.error.bind(
-    console, 'MongoDB connection error:\n')
+    console, '\n-----MongoDB connection error------:\n')
   );
 } else{
   console.log("ERROR to connect to " + DATABASE_NAME + " database")

@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-const Product = require("../models/artist");
+const Artist = require("../models/artist");
 
 exports.artists_get_all = (req, res, next) => {
-  Product.find()
+  Artist.find()
     .select("name currentAffiliattion achivements isCompany companyMembers  photoGallery photoGallery _id")
     .exec()
     .then(docs => {
@@ -24,13 +24,13 @@ exports.artists_get_all = (req, res, next) => {
           };
         })
       };
-      //   if (docs.length >= 0) {
+        if (docs.length >= 0) {
       res.status(200).json(response);
-      //   } else {
-      //       res.status(404).json({
-      //           message: 'No entries found'
-      //       });
-      //   }
+      } else {
+          res.status(404).json({
+              message: 'No entries found'
+          });
+      }
     })
     .catch(err => {
       console.log(err);
@@ -41,49 +41,61 @@ exports.artists_get_all = (req, res, next) => {
 };
 
 exports.artists_create_artist = (req, res, next) => {
-  const artist = new Product({
-    _id: new mongoose.Types.ObjectId(),
-    name: req.body.name,
-    currentAffiliattion: req.body.currentAffiliattion,
-    achivements: req.body.achivements,
-    isCompany: req.body.isCompany,
-    companyMembers: req.body.companyMembers,
-    abstract: req.body.abstract,
-    event: req.body.event
-    //photoGallery: req.file.path
-  });
-  artist
-    .save()
-    .then(result => {
-      console.log(result);
-      res.status(201).json({
-        message: "Created artist successfully",
-        createdProduct: {
-          name: result.name,
-          currentAffiliattion: result.currentAffiliattion,
-          isCompany: result.isCompany,
-          companyMembers: result.companyMembers,
-          abstract: result.abstract,
-          event: result.event,
-          _id: result._id,
-          request: {
-            type: "GET",
-            url: "http://localhost:3000/artists/" + result._id
-          }
-        }
-      });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json({
-        error: err
-      });
+  Artist.find({ name: req.body.name })
+    .exec()
+    .then(art => {
+      if (art.length >= 1) {
+        return res.status(409).json({
+          message: "Artist already exists"
+        });
+      } else {
+        const artist = new Artist({
+          _id: new mongoose.Types.ObjectId(),
+          name: req.body.name,
+          currentAffiliattion: req.body.currentAffiliattion,
+          achivements: req.body.achivements,
+          isCompany: req.body.isCompany,
+          companyMembers: req.body.companyMembers,
+          abstract: req.body.abstract,
+          event: req.body.event
+          //photoGallery: req.file.path
+        });
+        artist
+          .save()
+          .then(result => {
+            console.log(result);
+            res.status(201).json({
+              message: "Created artist successfully",
+              createdProduct: {
+                name: result.name,
+                currentAffiliattion: result.currentAffiliattion,
+                isCompany: result.isCompany,
+                companyMembers: result.companyMembers,
+                abstract: result.abstract,
+                event: result.event,
+                _id: result._id,
+                request: {
+                  type: "GET",
+                  url: "http://localhost:3000/artists/" + result._id
+                }
+              }
+            });
+          })
+          .catch(err => {
+            console.log(err);
+            res.status(500).json({
+              error: err
+            });
+          });
+      }
     });
-};
+  };
+    
+
 
 exports.artists_get_artist = (req, res, next) => {
   const id = req.params.artistId;
-  Product.findById(id)
+  Artist.findById(id)
     .select("name currentAffiliattion achivements isCompany companyMembers  photoGallery photoGallery event _id")
     .exec()
     .then(doc => {
@@ -114,7 +126,7 @@ exports.artists_update_artist = (req, res, next) => {
   for (const ops of req.body) {
     updateOps[ops.propName] = ops.value;
   }
-  Product.update({ _id: id }, { $set: updateOps })
+  Artist.update({ _id: id }, { $set: updateOps })
     .exec()
     .then(result => {
       res.status(200).json({
@@ -135,7 +147,7 @@ exports.artists_update_artist = (req, res, next) => {
 
 exports.artists_delete = (req, res, next) => {
   const id = req.params.artistId;
-  Product.remove({ _id: id })
+  Artist.remove({ _id: id })
     .exec()
     .then(result => {
       res.status(200).json({

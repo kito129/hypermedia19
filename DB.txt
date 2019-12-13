@@ -93,7 +93,7 @@ DB
 				"currentAffiliattion" : "Sugar Music",
 				"achivements" : "Disco di platino (2010)",
 				"isCompany" : "true",
-				"companyMembers" : "Giuliano Sangiorgi, Emanuele "Lele" Spedicato, Ermanno Carlà, Andrea "Andro" Mariano, Andrea "Pupillo" De Rocco, Danilo Tasco",
+				"companyMembers" : "Giuliano Sangiorgi, Emanuele Lele Spedicato, Ermanno Carlà, Andrea Andro Mariano, Andrea Pupillo De Rocco, Danilo Tasco",
 				"type" : "group",
 				"abstract" : "Negramaro is an Italian pop band formed in 1999 and successful since 2005. Their name stems from Negroamaro, a wine produced in their native district, Salento in Apulia. After years spent in the Italian alternative market, they finally became known more widely in 2005 thanks to the Sanremo Festival."
 			}

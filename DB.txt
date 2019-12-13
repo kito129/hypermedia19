@@ -35,8 +35,7 @@ DB
 				"isCompany" : "false",
 				"companyMembers" : "-",
 				"type" : "pianist",
-				"abstract" : "Ludovico Maria Enrico Einaudi (born November 23, 1955 in Turin) is an Italian pianist and composer. Trained at the Conservatorio Verdi in Milan, Einaudi began his career as a classical composer, later incorporating other styles and genres such as pop, rock, folk, and world music. 
-				Einaudi has composed the scores for a number of films and television productions. He has also released a number of solo albums for piano and other instruments. On 1 March 2019, Einaudi announced a seven-part project named Seven Days Walking, which is to be released over the course of seven months in 2019."
+				"abstract" : "Ludovico Maria Enrico Einaudi (born November 23, 1955 in Turin) is an Italian pianist and composer. Trained at the Conservatorio Verdi in Milan, Einaudi began his career as a classical composer, later incorporating other styles and genres such as pop, rock, folk, and world music. Einaudi has composed the scores for a number of films and television productions. He has also released a number of solo albums for piano and other instruments. On 1 March 2019, Einaudi announced a seven-part project named Seven Days Walking, which is to be released over the course of seven months in 2019."
 			}
 
 		4 -
@@ -48,7 +47,7 @@ DB
 				"isCompany" : "false",
 				"companyMembers" : "-",
 				"type" : "singer",
-				"abstract" : "Vasco Rossi (born February 7, 1952 in Zocca) is an Italian singer-songwriter. During his career, he has published 30 albums and has written over 250 songs, as well as lyrics for other artists. He calls himself a provocautore (an Italian portmanteau for "provoking author") as throughout his career he has been regularly criticized over his choice of lifestyle and the lyrics in his songs. With more than 35 millions of copies sold, he is one of the best-selling Italian singers."
+				"abstract" : "Vasco Rossi (born February 7, 1952 in Zocca) is an Italian singer-songwriter. During his career, he has published 30 albums and has written over 250 songs, as well as lyrics for other artists. He calls himself a provocautore (an Italian portmanteau for provoking author) as throughout his career he has been regularly criticized over his choice of lifestyle and the lyrics in his songs. With more than 35 millions of copies sold, he is one of the best-selling Italian singers."
 			}
 
 		5 -
@@ -60,7 +59,7 @@ DB
 				"isCompany" : "false",
 				"companyMembers" : "-",
 				"type" : "singer",
-				"abstract" : "Massimo Pezzali (born November 14, 1967 in Pavia), commonly known as Max Pezzali, is an Italian singer-songwriter. He was the principal singer and song writer of the pop rock group 883. In 2004, he released his first solo album "Il mondo insieme a te". The album was successful in Italy and since then Pezzali has remained a solo artist. Taking into account his solo work, as well as his work dating back to the 883 period, Max Pezzali has sold over 10 million albums, thereby becoming one of the most popular singers in the history of Italian music."
+				"abstract" : "Massimo Pezzali (born November 14, 1967 in Pavia), commonly known as Max Pezzali, is an Italian singer-songwriter. He was the principal singer and song writer of the pop rock group 883. In 2004, he released his first solo album Il mondo insieme a te. The album was successful in Italy and since then Pezzali has remained a solo artist. Taking into account his solo work, as well as his work dating back to the 883 period, Max Pezzali has sold over 10 million albums, thereby becoming one of the most popular singers in the history of Italian music."
 			}
 
 		6 -
@@ -72,7 +71,7 @@ DB
 				"isCompany" : "false",
 				"companyMembers" : "-",
 				"type" : "composer",
-				"abstract" : "Riccardo Vincent Cocciante (born, 20 febbraio, 1946 in Saigon) is an Italian-French songwriter, composer and musician. In 1991, he won the Sanremo Festival with the song "Se stiamo insieme". As of 2008, Cocciante has three musicals running, with Notre-Dame de Paris being the most known."
+				"abstract" : "Riccardo Vincent Cocciante (born, 20 febbraio, 1946 in Saigon) is an Italian-French songwriter, composer and musician. In 1991, he won the Sanremo Festival with the song Se stiamo insieme. As of 2008, Cocciante has three musicals running, with Notre-Dame de Paris being the most known."
 			}
 
 		7 -

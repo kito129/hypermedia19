@@ -16,6 +16,7 @@ exports.artists_get_all = (req, res, next) => {
             isCompany: doc.isCompany,
             companyMembers: doc.companyMembers,
             photoGallery: doc.photoGallery,
+            type: doc.type,
             _id: doc._id,
             request: {
               type: "GET",
@@ -41,6 +42,7 @@ exports.artists_get_all = (req, res, next) => {
 };
 
 exports.artists_create_artist = (req, res, next) => {
+  console.log(req.body);
   Artist.find({ name: req.body.name })
     .exec()
     .then(art => {
@@ -49,6 +51,7 @@ exports.artists_create_artist = (req, res, next) => {
           message: "Artist already exists"
         });
       } else {
+        console.log(req.file);
         const artist = new Artist({
           _id: new mongoose.Types.ObjectId(),
           name: req.body.name,
@@ -57,8 +60,9 @@ exports.artists_create_artist = (req, res, next) => {
           isCompany: req.body.isCompany,
           companyMembers: req.body.companyMembers,
           abstract: req.body.abstract,
-          event: req.body.event
-          //photoGallery: req.file.path
+          type: req.body.type,
+          event: req.body.event,
+          photoGallery: req.file.path
         });
         artist
           .save()
@@ -73,6 +77,8 @@ exports.artists_create_artist = (req, res, next) => {
                 companyMembers: result.companyMembers,
                 abstract: result.abstract,
                 event: result.event,
+                type: result.type,
+                photoGallery: result.photoGallery,
                 _id: result._id,
                 request: {
                   type: "GET",

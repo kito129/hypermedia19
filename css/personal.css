@@ -41,17 +41,19 @@
 	border-radius: 100%;
 }
 
-.images{
+.imagesArtist{
 	width: 250px;
 	border-radius: 100%;
 }
 
-.artists{
-	margin: auto;
+.imagesEvent{
+	width: 250px;
+	height: 120px;
+	border-radius: 20px;
 }
 
-.titleImages{
-	font-weight: bold;
+.artists{
+	margin: auto;
 }
 
 .credit{

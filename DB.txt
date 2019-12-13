@@ -5,21 +5,23 @@ DB
 		1 -
 
 			{
-				"name" : "Roberto Bolle",
+				"name" : "ROBERTO BOLLE",
 				"currentAffiliattion" : "American Ballet Theatre",
 				"achivements" : "Étoile and Principal Dancer",
 				"isCompany" : "false",
 				"companyMembers" : "-",
+				"type" : "dancer",
 				"abstract" : "Roberto Bolle (born March 26, 1975 in Casale Monferrato) is an Italian danseur. He is currently a principal dancer with the American Ballet Theatre and a principal dancer étoile at La Scala Theatre Ballet. Bolle also dances regularly as a guest artist with the world’s leading companies, including The Royal Ballet, the Mariinsky Ballet, the Bolshoi Ballet and the Paris Opera Ballet."
 			}
 
 		2 -
 
 			{
-				"name" : "Cirque du Soleil",
+				"name" : "CIRQUE DU SOLEIL",
 				"currentAffiliattion" : "DL Circus",
 				"achivements" : "Theater company of the year (2012, 2015, 2016, 2019)",
 				"isCompany" : "true",
+				"type" : "circus",
 				"companyMembers" : "Guy Laliberté, Gilles Ste-Croix, Daniel Gauthier, Rachel Vertus",
 				"abstract" : "Cirque du Soleil is a Canadian entertainment company and the largest contemporary circus producer in the world. Based in Montreal, Quebec, Canada, and located in the inner-city area of Saint-Michel, it was founded in Baie-Saint-Paul on 7 July 1984, by two former street performers, Guy Laliberté and Gilles Ste-Croix."
 			}
@@ -27,11 +29,12 @@ DB
 		3 -
 
 			{
-				"name" : "Ludovico Einaudi",
+				"name" : "LUDOVICO EINAUDI",
 				"currentAffiliattion" : "Decca Records",
 				"achivements" : "Best European composer (2008)",
 				"isCompany" : "false",
 				"companyMembers" : "-",
+				"type" : "pianist",
 				"abstract" : "Ludovico Maria Enrico Einaudi (born November 23, 1955 in Turin) is an Italian pianist and composer. Trained at the Conservatorio Verdi in Milan, Einaudi began his career as a classical composer, later incorporating other styles and genres such as pop, rock, folk, and world music. 
 				Einaudi has composed the scores for a number of films and television productions. He has also released a number of solo albums for piano and other instruments. On 1 March 2019, Einaudi announced a seven-part project named Seven Days Walking, which is to be released over the course of seven months in 2019."
 			}
@@ -39,55 +42,60 @@ DB
 		4 -
 
 			{
-				"name" : "Vasco Rossi",
+				"name" : "VASCO ROSSI",
 				"currentAffiliattion" : "EMI Italiana",
 				"achivements" : "Disco di diamante (2003, 2014)",
 				"isCompany" : "false",
 				"companyMembers" : "-",
+				"type" : "singer",
 				"abstract" : "Vasco Rossi (born February 7, 1952 in Zocca) is an Italian singer-songwriter. During his career, he has published 30 albums and has written over 250 songs, as well as lyrics for other artists. He calls himself a provocautore (an Italian portmanteau for "provoking author") as throughout his career he has been regularly criticized over his choice of lifestyle and the lyrics in his songs. With more than 35 millions of copies sold, he is one of the best-selling Italian singers."
 			}
 
 		5 -
 
 			{
-				"name" : "Max Pezzali",
+				"name" : "MAX PEZZALI",
 				"currentAffiliattion" : "Warner Music Italy",
 				"achivements" : "Disco di platino (2006)",
 				"isCompany" : "false",
 				"companyMembers" : "-",
+				"type" : "singer",
 				"abstract" : "Massimo Pezzali (born November 14, 1967 in Pavia), commonly known as Max Pezzali, is an Italian singer-songwriter. He was the principal singer and song writer of the pop rock group 883. In 2004, he released his first solo album "Il mondo insieme a te". The album was successful in Italy and since then Pezzali has remained a solo artist. Taking into account his solo work, as well as his work dating back to the 883 period, Max Pezzali has sold over 10 million albums, thereby becoming one of the most popular singers in the history of Italian music."
 			}
 
 		6 -
 
 			{
-				"name" : "Riccardo Cocciante",
+				"name" : "RICCARDO COCCIANTE",
 				"currentAffiliattion" : "RCA Talent",
 				"achivements" : "Sanremo (1991)",
 				"isCompany" : "false",
 				"companyMembers" : "-",
+				"type" : "composer",
 				"abstract" : "Riccardo Vincent Cocciante (born, 20 febbraio, 1946 in Saigon) is an Italian-French songwriter, composer and musician. In 1991, he won the Sanremo Festival with the song "Se stiamo insieme". As of 2008, Cocciante has three musicals running, with Notre-Dame de Paris being the most known."
 			}
 
 		7 -
 
 			{
-				"name" : "Dreamusical",
+				"name" : "DREAMUSICAL",
 				"currentAffiliattion" : "ACI Theater",
 				"achivements" : "Theater company of the year (2010, 2011, 2014)",
 				"isCompany" : "true",
 				"companyMembers" : "Giò Di Tonno (quasimodo), Lola Ponce (emeralda)",
+				"type" : "musical",
 				"abstract" : "Dreamusical is a theater company born in france in 1995. At the moment it puts on 4 different shows, the most important of which is surely Notre Dame de Paris which has allowed it to become one of the most important companies in the world."
 			}
 
 		8 -
 
 			{
-				"name" : "Negramaro",
+				"name" : "NEGRAMARO",
 				"currentAffiliattion" : "Sugar Music",
 				"achivements" : "Disco di platino (2010)",
 				"isCompany" : "true",
 				"companyMembers" : "Giuliano Sangiorgi, Emanuele "Lele" Spedicato, Ermanno Carlà, Andrea "Andro" Mariano, Andrea "Pupillo" De Rocco, Danilo Tasco",
+				"type" : "group",
 				"abstract" : "Negramaro is an Italian pop band formed in 1999 and successful since 2005. Their name stems from Negroamaro, a wine produced in their native district, Salento in Apulia. After years spent in the Italian alternative market, they finally became known more widely in 2005 thanks to the Sanremo Festival."
 			}
 
@@ -96,134 +104,145 @@ DB
 
 		1 -
 			{	
-				"artist" : "Roberto Bolle",
-				"name" : "Roberto Bolle and Friends",
+				"artist" : "ROBERTO BOLLE",
+				"name" : "ROBERTO BOLLE AND FRIENDS",
 				"date" : "12/06/2020 - 15.00",
 				"place" : "Pavilion 1",
 				"price" : "35.00€",
 				"isSoldOut" : "false",
-				"relSeminar" : "Dancing in New York",
+				"type" : "dance",
+				"relSeminar" : "DANCING IN NEW YORK SEMINAR",
 				"abstract" : "An unmissable opportunity to see on the same stage the Étoile of the two worlds Roberto Bolle with international dance stars, a real journey through the beauty and magic of this art form. Roberto Bolle, absolute protagonist of the dance, of these Gala is not only interpreter but also artistic director. His Gala have become an extraordinary tool for spreading dance and its excellence to a transversal audience, composed of thousands of fans and not only. Bolle, relying on his experience on the most important stages in the world, manages to make each of these shows unique in their kind by recreating a magical atmosphere that celebrates the beauty and elegance of dance. Next to him the most important dancers of the world to create a surprising program, able to fascinate an increasingly vast and heterogeneous number of spectators. The Roberto Bolle and Friends Gala represent a rare cultural opportunity of great prestige, a journey not to be missed through different styles and different schools that always arouse new emotions."
 			}
 
 		2 -
 			{	
-				"artist" : "Riccardo Cocciante",
-				"name" : "Best of Cocciante",
+				"artist" : "RICCARDO COCCIANTE",
+				"name" : "BEST OF COCCIANTE",
 				"date" : "12/06/2020 - 18.00",
 				"place" : "Pavilion 1",
 				"price" : "50.00€",
 				"isSoldOut" : "false",
+				"type" : "concert",
 				"relSeminar" : "-",
-				"abstract" : ""
+				"abstract" : "Best of Cocciante is a concert by Riccardo Cocciante where the best 20 songs of the artist are presented in a lyric key with a live orchestra."
 			}
 
 		3 -
 			{	
-				"artist" : "Ludovico Einaudi",
-				"name" : "Seven Days Walking Tour",
+				"artist" : "LUDOVICO EINAUDI",
+				"name" : "SEVEN DAYS WALKING TOUR",
 				"date" : "12/06/2020 - 21.00",
 				"place" : "Place of Tree of Life",
 				"price" : "50.00€",
 				"isSoldOut" : "true",
-				"relSeminar" : "Piano & Music",
+				"type" : "concert",
+				"relSeminar" : "PIANO & MUSIC SEMIAR",
 				"abstract" : "After the exciting American success, Ludovico Einaudi's "Seven Days Walking" tour arrives in Italy with five concerts in historic amphitheaters. London will follow with seven consecutive Barbican and Europe in the fall. The traditional Dieci Notti at the Teatro Dal Verme in Milan will close in December another year of extraordinary intensity for the iconic artist of international music."
 			}
 
 		4 -
 			{	
-				"artist" : "Dreamusical",
-				"name" : "Notre Dame de Paris",
+				"artist" : "DREAMUSICAL",
+				"name" : "NOTRE DAME DE PARIS",
 				"date" : "12/06/2020 - 21.00",
 				"place" : "Pavilion 1",
 				"price" : "35.00€",
 				"isSoldOut" : "false",
-				"relSeminar" : "Modern Musicals",
+				"type" : "theater",
+				"relSeminar" : "MODERN MUSICALS SEMINAR",
 				"abstract" : "Notre Dame de Paris is a sung-through French musical which debuted on 16 September 1998 in Paris. It is based upon the novel Notre-Dame de Paris by the French novelist Victor Hugo. The music was composed by Riccardo Cocciante and the lyrics are by Luc Plamondon."
 			}
 
 		5 -
 			{	
-				"artist" : "Vasco Rossi",
-				"name" : "Vasco NONSTOPLIVE Festival",
+				"artist" : "VASCO ROSSI",
+				"name" : "VASCO NONSTOPLIVE FESTIVAL",
 				"date" : "13/06/2020 - 15.00",
 				"place" : "Place of Tree of Life",
 				"price" : "50.00€",
 				"isSoldOut" : "true",
+				"type" : "concert",
 				"relSeminar" : "-",
-				"abstract" : ""
+				"abstract" : "The Vasco NONSTOPLIVE Live Festival is a tour by the Italian singer Vasco Rossi started in May 2019, with a zero date organized in Lignano Sabbiadoro. It's a tour consisting of 10 stages, with 30 songs each."
 			}
 
 		6 -
 			{	
-				"artist" : "Max Pezzali",
-				"name" : "CantaMax",
+				"artist" : "MAX PEZZALI",
+				"name" : "CANTAMAX",
 				"date" : "13/06/2020 - 18.00",
 				"place" : "Place of Tree of Life",
 				"price" : "50.00€",
 				"isSoldOut" : "false",
+				"type" : "concert",
 				"relSeminar" : "-",
-				"abstract" : ""
+				"abstract" : "Max Pezzali, one of the Italian singer-songwriters capable of involving several generations, is ready to bring to the stage of MILAN BY NIGHT a special and unique concert scheduled for Saturday 13th June 2020.Moreover, just three days after the opening of sales, the show achieved great results totaling over 30,000 tickets sold.On stage, the artist will retrace, together with the fans, the greatest successes of his career, accompanying them on a journey back in time, to relive the emotions of a past that only he knows how to bring to light."
 			}
 
 		7 -
 			{	
-				"artist" : "Negramaro",
-				"name" : "Amore che torni Tour",
+				"artist" : "NEGRAMARO",
+				"name" : "AMORE CHE TORNI TOUR,
 				"date" : "13/06/2020 - 21.00",
 				"place" : "Place of Tree of Life",
 				"price" : "50.00€",
 				"isSoldOut" : "false",
+				"type" : "concert",
 				"relSeminar" : "-",
-				"abstract" : ""
+				"abstract" : "The band led by Giuliano Sangiorgio will perform live in the summer months. First stop at our festival on 13th June. To anticipate the summer tour, last November 20th, the band from salento posted on their Facebook page a video that contains the best moments of the live in stadiums this summer, complete with a caption that reads: "We are preparing for another party together! And you?!?"."
 			}
 
 		8 -
 			{	
-				"artist" : "Ludovico Einaudi",
-				"name" : "Seven Days Walking Tour",
+				"artist" : "LUDOVICO EINAUDI",
+				"name" : "SEVEN DAYS WALKING TOUR",
 				"date" : "13/06/2020 - 21.00",
 				"place" : "Pavilion 1",
 				"price" : "50.00€",
 				"isSoldOut" : "true",
-				"relSeminar" : "Piano & Music",
+				"type" : "concert",
+				"relSeminar" : "PIANO & MUSIC SEMINAR",
 				"abstract" : "After the exciting American success, Ludovico Einaudi's "Seven Days Walking" tour arrives in Italy with five concerts in historic amphitheaters. London will follow with seven consecutive Barbican and Europe in the fall. The traditional Dieci Notti at the Teatro Dal Verme in Milan will close in December another year of extraordinary intensity for the iconic artist of international music."
 			}
 
 		9 -
 			{	
-				"artist" : "Vasco Rossi",
-				"name" : "Vasco NONSTOPLIVE Festival",
+				"artist" : "VASCO ROSSI",
+				"name" : "VASCO NONSTOPLIVE FESTIVAL",
 				"date" : "14/06/2020 - 15.00",
 				"place" : "Place of Tree of Life",
 				"price" : "50.00€",
 				"isSoldOut" : "false",
+				"type" : "concert",
 				"relSeminar" : "-",
-				"abstract" : ""
+				"abstract" : "The Vasco NONSTOPLIVE Live Festival is a tour by the Italian singer Vasco Rossi started in May 2019, with a zero date organized in Lignano Sabbiadoro. It's a tour consisting of 10 stages, with 30 songs each."
 			}
 
 
 		10 -
 			{	
-				"artist" : "Cirque du Soleil",
-				"name" : "Totem",
+				"artist" : "CIRQUE DU SOLEIL",
+				"name" : "TOTEM",
 				"date" : "14/06/2020 - 18.00",
 				"place" : "Pavilion 1",
 				"price" : "35.00€",
 				"isSoldOut" : "false",
+				"type" : "theater",
 				"relSeminar" : "-",
-				"abstract" : ""
+				"abstract" : "Totem is a touring show by Cirque du Soleil that premiered in Montréal on April 22, 2010. It was written and directed by previous collaborator Robert Lepage. Cirque du Soleil describes Totem's theme as the evolution of humanity from its primordial, amphibian state toward the aspiration of flight, taking inspiration from many of humanity's founding myths. The show was awarded the 2013 New York Drama Desk Award for Unique Theatrical Experience."
 			}
 
 		11 -
 			{	
-				"artist" : "Ludovico Einaudi",
-				"name" : "Seven Days Walking Tour",
+				"artist" : "LUDOVICO EINAUDI",
+				"name" : "SEVEN DAYS WALKING TOUR",
 				"date" : "14/06/2020 - 21.00",
 				"place" : "Pavilion 1",
 				"price" : "50.00€",
 				"isSoldOut" : "false",
-				"relSeminar" : "Piano & Music",
+				"type" : "concert",
+				"relSeminar" : "PIANO & MUSIC SEMINAR",
 				"abstract" : "After the exciting American success, Ludovico Einaudi's "Seven Days Walking" tour arrives in Italy with five concerts in historic amphitheaters. London will follow with seven consecutive Barbican and Europe in the fall. The traditional Dieci Notti at the Teatro Dal Verme in Milan will close in December another year of extraordinary intensity for the iconic artist of international music."
 			}
 
@@ -231,36 +250,36 @@ DB
 
 		1 -
 			{	
-				"seminarist" : "Ludovico Einaudi",
-				"name" : "Piano & Music Seminar",
+				"seminarist" : "LUDOVICO EINAUDI",
+				"name" : "PIANO & MUSIC SEMINAR",
 				"date" : "12/06/2020 - 18.00",
 				"place" : "Pavilion 2",
 				"price" : "free",
 				"isSoldOut" : "false",
-				"relEvent" : "Seven Days Walking Tour",
-				"abstract" : ""
+				"relEvent" : "SEVEN DAYS WALKING TOUR",
+				"abstract" : "Ludovico Einaudi tells us about his experience with the piano that began 50 years ago through small demonstrations of some of his compositions."
 			}
 
 		2 -
 			{	
-				"seminarist" : "Roberto Bolle",
-				"name" : "Dancing in New York Seminar",
+				"seminarist" : "ROBERTO BOLLE",
+				"name" : "DANCING IN NEW YORK SEMINAR",
 				"date" : "12/06/2020 - 20.00",
 				"place" : "Pavilion 2",
 				"price" : "free",
 				"isSoldOut" : "false",
-				"relEvent" : "Roberto Bolle and Friends",
-				"abstract" : ""
+				"relEvent" : "ROBERTO BOLLE AND FRIENDS",
+				"abstract" : "Roberto Bolle takes us into his world telling us what it feels like to be the most important dancer in Italy and the United States through special anecdotes."
 			}
 
 		3 -
 			{	
-				"seminarist" : "Riccardo Cocciante",
-				"name" : "Modern Musicals Seminar",
+				"seminarist" : "RICCARDO COCCIANTE",
+				"name" : "MODERN MUSICALS SEMINAR",
 				"date" : "12/06/2020 - 22.00",
 				"place" : "Pavilion 2",
 				"price" : "free",
 				"isSoldOut" : "false",
-				"relEvent" : "Notre Dame de Paris" , "Best of Cocciante",
-				"abstract" : ""
+				"relEvent" : "NOTRE DAME DE PARIS",
+				"abstract" : "Riccardo Cocciante talks about how the concept of musical has evolved over the years, comparing his works with those of the past."
 			}

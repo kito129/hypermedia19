@@ -19,7 +19,7 @@ exports.artists_get_all = (req, res, next) => {
             _id: doc._id,
             request: {
               type: "GET",
-              url: "http://localhost:3000/artists/" + doc._id
+              url: "http://localhost:3000/artist/" + doc._id
             }
           };
         })
@@ -76,7 +76,7 @@ exports.artists_create_artist = (req, res, next) => {
                 _id: result._id,
                 request: {
                   type: "GET",
-                  url: "http://localhost:3000/artists/" + result._id
+                  url: "http://localhost:3000/artist/" + result._id
                 }
               }
             });
@@ -105,7 +105,7 @@ exports.artists_get_artist = (req, res, next) => {
           artist: doc,
           request: {
             type: "GET",
-            url: "http://localhost:3000/artists"
+            url: "http://localhost:3000/artist/"
           }
         });
       } else {
@@ -123,25 +123,35 @@ exports.artists_get_artist = (req, res, next) => {
 exports.artists_update_artist = (req, res, next) => {
   const id = req.params.artistId;
   const updateOps = {};
-  for (const ops of req.body) {
+  for (const ops of req.body ) {
     updateOps[ops.propName] = ops.value;
   }
-  Artist.update({ _id: id }, { $set: updateOps })
+  var options = {new: true};
+  Artist.findOneAndUpdate({ _id: id }, { $set: updateOps },options,function (err, doc) {  
+  })
     .exec()
     .then(result => {
+      console.log(result);
       res.status(200).json({
         message: "Artist updated",
         request: {
           type: "GET",
-          url: "http://localhost:3000/artists/" + id
+          url: "http://localhost:3000/artist/" + id
         }
       });
     })
     .catch(err => {
-      console.log(err);
-      res.status(500).json({
-        error: err
-      });
+      if(err.name="CastError"){
+        console.log("Artist ID not found");
+        res.status(404).json({
+          error: "Artist ID not found"
+        });
+      } else{
+        console.log(err);
+        res.status(500).json({
+          error: err
+        });
+      }
     });
 };
 
@@ -154,7 +164,7 @@ exports.artists_delete = (req, res, next) => {
         message: "Artist deleted",
         request: {
           type: "POST",
-          url: "http://localhost:3000/artists",
+          url: "http://localhost:3000/artist/",
           body: { name: "String",}
         }
       });

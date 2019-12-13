@@ -9,7 +9,6 @@ const artistSchema = mongoose.Schema({
     companyMembers: { type: [], required: false },
     abstract: { type: String, required: false },
     type:{ type: String, required: true },
-    event: { type: mongoose.Schema.Types.ObjectId, ref: 'Event', required: false },
     photoGallery: { type: String, required: false }
 });
 

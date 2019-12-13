@@ -42,7 +42,6 @@ exports.artists_get_all = (req, res, next) => {
 };
 
 exports.artists_create_artist = (req, res, next) => {
-  console.log(req.body);
   Artist.find({ name: req.body.name })
     .exec()
     .then(art => {
@@ -51,7 +50,6 @@ exports.artists_create_artist = (req, res, next) => {
           message: "Artist already exists"
         });
       } else {
-        console.log(req.file);
         const artist = new Artist({
           _id: new mongoose.Types.ObjectId(),
           name: req.body.name,
@@ -61,25 +59,23 @@ exports.artists_create_artist = (req, res, next) => {
           companyMembers: req.body.companyMembers,
           abstract: req.body.abstract,
           type: req.body.type,
-          event: req.body.event,
           photoGallery: req.file.path
         });
         artist
           .save()
           .then(result => {
-            console.log(result);
+  
             res.status(201).json({
               message: "Created artist successfully",
               createdProduct: {
+                _id: result._id,
                 name: result.name,
                 currentAffiliattion: result.currentAffiliattion,
                 isCompany: result.isCompany,
                 companyMembers: result.companyMembers,
                 abstract: result.abstract,
-                event: result.event,
                 type: result.type,
                 photoGallery: result.photoGallery,
-                _id: result._id,
                 request: {
                   type: "GET",
                   url: "http://localhost:3000/artist/" + result._id
@@ -96,16 +92,13 @@ exports.artists_create_artist = (req, res, next) => {
       }
     });
   };
-    
-
 
 exports.artists_get_artist = (req, res, next) => {
   const id = req.params.artistId;
   Artist.findById(id)
-    .select("name currentAffiliattion achivements isCompany companyMembers  photoGallery photoGallery event _id")
+    .select("name currentAffiliattion achivements isCompany companyMembers  photoGallery photoGallery _id")
     .exec()
     .then(doc => {
-      console.log("From database", doc);
       if (doc) {
         res.status(200).json({
           artist: doc,
@@ -117,7 +110,7 @@ exports.artists_get_artist = (req, res, next) => {
       } else {
         res
           .status(404)
-          .json({ message: "No valid entry found for provided ID" });
+          .json({ message: "provided ID artist NOT FOUND" });
       }
     })
     .catch(err => {

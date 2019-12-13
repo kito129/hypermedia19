@@ -7,6 +7,7 @@ const postMethod = 'POST';
 
 //GET REQUEST
 
+//questo lo faccio io 
 var res;
 
 function getAllArtist() {
@@ -20,12 +21,11 @@ function getAllArtist() {
     return res;
 }
 
-
-// -------- TEST AIN--------
+//questo lo fa andrea
+// -------- TEST MAIN--------
 
 //get reference from html
 var btn = document.getElementById("btn");
-
 
 var cardName1 = document.getElementById("title1");
 var cardAbstarct1 = document.getElementById("text1");
@@ -33,12 +33,10 @@ var cardAbstarct1 = document.getElementById("text1");
 var cardName2 = document.getElementById("title2");
 var cardAbstarct2 = document.getElementById("text2");
 
-
 //add listener
 btn.addEventListener("click",function call() {
     var data = new Object(getAllArtist());
     console.log(data);
-
 
     var name1 = data.artists[1].name;
     var currentAffiliattion1 = data.artists[1].currentAffiliattion;
@@ -46,7 +44,6 @@ btn.addEventListener("click",function call() {
     cardName1.insertAdjacentHTML('beforeend',name1);
     cardAbstarct1.insertAdjacentHTML('beforeend',currentAffiliattion1);
     
-
     var name2 = data.artists[2].name;
     var currentAffiliattion2 = data.artists[2].currentAffiliattion;
 

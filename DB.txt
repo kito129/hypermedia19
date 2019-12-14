@@ -138,7 +138,6 @@ DB
 				According to data certified by the Italian Music Industry Federation, Nek has sold over 10 million records worldwide throughout his career."
 			}
 
-
 	EVENT
 
 		1 -
@@ -159,7 +158,7 @@ DB
 				"artist" : "RICCARDO COCCIANTE",
 				"name" : "BEST OF COCCIANTE",
 				"date" : "12/06/2020 - 18.00",
-				"place" : "Pavilion 1",
+				"place" : "Place of Tree of Life",
 				"price" : "50.00€",
 				"isSoldOut" : "false",
 				"type" : "concert",
@@ -258,18 +257,17 @@ DB
 				"abstract" : "The Fatti Sentire World Tour is the ninth concert tour by Italian recording artist Laura Pausini. The tour supports her thirteenth studio album, Fatti sentire. The singer will perform over 50 shows in Europe and the Americas."
 			}
 
-
 		10 -
 			{	
 				"artist" : "EMMA MARRONE",
-				"name" : "EMMA",
+				"name" : "FORTUNA LIVE",
 				"date" : "14/06/2020 - 18.00",
 				"place" : "Place of Tree of Life",
 				"price" : "50.00€",
 				"isSoldOut" : "true",
 				"type" : "concert",
 				"relSeminar" : "-",
-				"abstract" : "It is SOLD OUT, less than a month after the opening of the pre-sales, the big concert scheduled on June 14th on the stage of our Festival where EMMA will present the new album of unpublished "Fortuna" live and celebrate together with the public the 10-year career !"
+				"abstract" : "It is SOLD OUT, less than a month after the opening of the pre-sales, the big concert scheduled on June 14th on the stage of our Festival where Emma will present the new album of unpublished "Fortuna" live and celebrate together with the public the 10-year career !"
 			}
 
 		11 -

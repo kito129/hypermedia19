@@ -4,17 +4,17 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>INFO TICKET</title>
+    <title class="artista">ARTIST</title>
     <!-- Bootstrap -->
-    <link href="css/bootstrap-4.3.1.css" rel="stylesheet">
-	  <link href="css/personal.css" rel="stylesheet">
+    <link href="../css/bootstrap-4.3.1.css" rel="stylesheet">
+	  <link href="../css/personal.css" rel="stylesheet">
 </head>
 
 <body>
 	<!------------------ NAVBAR ------------------>
 	  <!-- The fixed navbar will overlay your other content, unless you add padding to the bottom of the <body>. Tip: By default, the navbar is 50px high.  -->
 	<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark pl-5" style="">
-	<a class="navbar-brand" href="index.html"><h2>MILAN BY NIGHT 2020</h2></a>
+	<a class="navbar-brand" href="../index.html"><h2>MILAN BY NIGHT 2020</h2></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarItems" aria-controls="navbarItems" aria-expanded="false" aria-label="Toggle navigation"> 
 			<span class="navbar-toggler-icon"></span> 
 		</button>
@@ -43,38 +43,51 @@
 	<br>
 	<br>
 	<br>
-	<div>
-		<h3 class="subtitle">INFO TICKET AND SHIPPING</h3>
+	<div align="center" class="singoloArtista">
+		<img src="../images/private/artists/einaudi.jpg" class="imageSingleArtist">
+	</div>
+	<div class="singleEvent">
+		<a class="artista"><b>LUDOVICO EINAUDI</b></a><br>
+		<a class="achievements">Achievements: <b>Best European composer (2008)</b></a><br>
+		<a class="currentAffiliation">Current Affiliation: <b>Decca Records</b></a><br>
+		<a class="date">Company Members: <b>-</b></a><br>
 		<div style="text-align:justify" class="paragrafofullpage">
-			<b>CONCERT</b>
-			<ul>
-				<li>*50.00€</li>
-			</ul>
-			<b>THEATER</b>
-			<ul>
-				<li>*35.00€ - 300 seats</li>
-			</ul>
-			<b>SEMINAR</b>
-			<ul>
-				<li>0.00€ - free while seats last</li>
-			</ul>
-			Buying the ticket online there will be a supplement of € 1.50 per ticket (advance sale).
-			<br>
-			The ticket purchased online must be printed and presented at the entrance of the festival with an identity document.
-			<br>
-			(It's possible to have the physical ticket sent home, € 2.00 surcharge).
-			<br>
-			<br>
-			*the admission price includes a t-shirt and a festival poster as a gift.
+			<p class="descrizione"><b>Ludovico Maria Enrico Einaudi (born November 23, 1955 in Turin) is an Italian pianist and composer. Trained at the Conservatorio Verdi in Milan, Einaudi began his career as a classical composer, later incorporating other styles and genres such as pop, rock, folk, and world music. Einaudi has composed the scores for a number of films and television productions. He has also released a number of solo albums for piano and other instruments. On 1 March 2019, Einaudi announced a seven-part project named Seven Days Walking, which is to be released over the course of seven months in 2019.</b></p>
 		</div>
 	</div>
+	<br>
+	<a id="relativeEvent"><b>RELATIVE EVENTS/SEMINAR</b></a><br><br>
+	<div align="center" id="singoloEvento">
+		<img src="../images/private/events/seven_days.jpg" class="imageSingleEvent">
+	</div>
+	<div class="singleEvent">
+		<a class="name" href="singleevent.html"><b>SEVEN DAYS WALKING TOUR</b></a><br>
+		<a class="artista"><b>LUDOVICO EINAUDI</b></a><br>
+		<a class="date">Date: <b>12/06/2020 - 21.00</b></a><br>
+		<a class="place">Place: <b>Place of Tree of Life</b></a><br>
+		<a class="price">Price: <b>50.00€</b></a><br>
+		<button type="button" class="btn btn-dark" disabled>SOLD OUT</button>
+	</div>
+	<br>
+	<div align="center" class="singoloSeminario">
+		<img src="../images/private/seminars/einaudi_sem.jpg" class="imageSingleSeminar">
+	</div>
+	<div class="singleEvent">
+		<a class="name" href="singleseminar.html"><b>PIANO & MUSIC SEMINAR</b></a><br>
+		<a class="artista" href="singleartist.html"><b>LUDOVICO EINAUDI</b></a><br>
+		<a class="date">Date: <b>12/06/2020 - 18.00</b></a><br>
+		<a class="place">Place: <b>Pavilion 2</b></a><br>
+		<a class="price">Price: <b>free</b></a><br>
+		<button type="button" class="btn btn-dark">BUY</button>
+	</div>
+	<br>
 	
 	<footer class="pt-4 pt-md-2 border-top bg-dark" id="footer">
     <div class="row">
       <div class="col-6 col-md foot" align-content="left">
         <h5>Features</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Events</a></li>
+          <li><a class="text-muted" href="events.html">Events</a></li>
           <li><a class="text-muted" href="artists.html">Artists</a></li>
           <li><a class="text-muted" href="calendar.html">Calendar</a></li>
         </ul>
@@ -100,14 +113,21 @@
 		<p align="center">© 2020 <b>MILAN BY NIGHT</b></p>
 		<div class="row" align="center">
 			<div class="col-12">
-        		<img src="images/public/icons/fb.png" class="icon">
-				<img src="images/public/icons/insta.png" class="icon">
-				<img src="images/public/icons/snap.png" class="icon">
-				<img src="images/public/icons/twit.png" class="icon">
+        		<img src="../images/public/icons/fb.png" class="icon">
+				<img src="../images/public/icons/insta.png" class="icon">
+				<img src="../images/public/icons/snap.png" class="icon">
+				<img src="../images/public/icons/twit.png" class="icon">
       		</div>
 		</div>
 		<p align="right" class="credit"><i>credit by Selva • Tresoldi • Zani</i></p>
 		<p align="right" class="credit"><i>#milnabynight</i></p>
   </footer>
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.3.1.js"></script>
+	
 </body>
 </html>

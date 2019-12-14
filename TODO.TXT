@@ -37,10 +37,10 @@ DELIVERBALE
 
 TODO:
 
-	-site schema with alla pages and dependencies
-	-create boostap templete for all pages
-	-create DB
-	-create RESTAPI for all service of the site
+	-site schema with alla pages and dependencies		OK
+	-create boostap templete for all pages				OK	
+	-create DB 											OK
+	-create RESTAPI for all service of the site			OK
 	-create all JS for use update DOM from API
 	-animation
 	-login

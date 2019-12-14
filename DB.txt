@@ -71,7 +71,7 @@ DB
 				"isCompany" : "false",
 				"companyMembers" : "-",
 				"type" : "composer",
-				"abstract" : "Riccardo Vincent Cocciante (born, 20 febbraio, 1946 in Saigon) is an Italian-French songwriter, composer and musician. In 1991, he won the Sanremo Festival with the song Se stiamo insieme. As of 2008, Cocciante has three musicals running, with Notre-Dame de Paris being the most known."
+				"abstract" : "Riccardo Vincent Cocciante (born Frebruary 20, 1946 in Saigon) is an Italian-French songwriter, composer and musician. In 1991, he won the Sanremo Festival with the song Se stiamo insieme. As of 2008, Cocciante has three musicals running, with Notre-Dame de Paris being the most known."
 			}
 
 		7 -
@@ -96,6 +96,46 @@ DB
 				"companyMembers" : "Giuliano Sangiorgi, Emanuele Lele Spedicato, Ermanno Carlà, Andrea Andro Mariano, Andrea Pupillo De Rocco, Danilo Tasco",
 				"type" : "group",
 				"abstract" : "Negramaro is an Italian pop band formed in 1999 and successful since 2005. Their name stems from Negroamaro, a wine produced in their native district, Salento in Apulia. After years spent in the Italian alternative market, they finally became known more widely in 2005 thanks to the Sanremo Festival."
+			}
+
+		9 -
+
+			{
+				"name" : "LAURA PAUSINI",
+				"currentAffiliattion" : "Atlantic Records",
+				"achivements" : "Grammy Award (2006)",
+				"isCompany" : "false",
+				"companyMembers" : "-",
+				"type" : "singer",
+				"abstract" : "Laura Pausini (born May 16, 1974 in Faenza) is an Italian singer-songwriter.
+				In the first part of his career he mainly sang of adolescent problems and love stories. Beginning in 1998, with the album My Answer, Italian music critics began to consider her as a more mature singer, praising her simplicity and her powerful voice.
+				His repertoire is mainly based on Italian melody, but his musical style has evolved over the course of his career with influences from Latin music, pop rock and dance pop."
+			}
+
+		10 -
+
+			{
+				"name" : "EMMA MARRONE",
+				"currentAffiliattion" : "Universal Music Group",
+				"achivements" : "Amici (2010)",
+				"isCompany" : "false",
+				"companyMembers" : "-",
+				"type" : "singer",
+				"abstract" : "Emma Marrone (born May 25, 1984 in Florence) is an Italian singer and record producer.
+				After some musical experiences with different groups, she rose to prominence as a solo singer between 2009 and 2010, winning the ninth talent show Amici di Maria De Filippi and signing a contract with the Universal Music Group."
+			}
+
+		11 -
+
+			{
+				"name" : "NEK",
+				"currentAffiliattion" : "Warner Music Italy",
+				"achivements" : "Disco di platino (2018)",
+				"isCompany" : "false",
+				"companyMembers" : "-",
+				"type" : "singer",
+				"abstract" : "Nek, pseudonym of Filippo Neviani (born January 6, 1972 in Sassuolo), is an Italian singer-songwriter and multi-instrumentalist.
+				According to data certified by the Italian Music Industry Federation, Nek has sold over 10 million records worldwide throughout his career."
 			}
 
 

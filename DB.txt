@@ -234,36 +234,9 @@ DB
 
 		8 -
 			{	
-				"artist" : "LUDOVICO EINAUDI",
-				"name" : "SEVEN DAYS WALKING TOUR",
-				"date" : "13/06/2020 - 21.00",
-				"place" : "Pavilion 1",
-				"price" : "50.00€",
-				"isSoldOut" : "true",
-				"type" : "concert",
-				"relSeminar" : "PIANO & MUSIC SEMINAR",
-				"abstract" : "After the exciting American success, Ludovico Einaudi's "Seven Days Walking" tour arrives in Italy with five concerts in historic amphitheaters. London will follow with seven consecutive Barbican and Europe in the fall. The traditional Dieci Notti at the Teatro Dal Verme in Milan will close in December another year of extraordinary intensity for the iconic artist of international music."
-			}
-
-		9 -
-			{	
-				"artist" : "VASCO ROSSI",
-				"name" : "VASCO NONSTOPLIVE FESTIVAL",
-				"date" : "14/06/2020 - 15.00",
-				"place" : "Place of Tree of Life",
-				"price" : "50.00€",
-				"isSoldOut" : "false",
-				"type" : "concert",
-				"relSeminar" : "-",
-				"abstract" : "The Vasco NONSTOPLIVE Live Festival is a tour by the Italian singer Vasco Rossi started in May 2019, with a zero date organized in Lignano Sabbiadoro. It's a tour consisting of 10 stages, with 30 songs each."
-			}
-
-
-		10 -
-			{	
 				"artist" : "CIRQUE DU SOLEIL",
 				"name" : "TOTEM",
-				"date" : "14/06/2020 - 18.00",
+				"date" : "13/06/2020 - 21.00",
 				"place" : "Pavilion 1",
 				"price" : "35.00€",
 				"isSoldOut" : "false",
@@ -272,17 +245,44 @@ DB
 				"abstract" : "Totem is a touring show by Cirque du Soleil that premiered in Montréal on April 22, 2010. It was written and directed by previous collaborator Robert Lepage. Cirque du Soleil describes Totem's theme as the evolution of humanity from its primordial, amphibian state toward the aspiration of flight, taking inspiration from many of humanity's founding myths. The show was awarded the 2013 New York Drama Desk Award for Unique Theatrical Experience."
 			}
 
-		11 -
+		9 -
 			{	
-				"artist" : "LUDOVICO EINAUDI",
-				"name" : "SEVEN DAYS WALKING TOUR",
-				"date" : "14/06/2020 - 21.00",
-				"place" : "Pavilion 1",
+				"artist" : "LAURA PAUSINI",
+				"name" : "FATTI SENTIRE WORLD TOUR",
+				"date" : "14/06/2020 - 15.00",
+				"place" : "Place of Tree of Life",
 				"price" : "50.00€",
 				"isSoldOut" : "false",
 				"type" : "concert",
-				"relSeminar" : "PIANO & MUSIC SEMINAR",
-				"abstract" : "After the exciting American success, Ludovico Einaudi's "Seven Days Walking" tour arrives in Italy with five concerts in historic amphitheaters. London will follow with seven consecutive Barbican and Europe in the fall. The traditional Dieci Notti at the Teatro Dal Verme in Milan will close in December another year of extraordinary intensity for the iconic artist of international music."
+				"relSeminar" : "-",
+				"abstract" : "The Fatti Sentire World Tour is the ninth concert tour by Italian recording artist Laura Pausini. The tour supports her thirteenth studio album, Fatti sentire. The singer will perform over 50 shows in Europe and the Americas."
+			}
+
+
+		10 -
+			{	
+				"artist" : "EMMA MARRONE",
+				"name" : "EMMA",
+				"date" : "14/06/2020 - 18.00",
+				"place" : "Place of Tree of Life",
+				"price" : "50.00€",
+				"isSoldOut" : "true",
+				"type" : "concert",
+				"relSeminar" : "-",
+				"abstract" : "It is SOLD OUT, less than a month after the opening of the pre-sales, the big concert scheduled on June 14th on the stage of our Festival where EMMA will present the new album of unpublished "Fortuna" live and celebrate together with the public the 10-year career !"
+			}
+
+		11 -
+			{	
+				"artist" : "NEK",
+				"name" : "NEK EUROPEAN TOUR",
+				"date" : "14/06/2020 - 21.00",
+				"place" : "Place of Tree of Life",
+				"price" : "50.00€",
+				"isSoldOut" : "false",
+				"type" : "concert",
+				"relSeminar" : "-",
+				"abstract" : "NEK returns to Europe with a tour that will touch the main capitals of the old continent. To open the dances of this fantastic tour there could only be our beloved festival that will give the public an unforgettable evening."
 			}
 
 	SEMINAR

@@ -2,321 +2,433 @@ DB
 
 	ARTIST
 
-		1 -
-
-			{
-				"name" : "ROBERTO BOLLE",
-				"currentAffiliattion" : "American Ballet Theatre",
-				"achivements" : "Étoile and Principal Dancer",
-				"isCompany" : "false",
-				"companyMembers" : "-",
-				"type" : "dancer",
-				"abstract" : "Roberto Bolle (born March 26, 1975 in Casale Monferrato) is an Italian danseur. He is currently a principal dancer with the American Ballet Theatre and a principal dancer étoile at La Scala Theatre Ballet. Bolle also dances regularly as a guest artist with the world’s leading companies, including The Royal Ballet, the Mariinsky Ballet, the Bolshoi Ballet and the Paris Opera Ballet."
-			}
-
-		2 -
-
-			{
-				"name" : "CIRQUE DU SOLEIL",
-				"currentAffiliattion" : "DL Circus",
-				"achivements" : "Theater company of the year (2012, 2015, 2016, 2019)",
-				"isCompany" : "true",
-				"type" : "circus",
-				"companyMembers" : "Guy Laliberté, Gilles Ste-Croix, Daniel Gauthier, Rachel Vertus",
-				"abstract" : "Cirque du Soleil is a Canadian entertainment company and the largest contemporary circus producer in the world. Based in Montreal, Quebec, Canada, and located in the inner-city area of Saint-Michel, it was founded in Baie-Saint-Paul on 7 July 1984, by two former street performers, Guy Laliberté and Gilles Ste-Croix."
-			}
-
-		3 -
-
-			{
-				"name" : "LUDOVICO EINAUDI",
-				"currentAffiliattion" : "Decca Records",
-				"achivements" : "Best European composer (2008)",
-				"isCompany" : "false",
-				"companyMembers" : "-",
-				"type" : "pianist",
-				"abstract" : "Ludovico Maria Enrico Einaudi (born November 23, 1955 in Turin) is an Italian pianist and composer. Trained at the Conservatorio Verdi in Milan, Einaudi began his career as a classical composer, later incorporating other styles and genres such as pop, rock, folk, and world music. Einaudi has composed the scores for a number of films and television productions. He has also released a number of solo albums for piano and other instruments. On 1 March 2019, Einaudi announced a seven-part project named Seven Days Walking, which is to be released over the course of seven months in 2019."
-			}
-
-		4 -
-
-			{
-				"name" : "VASCO ROSSI",
-				"currentAffiliattion" : "EMI Italiana",
-				"achivements" : "Disco di diamante (2003, 2014)",
-				"isCompany" : "false",
-				"companyMembers" : "-",
-				"type" : "singer",
-				"abstract" : "Vasco Rossi (born February 7, 1952 in Zocca) is an Italian singer-songwriter. During his career, he has published 30 albums and has written over 250 songs, as well as lyrics for other artists. He calls himself a provocautore (an Italian portmanteau for provoking author) as throughout his career he has been regularly criticized over his choice of lifestyle and the lyrics in his songs. With more than 35 millions of copies sold, he is one of the best-selling Italian singers."
-			}
-
-		5 -
-
-			{
-				"name" : "MAX PEZZALI",
-				"currentAffiliattion" : "Warner Music Italy",
-				"achivements" : "Disco di platino (2006)",
-				"isCompany" : "false",
-				"companyMembers" : "-",
-				"type" : "singer",
-				"abstract" : "Massimo Pezzali (born November 14, 1967 in Pavia), commonly known as Max Pezzali, is an Italian singer-songwriter. He was the principal singer and song writer of the pop rock group 883. In 2004, he released his first solo album Il mondo insieme a te. The album was successful in Italy and since then Pezzali has remained a solo artist. Taking into account his solo work, as well as his work dating back to the 883 period, Max Pezzali has sold over 10 million albums, thereby becoming one of the most popular singers in the history of Italian music."
-			}
-
-		6 -
-
-			{
-				"name" : "RICCARDO COCCIANTE",
-				"currentAffiliattion" : "RCA Talent",
-				"achivements" : "Sanremo (1991)",
-				"isCompany" : "false",
-				"companyMembers" : "-",
-				"type" : "composer",
-				"abstract" : "Riccardo Vincent Cocciante (born Frebruary 20, 1946 in Saigon) is an Italian-French songwriter, composer and musician. In 1991, he won the Sanremo Festival with the song Se stiamo insieme. As of 2008, Cocciante has three musicals running, with Notre-Dame de Paris being the most known."
-			}
-
-		7 -
-
-			{
-				"name" : "DREAMUSICAL",
-				"currentAffiliattion" : "ACI Theater",
-				"achivements" : "Theater company of the year (2010, 2011, 2014)",
-				"isCompany" : "true",
-				"companyMembers" : "Giò Di Tonno (quasimodo), Lola Ponce (emeralda)",
-				"type" : "musical",
-				"abstract" : "Dreamusical is a theater company born in france in 1995. At the moment it puts on 4 different shows, the most important of which is surely Notre Dame de Paris which has allowed it to become one of the most important companies in the world."
-			}
-
-		8 -
-
-			{
-				"name" : "NEGRAMARO",
-				"currentAffiliattion" : "Sugar Music",
-				"achivements" : "Disco di platino (2010)",
-				"isCompany" : "true",
-				"companyMembers" : "Giuliano Sangiorgi, Emanuele Lele Spedicato, Ermanno Carlà, Andrea Andro Mariano, Andrea Pupillo De Rocco, Danilo Tasco",
-				"type" : "group",
-				"abstract" : "Negramaro is an Italian pop band formed in 1999 and successful since 2005. Their name stems from Negroamaro, a wine produced in their native district, Salento in Apulia. After years spent in the Italian alternative market, they finally became known more widely in 2005 thanks to the Sanremo Festival."
-			}
-
-		9 -
-
-			{
-				"name" : "LAURA PAUSINI",
-				"currentAffiliattion" : "Atlantic Records",
-				"achivements" : "Grammy Award (2006)",
-				"isCompany" : "false",
-				"companyMembers" : "-",
-				"type" : "singer",
-				"abstract" : "Laura Pausini (born May 16, 1974 in Faenza) is an Italian singer-songwriter.
-				In the first part of his career he mainly sang of adolescent problems and love stories. Beginning in 1998, with the album My Answer, Italian music critics began to consider her as a more mature singer, praising her simplicity and her powerful voice.
-				His repertoire is mainly based on Italian melody, but his musical style has evolved over the course of his career with influences from Latin music, pop rock and dance pop."
-			}
-
-		10 -
-
-			{
-				"name" : "EMMA MARRONE",
-				"currentAffiliattion" : "Universal Music Group",
-				"achivements" : "Amici (2010)",
-				"isCompany" : "false",
-				"companyMembers" : "-",
-				"type" : "singer",
-				"abstract" : "Emma Marrone (born May 25, 1984 in Florence) is an Italian singer and record producer.
-				After some musical experiences with different groups, she rose to prominence as a solo singer between 2009 and 2010, winning the ninth talent show Amici di Maria De Filippi and signing a contract with the Universal Music Group."
-			}
-
-		11 -
-
-			{
-				"name" : "NEK",
-				"currentAffiliattion" : "Warner Music Italy",
-				"achivements" : "Disco di platino (2018)",
-				"isCompany" : "false",
-				"companyMembers" : "-",
-				"type" : "singer",
-				"abstract" : "Nek, pseudonym of Filippo Neviani (born January 6, 1972 in Sassuolo), is an Italian singer-songwriter and multi-instrumentalist.
-				According to data certified by the Italian Music Industry Federation, Nek has sold over 10 million records worldwide throughout his career."
-			}
+		{
+			"count": 11,
+			"artists": [
+				{
+					"name": "ROBERTO BOLLE",
+					"currentAffiliattion": "American Ballet Theatre",
+					"achivements": [
+						"Étoile and Principal Dancer"
+					],
+					"isCompany": false,
+					"companyMembers": [
+						""
+					],
+					"photoGallery": "uploads\\2019-12-16T16-31-44.266Zbolle.jpg",
+					"_id": "5df7b170ec3ed52d38859184",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artist/5df7b170ec3ed52d38859184"
+					}
+				},
+				{
+					"name": "CIRQUE DU SOLEIL",
+					"currentAffiliattion": "DL Circus",
+					"achivements": [
+						"Theater company of the year 2012",
+						"Theater company of the year 2015",
+						"Theater company of the year 2016",
+						"Theater company of the year 2019"
+					],
+					"isCompany": false,
+					"companyMembers": [
+						"Guy Laliberté",
+						"Gilles Ste-Croix",
+						"Daniel Gauthier",
+						"Rachel Vertus"
+					],
+					"photoGallery": "uploads\\2019-12-16T16-33-24.288Zcirque.jpg",
+					"_id": "5df7b1d4ec3ed52d38859185",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artist/5df7b1d4ec3ed52d38859185"
+					}
+				},
+				{
+					"name": "LUDOVICO EINAUDI",
+					"currentAffiliattion": "Decca Records",
+					"achivements": [
+						"Best European composer 2008"
+					],
+					"isCompany": false,
+					"companyMembers": [
+						""
+					],
+					"photoGallery": "uploads\\2019-12-16T16-36-46.357Zeinaudi.jpg",
+					"_id": "5df7b29eec3ed52d38859186",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artist/5df7b29eec3ed52d38859186"
+					}
+				},
+				{
+					"name": "VASCO ROSSI",
+					"currentAffiliattion": "EMI Italiana",
+					"achivements": [
+						"Disco di diamante 2003",
+						"Disco di diamante 2014"
+					],
+					"isCompany": false,
+					"companyMembers": [
+						""
+					],
+					"photoGallery": "uploads\\2019-12-16T16-37-20.617Zvrossi.jpg",
+					"_id": "5df7b2c0ec3ed52d38859187",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artist/5df7b2c0ec3ed52d38859187"
+					}
+				},
+				{
+					"name": "MAX PEZZALI",
+					"currentAffiliattion": "Warner Music Italy",
+					"achivements": [
+						"Disco di platino 2006"
+					],
+					"isCompany": false,
+					"companyMembers": [
+						""
+					],
+					"photoGallery": "uploads\\2019-12-16T16-37-56.560Zpezzali.jpg",
+					"_id": "5df7b2e4ec3ed52d38859188",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artist/5df7b2e4ec3ed52d38859188"
+					}
+				},
+				{
+					"name": "RICCARDO COCCIANTE",
+					"currentAffiliattion": "RCA Talent",
+					"achivements": [
+						"Sanremo 1991"
+					],
+					"isCompany": false,
+					"companyMembers": [
+						""
+					],
+					"photoGallery": "uploads\\2019-12-16T16-38-28.077Zcocciante.jpg",
+					"_id": "5df7b304ec3ed52d38859189",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artist/5df7b304ec3ed52d38859189"
+					}
+				},
+				{
+					"name": "DREAMUSICAL",
+					"currentAffiliattion": "ACI Theater",
+					"achivements": [
+						"Theater company of the year 2010",
+						"Theater company of the year 2011",
+						"Theater company of the year 2014"
+					],
+					"isCompany": false,
+					"companyMembers": [
+						"Giò Di Tonno",
+						"Lola Ponce "
+					],
+					"photoGallery": "uploads\\2019-12-16T16-39-31.341Zdreamus.jpg",
+					"_id": "5df7b343ec3ed52d3885918a",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artist/5df7b343ec3ed52d3885918a"
+					}
+				},
+				{
+					"name": "NEGRAMARO",
+					"currentAffiliattion": "Sugar Music",
+					"achivements": [
+						"Disco di platino 2010"
+					],
+					"isCompany": false,
+					"companyMembers": [
+						"Giuliano Sangiorgi, Emanuele Lele Spedicato, Ermanno Carlà, Andrea Andro Mariano, Andrea Pupillo De Rocco, Danilo Tasco"
+					],
+					"photoGallery": "uploads\\2019-12-16T16-40-14.214Znegramaro.jpg",
+					"_id": "5df7b36eec3ed52d3885918b",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artist/5df7b36eec3ed52d3885918b"
+					}
+				},
+				{
+					"name": "LAURA PAUSINI",
+					"currentAffiliattion": "Atlantic Records",
+					"achivements": [
+						"Grammy Award 2006"
+					],
+					"isCompany": false,
+					"companyMembers": [
+						""
+					],
+					"photoGallery": "uploads\\2019-12-16T16-41-00.609Zpausini.jpg",
+					"_id": "5df7b39cec3ed52d3885918c",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artist/5df7b39cec3ed52d3885918c"
+					}
+				},
+				{
+					"name": "EMMA MARRONE",
+					"currentAffiliattion": "Universal Music Group",
+					"achivements": [
+						"Amici 2010"
+					],
+					"isCompany": false,
+					"companyMembers": [
+						""
+					],
+					"photoGallery": "uploads\\2019-12-16T16-41-50.402Zemma_marrone.jpg",
+					"_id": "5df7b3ceec3ed52d3885918d",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artist/5df7b3ceec3ed52d3885918d"
+					}
+				},
+				{
+					"name": "NEK",
+					"currentAffiliattion": "Warner Music Italy",
+					"achivements": [
+						"Disco di platino 2018"
+					],
+					"isCompany": false,
+					"companyMembers": [
+						""
+					],
+					"photoGallery": "uploads\\2019-12-16T16-42-22.753Znek.jpg",
+					"_id": "5df7b3eeec3ed52d3885918e",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/artist/5df7b3eeec3ed52d3885918e"
+					}
+				}
+			]
+		}
 
 	EVENT
 
-		1 -
-			{	
-				"artist" : "ROBERTO BOLLE",
-				"name" : "ROBERTO BOLLE AND FRIENDS",
-				"date" : "12/06/2020 - 15.00",
-				"place" : "Pavilion 1",
-				"price" : "35.00€",
-				"isSoldOut" : "false",
-				"type" : "dance",
-				"relSeminar" : "DANCING IN NEW YORK SEMINAR",
-				"abstract" : "An unmissable opportunity to see on the same stage the Étoile of the two worlds Roberto Bolle with international dance stars, a real journey through the beauty and magic of this art form. Roberto Bolle, absolute protagonist of the dance, of these Gala is not only interpreter but also artistic director. His Gala have become an extraordinary tool for spreading dance and its excellence to a transversal audience, composed of thousands of fans and not only. Bolle, relying on his experience on the most important stages in the world, manages to make each of these shows unique in their kind by recreating a magical atmosphere that celebrates the beauty and elegance of dance. Next to him the most important dancers of the world to create a surprising program, able to fascinate an increasingly vast and heterogeneous number of spectators. The Roberto Bolle and Friends Gala represent a rare cultural opportunity of great prestige, a journey not to be missed through different styles and different schools that always arouse new emotions."
-			}
-
-		2 -
-			{	
-				"artist" : "RICCARDO COCCIANTE",
-				"name" : "BEST OF COCCIANTE",
-				"date" : "12/06/2020 - 18.00",
-				"place" : "Place of Tree of Life",
-				"price" : "50.00€",
-				"isSoldOut" : "false",
-				"type" : "concert",
-				"relSeminar" : "-",
-				"abstract" : "Best of Cocciante is a concert by Riccardo Cocciante where the best 20 songs of the artist are presented in a lyric key with a live orchestra."
-			}
-
-		3 -
-			{	
-				"artist" : "LUDOVICO EINAUDI",
-				"name" : "SEVEN DAYS WALKING TOUR",
-				"date" : "12/06/2020 - 21.00",
-				"place" : "Place of Tree of Life",
-				"price" : "50.00€",
-				"isSoldOut" : "true",
-				"type" : "concert",
-				"relSeminar" : "PIANO & MUSIC SEMIAR",
-				"abstract" : "After the exciting American success, Ludovico Einaudi's "Seven Days Walking" tour arrives in Italy with five concerts in historic amphitheaters. London will follow with seven consecutive Barbican and Europe in the fall. The traditional Dieci Notti at the Teatro Dal Verme in Milan will close in December another year of extraordinary intensity for the iconic artist of international music."
-			}
-
-		4 -
-			{	
-				"artist" : "DREAMUSICAL",
-				"name" : "NOTRE DAME DE PARIS",
-				"date" : "12/06/2020 - 21.00",
-				"place" : "Pavilion 1",
-				"price" : "35.00€",
-				"isSoldOut" : "false",
-				"type" : "theater",
-				"relSeminar" : "MODERN MUSICALS SEMINAR",
-				"abstract" : "Notre Dame de Paris is a sung-through French musical which debuted on 16 September 1998 in Paris. It is based upon the novel Notre-Dame de Paris by the French novelist Victor Hugo. The music was composed by Riccardo Cocciante and the lyrics are by Luc Plamondon."
-			}
-
-		5 -
-			{	
-				"artist" : "VASCO ROSSI",
-				"name" : "VASCO NONSTOPLIVE FESTIVAL",
-				"date" : "13/06/2020 - 15.00",
-				"place" : "Place of Tree of Life",
-				"price" : "50.00€",
-				"isSoldOut" : "true",
-				"type" : "concert",
-				"relSeminar" : "-",
-				"abstract" : "The Vasco NONSTOPLIVE Live Festival is a tour by the Italian singer Vasco Rossi started in May 2019, with a zero date organized in Lignano Sabbiadoro. It's a tour consisting of 10 stages, with 30 songs each."
-			}
-
-		6 -
-			{	
-				"artist" : "MAX PEZZALI",
-				"name" : "CANTAMAX",
-				"date" : "13/06/2020 - 18.00",
-				"place" : "Place of Tree of Life",
-				"price" : "50.00€",
-				"isSoldOut" : "false",
-				"type" : "concert",
-				"relSeminar" : "-",
-				"abstract" : "Max Pezzali, one of the Italian singer-songwriters capable of involving several generations, is ready to bring to the stage of MILAN BY NIGHT a special and unique concert scheduled for Saturday 13th June 2020.Moreover, just three days after the opening of sales, the show achieved great results totaling over 30,000 tickets sold.On stage, the artist will retrace, together with the fans, the greatest successes of his career, accompanying them on a journey back in time, to relive the emotions of a past that only he knows how to bring to light."
-			}
-
-		7 -
-			{	
-				"artist" : "NEGRAMARO",
-				"name" : "AMORE CHE TORNI TOUR,
-				"date" : "13/06/2020 - 21.00",
-				"place" : "Place of Tree of Life",
-				"price" : "50.00€",
-				"isSoldOut" : "false",
-				"type" : "concert",
-				"relSeminar" : "-",
-				"abstract" : "The band led by Giuliano Sangiorgio will perform live in the summer months. First stop at our festival on 13th June. To anticipate the summer tour, last November 20th, the band from salento posted on their Facebook page a video that contains the best moments of the live in stadiums this summer, complete with a caption that reads: "We are preparing for another party together! And you?!?"."
-			}
-
-		8 -
-			{	
-				"artist" : "CIRQUE DU SOLEIL",
-				"name" : "TOTEM",
-				"date" : "13/06/2020 - 21.00",
-				"place" : "Pavilion 1",
-				"price" : "35.00€",
-				"isSoldOut" : "false",
-				"type" : "theater",
-				"relSeminar" : "-",
-				"abstract" : "Totem is a touring show by Cirque du Soleil that premiered in Montréal on April 22, 2010. It was written and directed by previous collaborator Robert Lepage. Cirque du Soleil describes Totem's theme as the evolution of humanity from its primordial, amphibian state toward the aspiration of flight, taking inspiration from many of humanity's founding myths. The show was awarded the 2013 New York Drama Desk Award for Unique Theatrical Experience."
-			}
-
-		9 -
-			{	
-				"artist" : "LAURA PAUSINI",
-				"name" : "FATTI SENTIRE WORLD TOUR",
-				"date" : "14/06/2020 - 15.00",
-				"place" : "Place of Tree of Life",
-				"price" : "50.00€",
-				"isSoldOut" : "false",
-				"type" : "concert",
-				"relSeminar" : "-",
-				"abstract" : "The Fatti Sentire World Tour is the ninth concert tour by Italian recording artist Laura Pausini. The tour supports her thirteenth studio album, Fatti sentire. The singer will perform over 50 shows in Europe and the Americas."
-			}
-
-		10 -
-			{	
-				"artist" : "EMMA MARRONE",
-				"name" : "FORTUNA LIVE",
-				"date" : "14/06/2020 - 18.00",
-				"place" : "Place of Tree of Life",
-				"price" : "50.00€",
-				"isSoldOut" : "true",
-				"type" : "concert",
-				"relSeminar" : "-",
-				"abstract" : "It is SOLD OUT, less than a month after the opening of the pre-sales, the big concert scheduled on June 14th on the stage of our Festival where Emma will present the new album of unpublished "Fortuna" live and celebrate together with the public the 10-year career !"
-			}
-
-		11 -
-			{	
-				"artist" : "NEK",
-				"name" : "NEK EUROPEAN TOUR",
-				"date" : "14/06/2020 - 21.00",
-				"place" : "Place of Tree of Life",
-				"price" : "50.00€",
-				"isSoldOut" : "false",
-				"type" : "concert",
-				"relSeminar" : "-",
-				"abstract" : "NEK returns to Europe with a tour that will touch the main capitals of the old continent. To open the dances of this fantastic tour there could only be our beloved festival that will give the public an unforgettable evening."
-			}
+		{
+			"count": 11,
+			"events": [
+				{
+					"_id": "5df7f7da73ad1f2ae43e10e9",
+					"artistId": "5df7b170ec3ed52d38859184",
+					"name": "ROBERTO BOLLE AND FRIENDS",
+					"date": "12/06/2020 - 15.00",
+					"place": "Pavilion 1",
+					"price": "35.00€",
+					"isSoldOut": "flase",
+					"type": "dance",
+					"relSeminar": "5df7f72773ad1f2ae43e10e7",
+					"abstract": "An unmissable opportunity to see on the same stage the Étoile of the two worlds Roberto Bolle with international dance stars, a real journey through the beauty and magic of this art form. Roberto Bolle, absolute protagonist of the dance, of these Gala is not only interpreter but also artistic director. His Gala have become an extraordinary tool for spreading dance and its excellence to a transversal audience, composed of thousands of fans and not only. Bolle, relying on his experience on the most important stages in the world, manages to make each of these shows unique in their kind by recreating a magical atmosphere that celebrates the beauty and elegance of dance. Next to him the most important dancers of the world to create a surprising program, able to fascinate an increasingly vast and heterogeneous number of spectators. The Roberto Bolle and Friends Gala represent a rare cultural opportunity of great prestige, a journey not to be missed through different styles and different schools that always arouse new emotions.",
+					"photoGallery": "uploads\\2019-12-16T21-32-10.066Zbolle_and_friends.jpg",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/event/5df7f7da73ad1f2ae43e10e9"
+					}
+				},
+				{
+					"_id": "5df7f85273ad1f2ae43e10ea",
+					"artistId": "5df7b304ec3ed52d38859189",
+					"name": "BEST OF COCCIANTE",
+					"date": "12/06/2020 - 18.00",
+					"place": "Place of Tree of Life",
+					"price": "50.00€",
+					"isSoldOut": "flase",
+					"type": "concert",
+					"abstract": "Best of Cocciante is a concert by Riccardo Cocciante where the best 20 songs of the artist are presented in a lyric key with a live orchestra.",
+					"photoGallery": "uploads\\2019-12-16T21-34-10.918Zcocciante.jpg",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/event/5df7f85273ad1f2ae43e10ea"
+					}
+				},
+				{
+					"_id": "5df7f88273ad1f2ae43e10eb",
+					"artistId": "5df7b304ec3ed52d38859189",
+					"name": "SEVEN DAYS WALKING TOUR",
+					"date": "12/06/2020 - 21.00",
+					"place": "Place of Tree of Life",
+					"price": "50.00€",
+					"isSoldOut": "true",
+					"type": "concert",
+					"relSeminar": "5df7f6fb73ad1f2ae43e10e6",
+					"abstract": "After the exciting American success, Ludovico Einaudi's \"Seven Days Walking\" tour arrives in Italy with five concerts in historic amphitheaters. London will follow with seven consecutive Barbican and Europe in the fall. The traditional Dieci Notti at the Teatro Dal Verme in Milan will close in December another year of extraordinary intensity for the iconic artist of international music.",
+					"photoGallery": "uploads\\2019-12-16T21-34-58.842Zseven_days.jpg",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/event/5df7f88273ad1f2ae43e10eb"
+					}
+				},
+				{
+					"_id": "5df7f8f473ad1f2ae43e10ed",
+					"artistId": "5df7b343ec3ed52d3885918a",
+					"name": "NOTRE DAME DE PARIS",
+					"date": "12/06/2020 - 21.00",
+					"place": "Pavilion 1",
+					"price": "35.00€",
+					"isSoldOut": "false",
+					"type": "theater",
+					"relSeminar": "5df7f73e73ad1f2ae43e10e8",
+					"abstract": "Notre Dame de Paris is a sung-through French musical which debuted on 16 September 1998 in Paris. It is based upon the novel Notre-Dame de Paris by the French novelist Victor Hugo. The music was composed by Riccardo Cocciante and the lyrics are by Luc Plamondon.",
+					"photoGallery": "uploads\\2019-12-16T21-36-52.351Znotre_dame.jpg",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/event/5df7f8f473ad1f2ae43e10ed"
+					}
+				},
+				{
+					"_id": "5df7f91c73ad1f2ae43e10ee",
+					"artistId": "5df7b343ec3ed52d3885918a",
+					"name": "VASCO NONSTOPLIVE FESTIVAL",
+					"date": "13/06/2020 - 15.00",
+					"place": "Place of Tree of Life",
+					"price": "50.00€",
+					"isSoldOut": "true",
+					"type": "concert",
+					"abstract": "The Vasco NONSTOPLIVE Live Festival is a tour by the Italian singer Vasco Rossi started in May 2019, with a zero date organized in Lignano Sabbiadoro. It's a tour consisting of 10 stages, with 30 songs each.",
+					"photoGallery": "uploads\\2019-12-16T21-37-32.846Zvascononstop.jpg",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/event/5df7f91c73ad1f2ae43e10ee"
+					}
+				},
+				{
+					"_id": "5df7f94373ad1f2ae43e10ef",
+					"artistId": "5df7b2e4ec3ed52d38859188",
+					"name": "CANTAMAX",
+					"date": "13/06/2020 - 18.00",
+					"place": "Place of Tree of Life",
+					"price": "50.00€",
+					"isSoldOut": "false",
+					"type": "concert",
+					"abstract": "Max Pezzali, one of the Italian singer-songwriters capable of involving several generations, is ready to bring to the stage of MILAN BY NIGHT a special and unique concert scheduled for Saturday 13th June 2020.Moreover, just three days after the opening of sales, the show achieved great results totaling over 30,000 tickets sold.On stage, the artist will retrace, together with the fans, the greatest successes of his career, accompanying them on a journey back in time, to relive the emotions of a past that only he knows how to bring to light.",
+					"photoGallery": "uploads\\2019-12-16T21-38-11.862Zcantamax.jpeg",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/event/5df7f94373ad1f2ae43e10ef"
+					}
+				},
+				{
+					"_id": "5df7f96e73ad1f2ae43e10f0",
+					"artistId": "5df7b36eec3ed52d3885918b",
+					"name": "AMORE CHE TORNI TOUR",
+					"date": "13/06/2020 - 21.00",
+					"place": "Place of Tree of Life",
+					"price": "50.00€",
+					"isSoldOut": "false",
+					"type": "concert",
+					"abstract": "The band led by Giuliano Sangiorgio will perform live in the summer months. First stop at our festival on 13th June. To anticipate the summer tour, last November 20th, the band from salento posted on their Facebook page a video that contains the best moments of the live in stadiums this summer, complete with a caption that reads: We are preparing for another party together! And you?!?.",
+					"photoGallery": "uploads\\2019-12-16T21-38-53.978Zamore_che.jpg",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/event/5df7f96e73ad1f2ae43e10f0"
+					}
+				},
+				{
+					"_id": "5df7f9a473ad1f2ae43e10f1",
+					"artistId": "5df7b1d4ec3ed52d38859185",
+					"name": "TOTEM",
+					"date": "13/06/2020 - 21.00",
+					"place": "Pavilion 1",
+					"price": "35.00€",
+					"isSoldOut": "false",
+					"type": "theater",
+					"abstract": "Totem is a touring show by Cirque du Soleil that premiered in Montréal on April 22, 2010. It was written and directed by previous collaborator Robert Lepage. Cirque du Soleil describes Totem's theme as the evolution of humanity from its primordial, amphibian state toward the aspiration of flight, taking inspiration from many of humanity's founding myths. The show was awarded the 2013 New York Drama Desk Award for Unique Theatrical Experience.",
+					"photoGallery": "uploads\\2019-12-16T21-39-48.214Ztotem.jpg",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/event/5df7f9a473ad1f2ae43e10f1"
+					}
+				},
+				{
+					"_id": "5df7f9cd73ad1f2ae43e10f2",
+					"artistId": "5df7b39cec3ed52d3885918c",
+					"name": "FATTI SENTIRE WORLD TOUR",
+					"date": "14/06/2020 - 15.00",
+					"place": "Place of Tree of Life",
+					"price": "50.00€",
+					"isSoldOut": "false",
+					"type": "concert",
+					"abstract": "The Fatti Sentire World Tour is the ninth concert tour by Italian recording artist Laura Pausini. The tour supports her thirteenth studio album, Fatti sentire. The singer will perform over 50 shows in Europe and the Americas.",
+					"photoGallery": "uploads\\2019-12-16T21-40-29.040Zpausini_tour.jpg",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/event/5df7f9cd73ad1f2ae43e10f2"
+					}
+				},
+				{
+					"_id": "5df7f9fd73ad1f2ae43e10f3",
+					"artistId": "5df7b3ceec3ed52d3885918d",
+					"name": "FORTUNA LIVE",
+					"date": "14/06/2020 - 18.00",
+					"place": "Place of Tree of Life",
+					"price": "50.00€",
+					"isSoldOut": "true",
+					"type": "concert",
+					"abstract": "It is SOLD OUT, less than a month after the opening of the pre-sales, the big concert scheduled on June 14th on the stage of our Festival where Emma will present the new album of unpublished Fortuna live and celebrate together with the public the 10-year career !",
+					"photoGallery": "uploads\\2019-12-16T21-41-17.807Zemma_fortunalive.jpg",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/event/5df7f9fd73ad1f2ae43e10f3"
+					}
+				},
+				{
+					"_id": "5df7fa2173ad1f2ae43e10f4",
+					"artistId": "5df7b3eeec3ed52d3885918e",
+					"name": "NEK EUROPEAN TOUR",
+					"date": "14/06/2020 - 21.00",
+					"place": "Place of Tree of Life",
+					"price": "50.00€",
+					"isSoldOut": "false",
+					"type": "concert",
+					"abstract": "NEK returns to Europe with a tour that will touch the main capitals of the old continent. To open the dances of this fantastic tour there could only be our beloved festival that will give the public an unforgettable evening.",
+					"photoGallery": "uploads\\2019-12-16T21-41-52.993Znek_tour.jpg",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/event/5df7fa2173ad1f2ae43e10f4"
+					}
+				}
+			]
+		}
 
 	SEMINAR
 
-		1 -
-			{	
-				"seminarist" : "LUDOVICO EINAUDI",
-				"name" : "PIANO & MUSIC SEMINAR",
-				"date" : "12/06/2020 - 18.00",
-				"place" : "Pavilion 2",
-				"price" : "free",
-				"isSoldOut" : "false",
-				"relEvent" : "SEVEN DAYS WALKING TOUR",
-				"abstract" : "Ludovico Einaudi tells us about his experience with the piano that began 50 years ago through small demonstrations of some of his compositions."
-			}
-
-		2 -
-			{	
-				"seminarist" : "ROBERTO BOLLE",
-				"name" : "DANCING IN NEW YORK SEMINAR",
-				"date" : "12/06/2020 - 20.00",
-				"place" : "Pavilion 2",
-				"price" : "free",
-				"isSoldOut" : "false",
-				"relEvent" : "ROBERTO BOLLE AND FRIENDS",
-				"abstract" : "Roberto Bolle takes us into his world telling us what it feels like to be the most important dancer in Italy and the United States through special anecdotes."
-			}
-
-		3 -
-			{	
-				"seminarist" : "RICCARDO COCCIANTE",
-				"name" : "MODERN MUSICALS SEMINAR",
-				"date" : "12/06/2020 - 22.00",
-				"place" : "Pavilion 2",
-				"price" : "free",
-				"isSoldOut" : "false",
-				"relEvent" : "NOTRE DAME DE PARIS",
-				"abstract" : "Riccardo Cocciante talks about how the concept of musical has evolved over the years, comparing his works with those of the past."
-			}
+		{
+			"count": 3,
+			"seminars": [
+				{
+					"_id": "5df7f6fb73ad1f2ae43e10e6",
+					"name": "PIANO & MUSIC SEMINAR",
+					"date": "12/06/2020 - 18.00",
+					"place": "Pavilion 2",
+					"photoGallery": "uploads\\2019-12-16T21-28-27.156Zeinaudi_sem.jpg",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/seminar/5df7f6fb73ad1f2ae43e10e6"
+					}
+				},
+				{
+					"_id": "5df7f72773ad1f2ae43e10e7",
+					"name": "DANCING IN NEW YORK SEMINAR",
+					"date": "12/06/2020 - 20.00",
+					"place": "Pavilion 2",
+					"photoGallery": "uploads\\2019-12-16T21-29-11.412Zbolle_sem.jpg",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/seminar/5df7f72773ad1f2ae43e10e7"
+					}
+				},
+				{
+					"_id": "5df7f73e73ad1f2ae43e10e8",
+					"name": "MODERN MUSICALS SEMINAR",
+					"date": "12/06/2020 - 22.00",
+					"place": "Pavilion 2",
+					"photoGallery": "uploads\\2019-12-16T21-29-34.664Zcocciante_sem.jpg",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:3000/seminar/5df7f73e73ad1f2ae43e10e8"
+					}
+				}
+			]
+		}

@@ -27,9 +27,7 @@ const options = {
   useUnifiedTopology: true,
   autoIndex: false, // Don't build indexes
   connectTimeoutMS: 1000,
-  //reconnectTries: Number.MAX_VALUE, // Never stop trying to reconnect
-  //reconnectInterval: 500, // Reconnect every 500ms
-  poolSize: 10, // Maintain up to 10 socket connections
+  poolSize: 10 // Maintain up to 10 socket connections
 };
 //database connection
 if(mongoose.connect(CONNECTION_URL,options)){
@@ -67,7 +65,7 @@ app.use((req, res, next) => {
 // Routes which should handle requests
 app.use("/artist", artistRoutes);
 app.use("/event", eventRoutes);
-app.use("/sminar", userRoutes);
+app.use("/seminar", seminarRoutes);
 app.use("/user", userRoutes);
 
 //error 404 for not found routers

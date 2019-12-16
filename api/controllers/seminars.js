@@ -1,31 +1,37 @@
 const mongoose = require("mongoose");
 
 const Seminar = require("../models/seminar");
-const Event = require("../models/event");
 
 exports.seminars_get_all = (req, res, next) => {
   Seminar.find()
-    .select("name relEvent date place _id")
-    .populate("name", "relEvent","date","place",)
+    .select("name date place abstract photoGallery _id")
     .exec()
     .then(docs => {
-      res.status(200).json({
+      const response = {
         count: docs.length,
         seminars: docs.map(doc => {
           return {
             _id: doc._id,
             name: doc.name,
-            relEvent: doc.relEvent, 
             date: doc.date,
             place: doc.place,
+            abatract: doc.abatract,
+            photoGallery: doc.photoGallery,
             request: {
               type: "GET",
-              url: "http://localhost:3000/seminars/" + doc._id
+              url: "http://localhost:3000/seminar/" + doc._id
             }
           };
         })
-      });
-    })
+      };
+        if (docs.length >= 0) {
+          res.status(200).json(response);
+          } else {
+              res.status(404).json({
+                  message: 'No entries found'
+              });
+        }
+      })
     .catch(err => {
       res.status(500).json({
         error: err
@@ -34,64 +40,69 @@ exports.seminars_get_all = (req, res, next) => {
 };
 
 exports.seminars_create_seminar = (req, res, next) => {
-  Seminar.findById(req.body.artistId)
-    .then(product => {
-      if (!product) {
-        return res.status(404).json({
-          message: "Seminar not found"
+  Seminar.find({ name: req.body.name })
+    .exec()
+    .then(sem => {
+      if (sem.length >= 1) {
+        return res.status(409).json({
+          message: "Seminar already exist"
+        });
+      } else{
+        const seminar = new Seminar({
+          _id: mongoose.Types.ObjectId(),
+          name: req.body.name,
+          date: req.body.date,
+          place: req.body.place,
+          abstract: req.body.abstract,
+          photoGallery: req.file.path
+        });
+        seminar
+          .save()
+          .then(result => {
+            res.status(201).json({
+              message: "Created Seminar Created",
+              createdSeminar: {
+                _id: result._id,
+                name: result.name,
+                date: result.date,
+                place: result.place,
+                abstract: result.abstract,
+                photoGallery: result.photoGallery,
+                request: {
+                  type: "GET",
+                  url: "http://localhost:3000/seminar/" + result._id
+                }
+              }
+            });
+          })
+        .catch(err => {
+          console.log(err);
+          res.status(500).json({
+            error: err
+          });
         });
       }
-      const seminar = new Seminar({
-        _id: mongoose.Types.ObjectId(),
-        name: req.body.name,
-        relEvent: req.body.relEvent, 
-        date: req.body.date,
-        place: req.body.place,
-      });
-      return seminar.save();
-    })
-    .then(result => {
-      console.log(result);
-      res.status(201).json({
-        message: "Seminar stored",
-        createdSeminar: {
-          _id: result._id,
-          name: result.name,
-          relEvent: result.relEvent, 
-          date: result.date,
-          place: result.place,
-        },
-        request: {
-          type: "GET",
-          url: "http://localhost:3000/seminars/" + result._id
-        }
-      });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json({
-        error: err
-      });
-    });
+  });
 };
 
 exports.seminars_get_seminar = (req, res, next) => {
   Seminar.findById(req.params.seminarId)
-    .populate("seminar")
+    .select("name date place abstarct photoGallery _id")
     .exec()
-    .then(seminar => {
-      if (!seminar) {
-        return res.status(404).json({
-          message: "Seminar not found"
+    .then(doc => {
+      if (doc) {
+        res.status(200).json({
+          artist: doc,
+          request: {
+            type: "GET",
+            url: "http://localhost:3000/seminar/"
+          }
         });
+      } else {
+        res
+          .status(404)
+          .json({ message: "provided ID seminar NOT FOUND" });
       }
-      res.status(200).json({
-        seminar: seminar,
-        request: {
-          type: "GET",
-          url: "http://localhost:3000/seminars"
-        }
-      });
     })
     .catch(err => {
       res.status(500).json({
@@ -108,7 +119,7 @@ exports.seminars_delete_seminar = (req, res, next) => {
         message: "Seminar deleted",
         request: {
           type: "POST",
-          url: "http://localhost:3000/seminars",
+          url: "http://localhost:3000/seminar",
           body: { seminarId: "ID", name: "Name" }
         }
       });

@@ -31,6 +31,8 @@ const upload = multer({
   fileFilter: fileFilter
 });
 
+
+// Handle incoming requests to /artist
 router.get("/", ArtistsController.artists_get_all);
 
 router.post("/", checkAuth, upload.single('photoGallery'), ArtistsController.artists_create_artist);

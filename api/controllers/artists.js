@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const Artist = require("../models/artist");
 
 exports.artists_get_all = (req, res, next) => {
@@ -26,13 +27,13 @@ exports.artists_get_all = (req, res, next) => {
         })
       };
         if (docs.length >= 0) {
-      res.status(200).json(response);
-      } else {
-          res.status(404).json({
-              message: 'No entries found'
-          });
-      }
-    })
+          res.status(200).json(response);
+          } else {
+              res.status(404).json({
+                  message: 'No entries found'
+              });
+        }
+      })
     .catch(err => {
       console.log(err);
       res.status(500).json({
@@ -64,10 +65,9 @@ exports.artists_create_artist = (req, res, next) => {
         artist
           .save()
           .then(result => {
-  
             res.status(201).json({
-              message: "Created artist successfully",
-              createdProduct: {
+              message: "Created Artist Created",
+              createdArtist: {
                 _id: result._id,
                 name: result.name,
                 currentAffiliattion: result.currentAffiliattion,
@@ -83,12 +83,12 @@ exports.artists_create_artist = (req, res, next) => {
               }
             });
           })
-          .catch(err => {
-            console.log(err);
-            res.status(500).json({
-              error: err
-            });
+        .catch(err => {
+          console.log(err);
+          res.status(500).json({
+            error: err
           });
+        });
       }
     });
   };

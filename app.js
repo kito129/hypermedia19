@@ -10,6 +10,7 @@ const mongoose = require("mongoose");
 const artistRoutes = require("./api/routes/artists");
 const eventRoutes = require("./api/routes/events");
 const seminarRoutes = require("./api/routes/seminars");
+const orderRoutes = require('./api/routes/orders');
 const userRoutes = require('./api/routes/user');
 
 
@@ -66,6 +67,7 @@ app.use((req, res, next) => {
 app.use("/artist", artistRoutes);
 app.use("/event", eventRoutes);
 app.use("/seminar", seminarRoutes);
+app.use("/order", orderRoutes);
 app.use("/user", userRoutes);
 
 //error 404 for not found routers

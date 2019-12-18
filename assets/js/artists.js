@@ -3,6 +3,7 @@ $(document).ready(function(){
 	$.get("http://localhost:3000/artist", function(data, status){
 
 		var jsonArtists=JSON.parse(data);
+		console.log(jsonArtists);
 
 		for(var i=0;i<jsonArtists.artists.length;i++){
 

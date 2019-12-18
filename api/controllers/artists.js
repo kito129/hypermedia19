@@ -4,7 +4,7 @@ const Artist = require("../models/artist");
 
 exports.artists_get_all = (req, res, next) => {
   Artist.find()
-    .select("name currentAffiliattion achivements isCompany companyMembers  photoGallery photoGallery _id")
+    .select("name currentAffiliattion achivements isCompany companyMembers type photoGallery photoGallery _id")
     .exec()
     .then(docs => {
       const response = {
@@ -14,6 +14,7 @@ exports.artists_get_all = (req, res, next) => {
             currentAffiliattion: doc.currentAffiliattion,
             achivements: doc.achivements,
             isCompany: doc.isCompany,
+            type: doc.type,
             companyMembers: doc.companyMembers,
             photoGallery: doc.photoGallery,
             type: doc.type,

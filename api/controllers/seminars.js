@@ -76,7 +76,7 @@ exports.seminars_create_seminar = (req, res, next) => {
             });
           })
         .catch(err => {
-          console.log(err);
+          console.log("ERROR:\n" + err);
           res.status(500).json({
             error: err
           });

@@ -13,14 +13,13 @@ const seminarRoutes = require("./api/routes/seminars");
 const orderRoutes = require('./api/routes/orders');
 const userRoutes = require('./api/routes/user');
 
-
 //database setting
 const CONNECTION_URL = 
   "mongodb://shibbo:"+
   process.env.MONGO_ATLAS_PW +
   "@hypermedia-shard-00-00-pzrp3.mongodb.net:27017,hypermedia-shard-00-01-pzrp3.mongodb.net:27017,hypermedia-shard-00-02-pzrp3.mongodb.net:27017/test?ssl=true&replicaSet=hypermedia-shard-0&authSource=admin&retryWrites=true&w=majority";
 const DATABASE_NAME = "hypermedia";
-
+//database connection option
 const options = {
   useNewUrlParser: true,
   useCreateIndex: true,
@@ -34,7 +33,7 @@ const options = {
 if(mongoose.connect(CONNECTION_URL,options)){
   mongoose.Promise = global.Promise;
   //handle error
-  console.log("Connected to " + DATABASE_NAME + " database")
+  console.log("Server Connected to " + DATABASE_NAME + " database")
   mongoose.connection.on('error',console.error.bind(
     console, '\n-----MongoDB connection error------:\n')
   );
@@ -72,7 +71,7 @@ app.use("/user", userRoutes);
 
 //error 404 for not found routers
 app.use((req, res, next) => {
-  const error = new Error("Not found");
+  const error = new Error("Route Not Valid");
   error.status = 404;
   next(error);
 });

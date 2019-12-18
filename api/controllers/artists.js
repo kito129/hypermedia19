@@ -35,7 +35,7 @@ exports.artists_get_all = (req, res, next) => {
         }
       })
     .catch(err => {
-      console.log(err);
+      console.log("ERROR:\n" + err);
       res.status(500).json({
         error: err
       });
@@ -84,7 +84,7 @@ exports.artists_create_artist = (req, res, next) => {
             });
           })
         .catch(err => {
-          console.log(err);
+          console.log("ERROR:\n" + err);
           res.status(500).json({
             error: err
           });
@@ -114,7 +114,7 @@ exports.artists_get_artist = (req, res, next) => {
       }
     })
     .catch(err => {
-      console.log(err);
+      console.log("ERROR:\n" + err);
       res.status(500).json({ error: err });
     });
 };
@@ -146,7 +146,7 @@ exports.artists_update_artist = (req, res, next) => {
           error: "Artist ID not found"
         });
       } else{
-        console.log(err);
+        console.log("ERROR:\n" + err);
         res.status(500).json({
           error: err
         });
@@ -169,7 +169,7 @@ exports.artists_delete = (req, res, next) => {
       });
     })
     .catch(err => {
-      console.log(err);
+      console.log("ERROR:\n" + err);
       res.status(500).json({
         error: err
       });

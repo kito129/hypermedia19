@@ -32,7 +32,7 @@ exports.orders_get_all = (req, res, next) => {
         }
       })
     .catch(err => {
-      console.log(err);
+      console.log("ERROR:\n" + err);
       res.status(500).json({
         error: err
       });
@@ -40,7 +40,8 @@ exports.orders_get_all = (req, res, next) => {
 };
 
 exports.orders_create_order = (req, res, next) => {
-  Order.find({ userId: req.body.userId })
+  if(req.body.userId!=""){
+    Order.find({ userId: req.body.userId })
     .exec()
     .then(art => {
       if (art.length >= 1) {
@@ -48,36 +49,75 @@ exports.orders_create_order = (req, res, next) => {
           message: "Order with this userId already exists"
         });
       } else {
-        const order = new Order({
-          _id: new mongoose.Types.ObjectId(),
-          userId: req.body.userId,
-          order: req.body.order,
-          totalPrice: req.body.totalPrice
-        });
-        order
-          .save()
-          .then(result => {
-            res.status(201).json({
-              message: "Created Order Created",
-              createdOrder: {
-                userId: result.userId,
-                order: result.order,
-                totalPrice: result.totalPrice,
-                request: {
-                  type: "GET",
-                  url: "http://localhost:3000/order/" + result._id
-                }
+          Event.find({_id: req.body.order[0].eventId })
+          .exec()
+          .then(event =>{
+            console.log("event\n " +event);
+            const value = parseInt(event.price)
+            console.log("price " +value);
+            const sub = event.price*req.body.order[0].quantity;
+            const order = new Order({
+              _id: new mongoose.Types.ObjectId(),
+              userId: req.body.userId,
+              order: [{
+               eventId: req.body.order[0].orderId,
+               quantity: req.body.order[0].quantity,
+               subTotal: req.body.order[0].subTotal
+              }
+              ],
+              totalPrice: 2
+            });
+            order
+              .save()
+              .then(result => {
+                res.status(201).json({
+                  message: "Created Order Created",
+                  createdOrder: {
+                    userId: result.userId,
+                    order: result.order,
+                    totalPrice: result.totalPrice,
+                    requestCart: {
+                      type: "GET",
+                      url: "http://localhost:3000/order/" + result._id
+                    }
+                  }
+                });
+              })
+            .catch(err => {
+              if(err.name="CastError"){
+                console.log("INVALID INPUT:\n" + err);
+                res.status(400).json({
+                  error: err
+                });
+              } else {
+                console.log("ERROR:\n" + err);
+                res.status(500).json({
+                  error: err
+                });
               }
             });
           })
-        .catch(err => {
-          console.log(err);
-          res.status(500).json({
-            error: err
+          .catch(err => {
+            if(err.name="CastError"){
+              console.log("Invalid eventId input:\n" + err);
+              res.status(400).json({
+                error: "Invalid eventId input"
+              });
+            } else {
+              console.log("ERROR:\n" + err);
+              res.status(500).json({
+                error: err
+              });
+            }
           });
-        });
-      }
-    });
+        }
+      });   
+      } else {
+          console.log("Invalid ID input" );
+          res.status(400).json({
+            error: "Invalid ID input"
+          });
+        }
   };
 
 exports.orders_get_order = (req, res, next) => {
@@ -101,7 +141,7 @@ exports.orders_get_order = (req, res, next) => {
       }
     })
     .catch(err => {
-      console.log(err);
+      console.log("ERROR:\n" + err);
       res.status(500).json({ error: err });
     });
 };
@@ -133,7 +173,7 @@ exports.orders_update_order = (req, res, next) => {
           error: "Order ID not found"
         });
       } else{
-        console.log(err);
+        console.log("ERROR:\n" + err);
         res.status(500).json({
           error: err
         });
@@ -156,9 +196,10 @@ exports.orders_delete = (req, res, next) => {
       });
     })
     .catch(err => {
-      console.log(err);
+      console.log("ERROR:\n" + err);
       res.status(500).json({
         error: err
       });
     });
 };
+

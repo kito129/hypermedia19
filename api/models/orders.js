@@ -6,11 +6,11 @@ const orderSchema = mongoose.Schema({
     order: [
         {
             eventId: { type: mongoose.Schema.Types.ObjectId, ref: 'Event', required: true },
-            number: {type: Number, required: true},
-            subTotal: {type: Number, required: true}
+            quantity: {type: Number, required: true},
+            subTotal: {type: Number, required: false}
         }
     ],
-    totalPrice: {type: Number, required: true}
+    totalPrice: {type: Number, required: false}
 });
 
 module.exports = mongoose.model('Order', orderSchema);

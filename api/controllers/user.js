@@ -33,7 +33,7 @@ exports.user_signup = (req, res, next) => {
                 });
               })
               .catch(err => {
-                console.log(err);
+                console.log("ERROR:\n" + err);
                 res.status(500).json({
                   error: err
                 });
@@ -81,7 +81,7 @@ exports.user_login = (req, res, next) => {
       });
     })
     .catch(err => {
-      console.log(err);
+      console.log("ERROR:\n" + err);
       res.status(500).json({
         error: err
       });
@@ -97,9 +97,35 @@ exports.user_delete = (req, res, next) => {
       });
     })
     .catch(err => {
-      console.log(err);
+      console.log("ERROR:\n" + err);
       res.status(500).json({
         error: err
       });
+    });
+};
+
+exports.user_getId = (req, res, next) => {
+  User.find({ email: req.body.email })
+    .exec()
+    .then(user => {
+      if (user.length < 1) {
+        return res.status(401).json({
+           message: "provided mail NOT FOUND" 
+        });
+      } else {
+        console.log("Request for ID: "  + user.email);
+        const response = {
+          mail :user.map(doc => {
+            return {
+              userId: doc._id,
+              request: {
+                type: "GET",
+                url: "http://localhost:3000/user/"
+              }
+            };
+          })
+        }
+        res.status(200).json(response);    
+      }
     });
 };

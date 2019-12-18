@@ -94,7 +94,7 @@ exports.events_create_event = (req, res, next) => {
           });
         })
         .catch(err => {
-          console.log(err);
+          console.log("ERROR:\n" + err);
           res.status(500).json({
             error: err
           });
@@ -125,7 +125,7 @@ exports.events_get_event = (req, res, next) => {
       }
     })
     .catch(err => {
-      console.log(err);
+      console.log("ERROR:\n" + err);
       res.status(500).json({ error: err });
     });
 };

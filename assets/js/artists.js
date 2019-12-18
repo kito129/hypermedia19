@@ -2,8 +2,16 @@ $(document).ready(function(){
 
 	$.get("http://localhost:3000/artist", function(data, status){
 
-		var jsonDataArtists=JSON.parse(data);
-		console.log(jsonDataArtists);
+		
+		//console.log(data.artists[0]);
+		//console.log(data.artists[0].name);
+		//const ciao = JSON.parse(data);
+
+		const art= JSON.parse(data);
+
+		art.artists.forEach(element => {
+			console.log(element.name);
+		});
 
 		for (var i =0;i<jsonDataArtists.lenght;i++){
 

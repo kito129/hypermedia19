@@ -22,30 +22,12 @@ $(document).ready(function(){
 					<a href="singleartist.html">  
 						<img src="../../${jsonDataArtists[i].photoGallery}" class="imagesArtist">                   
 					</a> 
-					<div class="artista"><h5><b>ROBERTO BOLLE</b></h5></div>
-					<h7 class="type"><i><b>dancer</b></i></h7>
+					<div class="artista"><h5><b>${jsonDataArtists[i].name}</b></h5></div>
+					<h7 class="type"><i><b>${jsonDataArtists[i].type}</b></i></h7>
 				</div> 
 				
 				`
 			);
-				
-
-
-
-
-				
-
-
-
-
-
-
-
-
-	
 		}
-
-
 	});
-
 });

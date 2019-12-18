@@ -20,7 +20,7 @@ $(document).ready(function(){
 				`
 				<div class="col-md-4 col-6 mb-4">   
 					<a href="singleartist.html">  
-						<img src="../images/private/artists/bolle.jpg" class="imagesArtist">                   
+						<img src="../../${jsonDataArtists[i].photoGallery}" class="imagesArtist">                   
 					</a> 
 					<div class="artista"><h5><b>ROBERTO BOLLE</b></h5></div>
 					<h7 class="type"><i><b>dancer</b></i></h7>

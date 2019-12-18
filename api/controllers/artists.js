@@ -8,7 +8,6 @@ exports.artists_get_all = (req, res, next) => {
     .exec()
     .then(docs => {
       const response = {
-        count: docs.length,
         artists: docs.map(doc => {
           return {
             name: doc.name,
@@ -27,7 +26,7 @@ exports.artists_get_all = (req, res, next) => {
         })
       };
         if (docs.length >= 0) {
-          res.status(200).json(response);
+          res.status(200).json(JSON.stringify(response));
           } else {
               res.status(404).json({
                   message: 'No entries found'

@@ -18,6 +18,14 @@
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.navbarmy{
+	opacity: 0.9;
+}
+
+#navbarItems{
+	color: white;
+}
+
 .subtitle{
 	margin-left: 50px;
 	padding-top: 10px;
@@ -44,6 +52,7 @@
 .imagesArtist{
 	width: 250px;
 	border-radius: 100%;
+	padding: 10px;
 }
 
 .imagesEvent{
@@ -154,3 +163,11 @@
 	margin-left: 10px;
 	margin-right: 10px;
 }
+
+/* il carrello si deve vedere solo dopo aver fatto il login
+
+.cart{
+	display: none;
+}
+
+*/

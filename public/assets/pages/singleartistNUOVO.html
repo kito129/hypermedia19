@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CART</title>
+    <title class="artista">ARTIST</title>
     <!-- Bootstrap -->
     <link href="../css/bootstrap-4.3.1.css" rel="stylesheet">
 	  <link href="../css/personal.css" rel="stylesheet">
@@ -43,39 +43,36 @@
 	<br>
 	<br>
 	<br>
-	<div>
-		<h3 class="subtitle">SHOPPING CART</h3>
-		
+	<div align="center" class="singoloArtista">
+		<img src="../images/private/artists/einaudi.jpg" class="imageSingleArtist">
+	</div>
+	<div class="singleEvent">
+		<a class="artista"><b>LUDOVICO EINAUDI</b></a><br>
+		<a class="achievements">Achievements: <b>Best European composer (2008)</b></a><br>
+		<a class="currentAffiliation">Current Affiliation: <b>Decca Records</b></a><br>
+		<a class="date">Company Members: <b>-</b></a><br>
+		<div style="text-align:justify" class="paragrafofullpage">
+			<p class="descrizione"><b>Ludovico Maria Enrico Einaudi (born November 23, 1955 in Turin) is an Italian pianist and composer. Trained at the Conservatorio Verdi in Milan, Einaudi began his career as a classical composer, later incorporating other styles and genres such as pop, rock, folk, and world music. Einaudi has composed the scores for a number of films and television productions. He has also released a number of solo albums for piano and other instruments. On 1 March 2019, Einaudi announced a seven-part project named Seven Days Walking, which is to be released over the course of seven months in 2019.</b></p>
+		</div>
 	</div>
 	<br>
-	<div class="marginLeft">
-		<div class="row"> 
-			<div class="col-lg-8">
-				<span>
-					<a>
-						<img src="../images/private/events/amore_che.jpg" class="imagesEvent">
-					</a>
-					<button type="button" class="btn btn-dark btncart"><b>-</b></button>
-					<span class="quantity"><b>3</b></span>
-					<b>TICKETS</b>
-					<button type="button" class="btn btn-dark btncart"><b>+</b></button>
-					<b>PRICE: </b>
-					<span class="price"><b>150.00€</b></span>
-					<button type="button" class="btn btn-danger btncartremove"><b>REMOVE</b></button>
-				</span>
-				<hr>
-			</div>
-			<div class="col-lg-4">
-				<h4>TOTAL</h4>
-				<div class="riepilogo">
-					<span class="totalTicket"><b>3</b></span>
-					<span class="event"><b>x AMORE CHE TORNI TOUR</b></span>		
-				</div>
-				<hr>
-				<span class="totalPrice"><b>150.00€</b></span>
-				<button type="button" class="btn btn-dark btnshop"><b>BUY</b></button>
-			</div>
-		</div>
+	<a id="relativeEvent"><b>RELATIVE EVENTS</b></a><br><br>
+	<div align="center" id="singoloEvento">
+		<img src="../images/private/events/seven_days.jpg" class="imageSingleEvent">
+	</div>
+	<div class="singleEvent">
+		<a class="name" href="singleevent.html"><b>SEVEN DAYS WALKING TOUR</b></a><br>
+		<a class="artista"><b>LUDOVICO EINAUDI</b></a><br>
+		<a class="date">Date: <b>12/06/2020 - 21.00</b></a><br>
+		<a class="place">Place: <b>Place of Tree of Life</b></a><br>
+		<a class="price">Price: <b>50.00€</b></a><br>
+		<span>
+			<button type="button" class="btn btn-dark btncart"><b>-</b></button>
+			<span class="quantity"><b>3</b></span>
+			<b>TICKETS</b>
+			<button type="button" class="btn btn-dark btncart"><b>+</b></button>
+			<button type="button" class="btn btn-dark" disabled><b>SOLD OUT</b></button><br>
+		</span>
 	</div>
 	<br>
 	
@@ -125,6 +122,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap-4.3.1.js"></script>
+    <script src="../js/singleArtist.js"></script>
 	
 </body>
 </html>

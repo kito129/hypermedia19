@@ -10,7 +10,7 @@ $(document).ready(function(){
 			$("#performer").append(
 
 				`
-				<div class="col-md-4 col-6 mb-4">   
+				<div class="col-md-6 col-sm-12 col-12 col-lg-4 mb-4">   
 					<a href="singleartist.html?id=${jsonArtists.artists[i]._id}">  
 						<img src="../../../${jsonArtists.artists[i].photoGallery}"class="imagesArtist">                   
 				 	</a> 

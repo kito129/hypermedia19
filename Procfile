@@ -1,2 +1,1 @@
-web: npm install && npm start
-
+web: node app.js

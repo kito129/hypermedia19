@@ -44,6 +44,7 @@ if(mongoose.connect(CONNECTION_URL,options)){
 //use middleware 
 app.use(morgan("dev"));
 app.use('/uploads', express.static('uploads'));
+app.use(express.static(path.join(__dirname, './public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -68,14 +69,6 @@ app.use("/event", eventRoutes);
 app.use("/seminar", seminarRoutes);
 app.use("/order", orderRoutes);
 app.use("/user", userRoutes);
-
-/* viewed at http://localhost:8080
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/public/index.html'));
-});
-*/
-
-app.use(express.static(path.join(__dirname, './public')));
 
 //error 404 for not found routers
 app.use((req, res, next) => {

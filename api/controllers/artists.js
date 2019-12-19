@@ -105,7 +105,7 @@ exports.artists_get_artist = (req, res, next) => {
           artist: doc,
           request: {
             type: "GET",
-            url: "http://hypermedia19.herokuapp.com/artist/"
+            url: "http://hypermedia19.herokuapp.com/artist/"+ doc._id
           }
         }));
       } else {

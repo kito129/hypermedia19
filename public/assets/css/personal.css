@@ -164,6 +164,11 @@
 	margin-right: 10px;
 }
 
+.imagineAbout{
+	width: 450px;
+	border-radius: 20px;
+}
+
 /* il carrello si deve vedere solo dopo aver fatto il login
 
 .cart{

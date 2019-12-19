@@ -11,6 +11,7 @@ const eventRoutes = require("./api/routes/events");
 const seminarRoutes = require("./api/routes/seminars");
 const orderRoutes = require('./api/routes/orders');
 const userRoutes = require('./api/routes/user');
+const path = require('path');
 
 //database setting
 const CONNECTION_URL = 
@@ -43,6 +44,7 @@ if(mongoose.connect(CONNECTION_URL,options)){
 //use middleware 
 app.use(morgan("dev"));
 app.use('/uploads', express.static('uploads'));
+app.use(express.static(path.join(__dirname, './public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 

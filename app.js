@@ -29,17 +29,21 @@ const options = {
   connectTimeoutMS: 1000,
   poolSize: 10 // Maintain up to 10 socket connections
 };
+
 //database connection
-if(mongoose.connect(CONNECTION_URL,options)){
+try {
+  mongoose.connect(CONNECTION_URL,options);
   mongoose.Promise = global.Promise;
   //handle error
   console.log("Server Connected to " + DATABASE_NAME + " database")
   mongoose.connection.on('error',console.error.bind(
     console, '\n-----MongoDB connection error------:\n')
   );
-} else{
-  console.log("ERROR to connect to " + DATABASE_NAME + " database")
-}
+  
+} catch (error) {
+  console.log("ERROR to connect to " + DATABASE_NAME + " database");
+  console.log("ERROR:\n" + error);}
+
 
 //use middleware 
 app.use(morgan("dev"));
@@ -88,6 +92,6 @@ app.use((error, req, res, next) => {
 
 //app is listening on PORT
 app.listen(process.env.PORT || 5000, () => {
-  console.log("Server is listening on port:3000"  );
+  console.log("Server is listening on port: 5000"  );
   
 });

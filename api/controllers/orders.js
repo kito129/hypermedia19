@@ -18,7 +18,7 @@ exports.orders_get_all = (req, res, next) => {
             _id: doc._id,
             request: {
               type: "GET",
-              url: "http://hypermedia19.herokuapp.com/order/" + doc._id
+              url: "https://hypermedia19.herokuapp.com/order/" + doc._id
             }
           };
         })
@@ -78,7 +78,7 @@ exports.orders_create_order = (req, res, next) => {
                     totalPrice: result.totalPrice,
                     requestCart: {
                       type: "GET",
-                      url: "http://hypermedia19.herokuapp.com/order/" + result._id
+                      url: "https://hypermedia19.herokuapp.com/order/" + result._id
                     }
                   }
                 });
@@ -131,7 +131,7 @@ exports.orders_get_order = (req, res, next) => {
           order: doc,
           request: {
             type: "GET",
-            url: "http://hypermedia19.herokuapp.com/order/"
+            url: "https://hypermedia19.herokuapp.com/order/"
           }
         });
       } else {
@@ -162,7 +162,7 @@ exports.orders_update_order = (req, res, next) => {
         message: "Order updated",
         request: {
           type: "GET",
-          url: "http://hypermedia19.herokuapp.com/order/" + id
+          url: "https://hypermedia19.herokuapp.com/order/" + id
         }
       });
     })
@@ -190,7 +190,7 @@ exports.orders_delete = (req, res, next) => {
         message: "Order deleted",
         request: {
           type: "POST",
-          url: "http://hypermedia19.herokuapp.com/order/",
+          url: "https://hypermedia19.herokuapp.com/order/",
           body: { userId: "Number",}
         }
       });

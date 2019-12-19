@@ -36,12 +36,38 @@ $(document).ready(function(){
         $("#singoloArtista").append(
 
             `
-            <div align="center" class="singoloArtista">
-                <img src="../../../${jsonArtist.photoGallery}" class="imageSingleArtist">
-            </div>
-
+            <img src="../../../${jsonArtist[0].photoGallery}" class="imageSingleArtist">
+                
              `
             );
+
+        $("singleEvent").append(
+
+             `
+            <a class="artista"><b>${jsonArtist[0].name}</b></a><br>
+            <a class="achievements">Achievements: <b>${jsonArtist[0].achievements}</b></a><br>
+            <a class="currentAffiliation">Current Affiliation: <b>${jsonArtist[0].currentAffiliation}</b></a><br>
+            <a class="date">Company Members: <b>-</b></a><br>
+            <div style="text-align:justify" class="paragrafofullpage">
+                <p class="descrizione"><b>${jsonArtist[0].abstract}</b></p>
+            </div>
+
+
+              `
+            );
+
+
+
+
+
+
+
+
+
+
+
+
+        
 
 
 

@@ -120,7 +120,7 @@ exports.user_getId = (req, res, next) => {
               userId: doc._id,
               request: {
                 type: "GET",
-                url: "http://hypermedia19.herokuapp.com/user/"
+                url: "https://hypermedia19.herokuapp.com/user/"
               }
             };
           })

@@ -28,7 +28,7 @@ function getUrlParameterValue(url, parameter) {
 $(document).ready(function(){
 
     var id=getUrlParameterValue(self.location.href,"id");
-    $.get("http://hypermedia19.herokuapp.com/artist/"+id, function(data, status){
+    $.get("https://hypermedia19.herokuapp.com/artist/"+id, function(data, status){
 
         var jsonArtist=JSON.parse(data);
         console.log(jsonArtist);

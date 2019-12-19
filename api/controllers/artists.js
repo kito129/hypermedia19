@@ -4,7 +4,7 @@ const Artist = require("../models/artist");
 
 exports.artists_get_all = (req, res, next) => {
   Artist.find()
-    .select("name currentAffiliattion achivements isCompany companyMembers type photoGallery photoGallery _id")
+    .select("name currentAffiliattion achivements isCompany companyMembers abstract type photoGallery photoGallery _id")
     .exec()
     .then(docs => {
       const response = {
@@ -16,6 +16,7 @@ exports.artists_get_all = (req, res, next) => {
             isCompany: doc.isCompany,
             type: doc.type,
             companyMembers: doc.companyMembers,
+            abstract: doc.abstract,
             photoGallery: doc.photoGallery,
             type: doc.type,
             _id: doc._id,
@@ -29,16 +30,16 @@ exports.artists_get_all = (req, res, next) => {
         if (docs.length >= 0) {
           res.status(200).json(JSON.stringify(response));
           } else {
-              res.status(404).json({
+              res.status(404).json(JSON.stringify({
                   message: 'No entries found'
-              });
+              }));
         }
       })
     .catch(err => {
       console.log("ERROR:\n" + err);
-      res.status(500).json({
+      res.status(500).json(JSON.stringify({
         error: err
-      });
+      }));
     });
 };
 
@@ -65,7 +66,7 @@ exports.artists_create_artist = (req, res, next) => {
         artist
           .save()
           .then(result => {
-            res.status(201).json({
+            res.status(201).json(JSON.stringify({
               message: "Created Artist Created",
               createdArtist: {
                 _id: result._id,
@@ -81,13 +82,13 @@ exports.artists_create_artist = (req, res, next) => {
                   url: "http://localhost:3000/artist/" + result._id
                 }
               }
-            });
+            }));
           })
         .catch(err => {
           console.log("ERROR:\n" + err);
-          res.status(500).json({
+          res.status(500).json(JSON.stringify({
             error: err
-          });
+          }));
         });
       }
     });
@@ -96,26 +97,26 @@ exports.artists_create_artist = (req, res, next) => {
 exports.artists_get_artist = (req, res, next) => {
   const id = req.params.artistId;
   Artist.findById(id)
-    .select("name currentAffiliattion achivements isCompany companyMembers  photoGallery photoGallery _id")
+    .select("name currentAffiliattion type achivements isCompany companyMembers abstract photoGallery photoGallery _id")
     .exec()
     .then(doc => {
       if (doc) {
-        res.status(200).json({
+        res.status(200).json(JSON.stringify({
           artist: doc,
           request: {
             type: "GET",
             url: "http://localhost:3000/artist/"
           }
-        });
+        }));
       } else {
         res
           .status(404)
-          .json({ message: "provided ID artist NOT FOUND" });
+          .json(JSON.stringify({ message: "provided ID artist NOT FOUND" }));
       }
     })
     .catch(err => {
       console.log("ERROR:\n" + err);
-      res.status(500).json({ error: err });
+      res.status(500).json(JSON.stringify({ error: err }));
     });
 };
 
@@ -131,25 +132,25 @@ exports.artists_update_artist = (req, res, next) => {
     .exec()
     .then(result => {
       console.log(result);
-      res.status(200).json({
+      res.status(200).json(JSON.stringify({
         message: "Artist updated",
         request: {
           type: "GET",
           url: "http://localhost:3000/artist/" + id
         }
-      });
+      }));
     })
     .catch(err => {
       if(err.name="CastError"){
         console.log("Artist ID not found");
-        res.status(404).json({
+        res.status(404).json(JSON.stringify({
           error: "Artist ID not found"
-        });
+        }));
       } else{
         console.log("ERROR:\n" + err);
-        res.status(500).json({
+        res.status(500).json(JSON.stringify({
           error: err
-        });
+        }));
       }
     });
 };
@@ -159,19 +160,19 @@ exports.artists_delete = (req, res, next) => {
   Artist.remove({ _id: id })
     .exec()
     .then(result => {
-      res.status(200).json({
+      res.status(200).json(JSON.stringify({
         message: "Artist deleted",
         request: {
           type: "POST",
           url: "http://localhost:3000/artist/",
           body: { name: "String",}
         }
-      });
+      }));
     })
     .catch(err => {
       console.log("ERROR:\n" + err);
-      res.status(500).json({
+      res.status(500).json(JSON.stringify({
         error: err
-      });
+      }));
     });
 };

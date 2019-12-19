@@ -8,8 +8,7 @@ exports.events_get_all = (req, res, next) => {
     .select("isSoldOut type price name artistId date place relSeminar abstract photoGallery _id")
     .exec()
     .then(docs => {
-      res.status(200).json({
-        count: docs.length,
+      res.status(200).json(JSON.stringify({
         events: docs.map(doc => {
           return {
             _id: doc._id,
@@ -29,12 +28,12 @@ exports.events_get_all = (req, res, next) => {
             }
           };
         })
-      });
+      }));
     })
     .catch(err => {
-      res.status(500).json({
+      res.status(500).json(JSON.stringify({
         error: err
-      });
+      }));
     });
 };
 
@@ -43,18 +42,18 @@ exports.events_create_event = (req, res, next) => {
   .exec()
   .then(eve => {
     if (eve.length >= 1) {
-      return res.status(409).json({
+      return res.status(409).json(JSON.stringify({
         message: "Event already exists"
-      });
+      }));
     } else {
       Artist.findOne({_id: req.body.artistId})
       .exec()
       .then(artist => {
         
         if (!artist) {
-          return res.status(404).json({
+          return res.status(404).json(JSON.stringify({
             message: "Artist not found"
-          });
+          }));
         }
         const event = new Events({
           _id: new mongoose.Types.ObjectId(),
@@ -72,7 +71,7 @@ exports.events_create_event = (req, res, next) => {
         event
         .save()
         .then(result => {
-          res.status(201).json({
+          res.status(201).json(JSON.stringify({
             message: "Created Event successfully",
             createdArtist: {
               _id: result._id,
@@ -91,13 +90,13 @@ exports.events_create_event = (req, res, next) => {
                 url: "http://localhost:3000/event/" + result._id
               } 
             }
-          });
+          }));
         })
         .catch(err => {
           console.log("ERROR:\n" + err);
-          res.status(500).json({
+          res.status(500).json(JSON.stringify({
             error: err
-          });
+          }));
         });
       });
     }
@@ -111,22 +110,22 @@ exports.events_get_event = (req, res, next) => {
     .exec()
     .then(doc => {
       if (doc) {
-        res.status(200).json({
+        res.status(200).json(JSON.stringify({
           event: doc,
           request: {
             type: "GET",
             url: "http://localhost:3000/event/"
           }
-        });
+        }));
       } else {
         res
           .status(404)
-          .json({ message: "provided ID event NOT FOUND" });
+          .json(JSON.stringify({ message: "provided ID event NOT FOUND" }));
       }
     })
     .catch(err => {
       console.log("ERROR:\n" + err);
-      res.status(500).json({ error: err });
+      res.status(500).json(JSON.stringify({ error: err }));
     });
 };
 
@@ -134,18 +133,18 @@ exports.events_delete_event = (req, res, next) => {
   Events.remove({ _id: req.params.eventId })
     .exec()
     .then(result => {
-      res.status(200).json({
+      res.status(200).json(JSON.stringify({
         message: "Event deleted",
         request: {
           type: "POST",
           url: "http://localhost:3000/event",
           body: { eventId: "ID", name: "Name" }
         }
-      });
+      }));
     })
     .catch(err => {
-      res.status(500).json({
+      res.status(500).json(JSON.stringify({
         error: err
-      });
+      }));
     });
 };

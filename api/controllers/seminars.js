@@ -8,7 +8,6 @@ exports.seminars_get_all = (req, res, next) => {
     .exec()
     .then(docs => {
       const response = {
-        count: docs.length,
         seminars: docs.map(doc => {
           return {
             _id: doc._id,
@@ -25,17 +24,17 @@ exports.seminars_get_all = (req, res, next) => {
         })
       };
         if (docs.length >= 0) {
-          res.status(200).json(response);
+          res.status(200).json(JSON.stringify(response));
           } else {
-              res.status(404).json({
+              res.status(404).json(JSON.stringify({
                   message: 'No entries found'
-              });
+              }));
         }
       })
     .catch(err => {
-      res.status(500).json({
+      res.status(500).json(JSON.stringify({
         error: err
-      });
+      }));
     });
 };
 
@@ -44,9 +43,9 @@ exports.seminars_create_seminar = (req, res, next) => {
     .exec()
     .then(sem => {
       if (sem.length >= 1) {
-        return res.status(409).json({
+        return res.status(409).json(JSON.stringify({
           message: "Seminar already exist"
-        });
+        }));
       } else{
         const seminar = new Seminar({
           _id: mongoose.Types.ObjectId(),
@@ -59,7 +58,7 @@ exports.seminars_create_seminar = (req, res, next) => {
         seminar
           .save()
           .then(result => {
-            res.status(201).json({
+            res.status(201).json(JSON.stringify({
               message: "Created Seminar Created",
               createdSeminar: {
                 _id: result._id,
@@ -73,13 +72,13 @@ exports.seminars_create_seminar = (req, res, next) => {
                   url: "http://localhost:3000/seminar/" + result._id
                 }
               }
-            });
+            }));
           })
         .catch(err => {
           console.log("ERROR:\n" + err);
-          res.status(500).json({
+          res.status(500).json(JSON.stringify({
             error: err
-          });
+          }));
         });
       }
   });
@@ -91,23 +90,23 @@ exports.seminars_get_seminar = (req, res, next) => {
     .exec()
     .then(doc => {
       if (doc) {
-        res.status(200).json({
-          artist: doc,
+        res.status(200).json(JSON.stringify({
+          seminar: doc,
           request: {
             type: "GET",
             url: "http://localhost:3000/seminar/"
           }
-        });
+        }));
       } else {
         res
           .status(404)
-          .json({ message: "provided ID seminar NOT FOUND" });
+          .json(JSON.stringify({ message: "provided ID seminar NOT FOUND" }));
       }
     })
     .catch(err => {
-      res.status(500).json({
+      res.status(500).json(JSON.stringify({
         error: err
-      });
+      }));
     });
 };
 
@@ -115,18 +114,18 @@ exports.seminars_delete_seminar = (req, res, next) => {
   Seminar.remove({ _id: req.params.seminarId })
     .exec()
     .then(result => {
-      res.status(200).json({
+      res.status(200).json(JSON.stringify({
         message: "Seminar deleted",
         request: {
           type: "POST",
           url: "http://localhost:3000/seminar",
           body: { seminarId: "ID", name: "Name" }
         }
-      });
+      }));
     })
     .catch(err => {
-      res.status(500).json({
+      res.status(500).json(JSON.stringify({
         error: err
-      });
+      }));
     });
 };

@@ -11,6 +11,7 @@ const eventRoutes = require("./api/routes/events");
 const seminarRoutes = require("./api/routes/seminars");
 const orderRoutes = require('./api/routes/orders');
 const userRoutes = require('./api/routes/user');
+const path = require('path');
 
 //database setting
 const CONNECTION_URL = 
@@ -67,6 +68,14 @@ app.use("/event", eventRoutes);
 app.use("/seminar", seminarRoutes);
 app.use("/order", orderRoutes);
 app.use("/user", userRoutes);
+
+/* viewed at http://localhost:8080
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/public/index.html'));
+});
+*/
+
+app.use(express.static(path.join(__dirname, './public')));
 
 //error 404 for not found routers
 app.use((req, res, next) => {

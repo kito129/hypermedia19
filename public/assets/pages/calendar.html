@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>INFO TICKET</title>
+    <title>CALENDAR</title>
     <!-- Bootstrap -->
     <link href="../css/bootstrap-4.3.1.css" rel="stylesheet">
 	  <link href="../css/personal.css" rel="stylesheet">
@@ -32,7 +32,7 @@
 					</div>
 				</li>				
 				<li class="nav-item"><a class="nav-link performers" href="artists.html"><h7>Artists</h7></a></li>
-				<li class="nav-item"><a class="nav-link calendar" href="calendar.html"><h7>Calendar</h7></a></li>
+				<li class="nav-item active"><a class="nav-link calendar" href="calendar.html"><h7>Calendar</h7></a></li>
 				<li class="nav-item"><a class="nav-link contactus" href="contactus.html"><h7>Contact Us</h7></a></li>
 				<li class="nav-item"><a class="nav-link login" href="log.html"><h7>Log In</h7></a></li>
 				<li class="nav-item"><a class="nav-link signup" href="registration.html"><h7>Sign Up</h7></a></li>
@@ -44,31 +44,74 @@
 	<br>
 	<br>
 	<div>
-		<h3 class="subtitle">INFO TICKET AND SHIPPING</h3>
-		<div style="text-align:justify" class="paragrafofullpage">
-			<b>CONCERT</b>
-			<ul>
-				<li>*50.00€</li>
-			</ul>
-			<b>THEATER</b>
-			<ul>
-				<li>*35.00€ - 300 seats</li>
-			</ul>
-			<b>SEMINAR</b>
-			<ul>
-				<li>0.00€ - free while seats last</li>
-			</ul>
-			<b>Max 4 tickets per event per person.</b><br>
-			Buying the ticket online there will be a supplement of € 1.50 per ticket (advance sale).
-			<br>
-			The ticket purchased online must be printed and presented at the entrance of the festival with an identity document.
-			<br>
-			(It's possible to have the physical ticket sent home, € 2.00 surcharge).
-			<br>
-			<br>
-			*the admission price includes a t-shirt and a festival poster as a gift.
-		</div>
+		<h3 class="subtitle">CALENDAR PROGRAM</h3>
+		<h3 align="center">MAIN EVENTS</h3>
 	</div>
+	
+	<table class="table table-hover table-dark">
+	  <thead align="center">
+		<tr>
+		  <th scope="col"><h4>SCHEDULE</h4></th>
+		  <th scope="col"><h4>12/06/2020</h4></th>
+		  <th scope="col"><h4>13/06/2020</h4></th>
+		  <th scope="col"><h4>14/06/2020</h4></th>
+		</tr>
+	  </thead>
+	  <tbody align="center">
+		<tr>
+		  <th scope="row">15.00</th>
+		  <td><b>ROBERTO BOLLE AND FRIENDS</b><br><small>Pavilion 1 • ROBERTO BOLLE</small></td>
+		  <td><b>VASCO NONSTOP FESTIVAL</b><br><small>Place of Tree of Life • VASCO ROSSI</small></td>
+		  <td><b>FATTI SENTIRE WORLD TOUR</b><br><small>Place of Tree of Life • LAURA PAUSINI</small></td>
+		</tr>
+		<tr>
+		  <th scope="row">18.00</th>
+		  <td><b>BEST OF COCCIANTE</b><br><small>Place of Tree of Life • RICCARDO COCCIANTE</small></td>
+		  <td><b>CANTAMAX</b><br><small>Place of Tree of Life • MAX PEZZALI</small></td>
+		  <td><b>FORTUNA LIVE</b><br><small>Place of Tree of Life • EMMA MARRONE</small></td>
+		</tr>
+		<tr>
+		  <th scope="row">21.00</th>
+		  <td><b>SEVEN DAYS WALKING TOUR</b><br><small>Place of Tree of Life • LUDOVICO EINAUDI</small>
+		  </td>
+		  <td><b>AMORE CHE TORNI LIVE TOUR</b><br><small>Place of Tree of Life • NEGRAMARO</small>
+		  </td>
+		  <td><b>NEK EUROPEAN TOUR</b><br><small>Place of Tree of Life • NEK</small>	
+		  </td>
+		</tr>
+		<tr>
+		  <th scope="row">21.00</th>
+		  <td><b>NOTRE DAME DE PARIS</b><br><small>Pavilion 1 • DREAMUSICAL</small></td>
+		  <td><b>TOTEM</b><br><small>Pavilion 1 • CIRQUE DU SOLEIL</small>	
+		  </td>
+		  <td></td>
+		</tr>
+	  </tbody>
+	</table>
+	<h3 align="center">SEMINARS</h3>
+	
+	<table class="table table-hover table-dark">
+	  <thead align="center">
+		<tr>
+		  <th scope="col"><h4>SCHEDULE</h4></th>
+		  <th scope="col"><h4>12/06/2020</h4></th>
+		</tr>
+	  </thead>
+	  <tbody align="center">
+		<tr>
+		  <th scope="row">18.00</th>
+		  <td><b>Piano & Music</b><br><small>Pavilion 2 • LUDOVICO EINAUDI</small></td>
+		</tr>
+		<tr>
+		  <th scope="row">20.00</th>
+		  <td><b>Dancing in New York</b><br><small>Pavilion 2 • ROBERTO BOLLE</small></td>
+		</tr>
+		<tr>
+		  <th scope="row">22.00</th>
+		  <td><b>Modern Musical</b><br><small>Pavilion 2 • RICCARDO COCCIANTE</small></td>
+		</tr>
+	  </tbody>
+	</table>
 	
 	<footer class="pt-4 pt-md-2 border-top bg-dark" id="footer">
     <div class="row">
@@ -112,10 +155,10 @@
   </footer>
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap-4.3.1.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap-4.3.1.js"></script>
 	
 </body>
 </html>

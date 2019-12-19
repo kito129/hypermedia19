@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CART</title>
+    <title>LOG IN</title>
     <!-- Bootstrap -->
     <link href="../css/bootstrap-4.3.1.css" rel="stylesheet">
 	  <link href="../css/personal.css" rel="stylesheet">
@@ -34,7 +34,7 @@
 				<li class="nav-item"><a class="nav-link performers" href="artists.html"><h7>Artists</h7></a></li>
 				<li class="nav-item"><a class="nav-link calendar" href="calendar.html"><h7>Calendar</h7></a></li>
 				<li class="nav-item"><a class="nav-link contactus" href="contactus.html"><h7>Contact Us</h7></a></li>
-				<li class="nav-item"><a class="nav-link login" href="log.html"><h7>Log In</h7></a></li>
+				<li class="nav-item active"><a class="nav-link login" href="log.html"><h7>Log In</h7></a></li>
 				<li class="nav-item"><a class="nav-link signup" href="registration.html"><h7>Sign Up</h7></a></li>
 			</ul>
 		</div>
@@ -44,40 +44,28 @@
 	<br>
 	<br>
 	<div>
-		<h3 class="subtitle">SHOPPING CART</h3>
-		
+		<h3 class="subtitle">LOG IN</h3>
 	</div>
-	<br>
-	<div class="marginLeft">
-		<div id="performer" class="row"> 
-			<div class="col-lg-8 artists">
-				<span>
-					<a>
-						<img src="../images/private/events/amore_che.jpg" class="imagesEvent">
-					</a>
-					<button type="button" class="btn btn-dark btncart"><b>-</b></button>
-					<span class="quantity"><b>3</b></span>
-					<b>TICKETS</b>
-					<button type="button" class="btn btn-dark btncart"><b>+</b></button>
-					<b>PRICE: </b>
-					<span class="price"><b>150.00€</b></span>
-					<button type="button" class="btn btn-danger btncartremove"><b>REMOVE</b></button>
-				</span>
-				<hr>
-			</div>
-			<div class="col-lg-4">
-				<h4>TOTAL</h4>
-				<div class="riepilogo">
-					<span class="totalTicket"><b>3</b></span>
-					<span class="event"><b>x AMORE CHE TORNI TOUR</b></span>		
-				</div>
-				<hr>
-				<span class="totalPrice"><b>150.00€</b></span>
-				<button type="button" class="btn btn-dark btnshop"><b>BUY</b></button>
+	
+	<form class="subtitle" action="">
+		<div class="form-group row">
+			<label for="inputEmail" class="col-sm-2 col-form-label">e-mail</label>
+			<div class="col-sm-5">
+				<input type="email" class="form-control" id="inputEmail" required>
 			</div>
 		</div>
-	</div>
-	<br>
+		<div class="form-group row">
+			<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+			<div class="col-sm-5">
+				<input type="password" class="form-control" id="inputPassword" required>
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-sm-10">
+				<button type="button" class="btn btn-dark">Log In</button>
+			</div>
+		</div>
+	</form>
 	
 	<footer class="pt-4 pt-md-2 border-top bg-dark" id="footer">
     <div class="row">
@@ -121,10 +109,10 @@
   </footer>
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap-4.3.1.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap-4.3.1.js"></script>
 	
 </body>
 </html>

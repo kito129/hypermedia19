@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FESTIVAL</title>
+    <title>REGISTRATION</title>
     <!-- Bootstrap -->
     <link href="../css/bootstrap-4.3.1.css" rel="stylesheet">
 	  <link href="../css/personal.css" rel="stylesheet">
@@ -20,7 +20,7 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarItems">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item active"><a class="nav-link festival" href="festival.html"><h7>Festival</h7></a></li>
+				<li class="nav-item"><a class="nav-link festival" href="festival.html"><h7>Festival</h7></a></li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="events.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<h7>Events</h7>
@@ -35,7 +35,7 @@
 				<li class="nav-item"><a class="nav-link calendar" href="calendar.html"><h7>Calendar</h7></a></li>
 				<li class="nav-item"><a class="nav-link contactus" href="contactus.html"><h7>Contact Us</h7></a></li>
 				<li class="nav-item"><a class="nav-link login" href="log.html"><h7>Log In</h7></a></li>
-				<li class="nav-item"><a class="nav-link signup" href="registration.html"><h7>Sign Up</h7></a></li>
+				<li class="nav-item active"><a class="nav-link signup" href="registration.html"><h7>Sign Up</h7></a></li>
 			</ul>
 		</div>
 	</nav>
@@ -44,70 +44,46 @@
 	<br>
 	<br>
 	<div>
-		<h3 class="subtitle">FESTIVAL</h3>
+		<h3 class="subtitle">REGISTRATION</h3>
 	</div>
-	<div style="text-align:justify" class="paragrafofullpage">
-		... Music ... Dance ... Theater. This is MILAN BY NIGHT. Get ready for a weekend full of great events just for you, in an exclusive location with unique emotions thanks to the tree of life that with its colors manages to create a spatial atmosphere around the great guests of the evenings!
-		<b>
-		<div style="text-align:center" class="paragrafofullpagecenter">
-			<br>
-			VASCO ROSSI<br>
-			MAX PEZZALI<br>
-			CIRQUE DU SOLEIL<br>
-			NEGRAMARO<br>
-			ROBERTO BOLLE<br>
-			LUDOVICO EINAUDI<br>
-			DREAMUSICAL<br>
-			RICCARDO COCCIANTE	
-		</div>
-		</b>
-	</div>
-	<br>
-	<div style="text-align:justify" class="paragrafofullpage">
-		MILAN BY NIGHT was born in 2012 from a group of 3 boys who wanted to organize a festival to entertain their friends with music, dance and theater performances.<br>
-		In the early years the artists who performed on the "stage" were their acquaintances or however little-known guests, but quickly the festival gained fame and obtained ever more important partnerships until reaching today.<br>
-		Simone, Andrea and Marco would never have expected to arrive where they are now even within 10 years, so that now this Festival is considered one of the most important at national level, with guests of the caliber of Vasco Rossi, just to name one.
-	</div>
-	<br>
 	
-	<div align="center">
-		<img src="../images/public/festival/concerto.png" class="imagineRettang">
-		<img src="../images/public/festival/expo.jpg" class="imagineRettang">
-	</div>
-	<h3 align="center">HOW TO REACH US</h3>
-	<div style="text-align:justify" class="paragrafofullpage">
-		<b>LOCATION</b>
-		<br>MIND Milano Innovation District
-		<br>
-		<br>
-		<b>TRAIN</b>
-		<br>The main entrance to the concert area (ACCESS TRIULZA) is located near the RHO-FIERA station, reachable by the following trains:
-		<ul>
-			<li>SUBURBAN LINES
-				<ul>
-					<li>S5 (VARESE – MILANO – TREVIGLIO)</li>
-					<li>S6 (NOVARA – MILANO – TREVIGLIO)</li>
-					<li>S11 (CHIASSO – COMO – MILANO)</li>
-				</ul>
-			</li>
-			<li>REGIONAL LINES
-				<ul>
-					<li>Milano – Gallarate – Varese</li>
-					<li>Milano Centrale – Arona – Domodossola</li>
-					<li>Milano – Luino</li>
-				</ul>
-			</li>
-		</ul>
-		<b>PUBLIC TRANSPORT ATM</b>
-		<br>
-		The entrance to the concert area (WEST ACCESS TRIULZA) is near the RHO FIERA M1 stop (RED LINE) - TICKET ATM VALID FOR RHO FIERA IS NECESSARY. To facilitate the outflow we advise everyone to buy the round-trip ticket upon departure. Last departure from the terminus Rho Fieramilano at 00:10. To continue your journey late at night, you can use the night network buses (all lines on the website atm.it)
-		<br>
-		<br>
-		<b>CAR</b>
-		<br>
-		We recommend using Google Maps as a navigator, both on and off the show. From the A7-Genoa, A1-Bologna, A4-Turin highways: A50 motorway Ovest, direction Varese, exit FIERAMILANO. From the A4-Venice motorway: exit PERO-FIERAMILANO. From the A8-Varese, A9-Como motorways: from the Milan North barrier, A4-Venice direction and FIERAMILANO exit. If you were to accompany someone to the festival, we recommend using the address Via Achille Grandi, Rho (always via Google Maps). FROM MILAN Motorway A8 direction Varese-Como, exit FIERAMILANO. A4 motorway towards Turin, exit PERO-FIERAMILANO. FIERA MILANO RHO CAR PARKS AND CARS FOR RATES AND INFO ARE ACTIVE: http://www.apcoa.it/parcheggio-in/milano/fiere-milano.html
-	</div>
-	<br>
+	<form class="subtitle" action="">
+		<div class="form-group row">
+			<label for="inputName" class="col-sm-2 col-form-label">First Name*</label>
+			<div class="col-sm-5">
+				<input type="text" class="form-control" id="inputName" required>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputCognome" class="col-sm-2 col-form-label">Last Name</label>
+			<div class="col-sm-5">
+				<input type="text" class="form-control" id="inputCognome">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputEmail" class="col-sm-2 col-form-label">e-mail*</label>
+			<div class="col-sm-5">
+				<input type="email" class="form-control" id="inputEmail" required>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputPassword" class="col-sm-2 col-form-label">Password*</label>
+			<div class="col-sm-5">
+				<input type="password" class="form-control" id="inputPassword" required>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputConfirmPassword" class="col-sm-2 col-form-label">Confirm Password*</label>
+			<div class="col-sm-5">
+				<input type="password" class="form-control" id="inputConfirmPassword" required>
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-sm-10">
+				<button type="button" class="btn btn-dark">Register</button>
+			</div>
+		</div>
+	</form>
 	
 	<footer class="pt-4 pt-md-2 border-top bg-dark" id="footer">
     <div class="row">
@@ -151,11 +127,10 @@
   </footer>
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap-4.3.1.js"></script>
-
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap-4.3.1.js"></script>
 	
 </body>
 </html>

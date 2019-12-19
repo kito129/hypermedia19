@@ -79,6 +79,13 @@
 	width: 100%;
 }
 
+.homediv{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-style: dashed;
+	padding: 20px;
+}
+
 #datahome{
 	position: absolute;
 	margin-top: 50px;

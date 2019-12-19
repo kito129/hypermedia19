@@ -1,5 +1,4 @@
-//port Variable
-const PORT = 3000;
+
 //import dependencies
 const express = require("express");
 const app = express();
@@ -86,7 +85,7 @@ app.use((error, req, res, next) => {
 });
 
 //app is listening on PORT
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log("Server is listening on port:" +PORT);
   
 });

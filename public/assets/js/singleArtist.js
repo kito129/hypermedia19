@@ -66,7 +66,6 @@ $(document).ready(function(){
 
 
              `
-             ciaoooooo
             <a class="currentAffiliation">Current Affiliation: <b>${jsonArtist.artist.currentAffiliation}</b></a><br>
             <a class="date">Company Members: <b>-</b></a><br>
             <div style="text-align:justify" class="paragrafofullpage">

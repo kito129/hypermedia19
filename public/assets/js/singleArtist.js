@@ -31,7 +31,8 @@ $(document).ready(function(){
     $.get("https://hypermedia19.herokuapp.com/artist/"+id, function(data, status){
 
         var jsonArtist=JSON.parse(data);
-        console.log(jsonArtist);
+        console.log(jsonArtist.artist.name);
+
 
         $("#singoloArtista").append(
 
@@ -45,7 +46,26 @@ $(document).ready(function(){
 
              `
             <a class="artista"><b>${jsonArtist.artist.name}</b></a><br>
-            <a class="achievements">Achievements: <b>${jsonArtist.artist.achievements}</b></a><br>
+
+            `
+
+            );
+        /*
+
+        for(var i=0;i<jsonArtist.artist.achievements.lenght();i++){
+
+            $("#singleEvent").append(
+
+                `<a class="achievements">Achievements: <b>${jsonArtist.artist.achievements[i]+"/ "}</b></a><br>`
+            );
+        }
+        */
+
+        $("#singleEvent").append(
+
+
+
+             `
             <a class="currentAffiliation">Current Affiliation: <b>${jsonArtist.artist.currentAffiliation}</b></a><br>
             <a class="date">Company Members: <b>-</b></a><br>
             <div style="text-align:justify" class="paragrafofullpage">
@@ -55,6 +75,8 @@ $(document).ready(function(){
 
               `
             );
+
+    
 
 
 
@@ -79,25 +101,6 @@ $(document).ready(function(){
 
 
 
-        /*
-        for(var i=0;i<jsonArtists.artists.length;i++){
-
-            $("#performer").append(
-
-                `
-                <div class="col-md-4 col-6 mb-4">   
-                    <a href="singleartist.html?id=${jsonArtists.artists[i]._id}">  
-                        <img src="../../${jsonArtists.artists[i].photoGallery}"class="imagesArtist">                   
-                    </a> 
-                    <div class="artista"><h5><b>${jsonArtists.artists[i].name}</b></h5></div>
-                    <h7 class="type"><i><b>${jsonArtists.artists[i].type}</b></i></h7>
-                </div> 
-
-
-                `
-                );
-        }
-        */
     });
 
 

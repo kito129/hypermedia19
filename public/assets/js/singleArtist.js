@@ -31,7 +31,7 @@ $(document).ready(function(){
     $.get("https://hypermedia19.herokuapp.com/artist/"+id, function(data, status){
 
         var jsonArtist=JSON.parse(data);
-        console.log(jsonArtist);
+        console.log(jsonArtist.artist);
 
         $("#singoloArtista").append(
 
@@ -49,16 +49,20 @@ $(document).ready(function(){
             `
 
             );
+        /*
 
-        for(var i=0;i<jsonArtist.artist.achievements.lenght;i++){
+        for(var i=0;i<jsonArtist.artist.achievements.lenght();i++){
 
             $("#singleEvent").append(
 
                 `<a class="achievements">Achievements: <b>${jsonArtist.artist.achievements[i]+"/ "}</b></a><br>`
             );
         }
+        */
 
         $("#singleEvent").append(
+
+            ciaooo
 
              `
             <a class="currentAffiliation">Current Affiliation: <b>${jsonArtist.artist.currentAffiliation}</b></a><br>

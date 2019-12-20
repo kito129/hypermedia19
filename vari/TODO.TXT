@@ -37,21 +37,45 @@ DELIVERBALE
 
 TODO:
 
-	-site schema with alla pages and dependencies		OK
-	-create boostap templete for all pages				OK	
-	-create DB 											OK
-	-create RESTAPI for all service of the site			OK
-	-create all JS for use update DOM from API
-	-animation
-	-login
-	-cart and shop page
-
-	TODO MARCO:
+	BACKEND	
+		OpenAPI
+			/artist		OK  /get		/get/:id	/delete						TODO 	/post	/patch
+			/event		OK	/get		/get/:id	/delete						TODO 	/post	/patch
+			/seminar	OK	/get		/get/:id	/delete						TODO 	/post	/patch
+			/user		OK	/get/:id	/signup		/login		/delete			TODO
+			/order		OK														TODO 	/post	/patch	 /get	/get/:id	/delete	
 
 
-			FINIRE ORDINI CON SOMME 
-			HETOKU IL FILE PROC
-			
+	JS JQUERY CONNECTION
 
+		index 			-	
+		artists			-  getAllArtists()
+		singleArtist	-
+		events			-
+		singleEvent		-
+		calendar		-
+		cart			-
+		login			-
+		signup			-
+	
+	FRONTEND
+
+		index 			-	
+		about			-
+		artists			-
+		singleArtist	-
+		events			-
+		singleEvent		-
+		calendar		-
+		cart			-
+		login			-
+		signup			-
+		infoticket		-
+
+	DOCUMENTATION
+
+		backend			-
+		frontend		-
+		design			-
 
 

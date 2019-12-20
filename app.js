@@ -5,13 +5,13 @@ const app = express();
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const path = require('path');
 //import routers
 const artistRoutes = require("./api/routes/artists");
 const eventRoutes = require("./api/routes/events");
 const seminarRoutes = require("./api/routes/seminars");
 const orderRoutes = require('./api/routes/orders');
 const userRoutes = require('./api/routes/user');
-const path = require('path');
 
 //database setting
 const CONNECTION_URL = 
@@ -47,8 +47,6 @@ try {
 
 //use middleware 
 app.use(morgan("dev"));
-app.use('/uploads', express.static('uploads'));
-app.use(express.static(path.join(__dirname, './public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -73,6 +71,9 @@ app.use("/event", eventRoutes);
 app.use("/seminar", seminarRoutes);
 app.use("/order", orderRoutes);
 app.use("/user", userRoutes);
+//public router
+app.use('/uploads', express.static('uploads'));
+app.use(express.static(path.join(__dirname, './public')));
 
 //error 404 for not found routers
 app.use((req, res, next) => {

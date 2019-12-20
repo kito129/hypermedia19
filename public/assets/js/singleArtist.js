@@ -27,11 +27,11 @@ function getUrlParameterValue(url, parameter) {
 
 $(document).ready(function(){
 
-    var id=getUrlParameterValue(self.location.href,"id");
-    $.get("https://hypermedia19.herokuapp.com/artist/"+id, function(data, status){
+    var idArtist=getUrlParameterValue(self.location.href,"id");
+    $.get("https://hypermedia19.herokuapp.com/artist/"+idArtist, function(data, status){
 
         var jsonArtist=JSON.parse(data);
-        console.log(jsonArtist.artist.name);
+        //console.log(jsonArtist.artist);
 
 
         $("#singoloArtista").append(
@@ -41,6 +41,7 @@ $(document).ready(function(){
                 
              `
             );
+        
 
         $("#singleEvent").append(
 
@@ -50,24 +51,32 @@ $(document).ready(function(){
             `
 
             );
-        /*
 
-        for(var i=0;i<jsonArtist.artist.achievements.lenght();i++){
+        if(jsonArtist.artist.achivements.length!=0){
 
-            $("#singleEvent").append(
+            var text="";
 
-                `<a class="achievements">Achievements: <b>${jsonArtist.artist.achievements[i]+"/ "}</b></a><br>`
-            );
+            for(var i=0;i<jsonArtist.artist.achivements.length;i++){
+
+                text=text+jsonArtist.artist.achivements[i]+"---";
+
+            }
+
+             $("#singleEvent").append(
+
+                    `<a class="achievements">Achievements: <b id="bold"></b></a><br>`
+                );
+
+
+             $("#bold").text(text);
+
         }
-        */
 
         $("#singleEvent").append(
 
-
-
-             `
-            <a class="currentAffiliation">Current Affiliation: <b>${jsonArtist.artist.currentAffiliation}</b></a><br>
-            <a class="date">Company Members: <b>-</b></a><br>
+            `
+            <a class="currentAffiliation">Current Affiliation: <b>${jsonArtist.artist.currentAffiliattion}</b></a><br>
+            <a class="date">Company Members: <b>-------------------------ciao</b></a><br>
             <div style="text-align:justify" class="paragrafofullpage">
                 <p class="descrizione"><b>${jsonArtist.artist.abstract}</b></p>
             </div>
@@ -75,33 +84,35 @@ $(document).ready(function(){
 
               `
             );
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
     });
+
+/*
+    $.get("https://hypermedia19.herokuapp.com/event/", function(data, status){
+
+        var jsonEvents=JSON.parse(data);
+        console.log(jsonEvents.events.length);
+
+        for(var i=0;i<jsonEvents.events.lenght;i++){
+
+            
+          
+            if(){
+
+                $("singoloEvento").append(
+
+                    `
+                    <img src="../../../${jsonEvents[i].photoGallery}" class="imageSingleEvent">
+
+                    `
+
+                    );
+            }
+            
+        }
+    });
+    
+    */
+
 
 
 });

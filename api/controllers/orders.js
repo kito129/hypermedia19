@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const Order = require("../models/orders");
 const Event = require("../models/event");
 
+
+//TODO
 exports.orders_get_all = (req, res, next) => {
   Order.find()
     .select("_id userId order totalPrice")
@@ -39,6 +41,10 @@ exports.orders_get_all = (req, res, next) => {
     });
 };
 
+
+//TODO
+//sistemare somma subTotale e totale
+//creare array giusto e aggioranare per aggiunta o modifica ordine
 exports.orders_create_order = (req, res, next) => {
   if(req.body.userId!=""){
     Order.find({ userId: req.body.userId })
@@ -120,6 +126,7 @@ exports.orders_create_order = (req, res, next) => {
         }
   };
 
+  //CHECK
 exports.orders_get_order = (req, res, next) => {
   const id = req.params.orderId;
   Order.findById(id)
@@ -146,6 +153,9 @@ exports.orders_get_order = (req, res, next) => {
     });
 };
 
+
+//TODO
+//inserimento nuoi biglietti o modifca dal carrello
 exports.orders_update_order = (req, res, next) => {
   const id = req.params.orderId;
   const updateOps = {};
@@ -181,6 +191,8 @@ exports.orders_update_order = (req, res, next) => {
     });
 };
 
+
+//OK
 exports.orders_delete = (req, res, next) => {
   const id = req.params.orderId;
   Order.remove({ _id: id })

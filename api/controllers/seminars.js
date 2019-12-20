@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 
 const Seminar = require("../models/seminar");
 
+
+//OK
 exports.seminars_get_all = (req, res, next) => {
   Seminar.find()
     .select("name date place abstract photoGallery _id")
@@ -38,6 +40,8 @@ exports.seminars_get_all = (req, res, next) => {
     });
 };
 
+
+//CHECK
 exports.seminars_create_seminar = (req, res, next) => {
   Seminar.find({ name: req.body.name })
     .exec()
@@ -84,6 +88,8 @@ exports.seminars_create_seminar = (req, res, next) => {
   });
 };
 
+
+//OK
 exports.seminars_get_seminar = (req, res, next) => {
   Seminar.findById(req.params.seminarId)
     .select("name date place abstarct photoGallery _id")
@@ -110,6 +116,8 @@ exports.seminars_get_seminar = (req, res, next) => {
     });
 };
 
+
+//OK
 exports.seminars_delete_seminar = (req, res, next) => {
   Seminar.remove({ _id: req.params.seminarId })
     .exec()

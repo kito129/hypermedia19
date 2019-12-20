@@ -4,6 +4,9 @@ const router = express.Router();
 const UserController = require('../controllers/user');
 const checkAuth = require('../middleware/check-auth');
 
+
+//CHECK FOR AUTORIZATION FOR POST
+
 router.get("/", UserController.user_getId);
 
 router.post("/signup", UserController.user_signup);

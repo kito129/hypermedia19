@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+
+//TODO ADD NAME AND SURNAME IN LOGIN AND RESPONSE FOR GET:ID
 const userSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     email: { 

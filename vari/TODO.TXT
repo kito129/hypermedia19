@@ -6,8 +6,8 @@ TODO:
 		-OpenAPI
 			/artist		OK  /get		/get/:id	/delete						TODO 	/post	/patch
 			/event		OK	/get		/get/:id	/delete						TODO 	/post	/patch
-			/seminar	OK	/get		/get/:id	/delete						TODO 	/post	/patch
-			/user		OK	/get/:id	/signup		/login		/delete			TODO
+			/seminar	OK	/get		/get/:id	/delete						TODO 	/post	/patch	
+			/user		OK				/signup		/login		/delete			TODO	/get/:id
 			/order		OK														TODO 	/post	/patch	 /get	/get/:id	/delete	
 		-MongoDB			OK
 		-HerokuServer	OK

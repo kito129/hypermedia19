@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const Artist = require("../models/artist");
 
+//OK
 exports.artists_get_all = (req, res, next) => {
   Artist.find()
     .select("name currentAffiliattion achivements isCompany companyMembers abstract type photoGallery photoGallery _id")
@@ -43,6 +44,8 @@ exports.artists_get_all = (req, res, next) => {
     });
 };
 
+
+//CHECK
 exports.artists_create_artist = (req, res, next) => {
   Artist.find({ name: req.body.name })
     .exec()
@@ -94,6 +97,8 @@ exports.artists_create_artist = (req, res, next) => {
     });
   };
 
+
+  //OK
 exports.artists_get_artist = (req, res, next) => {
   const id = req.params.artistId;
   Artist.findById(id)
@@ -120,6 +125,8 @@ exports.artists_get_artist = (req, res, next) => {
     });
 };
 
+
+//CHECK
 exports.artists_update_artist = (req, res, next) => {
   const id = req.params.artistId;
   const updateOps = {};
@@ -155,6 +162,8 @@ exports.artists_update_artist = (req, res, next) => {
     });
 };
 
+
+//OK
 exports.artists_delete = (req, res, next) => {
   const id = req.params.artistId;
   Artist.remove({ _id: id })

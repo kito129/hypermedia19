@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const Events = require("../models/event");
 const Artist = require("../models/artist");
 
+
+//OK
 exports.events_get_all = (req, res, next) => {
   Events.find()
     .select("isSoldOut type price name artistId date place relSeminar abstract photoGallery _id")
@@ -37,6 +39,8 @@ exports.events_get_all = (req, res, next) => {
     });
 };
 
+
+//CHECK
 exports.events_create_event = (req, res, next) => {
   Events.find({ name: req.body.name })
   .exec()
@@ -103,6 +107,8 @@ exports.events_create_event = (req, res, next) => {
   })
 };
 
+
+//OK
 exports.events_get_event = (req, res, next) => {
   const id = req.params.eventId;
   Events.findById(id)
@@ -129,6 +135,8 @@ exports.events_get_event = (req, res, next) => {
     });
 };
 
+
+//OK
 exports.events_delete_event = (req, res, next) => {
   Events.remove({ _id: req.params.eventId })
     .exec()

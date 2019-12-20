@@ -31,7 +31,8 @@ $(document).ready(function(){
     $.get("https://hypermedia19.herokuapp.com/artist/"+id, function(data, status){
 
         var jsonArtist=JSON.parse(data);
-        console.log(jsonArtist.artist);
+        console.log(jsonArtist.artist.name);
+
 
         $("#singoloArtista").append(
 

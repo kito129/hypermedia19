@@ -1,5 +1,57 @@
 EXAM HYPERMEDIA 2020
 
+TODO:
+
+	BACKEND	
+		-OpenAPI
+			/artist		OK  /get		/get/:id	/delete						TODO 	/post	/patch
+			/event		OK	/get		/get/:id	/delete						TODO 	/post	/patch
+			/seminar	OK	/get		/get/:id	/delete						TODO 	/post	/patch
+			/user		OK	/get/:id	/signup		/login		/delete			TODO
+			/order		OK														TODO 	/post	/patch	 /get	/get/:id	/delete	
+		-MongoDB			OK
+		-HerokuServer	OK
+
+
+
+	JS JQUERY CONNECTION
+
+		index 			-OK			
+		artists			-OK  	getAllArtists()
+		singleArtist	-
+		events			-
+		singleEvent		-
+		calendar		-
+		cart			-
+		login			-
+		signup			-
+	
+	FRONTEND
+
+		index 			-	aggiungere bottoni sopra immagine per pagina artisti ed eventi
+		about & contact	-
+		artists			-
+		singleArtist	-
+		events			-
+		singleEvent		-
+		calendar		-
+		cart			-
+		login			-
+		signup			-
+		infoticket		-
+
+		VARIUS:
+			-insert /favicon.ico in all html page and add immage
+	
+	
+	DOCUMENTATION
+
+		backend			-WORKING	API
+		frontend		-
+		design			-
+
+
+
 DELIVERBALE
 
 	BACKEND:
@@ -32,50 +84,4 @@ DELIVERBALE
 				Team-member names MUST appear in the footer or header for all pages;  
 				
 				The file MUST be named as follows:  Group-member1 surname, Group-member2 surname, Group-member3 surname-P1-delivery date 
-
-				
-
-TODO:
-
-	BACKEND	
-		OpenAPI
-			/artist		OK  /get		/get/:id	/delete						TODO 	/post	/patch
-			/event		OK	/get		/get/:id	/delete						TODO 	/post	/patch
-			/seminar	OK	/get		/get/:id	/delete						TODO 	/post	/patch
-			/user		OK	/get/:id	/signup		/login		/delete			TODO
-			/order		OK														TODO 	/post	/patch	 /get	/get/:id	/delete	
-
-
-	JS JQUERY CONNECTION
-
-		index 			-	
-		artists			-  getAllArtists()
-		singleArtist	-
-		events			-
-		singleEvent		-
-		calendar		-
-		cart			-
-		login			-
-		signup			-
-	
-	FRONTEND
-
-		index 			-	
-		about			-
-		artists			-
-		singleArtist	-
-		events			-
-		singleEvent		-
-		calendar		-
-		cart			-
-		login			-
-		signup			-
-		infoticket		-
-
-	DOCUMENTATION
-
-		backend			-
-		frontend		-
-		design			-
-
 

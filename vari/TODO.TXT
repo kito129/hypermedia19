@@ -18,7 +18,7 @@ TODO:
 
 		index 			-OK			
 		artists			-OK  	getAllArtists()
-		singleArtist	-
+		singleArtist		-
 		events			-
 		singleEvent		-
 		calendar		-
@@ -28,10 +28,10 @@ TODO:
 	
 	FRONTEND
 
-		index 			-	aggiungere bottoni sopra immagine per pagina artisti ed eventi
-		about & contact	-
-		artists			-
-		singleArtist	-
+		index 			-OK
+		about & contact		-
+		artists			-OK
+		singleArtist		-
 		events			-
 		singleEvent		-
 		calendar		-

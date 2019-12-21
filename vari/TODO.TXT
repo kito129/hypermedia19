@@ -29,19 +29,19 @@ TODO:
 	FRONTEND
 
 		index 			-OK
-		about & contact		-
+		about & contact		-OK
 		artists			-OK
 		singleArtist		-
-		events			-
+		events			-OK
 		singleEvent		-
 		calendar		-
-		cart			-
-		login			-
-		signup			-
-		infoticket		-
+		cart			-OK
+		login			-OK
+		signup			-OK
+		infoticket		-OK
 
 		VARIUS:
-			-insert /favicon.ico in all html page and add immage
+			-insert /favicon.ico in all html page and add immage -OK
 	
 	
 	DOCUMENTATION

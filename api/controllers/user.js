@@ -24,21 +24,23 @@ exports.user_signup = (req, res, next) => {
             const user = new User({
               _id: new mongoose.Types.ObjectId(),
               email: req.body.email,
-              password: hash
+              password: hash,
+              name: req.body.name,
+              surname: req.body.surname
             });
             user
               .save()
               .then(result => {
                 console.log(result);
-                res.status(201).json({
+                res.status(201).json(JSON.stringify({
                   message: "User created"
-                });
+                }));
               })
               .catch(err => {
                 console.log("ERROR:\n" + err);
-                res.status(500).json({
+                res.status(500).json(JSON.stringify({
                   error: err
-                });
+                }));
               });
           }
         });
@@ -126,6 +128,8 @@ exports.user_getId = (req, res, next) => {
           mail :user.map(doc => {
             return {
               userId: doc._id,
+              name:  doc.name,
+              surname: doc.surname,
               request: {
                 type: "GET",
                 url: "https://hypermedia19.herokuapp.com/user/"

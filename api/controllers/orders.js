@@ -42,57 +42,56 @@ exports.orders_get_all = (req, res, next) => {
 };
 
 
-//TODO
-//sistemare somma subTotale e totale
-//creare array giusto e aggioranare per aggiunta o modifica ordine
 exports.orders_create_order = (req, res, next) => {
-  if(req.body.userId!=""){
-    Order.find({ userId: req.body.userId })
-    .exec()
-    .then(art => {
-      if (art.length >= 1) {
-        return res.status(409).json({
-          message: "Order with this userId already exists"
-        });
-      } else {
-          Event.find({_id: req.body.order[0].eventId })
-          .exec()
-          .then(event =>{
-            console.log("event\n " +event);
-            const value = parseInt(event.price)
-            console.log("price " +value);
-            const sub = event.price*req.body.order[0].quantity;
-            const order = new Order({
-              _id: new mongoose.Types.ObjectId(),
-              userId: req.body.userId,
-              order: [{
-               eventId: req.body.order[0].orderId,
-               quantity: req.body.order[0].quantity,
-               subTotal: req.body.order[0].subTotal
+  const body = req.body;
+  const bodyOrder = body.order;
+  Order.find({ userId: body.userId })
+  .exec()
+  .then(user => {
+    if (user.length >= 1) {
+      return res.status(409).json({
+        message: "Order with this userId already exists. Update this order"
+      });
+    } else {
+        Event.find({_id: req.body.order[0].eventId })
+        .exec()
+        .then(event =>{
+          const singlePrice =  Number(event[0].price);
+          const quant =  Number(bodyOrder[0].quantity);
+          const order = new Order({
+            _id: new mongoose.Types.ObjectId(),
+            userId: req.body.userId,
+            order: 
+            [
+              {
+                eventId: req.body.order[0].eventId,
+                quantity: req.body.order[0].quantity,
+                subTotal: singlePrice*quant
               }
-              ],
-              totalPrice: 2
-            });
-            order
-              .save()
-              .then(result => {
-                res.status(201).json({
-                  message: "Created Order Created",
-                  createdOrder: {
-                    userId: result.userId,
-                    order: result.order,
-                    totalPrice: result.totalPrice,
-                    requestCart: {
-                      type: "GET",
-                      url: "https://hypermedia19.herokuapp.com/order/" + result._id
-                    }
+            ],
+            totalPrice: singlePrice*quant
+          });
+          order
+            .save()
+            .then(result => {
+              res.status(201).json({
+                message: "Created Order Created",
+                createdOrder: {
+                  userId: result.userId,
+                  order: result.order,
+                  totalPrice: result.totalPrice,
+                  requestCart: {
+                    type: "GET",
+                    url: "https://hypermedia19.herokuapp.com/order/" + result._id
                   }
-                });
-              })
+                }
+              });
+            })
             .catch(err => {
               if(err.name="CastError"){
-                console.log("INVALID INPUT:\n" + err);
+                console.log("Invalid eventId input:\n" + err);
                 res.status(400).json({
+                  message: "Invalid eventId input",
                   error: err
                 });
               } else {
@@ -102,28 +101,37 @@ exports.orders_create_order = (req, res, next) => {
                 });
               }
             });
-          })
-          .catch(err => {
-            if(err.name="CastError"){
-              console.log("Invalid eventId input:\n" + err);
-              res.status(400).json({
-                error: "Invalid eventId input"
-              });
-            } else {
-              console.log("ERROR:\n" + err);
-              res.status(500).json({
-                error: err
-              });
-            }
-          });
-        }
-      });   
+        })
+        .catch(err => {
+          if(err.name="CastError"){
+            console.log("Invalid eventId input:\n" + err);
+            res.status(400).json({
+              message: "Invalid eventId input",
+              error: err
+            });
+          } else {
+            console.log("ERROR:\n" + err);
+            res.status(500).json({
+              error: err
+            });
+          }
+        });
+      }
+    })   
+    .catch(err => {
+      if(err.name="CastError"){
+        console.log("Invalid userId input:\n" + err);
+        res.status(400).json({
+          error: "Invalid userId input"
+        });
       } else {
-          console.log("Invalid ID input" );
-          res.status(400).json({
-            error: "Invalid ID input"
-          });
-        }
+        console.log("ERROR:\n" + err);
+        res.status(500).json({
+          error: err
+        });
+      }
+    });
+   
   };
 
   //CHECK

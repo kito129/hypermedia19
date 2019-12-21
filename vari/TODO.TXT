@@ -38,7 +38,7 @@ TODO:
 		cart			-
 		login			-OK
 		signup			-OK
-		infoticket		-
+		infoticket		-OK
 
 		VARIUS:
 			-insert /favicon.ico in all html page and add immage -OK

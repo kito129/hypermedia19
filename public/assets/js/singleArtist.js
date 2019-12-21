@@ -108,7 +108,7 @@ $(document).ready(function(){
 
             `
 
-            <div style="text-align:justify" class="paragrafofullpage">
+            <div style="text-align:justify" class="container">
 				<br>
                 <p class="descrizione"><b>${jsonArtist.artist.abstract}</b></p>
             </div>

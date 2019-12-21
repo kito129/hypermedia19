@@ -36,12 +36,12 @@ TODO:
 		singleEvent		-
 		calendar		-
 		cart			-
-		login			-
-		signup			-
+		login			-OK
+		signup			-OK
 		infoticket		-
 
 		VARIUS:
-			-insert /favicon.ico in all html page and add immage
+			-insert /favicon.ico in all html page and add immage -OK
 	
 	
 	DOCUMENTATION

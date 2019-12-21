@@ -29,7 +29,7 @@ exports.artists_get_all = (req, res, next) => {
         })
       };
         if (docs.length >= 0) {
-          res.status(200).json(response);
+          res.status(200).json(JSON.stringify(response));
           } else {
               res.status(404).json(JSON.stringify({
                   message: 'No entries found'

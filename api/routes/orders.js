@@ -11,7 +11,7 @@ router.post("/", checkAuth, OrdersController.orders_create_order);
 
 router.get("/:orderId", checkAuth, OrdersController.orders_get_order);
 
-router.patch("/:orderId", checkAuth, OrdersController.orders_update_order);
+router.patch("/:orderId/:update", checkAuth, OrdersController.orders_update_order);
 
 router.delete("/:orderId", checkAuth, OrdersController.orders_delete);
 

@@ -29,7 +29,7 @@ TODO:
 	FRONTEND
 
 		index 			-OK
-		about & contact		-
+		about & contact		-OK
 		artists			-OK
 		singleArtist		-
 		events			-

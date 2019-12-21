@@ -35,7 +35,7 @@ TODO:
 		events			-
 		singleEvent		-
 		calendar		-
-		cart			-
+		cart			-OK
 		login			-OK
 		signup			-OK
 		infoticket		-OK

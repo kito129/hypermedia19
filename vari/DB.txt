@@ -35,7 +35,7 @@ DB and API function
 						"Theater company of the year 2016",
 						"Theater company of the year 2019"
 					],
-					"isCompany": false,
+					"isCompany": true,
 					"type": "circus",
 					"companyMembers": [
 						"Guy Laliberté",
@@ -136,7 +136,7 @@ DB and API function
 						"Theater company of the year 2011",
 						"Theater company of the year 2014"
 					],
-					"isCompany": false,
+					"isCompany": true,
 					"type": "musical",
 					"companyMembers": [
 						"Giò Di Tonno",
@@ -156,7 +156,7 @@ DB and API function
 					"achivements": [
 						"Disco di platino 2010"
 					],
-					"isCompany": false,
+					"isCompany": true,
 					"type": "group",
 					"companyMembers": [
 						"Giuliano Sangiorgi, Emanuele Lele Spedicato, Ermanno Carlà, Andrea Andro Mariano, Andrea Pupillo De Rocco, Danilo Tasco"
@@ -285,7 +285,7 @@ DB and API function
 					"date": "12/06/2020 - 18.00",
 					"place": "Place of Tree of Life",
 					"price": 50,
-					"isSoldOut": "flase",
+					"isSoldOut": "false",
 					"type": "concert",
 					"abstract": "Best of Cocciante is a concert by Riccardo Cocciante where the best 20 songs of the artist are presented in a lyric key with a live orchestra.",
 					"photoGallery": "uploads\\2019-12-16T21-34-10.918Zcocciante.jpg",

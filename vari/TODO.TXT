@@ -32,7 +32,7 @@ TODO:
 		about & contact		-OK
 		artists			-OK
 		singleArtist		-
-		events			-
+		events			-OK
 		singleEvent		-
 		calendar		-
 		cart			-OK

@@ -225,6 +225,28 @@ DB and API function
 						"type": "GET",
 						"url": "https://hypermedia19.herokuapp.com/artist/5df7b3eeec3ed52d3885918e"
 					}
+				},
+				{
+					"name": "IL VOLO",
+					"currentAffiliattion": "Sony Music",
+					"achivements": [
+						"Wind Music Awards 2017",
+						"Wind Music Awards 2018"
+					],
+					"isCompany": true,
+					"type": "opera",
+					"companyMembers": [
+						"Gianluca Ginoble, Piero Barone, Ignazio Boschetto"
+					],
+					"abstract": "Il Volo is an Italian musical group consisting of two tenors and a baritone.
+					When they were very young, they made themselves known for their great talent and their voices, so much so that they managed in a short time to sign a direct contract with a great American representative, Geffen, thus becoming a group appreciated worldwide.
+					They are the first group to win the Sanremo Festival with a song tending to the opera; with the same piece he made Italy the Eurovision Song Contest 2015, finishing third.",
+					"photoGallery": "",
+					"_id": "",
+					"request": {
+						"type": "GET",
+						"url": "https://hypermedia19.herokuapp.com/artist/5df7b3eeec3ed52d3885918e"
+					}
 				}
 			]
 		}
@@ -435,6 +457,22 @@ DB and API function
 					"type": "concert",
 					"abstract": "NEK returns to Europe with a tour that will touch the main capitals of the old continent. To open the dances of this fantastic tour there could only be our beloved festival that will give the public an unforgettable evening.",
 					"photoGallery": "uploads\\2019-12-16T21-41-52.993Znek_tour.jpg",
+					"request": {
+						"type": "GET",
+						"url": "https://hypermedia19.herokuapp.com/event/5df7fa2173ad1f2ae43e10f4"
+					}
+				},
+				{
+					"_id": "5df7fa2173ad1f2ae43e10f5",
+					"artistId": "",
+					"name": "IL VOLO ON OPERA",
+					"date": "14/06/2020 - 21.00",
+					"place": "Pavilion 2",
+					"price": 50,
+					"isSoldOut": "false",
+					"type": "opera",
+					"abstract": "This opera show will keep you company for two hours of pure magic. With their majestic voices, Il Volo will be able to close our Festival perfectly.",
+					"photoGallery": "",
 					"request": {
 						"type": "GET",
 						"url": "https://hypermedia19.herokuapp.com/event/5df7fa2173ad1f2ae43e10f4"

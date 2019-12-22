@@ -124,12 +124,7 @@ $(document).ready(function(){
                       `
 
                       );
-<<<<<<< HEAD
-                     
 
-=======
-                    
->>>>>>> 6ada57660c3f59ab78feb09b6dd9dc112b1d37b8
             }
         }
     });

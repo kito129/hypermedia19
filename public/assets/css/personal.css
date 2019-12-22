@@ -64,6 +64,10 @@
 	color: white;
 }
 
+body {
+    padding-top: 70px !important;
+  } 
+
 .foot{
 	margin-left: 200px;
 }
@@ -91,9 +95,6 @@
 	margin-bottom: 10px;
 }
 
-.artists{
-	margin: auto;
-}
 
 .credit{
 	margin-right: 50px;
@@ -212,6 +213,10 @@
 	color: white;
 	padding: 1px;
 	border-radius: 20px;
+}
+
+.card{
+	border: none !important;
 }
 
 /* il carrello si deve vedere solo dopo aver fatto il login

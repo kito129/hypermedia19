@@ -100,7 +100,6 @@ $(document).ready(function(){
                         <h7><i><b>${jsonEvents.events[i].date}</b></i></h7>
                     </div>
                     `
-<<<<<<< HEAD
 
                     );
                 $("#infoEvent").append(
@@ -125,9 +124,6 @@ $(document).ready(function(){
 
                       );
                     
-=======
-                );     
->>>>>>> 42b8c58416731b77eba793af6b68135cfa5ac374
             }
         }
     });

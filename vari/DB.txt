@@ -140,7 +140,7 @@
 					"type": "musical",
 					"companyMembers": [
 						"Giò Di Tonno",
-						"Lola Ponce "
+						"Lola Ponce"
 					],
 					"abstract": "Dreamusical is a theater company born in france in 1995. At the moment it puts on 4 different shows, the most important of which is surely Notre Dame de Paris which has allowed it to become one of the most important companies in the world.",
 					"photoGallery": "uploads\\2019-12-16T16-39-31.341Zdreamus.jpg",
@@ -159,7 +159,12 @@
 					"isCompany": true,
 					"type": "group",
 					"companyMembers": [
-						"Giuliano Sangiorgi, Emanuele Lele Spedicato, Ermanno Carlà, Andrea Andro Mariano, Andrea Pupillo De Rocco, Danilo Tasco"
+						"Giuliano Sangiorgi",
+						"Emanuele Lele Spedicato",
+						"Ermanno Carlà",
+						"Andrea Andro Mariano",
+						"Andrea Pupillo De Rocco",
+						"Danilo Tasco"
 					],
 					"abstract": "Negramaro is an Italian pop band formed in 1999 and successful since 2005. Their name stems from Negroamaro, a wine produced in their native district, Salento in Apulia. After years spent in the Italian alternative market, they finally became known more widely in 2005 thanks to the Sanremo Festival.",
 					"photoGallery": "uploads\\2019-12-16T16-40-14.214Znegramaro.jpg",
@@ -230,13 +235,14 @@
 					"name": "IL VOLO",
 					"currentAffiliattion": "Sony Music",
 					"achivements": [
-						"Wind Music Awards 2017",
-						"Wind Music Awards 2018"
+						"Sanremo 2015"
 					],
 					"isCompany": true,
 					"type": "opera",
 					"companyMembers": [
-						"Gianluca Ginoble, Piero Barone, Ignazio Boschetto"
+						"Gianluca Ginoble",
+						"Piero Barone",
+						"Ignazio Boschetto"
 					],
 					"abstract": "Il Volo is an Italian musical group consisting of two tenors and a baritone.
 					When they were very young, they made themselves known for their great talent and their voices, so much so that they managed in a short time to sign a direct contract with a great American representative, Geffen, thus becoming a group appreciated worldwide.
@@ -466,7 +472,7 @@
 					"_id": "5df7fa2173ad1f2ae43e10f5",
 					"artistId": "",
 					"name": "IL VOLO ON OPERA",
-					"date": "14/06/2020 - 20.00",
+					"date": "14/06/2020 - 21.00",
 					"place": "Pavilion 2",
 					"price": 50,
 					"isSoldOut": "false",
@@ -514,7 +520,7 @@
 				{
 					"_id": "5df7f6fb73ad1f2ae43e10e6",
 					"name": "PIANO & MUSIC SEMINAR",
-					"date": "12/06/2020 - 18.00",
+					"date": "12/06/2020 - 15.00",
 					"place": "Pavilion 2",
 					"photoGallery": "uploads\\2019-12-16T21-28-27.156Zeinaudi_sem.jpg",
 					"request": {
@@ -525,7 +531,7 @@
 				{
 					"_id": "5df7f72773ad1f2ae43e10e7",
 					"name": "DANCING IN NEW YORK SEMINAR",
-					"date": "12/06/2020 - 20.00",
+					"date": "12/06/2020 - 18.00",
 					"place": "Pavilion 2",
 					"photoGallery": "uploads\\2019-12-16T21-29-11.412Zbolle_sem.jpg",
 					"request": {
@@ -536,7 +542,7 @@
 				{
 					"_id": "5df7f73e73ad1f2ae43e10e8",
 					"name": "MODERN MUSICALS SEMINAR",
-					"date": "12/06/2020 - 22.00",
+					"date": "12/06/2020 - 21.00",
 					"place": "Pavilion 2",
 					"photoGallery": "uploads\\2019-12-16T21-29-34.664Zcocciante_sem.jpg",
 					"request": {

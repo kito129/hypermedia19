@@ -31,94 +31,81 @@ $(document).ready(function(){
     var jsonArtist;
     $.get("https://hypermedia19.herokuapp.com/artist/"+idArtist, function(data, status){
 
+        console.log(data);
         jsonArtist=JSON.parse(data);
-        
-
-
-        $("#singoloArtista").append(
-
+        $("#artist").append(
             `
-            <img src="../../../${jsonArtist.artist.photoGallery}" class="imageSingleArtist">
-                
-             `
-            );
-        
-
-        $("#singleEvent").append(
-
-             `
-            <a class="artista"><b>${jsonArtist.artist.name}</b></a><br>
-
-            `
-
-            );
-
-        if(jsonArtist.artist.achivements.length!=0){
-
-            var text="";
-
-            for(var i=0;i<jsonArtist.artist.achivements.length;i++){
-
-                text=text+jsonArtist.artist.achivements[i]+"--";
-
-            }
-
-             $("#singleEvent").append(
-
-                    `<a class="achievements">Achievements: <b id="bold"></b></a><br>`
-                );
-
-
-             $("#bold").text(text);
-
-        }
-
-        $("#singleEvent").append(
-
-            `
-            <a class="currentAffiliation">Current Affiliation: <b>${jsonArtist.artist.currentAffiliattion}</b></a><br>
-
-            `
-            );
-
-        if(jsonArtist.artist.isCompany==true){
-
-            var members="";
-
-            for(var i=0;i<jsonArtist.artist.companyMembers.length;i++){
-
-                members=members+jsonArtist.artist.companyMembers[i]+"--";
-
-            }
-
-            $("#singleEvent").append(
-
-            `
-            <a class="date">Company Members: <b id="members"></b></a><br>
             
-
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 col-lg-4 mb-5 ">
+                        <img src="../../../${jsonArtist.artist.photoGallery}" class="imageSingleArtist">
+                    </div>
+                    <div class="col-sm-12 col-md-8 col-lg-8">
+                        <!--affiliattion-->
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-lg-4 " align="left">
+                                <h4><b>CurrentAffiliation: </b></h4>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-8 " align="left">
+                                <h5 id="currentAffiliation"></h5>
+                            </div>
+                        </div>
+                        <!--member-->
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-lg-4 " align="left">
+                                <h4><b id="memebersTitle"></b></h4>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-8 " align="left">
+                                <h5  id="members"></h5>
+                            </div>
+                        </div>
+                        <!--achievements-->
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-lg-4 " align="left">
+                                <h4><b id="achievementsTitle"></b></h4>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-8 " align="left">
+                                <h5 id="achievements"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5 mb-5">
+                    <div style="text-align:justify">
+                        <p>${jsonArtist.artist.abstract}</p>
+                    </div>
+                </div>
+        
             `
-            );
+        );    
 
-            $("#members").text(members);
+        $("#artistName").text(jsonArtist.artist.name);
+        $("#currentAffiliation").text(jsonArtist.artist.currentAffiliattion);
 
+        if(jsonArtist.artist.achivements.length>0){
+            var text="";
+            for(var i=0;i<jsonArtist.artist.achivements.length;i++){
+                text=text+jsonArtist.artist.achivements[i];
+            }
+    
+            $("#achievementsTitle").text("Achievements: ");
+            $("#achievements").text(text);
         }
-
-        $("#singleEvent").append(
-
-            `
-
-            <div style="text-align:justify" class="container">
-				<br>
-                <p class="descrizione"><b>${jsonArtist.artist.abstract}</b></p>
-            </div>
-           
-
-            `
-            );
-
-
+    
+        if(jsonArtist.artist.isCompany==true){
+            var members="";
+            for(var i=0;i<jsonArtist.artist.companyMembers.length;i++){
+                members=members+jsonArtist.artist.companyMembers[i];
+            }
+        
+            $("#memebersTitle").text("Members: ");
+            $("#members").text(members);
+        }
+       
+    
     });
+
+
 
     $.get("https://hypermedia19.herokuapp.com/event/", function(data, status){
 
@@ -164,10 +151,6 @@ $(document).ready(function(){
             
         }
     });
-    
-    
-
-
 
 });
 

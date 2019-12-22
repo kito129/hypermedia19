@@ -34,7 +34,7 @@ exports.events_get_all = (req, res, next) => {
           };
         })
       };
-      res.status(200).json(risp);
+      res.status(200).json(JSON.stringify(risp));
     })
     .catch(err => {
       console.log("ERROR:\n" + err);

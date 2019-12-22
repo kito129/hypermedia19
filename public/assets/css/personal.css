@@ -65,7 +65,7 @@
 }
 
 body {
-    padding-top: 70px !important;
+    padding-top: 55px !important;
   } 
 
 .foot{
@@ -115,12 +115,7 @@ body {
 	width: 100%;
 }
 
-.homediv{
-	margin-top: 10px;
-	margin-bottom: 10px;
-	border-style: dashed;
-	padding: 20px;
-}
+
 
 #datahome{
 	position: absolute;
@@ -146,10 +141,6 @@ body {
 	font-size: 20px;
 }
 
-.paragrafofullpage{
-	margin-left: 50px;
-	margin-right: 50px;
-}
 
 .singleEvent{
 	font-size: 20px;
@@ -179,7 +170,7 @@ body {
 }
 
 .imageSingleArtist{
-	width: 200px;
+	width: 100%;
 	border-radius: 100%;
 }
 

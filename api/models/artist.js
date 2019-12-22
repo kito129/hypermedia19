@@ -9,7 +9,7 @@ const artistSchema = mongoose.Schema({
     companyMembers: { type: Array, required: true },
     abstract: { type: String, required: true },
     type:{ type: String, required: true },
-    photoGallery: { type: String, required: false }
+    photoGallery: { type: Array, required: false }
 });
 
 module.exports = mongoose.model('Artist', artistSchema);

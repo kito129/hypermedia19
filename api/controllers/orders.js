@@ -24,18 +24,18 @@ exports.orders_get_all = (req, res, next) => {
         })
       };
         if (docs.length >= 0) {
-          res.status(200).json(response);
+          res.status(200).json(JSON.Stringify(response));
           } else {
-              res.status(404).json({
+              res.status(404).json(JSON.Stringify({
                   message: 'No entries found'
-              });
+              }));
         }
       })
     .catch(err => {
       console.log("ERROR:\n" + err);
-      res.status(500).json({
+      res.status(500).json(JSON.Stringify({
         error: err
-      });
+      }));
     });
 };
 
@@ -47,9 +47,9 @@ exports.orders_create_order = (req, res, next) => {
   .exec()
   .then(user => {
     if (user.length >= 1) {
-      return res.status(409).json({
+      return res.status(409).json(JSON.Stringify({
         message: "Order with this userId already exists. Update this order"
-      });
+      }));
     } else {
         Event.find({_id: req.body.order[0].eventId })
         .exec()
@@ -72,7 +72,7 @@ exports.orders_create_order = (req, res, next) => {
           order
             .save()
             .then(result => {
-              res.status(201).json({
+              res.status(201).json(JSON.Stringify({
                 message: "Created Order Created",
                 createdOrder: {
                   userId: result.userId,
@@ -83,21 +83,21 @@ exports.orders_create_order = (req, res, next) => {
                     url: "https://hypermedia19.herokuapp.com/order/" + result._id
                   }
                 }
-              });
+              }));
             })
         })
         .catch(err => {
           if(err.name="CastError"){
             console.log("Invalid eventId input:\n" + err);
-            res.status(400).json({
+            res.status(400).json(JSON.Stringify({
               message: "Invalid eventId input",
               error: err
-            });
+            }));
           } else {
             console.log("ERROR:\n" + err);
-            res.status(500).json({
+            res.status(500).json(JSON.Stringify({
               error: err
-            });
+            }));
           }
         });
       }
@@ -105,14 +105,14 @@ exports.orders_create_order = (req, res, next) => {
     .catch(err => {
       if(err.name="CastError"){
         console.log("Invalid userId input:\n" + err);
-        res.status(400).json({
+        res.status(400).json(JSON.Stringify({
           error: "Invalid userId input"
-        });
+        }));
       } else {
         console.log("ERROR:\n" + err);
-        res.status(500).json({
+        res.status(500).json(JSON.Stringify({
           error: err
-        });
+        }));
       }
     });
    
@@ -125,21 +125,21 @@ exports.orders_get_order = (req, res, next) => {
     .select("_id userId order totalPrice")
     .exec()
     .then(doc => {
-      res.status(200).json({
+      res.status(200).json(JSON.Stringify({
         order: doc,
         request: {
           type: "GET",
           url: "https://hypermedia19.herokuapp.com/order/"
         }
-      });
+      }));
     })
     .catch(err => {
       if(err.name="CastError"){
         console.log("ERROR:\n" + "provided ID order NOT FOUND");
-        res.status(404).json({ message: "provided ID order NOT FOUND" });
+        res.status(404).json(JSON.Stringify({ message: "provided ID order NOT FOUND" }));
       } else{
         console.log("ERROR:\n" + err);
-        res.status(500).json({ error: err });
+        res.status(500).json(JSON.Stringify({ error: err });
       }
     });
 };
@@ -148,7 +148,7 @@ exports.orders_get_order = (req, res, next) => {
 //TODO
 //inserimento nuoi biglietti o modifca dal carrello
 
-//se get:id da 404 allora creo il carrello con il primo ordine.
+//se get:id da 404 allora creo il carrello con il primo ordine CON LA POST.
 //nel se restituisce 200 allora 
   //mi da parametro lui se esiste evento 
     //controllo se c'e gia event ID
@@ -177,25 +177,25 @@ exports.orders_update_order = (req, res, next) => {
       .exec()
       .then(result => {
         console.log(result);
-        res.status(200).json({
+        res.status(200).json(JSON.Stringify({
           message: "Order updated",
           request: {
             type: "GET",
             url: "https://hypermedia19.herokuapp.com/order/" + id
           }
-        });
+        }));
       })
       .catch(err => {
         if(err.name="CastError"){
           console.log("Order ID not found");
-          res.status(404).json({
+          res.status(404).json(JSON.Stringify({
             error: "Order ID not found"
-          });
+          }));
         } else{
           console.log("ERROR:\n" + err);
-          res.status(500).json({
+          res.status(500).json(JSON.Stringify({
             error: err
-          });
+          }));
         }
       });
   
@@ -211,34 +211,26 @@ exports.orders_update_order = (req, res, next) => {
 };
 
 
-
-
-
-
-
-
-
-
 //OK
 exports.orders_delete = (req, res, next) => {
   const id = req.params.orderId;
   Order.remove({ _id: id })
     .exec()
     .then(result => {
-      res.status(200).json({
+      res.status(200).json(JSON.Stringify({
         message: "Order deleted",
         request: {
           type: "POST",
           url: "https://hypermedia19.herokuapp.com/order/",
           body: { userId: "Number",}
         }
-      });
+      }));
     })
     .catch(err => {
       console.log("ERROR:\n" + err);
-      res.status(500).json({
+      res.status(500).json(JSON.Stringify({
         error: err
-      });
+      }));
     });
 };
 

@@ -26,15 +26,15 @@ exports.seminars_get_all = (req, res, next) => {
         })
       };
         if (docs.length >= 0) {
-          res.status(200).json(JSON.stringify(response));
+          res.status(200).json(JSON.Stringify(response));
           } else {
-              res.status(404).json(JSON.stringify({
+              res.status(404).json(JSON.Stringify({
                   message: 'No entries found'
               }));
         }
       })
     .catch(err => {
-      res.status(500).json(JSON.stringify({
+      res.status(500).json(JSON.Stringify({
         error: err
       }));
     });
@@ -47,7 +47,7 @@ exports.seminars_create_seminar = (req, res, next) => {
     .exec()
     .then(sem => {
       if (sem.length >= 1) {
-        return res.status(409).json(JSON.stringify({
+        return res.status(409).json(JSON.Stringify({
           message: "Seminar already exist"
         }));
       } else{
@@ -62,7 +62,7 @@ exports.seminars_create_seminar = (req, res, next) => {
         seminar
           .save()
           .then(result => {
-            res.status(201).json(JSON.stringify({
+            res.status(201).json(JSON.Stringify({
               message: "Created Seminar Created",
               createdSeminar: {
                 _id: result._id,
@@ -80,7 +80,7 @@ exports.seminars_create_seminar = (req, res, next) => {
           })
         .catch(err => {
           console.log("ERROR:\n" + err);
-          res.status(500).json(JSON.stringify({
+          res.status(500).json(JSON.Stringify({
             error: err
           }));
         });
@@ -96,7 +96,7 @@ exports.seminars_get_seminar = (req, res, next) => {
     .exec()
     .then(doc => {
       if (doc) {
-        res.status(200).json(JSON.stringify({
+        res.status(200).json(JSON.Stringify({
           seminar: doc,
           request: {
             type: "GET",
@@ -106,11 +106,11 @@ exports.seminars_get_seminar = (req, res, next) => {
       } else {
         res
           .status(404)
-          .json(JSON.stringify({ message: "provided ID seminar NOT FOUND" }));
+          .json(JSON.Stringify({ message: "provided ID seminar NOT FOUND" }));
       }
     })
     .catch(err => {
-      res.status(500).json(JSON.stringify({
+      res.status(500).json(JSON.Stringify({
         error: err
       }));
     });
@@ -122,7 +122,7 @@ exports.seminars_delete_seminar = (req, res, next) => {
   Seminar.remove({ _id: req.params.seminarId })
     .exec()
     .then(result => {
-      res.status(200).json(JSON.stringify({
+      res.status(200).json(JSON.Stringify({
         message: "Seminar deleted",
         request: {
           type: "POST",
@@ -132,7 +132,7 @@ exports.seminars_delete_seminar = (req, res, next) => {
       }));
     })
     .catch(err => {
-      res.status(500).json(JSON.stringify({
+      res.status(500).json(JSON.Stringify({
         error: err
       }));
     });

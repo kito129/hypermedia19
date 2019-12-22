@@ -139,14 +139,14 @@ $(document).ready(function(){
                     );
                 $("#infoEvent").append(
 
-                    //da finire il riferimento all'evento singolo
+                    //da finire il riferimento all'evento singolo e gestire bottone
 
                      `
-                    <a class="name" href="singleevent.html"><b>SEVEN DAYS WALKING TOUR</b></a><br> 
+                    <a class="name" href="singleevent.html"><b>${jsonEvents.events[i].name}</b></a><br> 
                     <a class="artista"><b>${jsonArtist.artist.name}</b></a><br>
-                    <a class="date">Date: <b>12/06/2020 - 21.00</b></a><br>
-                    <a class="place">Place: <b>Place of Tree of Life</b></a><br>
-                    <a class="price">Price: <b>50.00€</b></a><br>
+                    <a class="date">Date: <b>${jsonEvents.events[i].date}</b></a><br>
+                    <a class="place">Place: <b>${jsonEvents.events[i].place}</b></a><br>
+                    <a class="price">Price: <b>${jsonEvents.events[i].price}</b></a><br>
                     <span>
                         <button type="button" class="btn btn-dark btncart"><b>-</b></button>
                         <span class="quantity"><b>3</b></span>

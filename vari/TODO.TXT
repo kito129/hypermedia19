@@ -31,9 +31,9 @@ TODO:
 		index 			-OK
 		about & contact		-OK
 		artists			-OK
-		singleArtist		-
+		singleArtist		-OK
 		events			-OK
-		singleEvent		-
+		singleEvent		-OK
 		calendar		-
 		cart			-OK
 		login			-OK

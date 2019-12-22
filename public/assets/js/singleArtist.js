@@ -27,114 +27,80 @@ function getUrlParameterValue(url, parameter) {
 
 $(document).ready(function(){
 
+    //ARTIST
     var idArtist=getUrlParameterValue(self.location.href,"id");
     var jsonArtist;
+
     $.get("https://hypermedia19.herokuapp.com/artist/"+idArtist, function(data, status){
 
         jsonArtist=JSON.parse(data);
-        
 
+        $("#artistName").text(jsonArtist.artist.name);
 
-        $("#singoloArtista").append(
-
+        //link for carousel
+        $("#img1").append(
             `
-            <img src="../../../${jsonArtist.artist.photoGallery}" class="imageSingleArtist">
-                
-             `
-            );
-        
-
-        $("#singleEvent").append(
-
-             `
-            <a class="artista"><b>${jsonArtist.artist.name}</b></a><br>
-
+            <img class="d-block w-100" src="../../../${jsonArtist.artist.photoGallery}">
             `
+        );
+        $("#img2").append(
+            `
+            <img class="d-block w-100" src="../../assets/images/private/artisti/Negramaro_2.jpeg">
+            `
+        );
+        $("#img3").append(
+            `
+            <img class="d-block w-100" src="../../assets/images/private/artisti/cirquedusoleil2.jpg">
+            `
+        );
 
-            );
+        //add info 
+        $("#currentAffiliation").text(jsonArtist.artist.currentAffiliattion);
+        $("#abstract").text(jsonArtist.artist.abstract);
 
-        if(jsonArtist.artist.achivements.length!=0){
-
+        //check for achivements 
+        if(jsonArtist.artist.achivements.length>0){
             var text="";
-
             for(var i=0;i<jsonArtist.artist.achivements.length;i++){
-
-                text=text+jsonArtist.artist.achivements[i]+"--";
-
+                text=text+jsonArtist.artist.achivements[i];
             }
-
-             $("#singleEvent").append(
-
-                    `<a class="achievements">Achievements: <b id="bold"></b></a><br>`
-                );
-
-
-             $("#bold").text(text);
-
+    
+            $("#achievementsTitle").text("Achievements: ");
+            $("#achievements").text(text);
         }
-
-        $("#singleEvent").append(
-
-            `
-            <a class="currentAffiliation">Current Affiliation: <b>${jsonArtist.artist.currentAffiliattion}</b></a><br>
-
-            `
-            );
-
+        //check for Company member
         if(jsonArtist.artist.isCompany==true){
-
             var members="";
-
             for(var i=0;i<jsonArtist.artist.companyMembers.length;i++){
-
-                members=members+jsonArtist.artist.companyMembers[i]+"--";
-
+                members=members+jsonArtist.artist.companyMembers[i];
             }
-
-            $("#singleEvent").append(
-
-            `
-            <a class="date">Company Members: <b id="members"></b></a><br>
-            
-
-            `
-            );
-
+        
+            $("#memebersTitle").text("Members: ");
             $("#members").text(members);
-
         }
-
-        $("#singleEvent").append(
-
-            `
-
-            <div style="text-align:justify" class="paragrafofullpage">
-                <p class="descrizione"><b>${jsonArtist.artist.abstract}</b></p>
-            </div>
-           
-
-            `
-            );
-
-
     });
 
+
+    //RELATIVE EVENT
     $.get("https://hypermedia19.herokuapp.com/event/", function(data, status){
 
         var jsonEvents=JSON.parse(data);
 
-
         for(var i=0;i<jsonEvents.events.length;i++){
-
             if(jsonEvents.events[i].artistId==idArtist){
-
-                
-                $("#fotoEvento").append(
-
+                $("#event").append(
                     `
-                    <img src="../../../${jsonEvents.events[i].photoGallery}" class="imageSingleEvent">
-
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="singleevent.html?id=${jsonEvents.events[i]._id}">  
+                            <img src="../../../${jsonEvents.events[i].photoGallery}"class="imagesArtist">                   
+                        </a> 
+                        <div>
+                            <h5><b>${jsonEvents.events[i].name}</b></h5>
+                        </div>
+                        <h7><i><b>${jsonEvents.events[i].date}</b></i></h7>
+                    </div>
                     `
+<<<<<<< HEAD
 
                     );
                 $("#infoEvent").append(
@@ -159,14 +125,16 @@ $(document).ready(function(){
 
                       );
                     
+=======
+                );     
+>>>>>>> 42b8c58416731b77eba793af6b68135cfa5ac374
             }
-            
         }
     });
-    
-    
 
-
-
+    //CAROUSEL
+    $('.carousel').carousel({
+        interval: 2000
+      })
 });
 

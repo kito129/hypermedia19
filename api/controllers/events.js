@@ -10,7 +10,10 @@ exports.events_get_all = (req, res, next) => {
     .select("isSoldOut type price name artistId date place relSeminar abstract photoGallery _id")
     .exec()
     .then(docs => {
-      res.status(200).json(JSON.stringify({
+      console.log(docs);
+      const el = [];
+        const risp = 
+      {
         events: docs.map(doc => {
           return {
             _id: doc._id,
@@ -21,7 +24,7 @@ exports.events_get_all = (req, res, next) => {
             price: doc.price,
             isSoldOut: doc.isSoldOut,
             type: doc.type,
-            relSeminar: doc.relSeminar,
+            relSeminar: ""+ doc.relSeminar ,
             abstract: doc.abstract,
             photoGallery: doc.photoGallery,
             request: {
@@ -30,9 +33,11 @@ exports.events_get_all = (req, res, next) => {
             }
           };
         })
-      }));
+      };
+      res.status(200).json(JSON.stringify(risp));
     })
     .catch(err => {
+      console.log("ERROR:\n" + err);
       res.status(500).json(JSON.stringify({
         error: err
       }));

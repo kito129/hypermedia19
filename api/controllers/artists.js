@@ -55,6 +55,7 @@ exports.artists_create_artist = (req, res, next) => {
           message: "Artist already exists"
         }));
       } else {
+        console.log(req.files);
         const artist = new Artist({
           _id: new mongoose.Types.ObjectId(),
           name: req.body.name,

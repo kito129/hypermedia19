@@ -6,10 +6,12 @@ const multer = require('multer');
 const ArtistsController = require('../controllers/artists');
 
 const storage = multer.diskStorage({
+  
   destination: function(req, file, cb) {
-      cb(null, './uploads/');
+      cb(null, './public/assets/images');
   },
   filename: function(req, file, cb) {
+      console.log("sono qui");
       const now = new Date().toISOString(); const date = now.replace(/:/g, '-'); cb(null, date + file.originalname);
   }
 });

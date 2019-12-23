@@ -48,7 +48,7 @@ try {
 //use middleware 
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json(JSON.Stringify());
+app.use(bodyParser.json();
 
 // Routes which should be accepted requests
 app.use((req, res, next) => {

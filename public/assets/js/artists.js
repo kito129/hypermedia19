@@ -8,7 +8,9 @@ $(document).ready(function(){
 
 			var  text= jsonArtists.artists[i].photoGallery[0].path;
 			console.log(jsonArtists.artists[i].name);
-			console.log(text);
+			console.log(jsonArtists.artists[i].photoGallery[0].path);
+			console.log(jsonArtists.artists[i].photoGallery[1].path);
+			console.log(jsonArtists.artists[i].photoGallery[2].path);
 
 			$("#performer").append(
 

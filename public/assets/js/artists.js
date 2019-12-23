@@ -17,7 +17,7 @@ $(document).ready(function(){
 				`
 				<div class="col-sm-12 col-md-6 col-lg-4">
 					<a href="singleartist.html?id=${jsonArtists.artists[i]._id}">  
-						<img src="../../${text}"class="imagesArtist">                   
+						<img src="../../../${text}"class="imagesArtist">                   
 					</a> 
 					<div>
 						<h5><b>${jsonArtists.artists[i].name}</b></h5>

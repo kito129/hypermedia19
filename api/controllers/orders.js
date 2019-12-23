@@ -139,9 +139,9 @@ exports.orders_get_order = (req, res, next) => {
         res.status(404).json(JSON.Stringify({ message: "provided ID order NOT FOUND" }));
       } else{
         console.log("ERROR:\n" + err);
-        res.status(500).json(JSON.Stringify({ error: err });
+        res.status(500).json(JSON.Stringify({ error: err }));
       }
-    }));
+    });
 };
 
 

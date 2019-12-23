@@ -34,23 +34,32 @@ $(document).ready(function(){
     $.get("https://hypermedia19.herokuapp.com/artist/"+idArtist, function(data, status){
 
         jsonArtist=JSON.parse(data);
+        var photo1;
+        var photo2;
+        var photo3;
+        console.log(jsonArtist.artist.photoGallery);
 
+        photo1=jsonArtist.artist.photoGallery[0].path;
+        photo2=jsonArtist.artist.photoGallery[1].path;
+        photo3=jsonArtist.artist.photoGallery[2].path;
+
+        
         $("#artistName").text(jsonArtist.artist.name);
 
         //link for carousel
         $("#img1").append(
             `
-            <img class="d-block w-100" src="../../../${jsonArtist.artist.photoGallery}">
+            <img class="d-block w-100" src="../../../${photo1}">
             `
         );
         $("#img2").append(
             `
-            <img class="d-block w-100" src="../../assets/images/private/artisti/Negramaro_2.jpeg">
+            <img class="d-block w-100" src="../../../${photo2}">
             `
         );
         $("#img3").append(
             `
-            <img class="d-block w-100" src="../../assets/images/private/artisti/cirquedusoleil2.jpg">
+            <img class="d-block w-100" src="../../../${photo3}">
             `
         );
 

@@ -74,7 +74,7 @@ $(document).ready(function(){
 
             var jsonArtist=JSON.parse(data);
 
-            &("#relArtist").append(
+            $("#relArtist").append(
 
                 `
                 <div class="col-sm-12 col-md-6 col-lg-4">

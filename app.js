@@ -60,7 +60,7 @@ app.use((req, res, next) => {
   );
   if (req.method === "OPTIONS") {
     res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
-    return res.status(200).json(JSON.Stringify({}));
+    return res.status(200).json({});
   }
   next();
 });
@@ -88,7 +88,7 @@ app.use((error, req, res, next) => {
     error: {
       message: error.message
     }
-  });
+  }));
 });
 
 //app is listening on PORT

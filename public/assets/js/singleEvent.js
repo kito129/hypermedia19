@@ -79,7 +79,7 @@ $(document).ready(function(){
                 `
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <a href="singleartist.html?id=${jsonArtist.artist._id}">  
-                        <img src="../../../${jsonEvents.events[i].photoGallery}"class="imagesArtist">                   
+                        <img src="../images/${jsonEvents.events[i].photoGallery[0]-filename}"class="imagesArtist">                   
                     </a> 
                     <div>
                         <h5><b>${jsonEvents.events[i].name}</b></h5>

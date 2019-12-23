@@ -37,7 +37,7 @@ $(document).ready(function(){
         var photo1;
         var photo2;
         var photo3;
-        console.log(jsonArtist.artist.photoGallery);
+        /*
 
         photo1=jsonArtist.artist.photoGallery[0].path;
         photo2=jsonArtist.artist.photoGallery[1].path;
@@ -62,6 +62,7 @@ $(document).ready(function(){
             <img class="d-block w-100" src="../../../${photo3}">
             `
         );
+        */
 
         //add info 
         $("#affiliationTitle").text("Current Affiliation: ")
@@ -84,60 +85,34 @@ $(document).ready(function(){
             for(var i=0;i<jsonArtist.artist.companyMembers.length;i++){
                 members=members+jsonArtist.artist.companyMembers[i]+"; ";
             }
-        
             $("#memebersTitle").text("Members: ");
             $("#members").text(members);
         }
-    });
+            //RELATIVE EVENT
+        $.get("https://hypermedia19.herokuapp.com/event/", function(data, status){
 
+            var jsonEvents=JSON.parse(data);
 
-    //RELATIVE EVENT
-    $.get("https://hypermedia19.herokuapp.com/event/", function(data, status){
-
-        var jsonEvents=JSON.parse(data);
-
-        for(var i=0;i<jsonEvents.events.length;i++){
-            if(jsonEvents.events[i].artistId==idArtist){
-                $("#event").append(
-                    `
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <a href="singleevent.html?id=${jsonEvents.events[i]._id}">  
-                            <img src="../../../${jsonEvents.events[i].photoGallery}"class="imagesArtist">                   
-                        </a> 
-                        <div>
-                            <h5><b>${jsonEvents.events[i].name}</b></h5>
+            for(var i=0;i<jsonEvents.events.length;i++){
+                if(jsonEvents.events[i].artistId==idArtist){
+                    $("#event").append(
+                        `
+                        <div class="col-sm-12 col-md-6 col-lg-4">
+                            <a href="singleevent.html?id=${jsonEvents.events[i]._id}">  
+                                <img src="../../../${jsonEvents.events[i].photoGallery}"class="imagesArtist">                   
+                            </a> 
+                            <div>
+                                <h5><b>${jsonEvents.events[i].name}</b></h5>
+                            </div>
+                            <h7><i><b>${jsonEvents.events[i].date}</b></i></h7>
                         </div>
-                        <h7><i><b>${jsonEvents.events[i].date}</b></i></h7>
-                    </div>
-                    `
+                        `
 
                     );
-                $("#infoEvent").append(
-
-                    //da finire il riferimento all'evento singolo e gestire bottone
-
-                     `
-                    <a class="name" href="singleevent.html"><b>${jsonEvents.events[i].name}</b></a><br> 
-                    <a class="artista"><b>${jsonArtist.artist.name}</b></a><br>
-                    <a class="date">Date: <b>${jsonEvents.events[i].date}</b></a><br>
-                    <a class="place">Place: <b>${jsonEvents.events[i].place}</b></a><br>
-                    <a class="price">Price: <b>${jsonEvents.events[i].price}</b></a><br>
-                    <span>
-                        <button type="button" class="btn btn-dark btncart"><b>-</b></button>
-                        <span class="quantity"><b>3</b></span>
-                        <b>TICKETS&ensp;</b>
-                        <button type="button" class="btn btn-dark btncart"><b>+</b></button>
-                        <button type="button" class="btn btn-dark" disabled><b>SOLD OUT</b></button><br>
-                    </span>
-
-                      `
-
-                      );
-
+                }
             }
-        }
+        });
     });
-
     //CAROUSEL
     $('.carousel').carousel({
         interval: 2000

@@ -32,7 +32,7 @@ $(document).ready(function(){
 						`
 						<div class="col-sm-12 col-md-6 col-lg-4">
 							<a href="singleevent.html?id=${jsonEvents.events[i]._id}">  
-								<img src="../../../${jsonEvents.events[i].photoGallery}"class="imagesArtist">                   
+								<img src="../images/${jsonEvents.events[i].photoGallery[0].filename}"class="imagesArtist">                   
 							</a> 
 							<div>
 								<h5><b>${jsonEvents.events[i].name}</b></h5>

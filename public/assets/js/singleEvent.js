@@ -36,10 +36,10 @@ $(document).ready(function(){
         var photo2;
         var photo3;
         
-        /*
-        photo1=jsonEvent.event.photoGallery[0].path;
-        photo2=jsonEvent.event[1].path;
-        photo3=jsonArtist.event.photoGallery[2].path;
+       
+        photo1=jsonEvent.event.photoGallery[0].filename;
+        photo2=jsonEvent.event[1].filename;
+        photo3=jsonArtist.event.photoGallery[2].filename;
 
         
 
@@ -48,20 +48,20 @@ $(document).ready(function(){
         //link for carousel
         $("#img1").append(
             `
-            <img class="d-block w-100" src="../../../${photo1}">
+            <img class="d-block w-100" src="../images/${photo1}">
             `
         );
         $("#img2").append(
             `
-            <img class="d-block w-100" src="../../../${photo2}">
+            <img class="d-block w-100" src="../images/${photo2}">
             `
         );
         $("#img3").append(
             `
-            <img class="d-block w-100" src="../../../${photo3}">
+            <img class="d-block w-100" src="../images/${photo3}">
             `
         );
-        */
+        
         //add info 
         $("#dateTitle").text("Date: ")
         $("#date").text(jsonEvent.event.date);

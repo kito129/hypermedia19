@@ -141,7 +141,7 @@ exports.orders_get_order = (req, res, next) => {
         console.log("ERROR:\n" + err);
         res.status(500).json(JSON.Stringify({ error: err });
       }
-    });
+    }));
 };
 
 

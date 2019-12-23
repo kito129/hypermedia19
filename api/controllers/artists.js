@@ -38,9 +38,9 @@ exports.artists_get_all = (req, res, next) => {
       })
     .catch(err => {
       console.log("ERROR:\n" + err);
-      res.status(500).json(JSON.Stringify({
+      res.status(500).json({
         error: err
-      }));
+      });
     });
 };
 

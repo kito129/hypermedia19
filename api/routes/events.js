@@ -7,7 +7,7 @@ const EventsController = require('../controllers/events');
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null, '../public/assets/images');
+        cb(null, './public/assets/images');
     },
     filename: function(req, file, cb) {
         const now = new Date().toISOString(); const date = now.replace(/:/g, '-'); cb(null, date + file.originalname);

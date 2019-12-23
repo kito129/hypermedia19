@@ -71,9 +71,11 @@ app.use("/event", eventRoutes);
 app.use("/seminar", seminarRoutes);
 app.use("/order", orderRoutes);
 app.use("/user", userRoutes);
-//public router
-app.use('/public/assets/images/', express.static('/public/assets/images/'));
+
+app.use('/', express.static(path.join(__dirname, './public')));
+//app.use('/public/assets/images/', express.static('/public/assets/images/'));
 app.use(express.static(path.join(__dirname, './public')));
+
 
 //error 404 for not found routers
 app.use((req, res, next) => {

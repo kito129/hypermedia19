@@ -7,7 +7,7 @@ const SeminarsController = require('../controllers/seminars');
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null, './uploads/');
+        cb(null, './public/assets/images');
     },
     filename: function(req, file, cb) {
         const now = new Date().toISOString(); const date = now.replace(/:/g, '-'); cb(null, date + file.originalname);

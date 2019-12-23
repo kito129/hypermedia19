@@ -7,7 +7,7 @@ $(document).ready(function(){
 		for(var i=0;i<jsonArtists.artists.length;i++){
 
 			var  text= jsonArtists.artists[i].photoGallery[0].path;
-			
+			console.log(text);
 
 			$("#performer").append(
 

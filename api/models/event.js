@@ -11,7 +11,7 @@ const eventSchema = mongoose.Schema({
     type: { type: String, required: true },
     relSeminar: { type: mongoose.Schema.Types.ObjectId, ref: 'Seminar', required: false },
     abstract: { type: String, required: true },
-    photoGallery: { type: String, required: false }    
+    photoGallery: { type: Array, required: false }    
 });
 
 module.exports = mongoose.model('Event', eventSchema);

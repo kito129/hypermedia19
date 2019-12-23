@@ -35,7 +35,7 @@ const storage = multer.diskStorage({
 // Handle incoming GET requests to /events
 router.get("/", EventsController.events_get_all);
 
-router.post("/", checkAuth, upload.single('photoGallery'), EventsController.events_create_event);
+router.post("/", checkAuth, upload.array('photoGallery', 3), EventsController.events_create_event);
 
 router.get("/:eventId", EventsController.events_get_event);
 

@@ -75,7 +75,7 @@ exports.events_create_event = (req, res, next) => {
           type:  req.body.type,
           relSeminar:  req.body.relSeminar,
           abstract:  req.body.abstract,
-          photoGallery:  req.file.path
+          photoGallery:  req.files
         });
         event
         .save()

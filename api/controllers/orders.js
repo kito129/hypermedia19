@@ -24,16 +24,16 @@ exports.orders_get_all = (req, res, next) => {
         })
       };
         if (docs.length >= 0) {
-          res.status(200).json(JSON.Stringify(response));
+          res.status(200).json(JSON.stringify(response));
           } else {
-              res.status(404).json(JSON.Stringify({
+              res.status(404).json(JSON.stringify({
                   message: 'No entries found'
               }));
         }
       })
     .catch(err => {
       console.log("ERROR:\n" + err);
-      res.status(500).json(JSON.Stringify({
+      res.status(500).json(JSON.stringify({
         error: err
       }));
     });
@@ -47,7 +47,7 @@ exports.orders_create_order = (req, res, next) => {
   .exec()
   .then(user => {
     if (user.length >= 1) {
-      return res.status(409).json(JSON.Stringify({
+      return res.status(409).json(JSON.stringify({
         message: "Order with this userId already exists. Update this order"
       }));
     } else {
@@ -72,7 +72,7 @@ exports.orders_create_order = (req, res, next) => {
           order
             .save()
             .then(result => {
-              res.status(201).json(JSON.Stringify({
+              res.status(201).json(JSON.stringify({
                 message: "Created Order Created",
                 createdOrder: {
                   userId: result.userId,
@@ -89,13 +89,13 @@ exports.orders_create_order = (req, res, next) => {
         .catch(err => {
           if(err.name="CastError"){
             console.log("Invalid eventId input:\n" + err);
-            res.status(400).json(JSON.Stringify({
+            res.status(400).json(JSON.stringify({
               message: "Invalid eventId input",
               error: err
             }));
           } else {
             console.log("ERROR:\n" + err);
-            res.status(500).json(JSON.Stringify({
+            res.status(500).json(JSON.stringify({
               error: err
             }));
           }
@@ -105,12 +105,12 @@ exports.orders_create_order = (req, res, next) => {
     .catch(err => {
       if(err.name="CastError"){
         console.log("Invalid userId input:\n" + err);
-        res.status(400).json(JSON.Stringify({
+        res.status(400).json(JSON.stringify({
           error: "Invalid userId input"
         }));
       } else {
         console.log("ERROR:\n" + err);
-        res.status(500).json(JSON.Stringify({
+        res.status(500).json(JSON.stringify({
           error: err
         }));
       }
@@ -125,7 +125,7 @@ exports.orders_get_order = (req, res, next) => {
     .select("_id userId order totalPrice")
     .exec()
     .then(doc => {
-      res.status(200).json(JSON.Stringify({
+      res.status(200).json(JSON.stringify({
         order: doc,
         request: {
           type: "GET",
@@ -136,10 +136,10 @@ exports.orders_get_order = (req, res, next) => {
     .catch(err => {
       if(err.name="CastError"){
         console.log("ERROR:\n" + "provided ID order NOT FOUND");
-        res.status(404).json(JSON.Stringify({ message: "provided ID order NOT FOUND" }));
+        res.status(404).json(JSON.stringify({ message: "provided ID order NOT FOUND" }));
       } else{
         console.log("ERROR:\n" + err);
-        res.status(500).json(JSON.Stringify({ error: err }));
+        res.status(500).json(JSON.stringify({ error: err }));
       }
     });
 };
@@ -177,7 +177,7 @@ exports.orders_update_order = (req, res, next) => {
       .exec()
       .then(result => {
         console.log(result);
-        res.status(200).json(JSON.Stringify({
+        res.status(200).json(JSON.stringify({
           message: "Order updated",
           request: {
             type: "GET",
@@ -188,12 +188,12 @@ exports.orders_update_order = (req, res, next) => {
       .catch(err => {
         if(err.name="CastError"){
           console.log("Order ID not found");
-          res.status(404).json(JSON.Stringify({
+          res.status(404).json(JSON.stringify({
             error: "Order ID not found"
           }));
         } else{
           console.log("ERROR:\n" + err);
-          res.status(500).json(JSON.Stringify({
+          res.status(500).json(JSON.stringify({
             error: err
           }));
         }
@@ -217,7 +217,7 @@ exports.orders_delete = (req, res, next) => {
   Order.remove({ _id: id })
     .exec()
     .then(result => {
-      res.status(200).json(JSON.Stringify({
+      res.status(200).json(JSON.stringify({
         message: "Order deleted",
         request: {
           type: "POST",
@@ -228,7 +228,7 @@ exports.orders_delete = (req, res, next) => {
     })
     .catch(err => {
       console.log("ERROR:\n" + err);
-      res.status(500).json(JSON.Stringify({
+      res.status(500).json(JSON.stringify({
         error: err
       }));
     });

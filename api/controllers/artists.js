@@ -29,9 +29,9 @@ exports.artists_get_all = (req, res, next) => {
         })
       };
         if (docs.length >= 0) {
-          res.status(200).json(JSON.Stringify(response));
+          res.status(200).json(JSON.stringify(response));
           } else {
-              res.status(404).json(JSON.Stringify({
+              res.status(404).json(JSON.stringify({
                   message: 'No entries found'
               }));
         }
@@ -51,7 +51,7 @@ exports.artists_create_artist = (req, res, next) => {
     .exec()
     .then(art => {
       if (art.length >= 1) {
-        return res.status(409).json(JSON.Stringify({
+        return res.status(409).json(JSON.stringify({
           message: "Artist already exists"
         }));
       } else {
@@ -69,7 +69,7 @@ exports.artists_create_artist = (req, res, next) => {
         artist
           .save()
           .then(result => {
-            res.status(201).json(JSON.Stringify({
+            res.status(201).json(JSON.stringify({
               message: "Created Artist Created",
               createdArtist: {
                 _id: result._id,
@@ -89,7 +89,7 @@ exports.artists_create_artist = (req, res, next) => {
           })
         .catch(err => {
           console.log("ERROR:\n" + err);
-          res.status(500).json(JSON.Stringify({
+          res.status(500).json(JSON.stringify({
             error: err
           }));
         });
@@ -106,7 +106,7 @@ exports.artists_get_artist = (req, res, next) => {
     .exec()
     .then(doc => {
       if (doc) {
-        res.status(200).json(JSON.Stringify({
+        res.status(200).json(JSON.stringify({
           artist: doc,
           request: {
             type: "GET",
@@ -116,12 +116,12 @@ exports.artists_get_artist = (req, res, next) => {
       } else {
         res
           .status(404)
-          .json(JSON.Stringify({ message: "provided ID artist NOT FOUND" }));
+          .json(JSON.stringify({ message: "provided ID artist NOT FOUND" }));
       }
     })
     .catch(err => {
       console.log("ERROR:\n" + err);
-      res.status(500).json(JSON.Stringify({ error: err }));
+      res.status(500).json(JSON.stringify({ error: err }));
     });
 };
 
@@ -139,7 +139,7 @@ exports.artists_update_artist = (req, res, next) => {
     .exec()
     .then(result => {
       console.log(result);
-      res.status(200).json(JSON.Stringify({
+      res.status(200).json(JSON.stringify({
         message: "Artist updated",
         request: {
           type: "GET",
@@ -150,12 +150,12 @@ exports.artists_update_artist = (req, res, next) => {
     .catch(err => {
       if(err.name="CastError"){
         console.log("Artist ID not found");
-        res.status(404).json(JSON.Stringify({
+        res.status(404).json(JSON.stringify({
           error: "Artist ID not found"
         }));
       } else{
         console.log("ERROR:\n" + err);
-        res.status(500).json(JSON.Stringify({
+        res.status(500).json(JSON.stringify({
           error: err
         }));
       }
@@ -169,7 +169,7 @@ exports.artists_delete = (req, res, next) => {
   Artist.remove({ _id: id })
     .exec()
     .then(result => {
-      res.status(200).json(JSON.Stringify({
+      res.status(200).json(JSON.stringify({
         message: "Artist deleted",
         request: {
           type: "POST",
@@ -180,7 +180,7 @@ exports.artists_delete = (req, res, next) => {
     })
     .catch(err => {
       console.log("ERROR:\n" + err);
-      res.status(500).json(JSON.Stringify({
+      res.status(500).json(JSON.stringify({
         error: err
       }));
     });

@@ -34,11 +34,11 @@ exports.events_get_all = (req, res, next) => {
           };
         })
       };
-      res.status(200).json(JSON.Stringify(risp));
+      res.status(200).json(JSON.stringify(risp));
     })
     .catch(err => {
       console.log("ERROR:\n" + err);
-      res.status(500).json(JSON.Stringify({
+      res.status(500).json(JSON.stringify({
         error: err
       }));
     });
@@ -51,7 +51,7 @@ exports.events_create_event = (req, res, next) => {
   .exec()
   .then(eve => {
     if (eve.length >= 1) {
-      return res.status(409).json(JSON.Stringify({
+      return res.status(409).json(JSON.stringify({
         message: "Event already exists"
       }));
     } else {
@@ -60,7 +60,7 @@ exports.events_create_event = (req, res, next) => {
       .then(artist => {
         
         if (!artist) {
-          return res.status(404).json(JSON.Stringify({
+          return res.status(404).json(JSON.stringify({
             message: "Artist not found"
           }));
         }
@@ -80,7 +80,7 @@ exports.events_create_event = (req, res, next) => {
         event
         .save()
         .then(result => {
-          res.status(201).json(JSON.Stringify({
+          res.status(201).json(JSON.stringify({
             message: "Created Event successfully",
             createdArtist: {
               _id: result._id,
@@ -103,7 +103,7 @@ exports.events_create_event = (req, res, next) => {
         })
         .catch(err => {
           console.log("ERROR:\n" + err);
-          res.status(500).json(JSON.Stringify({
+          res.status(500).json(JSON.stringify({
             error: err
           }));
         });
@@ -121,7 +121,7 @@ exports.events_get_event = (req, res, next) => {
     .exec()
     .then(doc => {
       if (doc) {
-        res.status(200).json(JSON.Stringify({
+        res.status(200).json(JSON.stringify({
           event: doc,
           request: {
             type: "GET",
@@ -131,12 +131,12 @@ exports.events_get_event = (req, res, next) => {
       } else {
         res
           .status(404)
-          .json(JSON.Stringify({ message: "provided ID event NOT FOUND" }));
+          .json(JSON.stringify({ message: "provided ID event NOT FOUND" }));
       }
     })
     .catch(err => {
       console.log("ERROR:\n" + err);
-      res.status(500).json(JSON.Stringify({ error: err }));
+      res.status(500).json(JSON.stringify({ error: err }));
     });
 };
 
@@ -146,7 +146,7 @@ exports.events_delete_event = (req, res, next) => {
   Events.remove({ _id: req.params.eventId })
     .exec()
     .then(result => {
-      res.status(200).json(JSON.Stringify({
+      res.status(200).json(JSON.stringify({
         message: "Event deleted",
         request: {
           type: "POST",
@@ -156,7 +156,7 @@ exports.events_delete_event = (req, res, next) => {
       }));
     })
     .catch(err => {
-      res.status(500).json(JSON.Stringify({
+      res.status(500).json(JSON.stringify({
         error: err
       }));
     });

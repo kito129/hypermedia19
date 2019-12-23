@@ -84,7 +84,7 @@ app.use((req, res, next) => {
 //specific error or 500 generic error routers gestor
 app.use((error, req, res, next) => {
   res.status(error.status || 500);
-  res.json(JSON.Stringify({
+  res.json(JSON.stringify({
     error: {
       message: error.message
     }

@@ -55,6 +55,7 @@ $(document).ready(function(){
         );
 
         //add info 
+        $("#affiliationTitle").text("Current Affiliation: ")
         $("#currentAffiliation").text(jsonArtist.artist.currentAffiliattion);
         $("#abstract").text(jsonArtist.artist.abstract);
 
@@ -62,7 +63,7 @@ $(document).ready(function(){
         if(jsonArtist.artist.achivements.length>0){
             var text="";
             for(var i=0;i<jsonArtist.artist.achivements.length;i++){
-                text=text+jsonArtist.artist.achivements[i];
+                text=text+jsonArtist.artist.achivements[i]+"; ";
             }
     
             $("#achievementsTitle").text("Achievements: ");
@@ -72,7 +73,7 @@ $(document).ready(function(){
         if(jsonArtist.artist.isCompany==true){
             var members="";
             for(var i=0;i<jsonArtist.artist.companyMembers.length;i++){
-                members=members+jsonArtist.artist.companyMembers[i];
+                members=members+jsonArtist.artist.companyMembers[i]+"; ";
             }
         
             $("#memebersTitle").text("Members: ");
@@ -123,7 +124,7 @@ $(document).ready(function(){
                       `
 
                       );
-                    
+
             }
         }
     });

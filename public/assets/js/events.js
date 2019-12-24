@@ -48,13 +48,24 @@ $(document).ready(function(){
 				}
 				for(var k=0;k<jsonSeminars.seminars.length;k++){
 
+<<<<<<< HEAD
 						console.log(jsonSeminars.seminars[k].photoGallery);
+=======
+						var splitte= jsonSeminars.seminars[k].photoGallery.split("\\");
+						var url= splitte[2]+ "\\"+splitte[3];
+
+
+>>>>>>> 61c9445390be5a1244ac1661e25810e3751b8aa1
 						$("#events").append(
 					
 						`
 						<div class="col-sm-12 col-md-6 col-lg-4">
 							<a href="singleseminar.html?id=${jsonSeminars.seminars[k]._id}">  
+<<<<<<< HEAD
 								<img src="${jsonSeminars.seminars[k].photoGallery}"class="imagesArtist">                   
+=======
+								<img src="../${url}"class="imagesArtist">                   
+>>>>>>> 61c9445390be5a1244ac1661e25810e3751b8aa1
 							</a> 
 							<div>
 								<h5><b>${jsonSeminars.seminars[k].name}</b></h5>

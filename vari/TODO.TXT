@@ -30,7 +30,7 @@ TODO:
 	TODO:
 			-insert /favicon.ico in all html page and add immage -OK
 			-menu bottone a destra
-			body ribassato su tutte le pagine
+			body ribassato su tutte le pagine //OK
 			nav bar sistemare eventi
 			check pagine statiche
 			fine eventi 

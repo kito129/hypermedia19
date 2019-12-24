@@ -38,12 +38,12 @@ $(document).ready(function(){
         
        
         photo1=jsonEvent.event.photoGallery[0].filename;
-        photo2=jsonEvent.event[1].filename;
-        photo3=jsonArtist.event.photoGallery[2].filename;
+        photo2=jsonEvent.event.photoGallery[1].filename;
+        photo3=jsonEvent.event.photoGallery[2].filename;
 
         
 
-        $("#artistName").text(jsonArtist.artist.name);
+        $("#eventName").text(jsonEvent.event.name);
 
         //link for carousel
         $("#img1").append(
@@ -79,11 +79,9 @@ $(document).ready(function(){
                 `
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <a href="singleartist.html?id=${jsonArtist.artist._id}">  
-<<<<<<< HEAD
-                        <img src="../../../${jsonArtist.artist.photoGallery[0].path}"class="imagesArtist">                   
-=======
-                        <img src="../images/${jsonEvents.events[i].photoGallery[0].filename}"class="imagesArtist">                   
->>>>>>> f3a9ecbbf234110438af56900ec57849893dbc2f
+
+                        <img src="../images/${jsonArtist.artist.photoGallery[0].filename}"class="imagesArtist">                   
+
                     </a> 
                     <div>
                         <h5><b>${jsonArtist.artist.name}</b></h5>
@@ -96,7 +94,7 @@ $(document).ready(function(){
         });
 
         //seminari relativi
-        if(jsonEvent.event.relSeminar.length!=0){
+        if(jsonEvent.event.relSeminar!=undefined){
             $.get("https://hypermedia19.herokuapp.com/seminar/"+jsonEvent.event.relSeminar, function(data, status){
 
                 jsonSeminar=JSON.parse(data);
@@ -123,40 +121,45 @@ $(document).ready(function(){
 
             var jsonAllEvents=JSON.parse(data);
             var thisEventDataAndHour=jsonEvent.event.date;
+            
+            for(let i=0;i<jsonAllEvents.events.length;i++){
 
-            for(var i=0;i<jsonAllEvents.events.length;i++){
+                if(jsonAllEvents.events[i].date[0]==thisEventDataAndHour[0]&&jsonAllEvents.events[i].date[1]==thisEventDataAndHour[1]&&
+                    jsonAllEvents.events[i].date[2]==thisEventDataAndHour[2]&&jsonAllEvents.events[i].date[3]==thisEventDataAndHour[3]&&
+                    jsonAllEvents.events[i].date[4]==thisEventDataAndHour[4]&&jsonAllEvents.events[i].date[5]==thisEventDataAndHour[5]&&
+                    jsonAllEvents.events[i].date[6]==thisEventDataAndHour[6]&&jsonAllEvents.events[i].date[7]==thisEventDataAndHour[7]&&
+                    jsonAllEvents.events[i].date[8]==thisEventDataAndHour[8]&&jsonAllEvents.events[i].date[9]==thisEventDataAndHour[9]
+                    &&jsonAllEvents.events[i]._id!=idEvent){
+                   
+                    $.get("https://hypermedia19.herokuapp.com/artist/"+jsonAllEvents.events[i].artistId, function(data, status){
 
-                if(jsonAllEvents.events[i].data[0]==thisEventOnlyDataAndHour[0]&&jsonAllEvents.events[i].data[1]==thisEventOnlyDataAndHour[1]&&
-                    jsonAllEvents.events[i].data[2]==thisEventOnlyDataAndHour[2]&&jsonAllEvents.events[i].data[3]==thisEventOnlyDataAndHour[3]&&
-                    jsonAllEvents.events[i].data[4]==thisEventOnlyDataAndHour[4]&&jsonAllEvents.events[i].data[5]==thisEventOnlyDataAndHour[5]&&
-                    jsonAllEvents.events[i].data[6]==thisEventOnlyDataAndHour[6]&&jsonAllEvents.events[i].data[7]==thisEventOnlyDataAndHour[7]&&
-                    jsonAllEvents.events[i].data[8]==thisEventOnlyDataAndHour[8]&&jsonAllEvents.events[i].data[9]==thisEventOnlyDataAndHour[9])
-                {
+                        var jsonSingleArtist=JSON.parse(data);
 
-                    $("#relSameDay").append(
+                        $("#relSameDay").append(
                     
-                        `
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <a href="singleevent.html?id=${jsonAllEvents.events[i]._id}">  
-                                <img src="../../../${jsonAllEvents.events[i].photoGallery}"class="imagesArtist">                   
-                            </a> 
-                            <div>
-                                <h5><b>${jsonAllEvents.events[i].name}</b></h5>
-                            </div>
-                            <h7><i><b>${nameArtist}</b></i></h7>                          <br>
-                            <h7><i><b>${jsonAllEvents.events[i].type}</b></i></h7>        <br>
-                            <h7><i><b>${jsonAllEvents.events[i].date}</b></i></h7>
-                        </div>
-                        `
-                    );
+                                `
+                                <div class="col-sm-12 col-md-6 col-lg-4">
+                                    <a href="singleevent.html?id=${jsonAllEvents.events[i]._id}">  
+                                        <img src="../images/${jsonAllEvents.events[i].photoGallery[0].filename}"class="imagesArtist">                   
+                                    </a> 
+                                    <div>
+                                        <h5><b>${jsonAllEvents.events[i].name}</b></h5>
+                                    </div>
+                                    <h7><i><b>${jsonSingleArtist.artist.name}</b></i></h7>                          <br>
+                                    <h7><i><b>${jsonAllEvents.events[i].type}</b></i></h7>        <br>
+                                    <h7><i><b>${jsonAllEvents.events[i].date}</b></i></h7>
+                                </div>
+                                `
+                        );
+                    });
                 }
             }
         });
     });
-    /*
+    
     //CAROUSEL
     $('.carousel').carousel({
         interval: 2000
       })
-      */
+      
 });

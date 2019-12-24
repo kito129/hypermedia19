@@ -182,9 +182,7 @@ $(document).ready(function(){
                         $("#relSameDay").append(
                         `
                             <div class="col-sm-12 col-md-6 col-lg-4">
-                                <a href="singleseminar.html?id=${jsonSeminars.seminars[j]._id}">  
-
-                                    <img src="${jsonSeminars.seminars[j].photoGallery}"class="imagesArtist">                   
+                                <a href="singleseminar.html?id=${jsonSeminars.seminars[j]._id}">         
 
                                     <img src="../${url}"class="imagesArtist">                   
 

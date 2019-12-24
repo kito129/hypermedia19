@@ -48,12 +48,13 @@ $(document).ready(function(){
 				}
 				for(var k=0;k<jsonSeminars.seminars.length;k++){
 
+						console.log(jsonSeminars.seminars[k].photoGallery);
 						$("#events").append(
 					
 						`
 						<div class="col-sm-12 col-md-6 col-lg-4">
 							<a href="singleseminar.html?id=${jsonSeminars.seminars[k]._id}">  
-								<img src="../images/${jsonSeminars.seminars[k].photoGallery}"class="imagesArtist">                   
+								<img src="${jsonSeminars.seminars[k].photoGallery}"class="imagesArtist">                   
 							</a> 
 							<div>
 								<h5><b>${jsonSeminars.seminars[k].name}</b></h5>

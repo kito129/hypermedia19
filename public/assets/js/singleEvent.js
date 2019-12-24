@@ -28,7 +28,7 @@ $(document).ready(function(){
 
     var idEvent=getUrlParameterValue(self.location.href,"id");
     var jsonEvent;
-    var thisEventDataAndHour=jsonEvent.event.date;
+    
 
     $.get("https://hypermedia19.herokuapp.com/event/"+idEvent, function(data, status){
 
@@ -124,6 +124,7 @@ $(document).ready(function(){
         $.get("https://hypermedia19.herokuapp.com/event/", function(data, status){
 
             var jsonAllEvents=JSON.parse(data);
+            var thisEventDataAndHour=jsonEvent.event.date;
             
             
             for(let i=0;i<jsonAllEvents.events.length;i++){
@@ -164,34 +165,35 @@ $(document).ready(function(){
             var jsonSeminars=JSON.parse(data);
             var splitte;
             var url;
+            var thisEventDataAndHour=jsonEvent.event.date;
 
-            for(let i=0;i<jsonSeminars.seminars.length;i++){
+            for(let j=0;j<jsonSeminars.seminars.length;j++){
 
-                if(jsonSeminars.seminars[i].date[0]==thisEventDataAndHour[0]&&jsonSeminars.seminars[i].date[1]==thisEventDataAndHour[1]&&
-                    jsonSeminars.seminars[i].date[2]==thisEventDataAndHour[2]&&jsonSeminars.seminars[i].date[3]==thisEventDataAndHour[3]&&
-                    jsonSeminars.seminars[i].date[4]==thisEventDataAndHour[4]&&jsonSeminars.seminars[i].date[5]==thisEventDataAndHour[5]&&
-                    jsonSeminars.seminars[i].date[6]==thisEventDataAndHour[6]&&jsonSeminars.seminars[i].date[7]==thisEventDataAndHour[7]&&
-                    jsonSeminars.seminars[i].date[8]==thisEventDataAndHour[8]&&jsonSeminars.seminars[i].date[9]==thisEventDataAndHour[9]){
+                if(jsonSeminars.seminars[j].date[0]==thisEventDataAndHour[0]&&jsonSeminars.seminars[j].date[1]==thisEventDataAndHour[1]&&
+                    jsonSeminars.seminars[j].date[2]==thisEventDataAndHour[2]&&jsonSeminars.seminars[j].date[3]==thisEventDataAndHour[3]&&
+                    jsonSeminars.seminars[j].date[4]==thisEventDataAndHour[4]&&jsonSeminars.seminars[j].date[5]==thisEventDataAndHour[5]&&
+                    jsonSeminars.seminars[j].date[6]==thisEventDataAndHour[6]&&jsonSeminars.seminars[j].date[7]==thisEventDataAndHour[7]&&
+                    jsonSeminars.seminars[j].date[8]==thisEventDataAndHour[8]&&jsonSeminars.seminars[j].date[9]==thisEventDataAndHour[9]){
 
-                    splitte= jsonSeminars.seminars[i].photoGallery.split("\\");
+                    splitte= jsonSeminars.seminars[j].photoGallery.split("\\");
                     url= splitte[2]+ "\\"+splitte[3];
 
                    
                     $("#relSameDay").append(
                     `
                         <div class="col-sm-12 col-md-6 col-lg-4">
-                            <a href="singleseminar.html?id=${jsonSeminars.seminars[i]._id}">  
+                            <a href="singleseminar.html?id=${jsonSeminars.seminars[j]._id}">  
 
-                                <img src="${jsonSeminars.seminars[i].photoGallery}"class="imagesArtist">                   
+                                <img src="${jsonSeminars.seminars[j].photoGallery}"class="imagesArtist">                   
 
                                 <img src="../${url}"class="imagesArtist">                   
 
                             </a> 
                             <div>
-                                <h5><b>${jsonSeminars.seminars[i].name}</b></h5>
+                                <h5><b>${jsonSeminars.seminars[j].name}</b></h5>
                             </div>
                             <h7><i><b>seminar</b></i></h7>        <br>
-                            <h7><i><b>${jsonSeminars.seminars[i].date}</b></i></h7>
+                            <h7><i><b>${jsonSeminars.seminars[j].date}</b></i></h7>
                         </div>
                         `
                     );

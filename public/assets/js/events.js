@@ -48,12 +48,16 @@ $(document).ready(function(){
 				}
 				for(var k=0;k<jsonSeminars.seminars.length;k++){
 
+						var splitte= jsonSeminars.seminars[k].photoGallery.split("\\");
+						var url= splitte[2]+ "\\"+splitte[3];
+
+
 						$("#events").append(
 					
 						`
 						<div class="col-sm-12 col-md-6 col-lg-4">
 							<a href="singleseminar.html?id=${jsonSeminars.seminars[k]._id}">  
-								<img src="../images/${jsonSeminars.seminars[k].photoGallery}"class="imagesArtist">                   
+								<img src="../${url}"class="imagesArtist">                   
 							</a> 
 							<div>
 								<h5><b>${jsonSeminars.seminars[k].name}</b></h5>

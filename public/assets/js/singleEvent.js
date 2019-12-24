@@ -99,12 +99,15 @@ $(document).ready(function(){
 
                 jsonSeminar=JSON.parse(data);
 
+                var splitte= jsonSeminar.seminar.photoGallery.split("\\");
+                var url= splitte[2]+ "\\"+splitte[3];
+
                 $("#relSeminar").append(
                     
                         `
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <a href="singleseminar.html?id=${jsonSeminar.seminar._id}">  
-                                <img src="../images/${jsonSeminar.seminar.photoGallery}"class="imagesArtist">                   
+                                <img src="../${url}"class="imagesArtist">                   
                             </a> 
                             <div>
                                 <h5><b>${jsonSeminar.seminar.name}</b></h5>

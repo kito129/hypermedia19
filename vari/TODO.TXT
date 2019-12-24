@@ -12,26 +12,12 @@ TODO:
 		-MongoDB			OK
 		-HerokuServer	OK
 
-
-
-	JS JQUERY CONNECTION
-
-		index 			-OK			
-		artists			-OK  	getAllArtists()
-		singleArtist		-
-		events			-
-		singleEvent		-
-		calendar		-
-		cart			-
-		login			-
-		signup			-
-	
 	FRONTEND
 
 		index 			-OK
 		about & contact		-OK
-		artists			-OK
-		singleArtist		-OK
+			artists			-OK
+			singleArtist		-OK
 		events			-OK
 		singleEvent		-OK
 		calendar		-
@@ -40,16 +26,20 @@ TODO:
 		signup			-OK
 		infoticket		-OK
 
-		VARIUS:
+	
+	TODO:
 			-insert /favicon.ico in all html page and add immage -OK
-	
-	
-	DOCUMENTATION
-
-		backend			-WORKING	API
-		frontend		-
-		design			-
-
+			-menu bottone a destra
+			body ribassato su tutte le pagine
+			nav bar sistemare eventi
+			check pagine statiche
+			fine eventi 
+			seminari
+			ordini
+			carrello
+			login/registrazione
+			filtro eventi
+			
 
 
 DELIVERBALE

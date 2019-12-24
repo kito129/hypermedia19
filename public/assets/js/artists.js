@@ -6,15 +6,14 @@ $(document).ready(function(){
 
 		for(var i=0;i<jsonArtists.artists.length;i++){
 
-			var  text= jsonArtists.artists[i].photoGallery[0].path;
-			
+			var  text= jsonArtists.artists[i].photoGallery[0].filename;
 
 			$("#performer").append(
 
 				`
 				<div class="col-sm-12 col-md-6 col-lg-4">
 					<a href="singleartist.html?id=${jsonArtists.artists[i]._id}">  
-						<img src="../../../${text}"class="imagesArtist">                   
+						<img src="../images/${text}"class="imagesArtist">                   
 					</a> 
 					<div>
 						<h5><b>${jsonArtists.artists[i].name}</b></h5>

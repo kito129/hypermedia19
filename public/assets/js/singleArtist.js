@@ -37,11 +37,11 @@ $(document).ready(function(){
         var photo1;
         var photo2;
         var photo3;
-        /*
+        
 
-        photo1=jsonArtist.artist.photoGallery[0].path;
-        photo2=jsonArtist.artist.photoGallery[1].path;
-        photo3=jsonArtist.artist.photoGallery[2].path;
+        photo1=jsonArtist.artist.photoGallery[0].filename;
+        photo2=jsonArtist.artist.photoGallery[1].filename;
+        photo3=jsonArtist.artist.photoGallery[2].filename;
 
         
         $("#artistName").text(jsonArtist.artist.name);
@@ -49,20 +49,20 @@ $(document).ready(function(){
         //link for carousel
         $("#img1").append(
             `
-            <img class="d-block w-100" src="../../../${photo1}">
+            <img class="d-block w-100" src="../images/${photo1}">
             `
         );
         $("#img2").append(
             `
-            <img class="d-block w-100" src="../../../${photo2}">
+            <img class="d-block w-100" src="../images/${photo2}">
             `
         );
         $("#img3").append(
             `
-            <img class="d-block w-100" src="../../../${photo3}">
+            <img class="d-block w-100" src="../images/${photo3}">
             `
         );
-        */
+        
 
         //add info 
         $("#affiliationTitle").text("Current Affiliation: ")
@@ -99,7 +99,7 @@ $(document).ready(function(){
                         `
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <a href="singleevent.html?id=${jsonEvents.events[i]._id}">  
-                                <img src="../../../${jsonEvents.events[i].photoGallery}"class="imagesArtist">                   
+                                <img src="../images/${jsonEvents.events[i].photoGallery[0].filename}"class="imagesArtist">                   
                             </a> 
                             <div>
                                 <h5><b>${jsonEvents.events[i].name}</b></h5>

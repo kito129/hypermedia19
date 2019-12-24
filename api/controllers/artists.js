@@ -55,6 +55,7 @@ exports.artists_create_artist = (req, res, next) => {
           message: "Artist already exists"
         }));
       } else {
+        console.log(req.files);
         const artist = new Artist({
           _id: new mongoose.Types.ObjectId(),
           name: req.body.name,
@@ -102,7 +103,7 @@ exports.artists_create_artist = (req, res, next) => {
 exports.artists_get_artist = (req, res, next) => {
   const id = req.params.artistId;
   Artist.findById(id)
-    .select("name currentAffiliattion type achivements isCompany companyMembers abstract photoGallery photoGallery _id")
+    .select("name currentAffiliattion type achivements isCompany companyMembers abstract photoGallery _id")
     .exec()
     .then(doc => {
       if (doc) {

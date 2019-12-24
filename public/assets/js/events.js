@@ -26,7 +26,9 @@ $(document).ready(function(){
 
 							nameArtist=jsonArtists.artists[j].name;
 						}
+
 					};
+					console.log(jsonEvents.events[i].name);
 					$("#events").append(
 					
 						`

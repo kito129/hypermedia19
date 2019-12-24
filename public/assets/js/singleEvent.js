@@ -199,8 +199,7 @@ $(document).ready(function(){
                     });
                 }
             }
-<<<<<<< HEAD
-=======
+
 
             $.get("https://hypermedia19.herokuapp.com/seminar/", function(data, status){
 
@@ -240,7 +239,7 @@ $(document).ready(function(){
                     }
                 }
             });
->>>>>>> 67a9881b268e8ba07ed74eb20531f11c23385f2d
+
         });
     });
     

@@ -210,6 +210,20 @@ body {
 	border: none !important;
 }
 
+.cont_calendario{
+	background-color: blanchedalmond;
+	border-radius: 30px;
+	padding: 10px;
+}
+
+.sfondo_orario_cal{
+	background-color: crimson;
+	color: white;
+	border-radius: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
 /* il carrello si deve vedere solo dopo aver fatto il login
 
 .cart{

@@ -104,7 +104,7 @@ $(document).ready(function(){
                         `
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <a href="singleseminar.html?id=${jsonSeminar.seminar._id}">  
-                                <img src="../../../${jsonSeminar.seminar.photoGallery}"class="imagesArtist">                   
+                                <img src="../images/${jsonSeminar.seminar.photoGallery}"class="imagesArtist">                   
                             </a> 
                             <div>
                                 <h5><b>${jsonSeminar.seminar.name}</b></h5>
@@ -155,6 +155,8 @@ $(document).ready(function(){
                 }
             }
         });
+
+        //appendere i seminari
     });
     
     //CAROUSEL

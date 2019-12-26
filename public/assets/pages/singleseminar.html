@@ -45,44 +45,68 @@
 			</ul>
 		</div>
 	</nav>
-	<br>
-	<br>
-	<br>
-	<div align="center" class="singleEvent">
-		<img src="../images/private/seminars/cocciante_sem.jpg" class="imageSingleSeminar">
-	</div>
-	<div class="singleEvent">
-		<a class="event"><b>MODERN MUSICAL SEMINAR</b></a><br>
-		<a class="artista" href="singleartist.html"><b>RICCARDO COCCIANTE</b></a><br>
-		<a class="date">Date: <b>12/06/2020 - 22.00</b></a><br>
-		<a class="place">Place: <b>Pavilion 2</b></a><br>
-		<a class="price">Price: <b>free</b></a><br>
-		<button type="button" class="btn btn-dark">BUY</button>
-		<div style="text-align:justify" class="paragrafofullpage">
-			<p class="descrizione"><b>Riccardo Cocciante talks about how the concept of musical has evolved over the years, comparing his works with those of the past.</b></p>
+	<!-- MAIN   -->
+	<div class="container">
+		<!-- SEMINAR   -->
+		<div  class="container-fluid" align="center"> 
+			<!--first row-->
+			<div class="col mt-4 mb-4">
+				<h3 id="seminarName"></h3>   
+			</div>
+			<div class="row">
+				<!-- photoGallery   -->
+				<div class="col-sm-12 col-md-5 col-lg-5 mb-5" id ="semImage">
+						<!-- photoGallery   -->
+					</a>
+				</div>
+				<!-- info   -->
+				<div class="col-sm-12 col-md-7 col-lg-7" id="info">
+					<!--data-->
+					<div class="row">
+						<div class="col-sm-12 col-md-6 col-lg-4 " align="left">
+							<h4><b id="dateTitle"></b></h4>
+						</div>
+						<div class="col-sm-12 col-md-6 col-lg-8 " align="left">
+							<h5 id="date"></h5>
+						</div>
+					</div>
+					<!--location-->
+					<div class="row">
+						<div class="col-sm-12 col-md-6 col-lg-4 " align="left">
+							<h4><b id="locationTitle"></b></h4>
+						</div>
+						<div class="col-sm-12 col-md-6 col-lg-8 " align="left">
+							<h5  id="location"></h5>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--second row   abstarct-->
+			<div class="row mt-3 mb-5">
+				<div style="text-align:justify">
+					<p id="abstract"></p>
+				</div>
+			</div>
+		</div>	
+		<!-- REL EVENT   -->
+		<div  class="container mt-5 mb-5" align="left">
+			<h3>RELATIVE EVENT</h3>   
+			<div class="row"  align="center" id="relEvent">
+				
+				<!--getRelEvent-->				
+
+			</div>	
+		</div>
+		<!-- SAME DATE   -->
+		<div  class="container mt-5 mb-5" align="left">
+			<h3>IN SAME DAY</h3>   
+			<div class="row"  align="center" id="relSameDay">
+				
+				<!--getSameDate-->				
+
+			</div>	
 		</div>
 	</div>
-	<br>
-	<a id="relativeEvent"><b>RELATIVE EVENTS</b></a><br><br>
-	<div align="center" class="singleEvent">
-		<img src="../images/private/events/notre_dame.jpg" class="imageSingleEvent">
-	</div>
-	<div class="singleEvent">
-		<a class="name" href="singleevent.html"><b>NOTRE DAME DE PARIS</b></a><br>
-		<a class="artista" href="singleartist.html"><b>DREAMUSICAL</b></a><br>
-		<a class="date">Date: <b>12/06/2020 - 21.00</b></a><br>
-		<a class="place">Place: <b>Pavilion 1</b></a><br>
-		<a class="price">Price: <b>35.00€</b></a><br>
-		<span>
-			<button type="button" class="btn btn-dark btncart"><b>-</b></button>
-			<span class="quantity"><b>3</b></span>
-			<b>TICKETS</b>
-			<button type="button" class="btn btn-dark btncart"><b>+</b></button>
-			<button type="button" class="btn btn-dark"><b>BUY</b></button><br>
-		</span>		
-	</div>
-	<br>
-	
 	<!------------------ FOOTER ------------------>
 	<footer class=" page-footer pt-4 pt-md-4 border-top bg-dark " id="footer">
 		<div class="container" align="center">
@@ -128,14 +152,13 @@
 			<p align="right" class="credit"><i>#milanbynight</i></p>
 		</div>	
 	</footer>
-
-  <!------------------ END FOOTER ------------------>	
-	
+  	<!------------------ END FOOTER ------------------>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="../js/jquery-3.3.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap-4.3.1.js"></script>
+	<script src="../js/bootstrap-4.3.1.js"></script>
+	<script src="../js/singleSeminar.js"></script>
 	
 </body>
 </html>

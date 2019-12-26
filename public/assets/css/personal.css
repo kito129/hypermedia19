@@ -26,35 +26,6 @@
 	color: white;
 }
 
-.img_container{
-	background-image: url("../images/public/b.png");
-	height: 650px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
-}
-
-.inner_container{
-	text-align: right;
-	position: absolute;
-	width: 100%;
-	color: white;
-	height: auto;
-	margin-top: 200px;
-}
-
-.btn{
-	width: 100px;
-	padding: 5px;
-	color: white;
-	border: 2px solid white;
-}
-
-.marginR{
-	margin-right: 10px;
-}
-
 .subtitle{
 	margin-left: 50px;
 	padding-top: 10px;

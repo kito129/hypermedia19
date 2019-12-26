@@ -29,23 +29,18 @@ $(document).ready(function(){
 
     //ARTIST
     var idArtist=getUrlParameterValue(self.location.href,"id");
+    //global
     var jsonArtist;
 
     $.get("https://hypermedia19.herokuapp.com/artist/"+idArtist, function(data, status){
 
         jsonArtist=JSON.parse(data);
-        var photo1;
-        var photo2;
-        var photo3;
-        
+        var photo1=jsonArtist.artist.photoGallery[0].filename;
+        var photo2=jsonArtist.artist.photoGallery[1].filename;
+        var photo3=jsonArtist.artist.photoGallery[2].filename;
 
-        photo1=jsonArtist.artist.photoGallery[0].filename;
-        photo2=jsonArtist.artist.photoGallery[1].filename;
-        photo3=jsonArtist.artist.photoGallery[2].filename;
-
-        
+        //add name
         $("#artistName").text(jsonArtist.artist.name);
-
         //link for carousel
         $("#img1").append(
             `
@@ -62,8 +57,6 @@ $(document).ready(function(){
             <img class="d-block w-100" src="../images/${photo3}">
             `
         );
-        
-
         //add info 
         $("#affiliationTitle").text("Current Affiliation: ")
         $("#currentAffiliation").text(jsonArtist.artist.currentAffiliattion);
@@ -88,7 +81,9 @@ $(document).ready(function(){
             $("#memebersTitle").text("Members: ");
             $("#members").text(members);
         }
-            //RELATIVE EVENT
+
+
+        //RELATIVE EVENT
         $.get("https://hypermedia19.herokuapp.com/event/", function(data, status){
 
             var jsonEvents=JSON.parse(data);
@@ -107,12 +102,12 @@ $(document).ready(function(){
                             <h7><i><b>${jsonEvents.events[i].date}</b></i></h7>
                         </div>
                         `
-
                     );
                 }
             }
         });
     });
+    
     //CAROUSEL
     $('.carousel').carousel({
         interval: 2000

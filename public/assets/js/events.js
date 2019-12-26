@@ -15,22 +15,17 @@ $(document).ready(function(){
 			$.get("https://hypermedia19.herokuapp.com/seminar",function(data,status){
 
 				jsonSeminars=JSON.parse(data);
-				//aggiungere  FORSE IL BOTTONE PER COMPRARE IL BIGLIETTO
+
+				//append event
 				for(var i=0;i<jsonEvents.events.length;i++){
-
 					var nameArtist;
-
 					for(var j=0;j<jsonArtists.artists.length;j++){
-
 						if(jsonArtists.artists[j]._id==jsonEvents.events[i].artistId){
-
 							nameArtist=jsonArtists.artists[j].name;
 						}
-
 					};
-					console.log(jsonEvents.events[i].name);
+
 					$("#events").append(
-					
 						`
 						<div class="col-sm-12 col-md-6 col-lg-4">
 							<a href="singleevent.html?id=${jsonEvents.events[i]._id}">  
@@ -39,49 +34,42 @@ $(document).ready(function(){
 							<div>
 								<h5><b>${jsonEvents.events[i].name}</b></h5>
 							</div>
-							<h7><i><b>${nameArtist}</b></i></h7>                          <br>
-							<h7><i><b>${jsonEvents.events[i].type}</b></i></h7>        <br>
-							<h7><i><b>${jsonEvents.events[i].date}</b></i></h7>
+							<div>
+								<h7><i><b>${nameArtist}</b></i></h7>
+							</div>
+							<div>
+								<h7><i><b>${jsonEvents.events[i].type}</b></i></h7>    
+							</div>  
+							<div>
+								<h7><i><b>${jsonEvents.events[i].date}</b></i></h7>
+							</div>
 						</div>
 						`
 					);
 				}
+				//append seminar
 				for(var k=0;k<jsonSeminars.seminars.length;k++){
-
-
-						console.log(jsonSeminars.seminars[k].photoGallery);
-
-						var splitte= jsonSeminars.seminars[k].photoGallery.split("\\");
-						var url= splitte[2]+ "\\"+splitte[3];
-
-						$("#events").append(
-					
+					var split= jsonSeminars.seminars[k].photoGallery.split("\\");
+					var url= split[2]+ "\\"+split[3];
+					$("#events").append(
 						`
 						<div class="col-sm-12 col-md-6 col-lg-4">
 							<a href="singleseminar.html?id=${jsonSeminars.seminars[k]._id}">  
-
 								<img src="../${url}"class="imagesArtist">                   
-
 							</a> 
 							<div>
 								<h5><b>${jsonSeminars.seminars[k].name}</b></h5>
 							</div>
-							<h7><i><b>seminar</b></i></h7>        <br>
+							<div>
+								<h7><i><b>seminar</b></i></h7>
+							</div>
+							<div>
 							<h7><i><b>${jsonSeminars.seminars[k].date}</b></i></h7>
+							</div>
 						</div>
 						`
 					);
-
-
-
 				}
-
-
-
-
-
-
-
 			});
 		});
 	});

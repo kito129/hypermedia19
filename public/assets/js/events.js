@@ -47,10 +47,10 @@ function changeStateSe() {
 function eventBtn() {
 	
 	if(evCout){
-		$('#eventBtn').removeClass('btn btn-primary').addClass('btn btn-outline-primary');
+		$('#eventBtn').removeClass('btn btn-primary').addClass('btn btn-primary disabled ');
 		$('.events').hide();
 	} else {
-		$('#eventBtn').removeClass('btn btn-outline-primary').addClass('btn btn-primary');
+		$('#eventBtn').removeClass('btn btn-primary disabled').addClass('btn btn-primary');
 		$('.events').show();
 	}
 	changeStateEv();
@@ -60,10 +60,10 @@ function eventBtn() {
 function seminarBtn() {
 
 	if(seCout){
-		$('#seminarBtn').removeClass('btn btn-secondary').addClass('btn btn-outline-secondary');
+		$('#seminarBtn').removeClass('btn btn-secondary').addClass('btn btn-secondary disabled ');
 		$('.seminars').hide();
 	} else {
-		$('#seminarBtn').removeClass('btn btn-outline-secondary').addClass('btn btn-secondary');
+		$('#seminarBtn').removeClass('btn btn-secondary disabled').addClass('btn btn-secondary');
 		$('.seminars').show();
 	}
 	changeStateSe();

@@ -68,7 +68,7 @@ function seminarBtn() {
 	}
 	changeStateSe();
 }
-
+let typeArray=[];
 
 //<a href="singleartist.html?id=${Artist.artist._id}">  
 
@@ -120,6 +120,11 @@ $(document).ready(function(){
 						</div>
 						`
 					);
+					//add type in the array
+					if (!typeArray.includes(Events.events[i].type)) {
+						typeArray.push(Events.events[i].type);
+					}
+								
 				}
 				
 				//append seminar
@@ -154,14 +159,28 @@ $(document).ready(function(){
 				} else if(value=="event"){
 					seminarBtn();
 				}
+				//populte row button with type
+				console.log(typeArray);
+				typeArray.forEach(element => {
+					$("#buttonRow").append(
+						`
+						<button type="button" class="btn btn-danger" id="${element}Btn">${element}</button>
+						`
+				);
+				});
+
+				var text =typeArray[0]+"Btn"
+				console.log(text);
+				
 			});
 		});
 	});
+
 });
 
 //observe for update the DOM
-let control1 = false;
-let control2 = false;
+let cEvent = false;
+let cSeminar = false;
 var observer = new MutationObserver(function(mutations, observer) {
 		
 	var ev = document.getElementsByClassName("events");
@@ -171,9 +190,9 @@ var observer = new MutationObserver(function(mutations, observer) {
 		const evEl = ev[i];
 
 		if(evEl.style.display==="none"){
-			control1=true;
+			cEvent=true;
 		} else {
-			control1 = false;
+			cEvent = false;
 			break;
 		}
 		
@@ -183,15 +202,15 @@ var observer = new MutationObserver(function(mutations, observer) {
 		console.log(semEl.style.display);
 
 		if(semEl.style.display==="none"){
-			control2=true;
+			cSeminar=true;
 		} else {
-			control2 = false;
+			cSeminar = false;
 			break;
 		}
 		
 	}
 	//check for no data
-	if(control1 && control2){
+	if(cEvent && cSeminar){
 		$("#events").append(
 			`
 			<div class="col-12 mt-5 mb-5" id="noData" align="center">
@@ -220,13 +239,9 @@ $( "#seminarBtn" ).click(function() {
 });
 
 //TYpE
-$( "#dropType" ).click(function() {
-
+$( "#danceBtn" ).click(function() {
+	console.log("ciao");
 });
-//DATA
-$( "#dropData" ).click(function() {
 
-});
-//EVENT
 
 

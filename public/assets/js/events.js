@@ -27,7 +27,7 @@ $(document).ready(function(){
 
 					$("#events").append(
 						`
-						<div class="col-sm-12 col-md-6 col-lg-4">
+						<div class="col-sm-12 col-md-6 col-lg-4 events">
 							<a href="singleevent.html?id=${Events.events[i]._id}">  
 								<img src="../images/${Events.events[i].photoGallery[0].filename}"class="imagesArtist">                   
 							</a> 
@@ -53,7 +53,7 @@ $(document).ready(function(){
 					var url= split[2]+ "\\"+split[3];
 					$("#events").append(
 						`
-						<div class="col-sm-12 col-md-6 col-lg-4">
+						<div class="col-sm-12 col-md-6 col-lg-4 seminars">
 							<a href="singleseminar.html?id=${Seminars.seminars[k]._id}">  
 								<img src="../${url}"class="imagesArtist">                   
 							</a> 
@@ -74,3 +74,63 @@ $(document).ready(function(){
 		});
 	});
 });
+
+
+let evCout = false;
+let seCout = false;
+
+function changeStateEv() {
+	if(evCout){
+		evCout=false;
+	} else {
+		evCout=true;
+	}
+}
+
+function changeStateSe() {
+	if(seCout){
+		seCout=false;
+	} else {
+		seCout=true;
+	}
+}
+
+
+
+//filter
+//EVENT
+$( "#eventBtn" ).click (function() {
+	
+	changeStateEv();
+	if(evCout){
+		$('.seminars').hide();
+	} else {
+		$('.seminars').show();
+	}
+	
+	
+
+});
+//TYpE
+$( "#dropType" ).click(function() {
+
+});
+//DATA
+$( "#dropData" ).click(function() {
+
+});
+//EVENT
+
+//SEMINAR
+$( "#seminarBtn" ).click(function() {
+	
+	changeStateSe();
+	if(seCout){
+		$('.events').hide();
+	} else {
+		$('.events').show();
+	}
+
+});
+
+

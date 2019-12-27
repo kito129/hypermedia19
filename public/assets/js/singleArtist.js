@@ -24,7 +24,6 @@ function getUrlParameterValue(url, parameter) {
     }
 }
 
-
 $(document).ready(function(){
 
     //ARTIST

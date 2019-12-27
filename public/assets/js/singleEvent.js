@@ -33,8 +33,6 @@ $(document).ready(function(){
     var Artist;
     var Artist;
     
-
-    
     $.get("https://hypermedia19.herokuapp.com/event/"+idEvent, function(data, status){
 
         Event=JSON.parse(data);

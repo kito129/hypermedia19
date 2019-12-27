@@ -1,3 +1,11 @@
+//global varible
+let evCout = true;
+let seCout = true;
+let textArray=[];
+let typeArray=[];
+let countArray=[];
+
+//get parameter from URL
 function getUrlParameterValue(url, parameter) {
     var questionSplit = url.split('?');
     questionSplit.shift();
@@ -24,26 +32,17 @@ function getUrlParameterValue(url, parameter) {
     }
 }
 
-
-//utlis function
-let evCout = true;
-let seCout = true;
-
-function changeStateEv() {
-	if(evCout){
-		evCout=false;
+//change state from true to false
+function changeState(val) {
+	if(val){
+		val=false;
 	} else {
-		evCout=true;
+		val=true;
 	}
-}
-function changeStateSe() {
-	if(seCout){
-		seCout=false;
-	} else {
-		seCout=true;
-	}
+	return val;
 }
 
+//function by changing state if the button
 function eventBtn() {
 	
 	if(evCout){
@@ -53,9 +52,8 @@ function eventBtn() {
 		$('#eventBtn').removeClass('btn btn-primary disabled').addClass('btn btn-primary');
 		$('.events').show();
 	}
-	changeStateEv();
+	evCout= changeState(evCout);
 }
-
 
 function seminarBtn() {
 
@@ -66,12 +64,13 @@ function seminarBtn() {
 		$('#seminarBtn').removeClass('btn btn-secondary disabled').addClass('btn btn-secondary');
 		$('.seminars').show();
 	}
-	changeStateSe();
+	seCout = changeState(seCout);
 }
-let typeArray=[];
+
 
 //<a href="singleartist.html?id=${Artist.artist._id}">  
 
+//ready get data from API adn populate DOM
 $(document).ready(function(){
 
 	var Artists;
@@ -123,9 +122,13 @@ $(document).ready(function(){
 					//add type in the array
 					if (!typeArray.includes(Events.events[i].type)) {
 						typeArray.push(Events.events[i].type);
+						countArray.push(true);
+						textArray.push(Events.events[i].type+"Btn");
 					}
-								
 				}
+				console.log(typeArray);
+				console.log(countArray);
+				console.log(textArray);
 				
 				//append seminar
 				for(var k=0;k<Seminars.seminars.length;k++){
@@ -159,8 +162,8 @@ $(document).ready(function(){
 				} else if(value=="event"){
 					seminarBtn();
 				}
+
 				//populte row button with type
-				console.log(typeArray);
 				typeArray.forEach(element => {
 					$("#buttonRow").append(
 						`
@@ -168,46 +171,36 @@ $(document).ready(function(){
 						`
 				);
 				});
-
-				var text =typeArray[0]+"Btn"
-				console.log(text);
-				
 			});
 		});
 	});
-
 });
 
 //observe for update the DOM
 let cEvent = false;
 let cSeminar = false;
 var observer = new MutationObserver(function(mutations, observer) {
-		
 	var ev = document.getElementsByClassName("events");
 	var sem = document.getElementsByClassName("seminars");
-
+	//check empty event
 	for (let i = 0; i < ev.length; i++) {
 		const evEl = ev[i];
-
 		if(evEl.style.display==="none"){
 			cEvent=true;
 		} else {
 			cEvent = false;
 			break;
 		}
-		
 	}
+	//check empty seminar
 	for (let k = 0; k < sem.length; k++) {
 		const semEl = sem[k];
-		console.log(semEl.style.display);
-
 		if(semEl.style.display==="none"){
 			cSeminar=true;
 		} else {
 			cSeminar = false;
 			break;
 		}
-		
 	}
 	//check for no data
 	if(cEvent && cSeminar){
@@ -222,13 +215,14 @@ var observer = new MutationObserver(function(mutations, observer) {
 		$("#noData").remove();
 	}
 });
-//observe for update the DOM
+
+//observe for update the DOM in all subTree
 observer.observe(document, {
 	subtree: true,
 	attributes: true
   });
 
-//filter
+//filter button
 //EVENT
 $( "#eventBtn" ).click (function() {
 	eventBtn();
@@ -238,10 +232,12 @@ $( "#seminarBtn" ).click(function() {
 	seminarBtn();
 });
 
-//TYpE
-$( "#danceBtn" ).click(function() {
+/*
+$( document ).on("click",text,function() {
 	console.log("ciao");
 });
+
+*/
 
 
 

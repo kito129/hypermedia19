@@ -1,3 +1,77 @@
+function getUrlParameterValue(url, parameter) {
+    var questionSplit = url.split('?');
+    questionSplit.shift();
+    var onlyParameters = questionSplit.join('?');
+    var splittedParameters = onlyParameters.split('&');
+    var found = false;
+    var value = null;
+    for (var c = 0; c < splittedParameters.length; c++) {
+        var parts = splittedParameters[c].split('=');
+        if (parts[0] == parameter) {
+            value = parts[1];
+            if (value.trim()== '') {
+                found = false;
+            } else {
+                found = true;
+            }
+        }
+        if (found) {
+            return value;
+        }
+    }
+    if (!found) {
+        return false;
+    }
+}
+
+
+//utlis function
+let evCout = true;
+let seCout = true;
+
+function changeStateEv() {
+	if(evCout){
+		evCout=false;
+	} else {
+		evCout=true;
+	}
+}
+function changeStateSe() {
+	if(seCout){
+		seCout=false;
+	} else {
+		seCout=true;
+	}
+}
+
+function eventBtn() {
+	
+	if(evCout){
+		$('#eventBtn').removeClass('btn btn-primary').addClass('btn btn-outline-primary');
+		$('.events').hide();
+	} else {
+		$('#eventBtn').removeClass('btn btn-outline-primary').addClass('btn btn-primary');
+		$('.events').show();
+	}
+	changeStateEv();
+}
+
+
+function seminarBtn() {
+
+	if(seCout){
+		$('#seminarBtn').removeClass('btn btn-secondary').addClass('btn btn-outline-secondary');
+		$('.seminars').hide();
+	} else {
+		$('#seminarBtn').removeClass('btn btn-outline-secondary').addClass('btn btn-secondary');
+		$('.seminars').show();
+	}
+	changeStateSe();
+}
+
+
+//<a href="singleartist.html?id=${Artist.artist._id}">  
+
 $(document).ready(function(){
 
 	var Artists;
@@ -27,7 +101,7 @@ $(document).ready(function(){
 
 					$("#events").append(
 						`
-						<div class="col-sm-12 col-md-6 col-lg-4 events">
+						<div class="col-sm-12 col-md-6 col-lg-4 events" id="${Events.events[i].type}">
 							<a href="singleevent.html?id=${Events.events[i]._id}">  
 								<img src="../images/${Events.events[i].photoGallery[0].filename}"class="imagesArtist">                   
 							</a> 
@@ -47,6 +121,7 @@ $(document).ready(function(){
 						`
 					);
 				}
+				
 				//append seminar
 				for(var k=0;k<Seminars.seminars.length;k++){
 					var split= Seminars.seminars[k].photoGallery.split("\\");
@@ -70,47 +145,33 @@ $(document).ready(function(){
 						`
 					);
 				}
+
+				//check for initial filter
+				var value=getUrlParameterValue(self.location.href,"value");
+				
+				if(value=="seminar"){
+					eventBtn();
+				} else if(value=="event"){
+					seminarBtn();
+				}
 			});
 		});
 	});
 });
 
 
-let evCout = false;
-let seCout = false;
-
-function changeStateEv() {
-	if(evCout){
-		evCout=false;
-	} else {
-		evCout=true;
-	}
-}
-
-function changeStateSe() {
-	if(seCout){
-		seCout=false;
-	} else {
-		seCout=true;
-	}
-}
-
 
 
 //filter
 //EVENT
 $( "#eventBtn" ).click (function() {
-	
-	changeStateEv();
-	if(evCout){
-		$('.seminars').hide();
-	} else {
-		$('.seminars').show();
-	}
-	
-	
-
+	eventBtn();
 });
+//SEMINAR
+$( "#seminarBtn" ).click(function() {
+	seminarBtn();
+});
+
 //TYpE
 $( "#dropType" ).click(function() {
 
@@ -121,16 +182,5 @@ $( "#dropData" ).click(function() {
 });
 //EVENT
 
-//SEMINAR
-$( "#seminarBtn" ).click(function() {
-	
-	changeStateSe();
-	if(seCout){
-		$('.events').hide();
-	} else {
-		$('.events').show();
-	}
-
-});
 
 

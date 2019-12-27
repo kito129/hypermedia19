@@ -1,9 +1,10 @@
 //global varible
-let evCout = true;
-let seCout = true;
-let textArray=[];
-let typeArray=[];
-let countArray=[];
+let evCount = true;
+let seCount = true;
+let danceCount = true;
+let operaCount = true;
+let concertCount = true;
+let theaterCount = true;
 
 //get parameter from URL
 function getUrlParameterValue(url, parameter) {
@@ -45,26 +46,74 @@ function changeState(val) {
 //function by changing state if the button
 function eventBtn() {
 	
-	if(evCout){
+	if(evCount){
 		$('#eventBtn').removeClass('btn btn-primary').addClass('btn btn-primary disabled ');
 		$('.events').hide();
 	} else {
 		$('#eventBtn').removeClass('btn btn-primary disabled').addClass('btn btn-primary');
 		$('.events').show();
 	}
-	evCout= changeState(evCout);
+	evCount= changeState(evCount);
 }
 
 function seminarBtn() {
 
-	if(seCout){
+	if(seCount){
 		$('#seminarBtn').removeClass('btn btn-secondary').addClass('btn btn-secondary disabled ');
 		$('.seminars').hide();
 	} else {
 		$('#seminarBtn').removeClass('btn btn-secondary disabled').addClass('btn btn-secondary');
 		$('.seminars').show();
 	}
-	seCout = changeState(seCout);
+	seCount = changeState(seCount);
+}
+
+function danceBtn() {
+
+	if(danceCount){
+		$('#danceBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
+		$('[type=dance]').hide();
+	} else {
+		$('#danceBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
+		$('[type=dance]').show();
+	}
+	danceCount = changeState(danceCount);
+}
+
+function concertBtn() {
+
+	if(concertCount){
+		$('#concertBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
+		$('[type=concert]').hide();
+	} else {
+		$('#concertBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
+		$('[type=concert]').show();
+	}
+	concertCount = changeState(concertCount);
+}
+
+function theaterBtn() {
+
+	if(theaterCount){
+		$('#theaterBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
+		$('[type=theater]').hide();
+	} else {
+		$('#theaterBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
+		$('[type=theater]').show();
+	}
+	theaterCount = changeState(theaterCount);
+}
+
+function operaBtn() {
+
+	if(operaCount){
+		$('#operaBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
+		$('[type=opera]').hide();
+	} else {
+		$('#operaBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
+		$('[type=opera]').show();
+	}
+	operaCount = changeState(operaCount);
 }
 
 
@@ -100,7 +149,7 @@ $(document).ready(function(){
 
 					$("#events").append(
 						`
-						<div class="col-sm-12 col-md-6 col-lg-4 events" id="${Events.events[i].type}">
+						<div class="col-sm-12 col-md-6 col-lg-4 events" type="${Events.events[i].type}">
 							<a href="singleevent.html?id=${Events.events[i]._id}">  
 								<img src="../images/${Events.events[i].photoGallery[0].filename}"class="imagesArtist">                   
 							</a> 
@@ -119,16 +168,7 @@ $(document).ready(function(){
 						</div>
 						`
 					);
-					//add type in the array
-					if (!typeArray.includes(Events.events[i].type)) {
-						typeArray.push(Events.events[i].type);
-						countArray.push(true);
-						textArray.push(Events.events[i].type+"Btn");
-					}
 				}
-				console.log(typeArray);
-				console.log(countArray);
-				console.log(textArray);
 				
 				//append seminar
 				for(var k=0;k<Seminars.seminars.length;k++){
@@ -163,14 +203,6 @@ $(document).ready(function(){
 					seminarBtn();
 				}
 
-				//populte row button with type
-				typeArray.forEach(element => {
-					$("#buttonRow").append(
-						`
-						<button type="button" class="btn btn-danger" id="${element}Btn">${element}</button>
-						`
-				);
-				});
 			});
 		});
 	});
@@ -231,6 +263,24 @@ $( "#eventBtn" ).click (function() {
 $( "#seminarBtn" ).click(function() {
 	seminarBtn();
 });
+//TODAY
+$( "#todayBtn" ).click(function() {
+	todayBtn();
+});
+//TYPE
+$( "#concertBtn" ).click(function() {
+	concertBtn();
+});
+$( "#theaterBtn" ).click(function() {
+	theaterBtn();
+});
+$( "#operaBtn" ).click(function() {
+	operaBtn();
+});
+$( "#danceBtn" ).click(function() {
+	danceBtn();
+});
+
 
 /*
 $( document ).on("click",text,function() {

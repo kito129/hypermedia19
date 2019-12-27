@@ -159,13 +159,55 @@ $(document).ready(function(){
 	});
 });
 
-const mutation = new MutationObserver(function () {
-	console.log("cioa");
+//observe for update the DOM
+let control1 = false;
+let control2 = false;
+var observer = new MutationObserver(function(mutations, observer) {
+		
+	var ev = document.getElementsByClassName("events");
+	var sem = document.getElementsByClassName("seminars");
+
+	for (let i = 0; i < ev.length; i++) {
+		const evEl = ev[i];
+
+		if(evEl.style.display==="none"){
+			control1=true;
+		} else {
+			control1 = false;
+			break;
+		}
+		
+	}
+	for (let k = 0; k < sem.length; k++) {
+		const semEl = sem[k];
+		console.log(semEl.style.display);
+
+		if(semEl.style.display==="none"){
+			control2=true;
+		} else {
+			control2 = false;
+			break;
+		}
+		
+	}
+	//check for no data
+	if(control1 && control2){
+		$("#events").append(
+			`
+			<div class="col-12 mt-5 mb-5" id="noData" align="center">
+				<h3><i>No data</i></h3>
+			</div>
+			`
+		);
+	} else {
+		$("#noData").remove();
+	}
 });
-
-console.log(document.getElementsByClassName("container mt-5 mb-5")[0],{ subtree : true});
-
-
+//observe for update the DOM
+observer.observe(document, {
+	subtree: true,
+	attributes: true
+  });
 
 //filter
 //EVENT
@@ -186,7 +228,5 @@ $( "#dropData" ).click(function() {
 
 });
 //EVENT
-mutation.observe(document.getElementsByClassName("container mt-5 mb-5")[0],{subtree: true, childList: true});
-
 
 

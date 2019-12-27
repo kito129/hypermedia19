@@ -159,6 +159,11 @@ $(document).ready(function(){
 	});
 });
 
+const mutation = new MutationObserver(function () {
+	console.log("cioa");
+});
+
+console.log(document.getElementsByClassName("container mt-5 mb-5")[0],{ subtree : true});
 
 
 
@@ -181,6 +186,7 @@ $( "#dropData" ).click(function() {
 
 });
 //EVENT
+mutation.observe(document.getElementsByClassName("container mt-5 mb-5")[0],{subtree: true, childList: true});
 
 
 

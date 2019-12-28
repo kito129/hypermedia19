@@ -1,13 +1,214 @@
+// ------  UTIL SECTION ------- 
+
 //global varible
-let evCount = true;
-let seCount = true;
-let danceCount = true;
-let operaCount = true;
-let concertCount = true;
-let theaterCount = true;
-let Count12 = true;
-let Count13 = true;
-let Count14 = true;
+let counter = [];
+for (let o = 0; o < 8; o++) {
+	counter.push(false);
+}
+
+//change state from true to false
+function changeState(val) {
+	if(val){
+		val=false;
+	} else {
+		val=true;
+	}
+	return val;
+}
+
+//function by changing state if the button
+//ARISTI AND SEMINAR
+
+//ON/OFF FUNCITON FILTER
+function onSeminar() {
+	$('#seminarBtn').removeClass('btn btn-secondary disabled').addClass('btn btn-secondary');
+	$('.seminars').show();
+}
+function offSeminar() {
+	$('#seminarBtn').removeClass('btn btn-secondary').addClass('btn btn-secondary disabled ');
+	$('.seminars').hide();
+}
+//TYPE
+function onDance() {
+	$('#danceBtn').removeClass('btn btn-danger disabled m-1').addClass('btn btn-danger m-1');
+	$('[type="dance"]').show();
+}
+function offDance() {
+	$('#danceBtn').removeClass('btn btn-danger m-1').addClass('btn btn-danger disabled m-1');
+	$('[type="dance"]').hide();
+}
+function onConcert() {
+	$('#concertBtn').removeClass('btn btn-danger disabled m-1').addClass('btn btn-danger m-1');
+	$('[type=concert]').show();
+}
+function offConcert() {
+	$('#concertBtn').removeClass('btn btn-danger m-1').addClass('btn btn-danger disabled m-1');
+	$('[type=concert]').hide();
+}
+function onTheater() {
+	$('#theaterBtn').removeClass('btn btn-danger disabled m-1').addClass('btn btn-danger m-1');
+	$('[type=theater]').show();
+}
+function offTheater() {
+	$('#theaterBtn').removeClass('btn btn-danger m-1').addClass('btn btn-danger disabled m-1');
+	$('[type=theater]').hide();
+}
+function onOpera() {
+	$('#operaBtn').removeClass('btn btn-danger disabled m-1').addClass('btn btn-danger m-1');
+	$('[type=opera]').show();
+}
+function offOpera() {
+	$('#operaBtn').removeClass('btn btn-danger m-1').addClass('btn btn-danger disabled m-1');
+	$('[type=opera]').hide();
+}
+//DATE
+function on1206() {
+	$('#Btn1206').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
+	$('[date=12062020]').show();
+}
+function off1206() {
+	$('#Btn1206').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
+	$('[date=12062020]').hide();
+}
+function on1306() {
+	$('#Btn1306').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
+	$('[date=13062020]').show();
+}
+function off1306() {
+	$('#Btn1306').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
+	$('[date=13062020]').hide();
+}
+function on1406() {
+	$('#Btn1406').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
+	$('[date=14062020]').show();
+}
+function off1406() {
+	$('#Btn1406').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
+	$('[date=14062020]').hide();
+}
+function onToday() {
+	console.log("today: ");
+	console.log(counter);
+}
+function offToday() {
+	console.log("today: ");
+	console.log(counter);
+}
+
+//BUTTON FUNCTION
+function seminarBtn() {
+	counter[0] = updateFilter(0);
+}
+//TYPE
+function danceBtn() {
+	counter[1] = updateFilter(1);
+}
+function concertBtn() {
+	counter[2] = updateFilter(2);
+}
+function theaterBtn() {
+	counter[3] = updateFilter(3);	
+}
+function operaBtn() {
+	counter[4] = updateFilter(4);
+}
+//DATA
+function Btn1206() {
+	counter[5] = updateFilter(5);
+}
+function Btn1306() {
+	counter[6] = updateFilter(6);
+}
+
+function Btn1406() {
+	counter[7] = updateFilter(7);
+}
+
+function todayBtn() {
+	counter[8] = updateFilter(8);
+}
+//function update filter
+function updateFilter(params) {
+
+	counter[params] = changeState(counter[params]);
+		switch (params) {
+			//seminar
+			case 0:
+				if(counter[params]){
+					offSeminar();
+				}else {
+					onSeminar();
+				}
+				break;
+			//dance
+			case 1:
+				if(counter[params]){
+					offDance();
+				}else {
+					onDance();
+				}
+			break;
+			//concert
+			case 2:
+				if(counter[params]){
+					offConcert();
+				}else {
+					onConcert();
+				}
+			break;
+			//theater
+			case 3:
+				if(counter[params]){
+					offTheater();
+				}else {
+					onTheater();
+				}
+			break;
+			//opera
+			case 4:
+				if(counter[params]){
+					offOpera();
+				}else {
+					onOpera();
+				}			
+			break;
+			//12/06
+			case 5:
+				if(counter[params]){
+					off1206();
+				}else {
+					on1206();
+				}
+			break;
+			//13/06
+			case 6:
+				if(counter[params]){
+					off1306();
+				}else {
+					on1306();
+				}
+			break;
+			//14/06
+			case 7:
+				if(counter[params]){
+					off1406();
+				}else {
+					on1406();
+				}
+			break;
+			//today
+			case 8:
+				if(counter[params]){
+					onToday();
+				}else {
+					offToday();
+				}
+			break;
+			}
+	
+	return counter[params];
+}
+
 
 //get parameter from URL
 function getUrlParameterValue(url, parameter) {
@@ -36,191 +237,9 @@ function getUrlParameterValue(url, parameter) {
     }
 }
 
-//change state from true to false
-function changeState(val) {
-	if(val){
-		val=false;
-	} else {
-		val=true;
-	}
-	return val;
-}
-
-//function by changing state if the button
-//ARISTI AND SEMINAR
-function eventBtn() {
-	
-	if(evCount){
-
-		$('#eventBtn').removeClass('btn btn-primary').addClass('btn btn-primary disabled ');
-		$('#danceBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
-		$('#concertBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
-		$('#theaterBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
-		$('#operaBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
-		/*
-		$('#Btn1206').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
-		$('#Btn1306').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
-		$('#Btn1406').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
-		*/
-		$('[type=dance]').hide();
-		$('[type=concert]').hide();
-		$('[type=theater]').hide();
-		$('[type=opera]').hide();
-		/*
-		$('[date=12/06/2020]').hide();
-		$('[date=13/06/2020]').hide();
-		$('[date=14/06/2020]').hide();
-		*/
-		danceCount = false;
-		operaCount = false;
-		concertCount = false;
-		theaterCount = false;
-		
-		Count12 = false;
-		Count13 = false;
-		Count14 = false;
-		
-
-	} else {
-		$('#eventBtn').removeClass('btn btn-primary disabled').addClass('btn btn-primary');
-		$('#eventBtn').removeClass('btn btn-danger disabled').addClass('btn btn-primary');
-		$('#danceBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
-		$('#concertBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
-		$('#theaterBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
-		$('#operaBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
-		/*
-		$('#Btn1206').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
-		$('#Btn1306').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
-		$('#Btn1406').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
-		*/
-		$('[type=dance]').show();
-		$('[type=concert]').show();
-		$('[type=theater]').show();
-		$('[type=opera]').show();
-		/*
-		$('[date=12/06/2020]').show();
-		$('[date=13/06/2020]').show();
-		$('[date=14/06/2020]').show();
-		*/
-		danceCount = true;
-		operaCount = true;
-		concertCount = true;
-		theaterCount = true;
-		
-		Count12 = true;
-		Count13 = true;
-		Count14 = true;
-		
-
-	}
-	evCount= changeState(evCount);
-}
-
-function seminarBtn() {
-
-	if(seCount){
-		$('#seminarBtn').removeClass('btn btn-secondary').addClass('btn btn-secondary disabled ');
-		$('.seminars').hide();
-	} else {
-		$('#seminarBtn').removeClass('btn btn-secondary disabled').addClass('btn btn-secondary');
-		$('.seminars').show();
-	}
-	seCount = changeState(seCount);
-}
-
-//TYPE
-function danceBtn() {
-
-	if(danceCount){
-		$('#danceBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
-		$('[type=dance]').hide();
-	} else {
-		$('#danceBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
-		$('[type=dance]').show();
-	}
-	danceCount = changeState(danceCount);
-}
-
-function concertBtn() {
-
-	if(concertCount){
-		$('#concertBtn').removeClass('btn btn-danger m-1').addClass('btn btn-danger disabled m-1');
-		$('[type=concert]').hide();
-	} else {
-		$('#concertBtn').removeClass('btn btn-danger disabled m-1').addClass('btn btn-danger m-1');
-		$('[type=concert]').show();
-	}
-	concertCount = changeState(concertCount);
-}
-
-function theaterBtn() {
-
-	if(theaterCount){
-		$('#theaterBtn').removeClass('btn btn-danger m-1').addClass('btn btn-danger disabled m-1');
-		$('[type=theater]').hide();
-	} else {
-		$('#theaterBtn').removeClass('btn btn-danger disabled m-1').addClass('btn btn-danger m-1');
-		$('[type=theater]').show();
-	}
-	theaterCount = changeState(theaterCount);
-}
-
-function operaBtn() {
-
-	if(operaCount){
-		$('#operaBtn').removeClass('btn btn-danger m-1').addClass('btn btn-danger disabled m-1');
-		$('[type=opera]').hide();
-	} else {
-		$('#operaBtn').removeClass('btn btn-danger disabled m-1').addClass('btn btn-danger m-1');
-		$('[type=opera]').show();
-	}
-	
-	operaCount = changeState(operaCount);
-}
-
-//DATA
-
-//12/06
-function Btn1206() {
-
-	if(Count12){
-		$('#Btn1206').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
-		$('[date=12062020]').hide();
-
-	} else {
-		$('#Btn1206').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
-		$('[date=12062020]').show();
-	}
-	Count12 = changeState(Count12);
-}
-//13/06
-function Btn1306() {
-
-	if(Count13){
-		$('#Btn1306').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
-		$('[date=13062020]').hide();
-
-	} else {
-		$('#Btn1306').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
-		$('[date=13062020]').show();
-	}
-	Count13 = changeState(Count13);
-}
-//14/06
-function Btn1406() {
-
-	if(Count14){
-		$('#Btn1406').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
-		$('[date=14062020]').hide();
-
-	} else {
-		$('#Btn1406').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
-		$('[date=14062020]').show();
-	}
-	Count14 = changeState(Count14);
-}
 
 
+// ------  MAIN SECTION ------- 
 //ready get data from API adn populate DOM
 $(document).ready(function(){
 
@@ -252,7 +271,7 @@ $(document).ready(function(){
 					var dateTxt = arr[0] + arr[1] +arr[2];
 					$("#events").append(
 						`
-						<div class="col-sm-12 col-md-6 col-lg-4 events" type="${Events.events[i].type}" date="${dateTxt}">
+						<div class="col-sm-12 col-md-6 col-lg-4 events " type="${Events.events[i].type}" date="${dateTxt}" >
 							<a href="singleevent.html?id=${Events.events[i]._id}">  
 								<img src="../images/${Events.events[i].photoGallery[0].filename}"class="imagesArtist">                   
 							</a> 
@@ -303,9 +322,9 @@ $(document).ready(function(){
 				var value=getUrlParameterValue(self.location.href,"value");
 				
 				if(value=="seminar"){
-					eventBtn();
+					onSeminar();
 				} else if(value=="event"){
-					seminarBtn();
+					offSeminar();
 				}
 
 			});
@@ -313,53 +332,8 @@ $(document).ready(function(){
 	});
 });
 
-//observe for update the DOM
-let cEvent = false;
-let cSeminar = false;
-var observer = new MutationObserver(function(mutations, observer) {
-	var ev = document.getElementsByClassName("events");
-	var sem = document.getElementsByClassName("seminars");
-	//check empty event
-	for (let i = 0; i < ev.length; i++) {
-		const evEl = ev[i];
-		if(evEl.style.display==="none"){
-			cEvent=true;
-		} else {
-			cEvent = false;
-			break;
-		}
-	}
-	//check empty seminar
-	for (let k = 0; k < sem.length; k++) {
-		const semEl = sem[k];
-		if(semEl.style.display==="none"){
-			cSeminar=true;
-		} else {
-			cSeminar = false;
-			break;
-		}
-	}
-	//check for no data
-	if(cEvent && cSeminar){
-		$("#events").append(
-			`
-			<div class="col-12 mt-5 mb-5" id="noData" align="center">
-				<h3><i>No data..</i></h3>
-			</div>
-			`
-		);
-	} else {
-		$("#noData").remove();
-	}
-});
+// ------  EVENT SECTION ------- 
 
-//observe for update the DOM in all subTree
-observer.observe(document, {
-	subtree: true,
-	attributes: true
-  });
-
-//filter button
 //EVENT
 $( "#eventBtn" ).click (function() {
 	eventBtn();
@@ -395,15 +369,161 @@ $( "#Btn1306" ).click(function() {
 $( "#Btn1406" ).click(function() {
 	Btn1406();
 });
-
-
-
-/*
-$( document ).on("click",text,function() {
-	console.log("ciao");
+$( "#todayBtn" ).click(function() {
+	todayBtn();
 });
 
-*/
+// ------  OBSERVER SECTION ------- 
 
+//global varible
+let obs = [];
+for (let o = 0; o < 9; o++) {
+	obs.push(false);
+}
+//function for check if exist elemt end update array obs
+
+function checkEmpty(params,index) {
+	//check empty event
+	for (let i = 0; i < params.length; i++) {
+		const el = params[i];
+		if(el.style.display==="none"){
+			obs[index]=true;
+		} else {
+			obs[index] = false;
+			break;
+		}
+	}
+}
+
+//observe for update the DOM
+var observer = new MutationObserver(function(mutations, observer) {
+
+	//get reference for the html objext
+	var ev = document.getElementsByClassName("events");
+	var sem = document.getElementsByClassName("seminars");
+	var dance = $('[type="dance"]');
+	var concert = $('[type=concert]');
+	var theater = $('[type=theater]');
+	var opera = $('[type=opera]');
+	var d12 = $('[date=12062020]');
+	var d13 = $('[date=13062020]');
+	var d14 = $('[date=14062020]');
+	//check if elemt is present
+	checkEmpty(ev,0);
+	checkEmpty(sem,1);
+	checkEmpty(dance,2);
+	checkEmpty(concert,3);
+	checkEmpty(theater,4);
+	checkEmpty(opera,5);
+	checkEmpty(d12,6);
+	checkEmpty(d13,7);
+	checkEmpty(d14,8);
+	//update button state
+	for (let z = 0; z < counter.length; z++) {
+
+		if(counter[z]!=obs[z+1]){
+			switch (z) {
+				//seminar
+				case 0:
+					if(obs[z+1]){
+						$('#seminarBtn').removeClass('btn btn-secondary').addClass('btn btn-secondary disabled');		
+					} else {
+						$('#seminarBtn').removeClass('btn btn-secondary disabled').addClass('btn btn-secondary');		
+					}
+				break;
+				//dance
+				case 1:
+					if(obs[z+1]){
+						$('#danceBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled');			
+					} else {
+						$('#danceBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');		
+					}
+				break;
+				//concert
+				case 2:
+					if(obs[z+1]){
+						$('#concertBtn').removeClass('btn btn-danger m-1').addClass('btn btn-danger disabled m-1');			
+					} else { 
+						$('#concertBtn').removeClass('btn btn-danger disabled m-1').addClass('btn btn-danger m-1');			
+					}
+				break;
+				//theater
+				case 3:
+					if(obs[z+1]){
+						$('#theaterBtn').removeClass('btn btn-danger m-1').addClass('btn btn-danger disabled m-1');
+					} else {
+						$('#theaterBtn').removeClass('btn btn-danger disabled m-1').addClass('btn btn-danger m-1');
+					}
+				break;
+				//opera
+				case 4:
+					if(obs[z+1]){
+						$('#operaBtn').removeClass('btn btn-danger m-1').addClass('btn btn-danger disabled m-1');
+					} else {
+						$('#operaBtn').removeClass('btn btn-danger disabled m-1').addClass('btn btn-danger m-1');
+					}
+				break;
+				//12/06
+				case 5:
+					if(obs[z+1]){
+						$('#Btn1206').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');			
+					} else {
+						$('#Btn1206').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
+					}
+				break;
+				//13/06
+				case 6:
+					if(v){
+						$('#Btn1306').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');			
+					} else {
+						$('#Btn1306').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
+					}
+				break;
+				//14/06
+				case 7:
+					if(obs[z+1]){
+						$('#Btn1406').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
+					} else {
+						$('#Btn1406').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
+					}
+				break;
+			}
+		}
+	}
+	//check for no data
+	if(obs[0] && obs[1]){
+
+		if($("#noData").length==0){
+			$("#events").append(
+				`
+				<div class="col-12 mt-5 mb-5" id="noData" align="center">
+					<h3><i>No data..</i></h3>
+				</div>
+				`
+			);
+		}
+	} else {
+		$("#noData").remove();	
+	}
+	//update button status
+	counter[0]=obs[1];
+	counter[1]=obs[2];
+	counter[2]=obs[3];
+	counter[3]=obs[4];
+	counter[4]=obs[5];
+	counter[5]=obs[6];
+	counter[6]=obs[7];
+	counter[7]=obs[8];
+});
+
+//observe for update the DOM in all subTree
+observer.observe(document, {
+	subtree: true,
+	attributes: true
+  });
+
+
+
+  
 
 

@@ -5,6 +5,14 @@ let counter = [];
 for (let o = 0; o < 8; o++) {
 	counter.push(false);
 }
+counter[8] = true;
+
+//global varible
+let obs = [];
+for (let o = 0; o < 9; o++) {
+	obs.push(false);
+}
+counter[9] = true;
 
 //change state from true to false
 function changeState(val) {
@@ -15,11 +23,17 @@ function changeState(val) {
 	}
 	return val;
 }
+//today util
+let today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+today = mm + dd + yyyy;
+let selector = "[date='"+today+"']";
+
+// ------  BUTTON SECTION ------- 
 
 //function by changing state if the button
-//ARISTI AND SEMINAR
-
-//ON/OFF FUNCITON FILTER
 function onSeminar() {
 	$('#seminarBtn').removeClass('btn btn-secondary disabled').addClass('btn btn-secondary');
 	$('.seminars').show();
@@ -87,15 +101,24 @@ function off1406() {
 	$('[date=14062020]').hide();
 }
 function onToday() {
-	console.log("today: ");
-	console.log(counter);
+
+	$('#todayBtn').removeClass('btn btn-success disabled m-1').addClass('btn btn-success  m-1');
+	$('[date=12062020]').hide();
+	$('[date=13062020]').hide();
+	$('[date=14062020]').hide();
+	$(selector).show();
 }
 function offToday() {
-	console.log("today: ");
-	console.log(counter);
+		
+	$('#todayBtn').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
+	$('[date=12062020]').show();
+	$('[date=13062020]').show();
+	$('[date=14062020]').show();
 }
 
-//BUTTON FUNCTION
+
+// ------  BUTTON ACTIVATE ------- 
+
 function seminarBtn() {
 	counter[0] = updateFilter(0);
 }
@@ -127,6 +150,8 @@ function Btn1406() {
 function todayBtn() {
 	counter[8] = updateFilter(8);
 }
+
+
 //function update filter
 function updateFilter(params) {
 
@@ -199,17 +224,18 @@ function updateFilter(params) {
 			//today
 			case 8:
 				if(counter[params]){
-					onToday();
-				}else {
 					offToday();
+				}else {
+					onToday();
 				}
 			break;
 			}
-	
+	console.log(counter[8]);
 	return counter[params];
 }
 
 
+// ------  PARAMETER SECTION ------- 
 //get parameter from URL
 function getUrlParameterValue(url, parameter) {
     var questionSplit = url.split('?');
@@ -342,10 +368,6 @@ $( "#eventBtn" ).click (function() {
 $( "#seminarBtn" ).click(function() {
 	seminarBtn();
 });
-//TODAY
-$( "#todayBtn" ).click(function() {
-	todayBtn();
-});
 //TYPE
 $( "#concertBtn" ).click(function() {
 	concertBtn();
@@ -359,7 +381,7 @@ $( "#operaBtn" ).click(function() {
 $( "#danceBtn" ).click(function() {
 	danceBtn();
 });
-//date
+//DATE
 $( "#Btn1206" ).click(function() {
 	Btn1206();
 });
@@ -369,17 +391,13 @@ $( "#Btn1306" ).click(function() {
 $( "#Btn1406" ).click(function() {
 	Btn1406();
 });
+//TODAY
 $( "#todayBtn" ).click(function() {
 	todayBtn();
 });
 
 // ------  OBSERVER SECTION ------- 
 
-//global varible
-let obs = [];
-for (let o = 0; o < 9; o++) {
-	obs.push(false);
-}
 //function for check if exist elemt end update array obs
 
 function checkEmpty(params,index) {
@@ -408,6 +426,7 @@ var observer = new MutationObserver(function(mutations, observer) {
 	var d12 = $('[date=12062020]');
 	var d13 = $('[date=13062020]');
 	var d14 = $('[date=14062020]');
+	//var today = $(selector);
 	//check if elemt is present
 	checkEmpty(ev,0);
 	checkEmpty(sem,1);
@@ -418,6 +437,7 @@ var observer = new MutationObserver(function(mutations, observer) {
 	checkEmpty(d12,6);
 	checkEmpty(d13,7);
 	checkEmpty(d14,8);
+	//checkEmpty(today,9);
 	//update button state
 	for (let z = 0; z < counter.length; z++) {
 
@@ -487,6 +507,16 @@ var observer = new MutationObserver(function(mutations, observer) {
 						$('#Btn1406').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
 					}
 				break;
+				//today
+				case 8:
+					/*
+					if(obs[z+1]){
+						$('#todayBtn').removeClass('btn btn-warning disabled m-1').addClass('btn btn-warning m-1');
+					} else {
+						$('#todayBtn').removeClass('btn btn-warning m-1').addClass('btn btn-warning disabled m-1');
+					}
+					*/
+				break;
 			}
 		}
 	}
@@ -494,13 +524,23 @@ var observer = new MutationObserver(function(mutations, observer) {
 	if(obs[0] && obs[1]){
 
 		if($("#noData").length==0){
-			$("#events").append(
-				`
-				<div class="col-12 mt-5 mb-5" id="noData" align="center">
-					<h3><i>No data..</i></h3>
-				</div>
-				`
-			);
+			if($(selector).length==0 && counter[8]==false){
+				$("#events").append(
+					`
+					<div class="col-12 mt-5 mb-5" id="noData" align="center">
+						<h3><b><i>No events for today..</i></b></h3>
+					</div>
+					`
+				);
+			} else {
+				$("#events").append(
+					`
+					<div class="col-12 mt-5 mb-5" id="noData" align="center">
+						<h3><i>No data..</i></h3>
+					</div>
+					`
+				);
+			}
 		}
 	} else {
 		$("#noData").remove();	
@@ -514,13 +554,14 @@ var observer = new MutationObserver(function(mutations, observer) {
 	counter[5]=obs[6];
 	counter[6]=obs[7];
 	counter[7]=obs[8];
+	//counter[8]=obs[9];
 });
 
 //observe for update the DOM in all subTree
 observer.observe(document, {
 	subtree: true,
 	attributes: true
-  });
+});
 
 
 

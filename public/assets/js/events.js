@@ -47,11 +47,37 @@ function changeState(val) {
 function eventBtn() {
 	
 	if(evCount){
+
 		$('#eventBtn').removeClass('btn btn-primary').addClass('btn btn-primary disabled ');
-		$('.events').hide();
+		$('#danceBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
+		$('#concertBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
+		$('#theaterBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
+		$('#operaBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
+		$('[type=dance]').hide();
+		$('[type=concert]').hide();
+		$('[type=theater]').hide();
+		$('[type=opera]').hide();
+		danceCount = false;
+		operaCount = false;
+		concertCount = false;
+		theaterCount = false;
+
 	} else {
 		$('#eventBtn').removeClass('btn btn-primary disabled').addClass('btn btn-primary');
-		$('.events').show();
+		$('#eventBtn').removeClass('btn btn-danger disabled').addClass('btn btn-primary');
+		$('#danceBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
+		$('#concertBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
+		$('#theaterBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
+		$('#operaBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
+		$('[type=dance]').show();
+		$('[type=concert]').show();
+		$('[type=theater]').show();
+		$('[type=opera]').show();
+		danceCount = true;
+		operaCount = true;
+		concertCount = true;
+		theaterCount = true;
+
 	}
 	evCount= changeState(evCount);
 }
@@ -115,9 +141,6 @@ function operaBtn() {
 	}
 	operaCount = changeState(operaCount);
 }
-
-
-//<a href="singleartist.html?id=${Artist.artist._id}">  
 
 //ready get data from API adn populate DOM
 $(document).ready(function(){

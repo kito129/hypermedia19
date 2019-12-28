@@ -57,14 +57,29 @@ function eventBtn() {
 		$('#concertBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
 		$('#theaterBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
 		$('#operaBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
+		/*
+		$('#Btn1206').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
+		$('#Btn1306').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
+		$('#Btn1406').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
+		*/
 		$('[type=dance]').hide();
 		$('[type=concert]').hide();
 		$('[type=theater]').hide();
 		$('[type=opera]').hide();
+		/*
+		$('[date=12/06/2020]').hide();
+		$('[date=13/06/2020]').hide();
+		$('[date=14/06/2020]').hide();
+		*/
 		danceCount = false;
 		operaCount = false;
 		concertCount = false;
 		theaterCount = false;
+		
+		Count12 = false;
+		Count13 = false;
+		Count14 = false;
+		
 
 	} else {
 		$('#eventBtn').removeClass('btn btn-primary disabled').addClass('btn btn-primary');
@@ -73,14 +88,29 @@ function eventBtn() {
 		$('#concertBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
 		$('#theaterBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
 		$('#operaBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
+		/*
+		$('#Btn1206').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
+		$('#Btn1306').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
+		$('#Btn1406').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
+		*/
 		$('[type=dance]').show();
 		$('[type=concert]').show();
 		$('[type=theater]').show();
 		$('[type=opera]').show();
+		/*
+		$('[date=12/06/2020]').show();
+		$('[date=13/06/2020]').show();
+		$('[date=14/06/2020]').show();
+		*/
 		danceCount = true;
 		operaCount = true;
 		concertCount = true;
 		theaterCount = true;
+		
+		Count12 = true;
+		Count13 = true;
+		Count14 = true;
+		
 
 	}
 	evCount= changeState(evCount);
@@ -144,6 +174,7 @@ function operaBtn() {
 		$('#operaBtn').removeClass('btn btn-danger disabled m-1').addClass('btn btn-danger m-1');
 		$('[type=opera]').show();
 	}
+	
 	operaCount = changeState(operaCount);
 }
 
@@ -153,24 +184,42 @@ function operaBtn() {
 function Btn1206() {
 
 	if(Count12){
-		$('#1206Btn').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
-		var text;
-		for (let g = 0; g < $('.date').length; g++) {
-			const element = $('.date')[g];
-			text = element.innerText;
-			text = text.split("-")[0].replace(/\s+/g, '');
-			if (text=="12/06/2020") {
-				var parent = $('.date').parent();
-				parent.hide();
-			}
-		}
+		$('#Btn1206').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
+		$('[date=12062020]').hide();
 
 	} else {
-		$('#1206Btn').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
-		$('.date').show();
+		$('#Btn1206').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
+		$('[date=12062020]').show();
 	}
 	Count12 = changeState(Count12);
 }
+//13/06
+function Btn1306() {
+
+	if(Count13){
+		$('#Btn1306').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
+		$('[date=13062020]').hide();
+
+	} else {
+		$('#Btn1306').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
+		$('[date=13062020]').show();
+	}
+	Count13 = changeState(Count13);
+}
+//14/06
+function Btn1406() {
+
+	if(Count14){
+		$('#Btn1406').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
+		$('[date=14062020]').hide();
+
+	} else {
+		$('#Btn1406').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
+		$('[date=14062020]').show();
+	}
+	Count14 = changeState(Count14);
+}
+
 
 //ready get data from API adn populate DOM
 $(document).ready(function(){
@@ -199,10 +248,11 @@ $(document).ready(function(){
 							nameArtist=Artists.artists[j].name;
 						}
 					};
-
+					var arr = Events.events[i].date.split("-")[0].replace(/\s+/g, '').split("/");
+					var dateTxt = arr[0] + arr[1] +arr[2];
 					$("#events").append(
 						`
-						<div class="col-sm-12 col-md-6 col-lg-4 events" type="${Events.events[i].type}">
+						<div class="col-sm-12 col-md-6 col-lg-4 events" type="${Events.events[i].type}" date="${dateTxt}">
 							<a href="singleevent.html?id=${Events.events[i]._id}">  
 								<img src="../images/${Events.events[i].photoGallery[0].filename}"class="imagesArtist">                   
 							</a> 
@@ -227,9 +277,11 @@ $(document).ready(function(){
 				for(var k=0;k<Seminars.seminars.length;k++){
 					var split= Seminars.seminars[k].photoGallery.split("\\");
 					var url= split[2]+ "\\"+split[3];
+					var arr = Seminars.seminars[k].date.split("-")[0].replace(/\s+/g, '').split("/");
+					var dateTxt = arr[0] + arr[1] +arr[2];
 					$("#events").append(
 						`
-						<div class="col-sm-12 col-md-6 col-lg-4 seminars">
+						<div class="col-sm-12 col-md-6 col-lg-4 seminars" date="${dateTxt}">
 							<a href="singleseminar.html?id=${Seminars.seminars[k]._id}">  
 								<img src="../${url}"class="imagesArtist">                   
 							</a> 
@@ -334,13 +386,13 @@ $( "#danceBtn" ).click(function() {
 	danceBtn();
 });
 //date
-$( "#1206Btn" ).click(function() {
+$( "#Btn1206" ).click(function() {
 	Btn1206();
 });
-$( "#1306Btn" ).click(function() {
+$( "#Btn1306" ).click(function() {
 	Btn1306();
 });
-$( "#1406Btn" ).click(function() {
+$( "#Btn1406" ).click(function() {
 	Btn1406();
 });
 

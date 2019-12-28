@@ -5,6 +5,9 @@ let danceCount = true;
 let operaCount = true;
 let concertCount = true;
 let theaterCount = true;
+let Count12 = true;
+let Count13 = true;
+let Count14 = true;
 
 //get parameter from URL
 function getUrlParameterValue(url, parameter) {
@@ -44,6 +47,7 @@ function changeState(val) {
 }
 
 //function by changing state if the button
+//ARISTI AND SEMINAR
 function eventBtn() {
 	
 	if(evCount){
@@ -94,6 +98,7 @@ function seminarBtn() {
 	seCount = changeState(seCount);
 }
 
+//TYPE
 function danceBtn() {
 
 	if(danceCount){
@@ -109,10 +114,10 @@ function danceBtn() {
 function concertBtn() {
 
 	if(concertCount){
-		$('#concertBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
+		$('#concertBtn').removeClass('btn btn-danger m-1').addClass('btn btn-danger disabled m-1');
 		$('[type=concert]').hide();
 	} else {
-		$('#concertBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
+		$('#concertBtn').removeClass('btn btn-danger disabled m-1').addClass('btn btn-danger m-1');
 		$('[type=concert]').show();
 	}
 	concertCount = changeState(concertCount);
@@ -121,10 +126,10 @@ function concertBtn() {
 function theaterBtn() {
 
 	if(theaterCount){
-		$('#theaterBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
+		$('#theaterBtn').removeClass('btn btn-danger m-1').addClass('btn btn-danger disabled m-1');
 		$('[type=theater]').hide();
 	} else {
-		$('#theaterBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
+		$('#theaterBtn').removeClass('btn btn-danger disabled m-1').addClass('btn btn-danger m-1');
 		$('[type=theater]').show();
 	}
 	theaterCount = changeState(theaterCount);
@@ -133,13 +138,38 @@ function theaterBtn() {
 function operaBtn() {
 
 	if(operaCount){
-		$('#operaBtn').removeClass('btn btn-danger').addClass('btn btn-danger disabled ');
+		$('#operaBtn').removeClass('btn btn-danger m-1').addClass('btn btn-danger disabled m-1');
 		$('[type=opera]').hide();
 	} else {
-		$('#operaBtn').removeClass('btn btn-danger disabled').addClass('btn btn-danger');
+		$('#operaBtn').removeClass('btn btn-danger disabled m-1').addClass('btn btn-danger m-1');
 		$('[type=opera]').show();
 	}
 	operaCount = changeState(operaCount);
+}
+
+//DATA
+
+//12/06
+function Btn1206() {
+
+	if(Count12){
+		$('#1206Btn').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');
+		var text;
+		for (let g = 0; g < $('.date').length; g++) {
+			const element = $('.date')[g];
+			text = element.innerText;
+			text = text.split("-")[0].replace(/\s+/g, '');
+			if (text=="12/06/2020") {
+				var parent = $('.date').parent();
+				parent.hide();
+			}
+		}
+
+	} else {
+		$('#1206Btn').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');
+		$('.date').show();
+	}
+	Count12 = changeState(Count12);
 }
 
 //ready get data from API adn populate DOM
@@ -186,7 +216,7 @@ $(document).ready(function(){
 								<h7><i><b>${Events.events[i].type}</b></i></h7>    
 							</div>  
 							<div>
-								<h7><i><b>${Events.events[i].date}</b></i></h7>
+								<h7 class="date"><b>${Events.events[i].date}</b></h7>
 							</div>
 						</div>
 						`
@@ -262,7 +292,7 @@ var observer = new MutationObserver(function(mutations, observer) {
 		$("#events").append(
 			`
 			<div class="col-12 mt-5 mb-5" id="noData" align="center">
-				<h3><i>No data</i></h3>
+				<h3><i>No data..</i></h3>
 			</div>
 			`
 		);
@@ -303,6 +333,17 @@ $( "#operaBtn" ).click(function() {
 $( "#danceBtn" ).click(function() {
 	danceBtn();
 });
+//date
+$( "#1206Btn" ).click(function() {
+	Btn1206();
+});
+$( "#1306Btn" ).click(function() {
+	Btn1306();
+});
+$( "#1406Btn" ).click(function() {
+	Btn1406();
+});
+
 
 
 /*

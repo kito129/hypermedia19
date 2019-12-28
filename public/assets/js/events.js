@@ -343,12 +343,15 @@ $(document).ready(function(){
 						`
 					);
 				}
-
 				//check for initial filter
 				var value=getUrlParameterValue(self.location.href,"value");
 				
 				if(value=="seminar"){
+					off1206();
+					off1306();
+					off1406();
 					onSeminar();
+					//onSeminar();
 				} else if(value=="event"){
 					offSeminar();
 				}

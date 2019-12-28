@@ -473,7 +473,7 @@ var observer = new MutationObserver(function(mutations, observer) {
 				break;
 				//13/06
 				case 6:
-					if(v){
+					if(obs[z+1]){
 						$('#Btn1306').removeClass('btn btn-success m-1').addClass('btn btn-success disabled m-1');			
 					} else {
 						$('#Btn1306').removeClass('btn btn-success disabled m-1').addClass('btn btn-success m-1');

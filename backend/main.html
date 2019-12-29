@@ -1,5 +1,105 @@
-<p># Documentation of the Backend part<br />&gt; Deliverable D1<br />## General group information<br />| Member n. | Role | First name | Last Name | Matricola | Email address | <br />|-----------|---------------|------------|-----------|-----------|-----------------| <br />| 1 | administrator | Foo | FooL | 123456 | foo@example.com |<br /> | 2 | member | Bar | BarL | 78982 | bar@example.com |<br /> | 2 | member | Bar | BarL | 78982 | bar@example.com |</p>
-<p>## Links to other deliverables<br />- Deliverable D0: the web application is accessible at [this address](https://example.com).<br />- Deliverable D2: the YAML or JSON file containing the specification of the app API can be found at [this address](https://example.com/backend/spec.yaml).<br />- Deliverable D3: the SwaggerUI page of the same API is available at [this address](https://example.com/backend/swaggerui).<br />- Deliverable D4: the source code of D0 is available as a zip file at [this address](https://example.com/backend/app.zip).<br />- Deliverable D5: the address of the online source control repository is available [this address](https://examplegit.com). We hereby declare that this is a private repository and, upon request, we will give access to the instructors.<br />## Specification<br />### Web Architecture<br />Describe here, with a diagram, the components of your web application and how they interact. Highlight which parts belong to the application layer, data layer or presentation layer. How did you ensure that HTML is not rendered server side?<br />### API<br />#### REST compliance<br />Describe here to what extent did you follow REST principles and what are the reasons for which you might have decided to diverge. Note, you must not describe the whole API here, just the design decisions.<br />#### OpenAPI Resource models<br />Describe here synthetically, which models you have introduced for resources.<br />### Data model<br />Describe with an ER diagram the model used in the data layer of your web application. How these map to the OpenAPI data model?<br />## Implementation<br />### Tools used<br />Describe here which tools, languages and frameworks did you use for the backend of the application.</p>
-<p>### Discussion<br />Describe here:<br />- How did you make sure your web application adheres to the provided OpenAPI specification? Which method did you use to test all APIs endpoints against the expected response?<br />- Why do you think your web application adheres to common practices to partition a REST-based web application (static assets vs. application data)<br />- Describe synthetically why and how did you manage session state, what are the state change triggering actions (e.g., POST to login etc..).<br />- Which technology did you use (relational or a no-SQL database) for managing the data model?<br />## Other information<br />### Task assignment<br />Describe here how development tasks have been subdivided among members of the group, e.g.:<br />&gt; - Foo worked on front end (80%) and OpenAPI Spec (20% of the time) &gt; - Bar worked on ....<br />### Analysis of existing API<br />Describe here the research of (full or part of) existing APIs that are similar in objectives and scope to the one implemented, that have possibly guided implementation choices (these should not be necessarily OpenAPI implementations). Toy APIs (such as the Swagger's Pet Store) or the example shown during lectures are not a valid response.<br />Use TWO or more items of the form:<br />&gt; We took (full/partial) inspiration from API &lt;XYZ&gt;(link) for the part of the &gt; API that manages &lt;ABC&gt; because of &lt;REASON&gt;.<br />Or<br />&gt; For the part of the API that manages &lt;ABC&gt; we considered/studied &lt;XYZ&gt;(link) &gt; because of &lt;REASON&gt; but wasn't completely fitting to our purpose because of &gt; &lt;REASON&gt;.<br />### Learning outcome<br />What was the most important thing all the members have learned while developing this part of the project, what questions remained unanswered, how you will use what you've learned in your everyday life?</p>
-<p>Examples:<br />- Foo learned to write SQL queries and Javascript but wanted to know more about caching, he's probably going to create his own startup with what she has learned - Bar learned how to deploy on a cloud platform, he would have liked to know more about promises for asynchronous code..</p>
-<p>&nbsp;</p>
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="https://stackedit.io/style.css" />
+    <!-- Bootstrap -->
+    <link href="../public/assets/css/bootstrap-4.3.1.css" rel="stylesheet">
+</head>
+
+<body >
+    <div class="container-fluid" >
+        <div class="col text-justify"> 
+            </hr>
+            <h1 class="mt-5 mb-2" >Documentation of the Backend part</h1>
+            </hr>
+            <h2 class="mt-3 mb-3">Deliverable D1</h2>
+            </hr>
+            <h2 >General group information</h2>
+            <div class="col">
+                <p>| Member n. | Role | First name | Last Name | Matricola | Email address |</p>
+                <p>| --------- | ------------- | ---------- | --------- | --------- | --------------- |</p>
+                <p>| 1 | member | Marco | Selva | 847171 | <a href="mailto:marco3.selva@mail.polimi.it">marco3.selva@mail.polimi.it</a> |</p>
+                <p>| 2 | team admin | Andrea | Tresoldi | 847387 | <a href="mailto:@mail.polimi.it"></a> |</p>
+                <p>| 3 | member | Zani | Simone | 846664 | <a href="mailto:@mail.polimi.it"></a> |</p>
+            </div>
+            <h2 class="mt-3 mb-3">Links to other deliverables</h2>
+            <div class="col">
+                <ul>
+                    <li>Deliverable D0: the web application is accessible at</li>
+                </ul>
+                <p><a href="http://hypermedia19.herokuapp.com/">this address</a>. The backend application is accessible at <a href="http://hypermedia19.herokuapp.com/documentation">this address</a>.</p>
+                <ul>
+                    <li>Deliverable D2: the YAML or JSON file containing the specification of the app</li>
+                </ul>
+                <p>API can be found at <a href="http://hypermedia19.herokuapp.com/backend/spec.yaml">this address</a>.</p>
+                <ul>
+                    <li>Deliverable D3: the SwaggerUI page of the same API is available at</li>
+                </ul>
+                <p><a href="http://hypermedia19.herokuapp.com/backend/swaggerui">this address</a>.</p>
+                <ul>
+                    <li>Deliverable D4: the source code of the web application at D0 is available as a zip file at</li>
+                </ul>
+                <p><a href="http://hypermedia19.herokuapp.com/frontend/app.zip">this address</a>. The source code of the backend application is accessible at <a href="https://bookstore-hypermedia-be.herokuapp.com/backend/app.zip">this address</a>.</p>
+                <ul>
+                    <li>Deliverable D5: the address of the online source control repository is</li>
+                </ul>
+                <p>available at <a href="https://github.com/marcoselva/hypermedia19">this address</a> We hereby declare that both are private repositories and we will give access to the instructors.</p>
+            </div>
+            <h2 class="mt-3 mb-3" >Specification</h2>
+            <div class="col">
+                <h3 id="web-architecture">Web Architecture</h3>
+                <p></p>
+            </div>
+            <h3 class="mt-3 mb-3">API</h3>
+            <div class="col">
+                <h4 id="rest-compliance">REST compliance</h4>
+                <p></p>
+                <h4 id="openapi-resource-models">OpenAPI Resource models</h4>
+                <p></p>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <p></p>
+            </div>
+            <h3  >Data model</h3>
+            <div class="col">
+                <p></p>
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+            <h2 class="mt-3 mb-3">Implementation</h2>
+            <div class="col">
+                <h3 >Tools used</h3>
+                <div class="col">
+                    <p></p>
+                </div>
+                <h3 id="discussion">Discussion</h3>
+                <div class="col">
+                    <p></p>
+                </div>
+            </div>
+            <h2>Other information</h2>
+            <div class="col">
+                <h3 >Task assignment</h3>
+                <div class="col">
+                    <p></p>
+                </div>
+                <h3 >Analysis of existing API</h3>
+                <div class="col">
+                    <p></p>
+                </div>
+                <h3>Learning outcome</h3>
+                <div class="col">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

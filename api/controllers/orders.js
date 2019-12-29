@@ -120,29 +120,74 @@ exports.orders_create_order = (req, res, next) => {
 
 //OK
 exports.orders_get_order = (req, res, next) => {
-  const id = req.params.orderId;
-  Order.findById(id)
+  const id = req.params.userId;
+  Order.find({ userId: id})
     .select("_id userId order totalPrice")
     .exec()
     .then(doc => {
+      console.log(doc);
       res.status(200).json(JSON.stringify({
         order: doc,
         request: {
           type: "GET",
-          url: "https://hypermedia19.herokuapp.com/order/"
+          url: "https://hypermedia19.herokuapp.com/order/" + id
         }
       }));
     })
     .catch(err => {
       if(err.name="CastError"){
-        console.log("ERROR:\n" + "provided ID order NOT FOUND");
-        res.status(404).json(JSON.stringify({ message: "provided ID order NOT FOUND" }));
+        console.log("ERROR:\n" + "provided uset ID  NOT FOUND");
+        res.status(404).json(JSON.stringify({ message: "provided user ID NOT FOUND" }));
       } else{
         console.log("ERROR:\n" + err);
         res.status(500).json(JSON.stringify({ error: err }));
       }
     });
 };
+
+//OK
+exports.orders_get_order_get_event = (req, res, next) => {
+  const id = req.params.userId;
+  const evId= req.params.eventId;
+  Order.find({ userId: id},{ eventId: evId} )
+    .select("_id userId order eventId subTotale totalPrice")
+    .exec()
+    .then(doc => {
+      let el;
+
+      for (let k = 0; k < doc[0].order.length; k++) {
+        const element = doc[0].order[k];
+        if(element.eventId==evId){
+          el =element;
+        }
+      }
+
+      if (el==undefined) {
+        console.log("ERROR:\n" + "provided eventID NOT FOUND\n");
+        res.status(404).json(JSON.stringify({ message: "provided eventID NOT FOUND" }));
+      } else{
+        res.status(200).json(JSON.stringify({
+          order: el,
+          request: {
+            type: "GET",
+            url: "https://hypermedia19.herokuapp.com/order/" + id + "/" + evId
+          }
+        }));
+      }
+      
+    })
+    .catch(err => {
+      if(err.name="CastError"){
+        console.log("ERROR:\n" + "provided userId NOT FOUND\n" + err);
+        res.status(404).json(JSON.stringify({ message: "provided userId  NOT FOUND" }));
+      } else{
+        console.log("ERROR:\n" + err);
+        res.status(500).json(JSON.stringify({ error: err }));
+      }
+    });
+  };
+
+
 
 
 //TODO
@@ -158,7 +203,7 @@ exports.orders_get_order = (req, res, next) => {
 
 
 exports.orders_update_order = (req, res, next) => {
-  const id = req.params.orderId;
+  const id = req.params.userId;
   const type = req.params.update;
   const body = req.body;
   console.log(body);
@@ -173,7 +218,7 @@ exports.orders_update_order = (req, res, next) => {
     }
     var options = {new: true};
 
-    Order.findOneAndUpdate({ _id: id }, { $set: updateOps },options,function (err, doc) {})
+    Order.findOneAndUpdate({ userId: id }, { $set: updateOps },options,function (err, doc) {})
       .exec()
       .then(result => {
         console.log(result);
@@ -187,25 +232,14 @@ exports.orders_update_order = (req, res, next) => {
       })
       .catch(err => {
         if(err.name="CastError"){
-          console.log("Order ID not found");
-          res.status(404).json(JSON.stringify({
-            error: "Order ID not found"
-          }));
+          console.log("ERROR:\n" + "provided userID NOT FOUND");
+          res.status(404).json(JSON.stringify({ message: "provided urserID NOT FOUND" }));
         } else{
           console.log("ERROR:\n" + err);
-          res.status(500).json(JSON.stringify({
-            error: err
-          }));
+          res.status(500).json(JSON.stringify({ error: err }));
         }
       });
-  
-
-    
-  } else {
-    //se non c'e evento ed è da aggiungere al carrelo
-
-  }
-
+  };
   
 
 };
@@ -213,8 +247,8 @@ exports.orders_update_order = (req, res, next) => {
 
 //OK
 exports.orders_delete = (req, res, next) => {
-  const id = req.params.orderId;
-  Order.remove({ _id: id })
+  const id = req.params.userId;
+  Order.remove({ userId: id })
     .exec()
     .then(result => {
       res.status(200).json(JSON.stringify({

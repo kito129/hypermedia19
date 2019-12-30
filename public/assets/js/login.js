@@ -1,4 +1,3 @@
-import { Router } from "express";
 
 $( "form" ).submit(function( event ) {
     var dataFrom = $( this ).serializeArray();

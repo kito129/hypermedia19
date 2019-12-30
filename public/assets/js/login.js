@@ -31,6 +31,7 @@ $( "form" ).submit(function( event ) {
                 <h4 class="text-center mt-4 mb-4">Logged in.</h4>
                 `
             );
+        
         },
         error       : function (err) {
             if(err.status==401){
@@ -43,12 +44,7 @@ $( "form" ).submit(function( event ) {
                 );
                 
             }
-        },
-        complete       : function () {
-            wait(1000);
-            window.location.replace("https://hypermedia19.herokuapp.com/");
         }
-    
     });
 
     

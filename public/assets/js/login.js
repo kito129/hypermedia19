@@ -18,8 +18,6 @@ $( "form" ).submit(function( event ) {
         dataType   : "json",
         success    : function(data,status,xrh){
             var res = JSON.parse(data);
-       
-            console.log("User Logged In");
             localStorage.clear();
             localStorage.setItem('token', "bearer: " + res.token);
             localStorage.setItem('userId', res.userId);

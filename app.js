@@ -72,6 +72,7 @@ app.use("/seminar", seminarRoutes);
 app.use("/order", orderRoutes);
 app.use("/user", userRoutes);
 //public router
+app.use("/docs",express.static(path.join(__dirname, './backend')));
 app.use(express.static(path.join(__dirname, './public')));
 
 //error 404 for not found routers

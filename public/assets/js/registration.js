@@ -22,12 +22,6 @@ $( "form" ).submit(function( event ) {
         contentType: "application/json; carset=utf-8",
         dataType   : "json",
         success    : function(data,status,xrh){
-            var res = JSON.parse(data);
-            localStorage.clear();
-            localStorage.setItem('token', "bearer: " + res.token);
-            localStorage.setItem('userId', res.userId);
-            localStorage.setItem('name', res.userName);
-            localStorage.setItem('surname', res.userSurname);
             $("#respReg").empty();
             $("#respReg").append(
                 `

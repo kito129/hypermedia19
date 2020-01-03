@@ -34,6 +34,7 @@ $( "form" ).submit(function( event ) {
         error       : function (err) {
             if(err.status==401){
                 console.log("Auth failed");
+                localStorage.clear();
                 $("#respLogin").empty();
                 $("#respLogin").append(
                     `

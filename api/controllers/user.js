@@ -22,8 +22,9 @@ exports.user_signup = (req, res, next) => {
               error: err
             }));
           } else {
+            var usId = new mongoose.Types.ObjectId()
             const user = new User({
-              _id: new mongoose.Types.ObjectId(),
+              _id: usId,
               email: req.body.email,
               password: hash,
               name: req.body.name,
@@ -32,7 +33,6 @@ exports.user_signup = (req, res, next) => {
             user
               .save()
               .then(result => {
-                console.log(result);
                 res.status(201).json(JSON.stringify({
                   message: "User created"
                 }));
@@ -46,7 +46,7 @@ exports.user_signup = (req, res, next) => {
 
               const order = new Order({
                 _id: new mongoose.Types.ObjectId(),
-                userId: req.body.userId,
+                userId: usId,
                 order: [],
                 totalPrice: 0
               });

@@ -45,47 +45,33 @@
 			</ul>
 		</div>
 	</nav>
-
-	<div class="container-fluid mt-4">
-		<h3>REGISTRATION</h3>
-		<form action="">
-			<div class="form-group row">
-				<label for="inputName" class="col-sm-4 col-form-label">First Name*</label>
-				<div class="col-sm-4">
-					<input type="text" class="form-control" id="inputName" required>
+	<!------------------ MAIN ------------------>
+	<div class="container mt-4">
+		<div class="login-form">
+			<form class="from" method="post">
+				<h2 class="text-center mt-3 mb-4">Register</h2>       
+				<div class="form-group">
+					<input type="text" name="firstname"  class="form-control text-center" placeholder="Your First Name" required="required">
 				</div>
-			</div>
-			<div class="form-group row">
-				<label for="inputCognome" class="col-sm-4 col-form-label">Last Name</label>
-				<div class="col-sm-4">
-					<input type="text" class="form-control" id="inputCognome">
+				<div class="form-group">
+					<input type="text" name="surname"  class="form-control text-center" placeholder="Your Surname" required="required">
 				</div>
-			</div>
-			<div class="form-group row">
-				<label for="inputEmail" class="col-sm-4 col-form-label">e-mail*</label>
-				<div class="col-sm-4">
-					<input type="email" class="form-control" id="inputEmail" required>
+				<div class="form-group">
+					<input type="text" name="username"  class="form-control text-center" placeholder="Your Email" required="required">
 				</div>
-			</div>
-			<div class="form-group row">
-				<label for="inputPassword" class="col-sm-4 col-form-label">Password*</label>
-				<div class="col-sm-4">
-					<input type="password" class="form-control" id="inputPassword" required>
+				<div class="form-group">
+					<input type="password" name="password" class="form-control text-center" placeholder="Your Password" required="required">
 				</div>
-			</div>
-			<div class="form-group row">
-				<label for="inputConfirmPassword" class="col-sm-4 col-form-label">Confirm Password*</label>
-				<div class="col-sm-4">
-					<input type="password" class="form-control" id="inputConfirmPassword" required>
-				</div>
-			</div>
-			<div class="form-group row">
-				<div class="col-sm-10">
-					<button type="button" class="btn btn-dark">Register</button>
-				</div>
-			</div>
-		</form>
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary btn-block">Register</button>
+				</div>      
+			</form>
+		</div>
+		<div class="col " id ="respReg">
+			
+		</div>
 	</div>
+
 	
 	<!------------------ FOOTER ------------------>
 	<footer class=" page-footer pt-4 pt-md-4 border-top bg-dark " id="footer">
@@ -139,7 +125,8 @@
     <script src="../js/jquery-3.3.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap-4.3.1.js"></script>
+	<script src="../js/bootstrap-4.3.1.js"></script>
+	<script src="../js/registration.js"></script>
 	
 </body>
 </html>

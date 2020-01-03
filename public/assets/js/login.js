@@ -14,7 +14,7 @@ $( "form" ).submit(function( event ) {
                 password: pass
             }
         ),
-        contentType: "application/json; charset=utf-8",
+        contentType: "application/json; carset=utf-8",
         dataType   : "json",
         success    : function(data,status,xrh){
             var res = JSON.parse(data);
@@ -44,7 +44,4 @@ $( "form" ).submit(function( event ) {
             }
         }
     });
-
-    
-
   });

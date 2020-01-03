@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const User = require("../models/user");
+const Order = require("../models/orders");
 
 
 //OK
@@ -42,6 +43,18 @@ exports.user_signup = (req, res, next) => {
                   error: err
                 }));
               });
+
+              const order = new Order({
+                _id: new mongoose.Types.ObjectId(),
+                userId: req.body.userId,
+                order: [],
+                totalPrice: 0
+              });
+              order
+              .save()
+              .catch(err =>{
+                console.log("ERROR:\n" + err);
+              })
           }
         });
       }

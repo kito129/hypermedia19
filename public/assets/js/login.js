@@ -23,10 +23,12 @@ $( "form" ).submit(function( event ) {
             localStorage.setItem('userId', res.userId);
             localStorage.setItem('name', res.userName);
             localStorage.setItem('surname', res.userSurname);
+            var string = res.userName + res.userSurname;
             $("#respLogin").empty();
             $("#respLogin").append(
                 `
                 <h4 class="text-center mt-4 mb-4">Logged in.</h4>
+                <h4 class="text-center mt-4 mb-4">Welome back ${string}.</h4>
                 `
             );
         

@@ -73,6 +73,10 @@ body {
 	padding: 10px;
 }
 
+.mapsPhoto{
+	max-height: 350px
+}
+
 .icon{
 	width: 30px;
 }

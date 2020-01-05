@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		var event=[];
 
+		//populate event
 		for(var i=0;i<Events.events.length;i++){
 			var el = Events.events[i];
 			var date=el.date;
@@ -22,7 +23,25 @@ document.addEventListener('DOMContentLoaded', function() {
 				id: el._id,
 				title: el.name,
 				start: dateTxt,
-				url:   '../pages/singleevent.html?id='+ el._id
+				url:   '../pages/singleevent.html?id='+ el._id,
+				color: 'red'
+			};
+			event.push(text);
+		}
+
+		//populate seminar
+		for(var i=0;i<Seminars.seminars.length;i++){
+			var el = Seminars.seminars[i];
+			var date=el.date;
+			var arr = date.split("-")[0].replace(/\s+/g, '').split("/");
+			var hour = date.split("-")[1].replace(/\s+/g, '').split(".");
+			var dateTxt = arr[2] + "-" + arr[1] + "-" +arr[0] + "T" +hour[0] + ":"+hour[1]+":00" ;
+			var text = {
+				id: el._id,
+				title: el.name,
+				start: dateTxt,
+				url:   '../pages/singleseminar.html?id='+ el._id,
+				color: 'green'
 			};
 			event.push(text);
 		}
@@ -37,8 +56,9 @@ document.addEventListener('DOMContentLoaded', function() {
 			hiddenDays: [ 1, 2, 3 ],
 			themeSystem: 'bootstrap',
 			firstDay: 1,
+			eventColor: '#378006',
 			header: {
-			left: 'listDay, listWeek,timeGridWeek',
+			left: 'listDay,listWeek',
 			center: 'title',
 			right: 'prev,next, today'
 			},

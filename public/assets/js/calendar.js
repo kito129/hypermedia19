@@ -1,76 +1,58 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
+	
+	var calendarEl = document.getElementById('calendar');
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      plugins: [ 'interaction', 'dayGrid' ],
-      header: {
-        left: '',
-        center: 'title',
-        right: 'prev,next, today'
-      },
-      defaultDate: '2020-06-12',
-      navLinks: true, // can click day/week names to navigate views
-      editable: true,
-      eventLimit: true, // allow "more" link when too many events
+    $.get("https://hypermedia19.herokuapp.com/event", function(data, status){
 
-      //compile here
-      events: [
-        {
-          title: 'All Day Event',
-          start: '2020-06-12T16:00:00'
-        },
-        {
-          title: 'Long Event',
-          start: '2019-08-07',
-          end: '2019-08-10'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2019-08-09T16:00:00'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2019-08-16T16:00:00'
-        },
-        {
-          title: 'Conference',
-          start: '2019-08-11',
-          end: '2019-08-13'
-        },
-        {
-          title: 'Meeting',
-          start: '2019-08-12T10:30:00',
-          end: '2019-08-12T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: '2019-08-12T12:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: '2019-08-12T14:30:00'
-        },
-        {
-          title: 'Happy Hour',
-          start: '2019-08-12T17:30:00'
-        },
-        {
-          title: 'Dinner',
-          start: '2019-08-12T20:00:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2019-08-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: '2019-08-28'
-        }
-      ]
-    });
+	  Events=JSON.parse(data);
 
-    calendar.render();
-  });
+	  $.get("https://hypermedia19.herokuapp.com/seminar",function(data,status){
+
+		Seminars=JSON.parse(data);
+
+		var event=[];
+
+		for(var i=0;i<Events.events.length;i++){
+			var el = Events.events[i];
+			var date=el.date;
+			var arr = date.split("-")[0].replace(/\s+/g, '').split("/");
+			var hour = date.split("-")[1].replace(/\s+/g, '').split(".");
+			var dateTxt = arr[2] + "-" + arr[1] + "-" +arr[0] + "T" +hour[0] + ":"+hour[1]+":00" ;
+			var text = {
+				id: el._id,
+				title: el.name,
+				start: dateTxt,
+				url:   '../pages/singleevent.html?id='+ el._id
+			};
+			event.push(text);
+		}
+
+		var calendar = new FullCalendar.Calendar(calendarEl, {
+			plugins: [  'list','timeGrid' ],			
+			views: {
+				listDay: { buttonText: 'list day' },
+				listWeek: { buttonText: 'list week' }
+			},
+			defaultView: 'listWeek',
+			hiddenDays: [ 1, 2, 3 ],
+			themeSystem: 'bootstrap',
+			firstDay: 1,
+			header: {
+			left: 'listDay, listWeek,timeGridWeek',
+			center: 'title',
+			right: 'prev,next, today'
+			},
+			minTime: '13:00:00',
+			maxTime: '23:59:59',
+			defaultDate: '2020-06-12',
+			navLinks: true, // can click day/week names to navigate views
+			editable: false,
+			eventLimit: true, // allow "more" link when too many events
+			//compile here
+			events: event
+		});
+
+		calendar.render();
+		});
+	});
+});

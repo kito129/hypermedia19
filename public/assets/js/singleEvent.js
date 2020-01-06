@@ -78,6 +78,8 @@ $(document).ready(function(){
         $("#location").text(Event.event.place);
         $("#typeTitle").text("Type: ")
         $("#type").text(Event.event.type);
+        $("#priceTitle").text("Price: ")
+        $("#price").text(Event.event.price + ".00€");
         
 
         

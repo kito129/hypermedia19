@@ -9,7 +9,7 @@ const eventSchema = mongoose.Schema({
     price: { type: Number, required: true },
     isSoldOut: { type: String, required: true },
     type: { type: String, required: true },
-    relSeminar: { type: mongoose.Schema.Types.ObjectId, ref: 'Seminar', required: false },
+    relSeminar: { type: [mongoose.Schema.Types.ObjectId], ref: 'Seminar', required: false },
     abstract: { type: String, required: true },
     photoGallery: { type: Array, required: false }    
 });

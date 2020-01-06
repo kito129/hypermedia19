@@ -75,9 +75,9 @@ $(document).ready(function(){
         $("#date").text(Event.event.date);
         $("#abstract").text(Event.event.abstract);
         $("#locationTitle").text("Location: ")
-        $("#location").text(jsonEvent.event.place);
+        $("#location").text(Event.event.place);
         $("#typeTitle").text("Type: ")
-        $("#type").text(jsonEvent.event.type);
+        $("#type").text(Event.event.type);
         
 
         

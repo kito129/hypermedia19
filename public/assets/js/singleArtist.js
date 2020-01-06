@@ -68,6 +68,8 @@ $(document).ready(function(){
         $("#affiliationTitle").text("Current Affiliation: ")
         $("#currentAffiliation").text(jsonArtist.artist.currentAffiliattion);
         $("#abstract").text(jsonArtist.artist.abstract);
+        $("#typeTitle").text("Type: ")
+        $("#type").text(jsonArtist.artist.type);
 
         //check for achivements 
         if(jsonArtist.artist.achivements.length>0){

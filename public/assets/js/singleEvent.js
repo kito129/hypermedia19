@@ -69,6 +69,10 @@ $(document).ready(function(){
         $("#abstract").text(jsonEvent.event.abstract);
         $("#locationTitle").text("Location: ")
         $("#location").text(jsonEvent.event.place);
+        $("#typeTitle").text("Type: ")
+        $("#type").text(jsonEvent.event.type);
+        
+
         
         //artisti relativi
         $.get("https://hypermedia19.herokuapp.com/artist/"+jsonEvent.event.artistId, function(data, status){

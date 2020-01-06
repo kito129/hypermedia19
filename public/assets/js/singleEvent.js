@@ -75,18 +75,11 @@ $(document).ready(function(){
         $("#date").text(Event.event.date);
         $("#abstract").text(Event.event.abstract);
         $("#locationTitle").text("Location: ")
-<<<<<<< HEAD
         $("#location").text(jsonEvent.event.place);
         $("#typeTitle").text("Type: ")
         $("#type").text(jsonEvent.event.type);
         
 
-=======
-        $("#location").text(Event.event.place);
-        $("#priceTitle").text("Price: ")
-        $("#price").text(Event.event.price + ".00€");
-        evPrice =Event.event.price;
->>>>>>> cf3f980ffddb6bd97f8f03587afe1983f30f5d53
         
         //relative artist
         $.get("https://hypermedia19.herokuapp.com/artist/"+Event.event.artistId, function(data, status){

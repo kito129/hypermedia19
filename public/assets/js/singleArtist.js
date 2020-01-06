@@ -59,15 +59,10 @@ $(document).ready(function(){
         );
         //add info 
         $("#affiliationTitle").text("Current Affiliation: ")
-<<<<<<< HEAD
         $("#currentAffiliation").text(jsonArtist.artist.currentAffiliattion);
         $("#abstract").text(jsonArtist.artist.abstract);
         $("#typeTitle").text("Type: ")
         $("#type").text(jsonArtist.artist.type);
-=======
-        $("#currentAffiliation").text(Artist.artist.currentAffiliattion);
-        $("#abstract").text(Artist.artist.abstract);
->>>>>>> cf3f980ffddb6bd97f8f03587afe1983f30f5d53
 
         //check for achivements 
         if(Artist.artist.achivements.length>0){

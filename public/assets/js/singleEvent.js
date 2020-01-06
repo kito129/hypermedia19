@@ -24,9 +24,14 @@ function getUrlParameterValue(url, parameter) {
     }
 }
 
+let eventInCart=false;
+let quantity=0;
+let idEvent;
+let eVprice;
+
 $(document).ready(function(){
 
-    var idEvent=getUrlParameterValue(self.location.href,"id");
+    idEvent=getUrlParameterValue(self.location.href,"id");
     var Event;
     var Events;
     var Seminars;
@@ -71,6 +76,9 @@ $(document).ready(function(){
         $("#abstract").text(Event.event.abstract);
         $("#locationTitle").text("Location: ")
         $("#location").text(Event.event.place);
+        $("#priceTitle").text("Price: ")
+        $("#price").text(Event.event.price + ".00€");
+        evPrice =Event.event.price;
         
         //relative artist
         $.get("https://hypermedia19.herokuapp.com/artist/"+Event.event.artistId, function(data, status){
@@ -226,6 +234,46 @@ $(document).ready(function(){
                 }
             });
         });
+   
+        //check for order
+        if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null) {
+
+            var userId=localStorage.getItem("userId");
+            //call to torder api
+            $.ajax({
+                url : "https://hypermedia19.herokuapp.com/order/" + localStorage.getItem("userId") +  "/" + idEvent,
+                type: "GET",
+                contentType: "application/json; carset=utf-8",
+                dataType   : "json",
+                beforeSend: function (xhr) {
+
+                    xhr.setRequestHeader ("Authorization",localStorage.getItem("token"));
+                },
+                success    : function(data,status,xrh){
+
+                    var or =  JSON.parse(data);
+                    var qua = or.order.quantity;
+                    quantity = qua;
+                    eventInCart=true;
+                    $("#orderTitle").text("Order");
+                    $('div').find("input[type=text]").each(function(ev)
+                    {
+                        if(!$(this).val()) { 
+                       $(this).attr("placeholder", quantity);
+                    }
+                    });
+                },
+                error       : function (err) {
+                    eventInCart=false;
+                    quantity =0;
+                    $("#orderTitle").text("Order");
+                }
+            });
+        } else{
+            //if not logged
+            $("#orderTitle").text("You are not logged, can't use order feature");
+            $("#order").hide();
+        }
     });
     
     //CAROUSEL
@@ -234,3 +282,85 @@ $(document).ready(function(){
     })
       
 });
+
+
+function addUpdateBtn() {
+    $("#updateSpace").empty();
+    $("#updateSpace").append(
+        `
+        <button type="button" class="btn btn-success m-1" id="updateBtn">Update</button>
+        `
+    );
+}
+
+
+$( "#increment" ).click(function() {
+    quantity=quantity+1;
+    if(quantity<6){
+        addUpdateBtn();
+        $('div').find("input[type=text]").each(function(ev)
+            {
+                if(!$(this).val()) { 
+                $(this).attr("placeholder", quantity);
+            }
+        });
+    } else {
+        quantity=quantity-1;
+    }	
+});
+
+$( "#decrement" ).click(function() {
+
+    quantity=quantity-1;
+    if(quantity>-1){
+        addUpdateBtn();
+        $('div').find("input[type=text]").each(function(ev)
+            {
+                if(!$(this).val()) { 
+                $(this).attr("placeholder", quantity);
+            }
+        });
+    } else {
+        quantity=quantity+1;
+    }	
+});
+
+//sumbit modification
+$( "#updateSpace").on("click",'#updateBtn' , function() {
+    $("#updateSpace").empty();
+    //post order to 
+    order(quantity);
+
+});
+
+
+function order(newQuantity) {
+
+    $.ajax({
+
+        url : "https://hypermedia19.herokuapp.com/order/" + localStorage.getItem("userId"),
+        type: "POST",
+        contentType: "application/json; carset=utf-8",
+        dataType   : "json",
+        data: JSON.stringify(
+            [
+                {		
+                    "propName":"eventId"  ,"value":idEvent,
+                    "propName":"price"  ,"value":evPrice,
+                    "propName":"quantity"  ,"value":newQuantity,
+
+                }
+            ]
+        ),
+        beforeSend: function (xhr) {
+
+            xhr.setRequestHeader ("Authorization",localStorage.getItem("token"));
+        },
+        success    : function(data,status,xrh){
+        },
+        error      : function (err) {
+            console.log(err);
+        }
+    
+    });
+}

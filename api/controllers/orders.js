@@ -42,71 +42,101 @@ exports.orders_get_all = (req, res, next) => {
 //OK
 exports.orders_create_order = (req, res, next) => {
   const body = req.body;
-  const bodyOrder = body.order;
-  Order.find({ userId: body.userId })
+  console.log(body);
+  const evId = req.body.eventId;
+  const qua = req.body.quantity;
+  const pri = req.body.price;
+  const userId=  req.params.userId;
+  const updateOps = {};
+  for (const ops of req.body ) {
+    updateOps[ops.propName] = ops.value;
+  }
+
+  Order.findOneAndUpdate({ userId:userId }, { $set: updateOps },{new: true}) 
   .exec()
-  .then(user => {
-    if (user.length >= 1) {
-      return res.status(409).json(JSON.stringify({
-        message: "Order with this userId already exists. Update this order"
-      }));
-    } else {
-        Event.find({_id: req.body.order[0].eventId })
-        .exec()
-        .then(event =>{
-          const singlePrice =  Number(event[0].price);
-          const quant =  Number(bodyOrder[0].quantity);
-          const order = new Order({
-            _id: new mongoose.Types.ObjectId(),
-            userId: req.body.userId,
-            order: 
-            [
-              {
-                eventId: req.body.order[0].eventId,
-                quantity: req.body.order[0].quantity,
-                subTotal: singlePrice*quant
-              }
-            ],
-            totalPrice: singlePrice*quant
-          });
-          order
-            .save()
-            .then(result => {
-              res.status(201).json(JSON.stringify({
-                message: "Created Order Created",
-                createdOrder: {
-                  userId: result.userId,
-                  order: result.order,
-                  totalPrice: result.totalPrice,
-                  requestCart: {
-                    type: "GET",
-                    url: "https://hypermedia19.herokuapp.com/order/" + result._id
-                  }
-                }
-              }));
-            })
-        })
-        .catch(err => {
-          if(err.name="CastError"){
-            console.log("Invalid eventId input:\n" + err);
-            res.status(400).json(JSON.stringify({
-              message: "Invalid eventId input",
-              error: err
-            }));
-          } else {
-            console.log("ERROR:\n" + err);
-            res.status(500).json(JSON.stringify({
-              error: err
-            }));
+  .then(ord => {
+
+    console.log(ord);
+    /*
+    for (let k = 0; k < ord[0].order.length; k++) {
+      const element = ord[0].order[k];
+      
+      if (element.eventId==evId) {
+
+        var update = 
+        [
+          {
+            eventId: evId,
+            quantity: qua,
+            price: pri,
+            subTotal: pri*qua
           }
-        });
+        ];
+        console.log(update);
+
+      
+      } else {
+        console.log("not");
       }
-    })   
+    }
+    */
+  })
+  .catch(err => {
+    console.log("ERROR:\n" + err);
+      res.status(500).json(JSON.stringify({
+        error: err
+      }));
+  });
+};
+
+
+/*
+
+if (user.length >= 1) {
+  return res.status(409).json(JSON.stringify({
+    message: "Order with this userId already exists. Update this order"
+  }));
+} else {
+    Event.find({_id: req.body.order[0].eventId })
+    .exec()
+    .then(event =>{
+      const singlePrice =  Number(event[0].price);
+      const quant =  Number(bodyOrder[0].quantity);
+      const order = new Order({
+        _id: new mongoose.Types.ObjectId(),
+        order: 
+        [
+          {
+            eventId: req.body.order[0].eventId,
+            quantity: req.body.order[0].quantity,
+            subTotal: singlePrice*quant
+          }
+        ],
+        totalPrice: singlePrice*quant
+      });
+      order
+        .save()
+        .then(result => {
+          res.status(201).json(JSON.stringify({
+            message: "Created Order Created",
+            createdOrder: {
+              userId: result.userId,
+              order: result.order,
+              totalPrice: result.totalPrice,
+              requestCart: {
+                type: "GET",
+                url: "https://hypermedia19.herokuapp.com/order/" + result._id
+              }
+            }
+          }));
+        })
+    })
     .catch(err => {
       if(err.name="CastError"){
-        console.log("Invalid userId input:\n" + err);
+        console.log("Invalid eventId input:\n" + err);
         res.status(400).json(JSON.stringify({
-          error: "Invalid userId input"
+          message: "Invalid eventId input",
+          error: err
         }));
       } else {
         console.log("ERROR:\n" + err);
@@ -115,8 +145,13 @@ exports.orders_create_order = (req, res, next) => {
         }));
       }
     });
-   
-  };
+  }
+})   
+
+
+*/
+
+
 
 //OK
 exports.orders_get_order = (req, res, next) => {
@@ -165,6 +200,7 @@ exports.orders_get_order_get_event = (req, res, next) => {
       if (el==undefined) {
         console.log("ERROR:\n" + "provided eventID NOT FOUND\n");
         res.status(404).json(JSON.stringify({ message: "provided eventID NOT FOUND" }));
+
       } else{
         res.status(200).json(JSON.stringify({
           order: el,

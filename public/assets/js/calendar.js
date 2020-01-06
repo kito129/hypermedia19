@@ -16,15 +16,37 @@ document.addEventListener('DOMContentLoaded', function() {
 		for(var i=0;i<Events.events.length;i++){
 			var el = Events.events[i];
 			var date=el.date;
+			//get and format date
 			var arr = date.split("-")[0].replace(/\s+/g, '').split("/");
 			var hour = date.split("-")[1].replace(/\s+/g, '').split(".");
 			var dateTxt = arr[2] + "-" + arr[1] + "-" +arr[0] + "T" +hour[0] + ":"+hour[1]+":00" ;
+			//get and fromat color
+			var type=el.type;
+		
+			var col;
+			switch (type) {
+				case "concert":
+					col='red';
+					break;
+				case "theater":
+					col="yellow";
+					break;
+				case "opera":
+					col="#7AD7F0";
+					break;
+				case "dance":
+					col="grey";
+					break;
+		
+				default:
+					break;
+			}
 			var text = {
 				id: el._id,
 				title: el.name,
 				start: dateTxt,
 				url:   '../pages/singleevent.html?id='+ el._id,
-				color: 'red'
+				color: col
 			};
 			event.push(text);
 		}
@@ -49,8 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		var calendar = new FullCalendar.Calendar(calendarEl, {
 			plugins: [  'list','timeGrid' ],			
 			views: {
-				listDay: { buttonText: 'list day' },
-				listWeek: { buttonText: 'list week' }
+				listDay: { buttonText: 'Day' },
+				listWeek: { buttonText: 'Full' }
 			},
 			defaultView: 'listWeek',
 			hiddenDays: [ 1, 2, 3 ],

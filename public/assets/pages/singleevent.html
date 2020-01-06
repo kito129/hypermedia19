@@ -70,19 +70,28 @@
 							<h5  id="location"></h5>
 						</div>
 					</div>
+					<!--price-->
+					<div class="row">
+						<div class="col-sm-12 col-md-6 col-lg-4 " align="left">
+							<h4><b id="priceTitle"></b></h4>
+						</div>
+						<div class="col-sm-12 col-md-6 col-lg-8 " align="left">
+							<h5  id="price"></h5>
+						</div>
+					</div>
 					<!--order-->
 					<div class="row mt-3 mb-3">
 						<div class="col-sm-12 col-md-5 col-lg-5 " align="left">
-							<h4><b>Order Ticket:</b></h4>
+							<h4 align="center"><b id="orderTitle"></b></h4>
 						</div>
-						<div class="col-sm-12 col-md-4 col-lg-4 "align="left">
+						<div class="col-sm-12 col-md-4 col-lg-4 "align="left" id ="order">
 							<div class="col-12 mt-3" align="center">
 								<div class="btn-group mr-2" role="group" aria-label="First group">
-									<button type="button" class="btn btn-secondary">-</button>
+									<button type="button" class="btn btn-secondary" id ="decrement">-</button>
 									<div class="input-group">
-										<input type="text" class="form-control" placeholder="2" aria-label="npur order" aria-describedby="btnGroupAddon">
+										<input type="text" class="form-control" placeholder="0" aria-label="npur order" aria-describedby="btnGroupAddon">
 									</div>
-									<button type="button" class="btn btn-secondary">+</button>
+									<button type="button" class="btn btn-secondary" id ="increment">+</button>
 								</div>
 							</div>
 							<div class="col-12 mt-3" align="center">
@@ -90,7 +99,12 @@
 								<h5 id="subPrice"></h5>
 							</div>
 						</div>
-						<div class="col-sm-0 col-md-3 col-lg-3"></div>
+						<div class="col-sm-0 col-md-3 col-lg-3">
+							<div class="col-12 mt-3" align="center" id ="updateSpace">
+                        
+							</div>
+						</div>
+						
 					</div>
 				</div>
 			</div>

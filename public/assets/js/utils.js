@@ -41,10 +41,10 @@ $(document).ready(function(){
     $('#footer').append(
 
         `
-        <footer class="pt-4 pt-md-2 border-top bg-dark" id="footer">
+        <footer class="footer pt-4 pt-md-2 border-top bg-dark  id="footer">
 		<div class="container">
 			<div class="row" align="center">
-			  <div class="col-6 col-md">
+			  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
 				<h5>Features</h5>
 				<ul class="list-unstyled text-small">
 				  <li><a class="text-muted" href="/assets/pages/events.html">Events</a></li>
@@ -52,14 +52,14 @@ $(document).ready(function(){
 				  <li><a class="text-muted" href="/assets/pages/calendar.html">Calendar</a></li>
 				</ul>
 			  </div>
-			  <div class="col-6 col-md">
+			  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
 				<h5>About</h5>
 				<ul class="list-unstyled text-small">
 				  <li><a class="text-muted" href="/assets/pages/infoticket.html">Info Ticket and Shipping</a></li>
 				  <li><a class="text-muted" href="/assets/pages/about.html">Contact and How to Reach Us</a></li>
 				</ul>
 			  </div>
-			  <div class="col-6 col-md">
+			  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
 				<h5>Informations</h5>
 				<ul class="list-unstyled text-small">
 				  <li><a class="text-muted">area EXPO Milan (Italy)</a></li>

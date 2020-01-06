@@ -196,6 +196,8 @@ $(document).ready(function(){
                 if(test){
                     $("#sameTitle").text("RELATIVE SAME DAY");
                 }
+
+                //to remove
                 var phSplit;
                 var phurl;
                 var iSeminarDate;
@@ -235,6 +237,7 @@ $(document).ready(function(){
                         );
                     }
                 }
+                //to remove
             });
         });
    
@@ -275,6 +278,11 @@ $(document).ready(function(){
         } else{
             //if not logged
             $("#orderTitle").text("You are not logged, can't use order feature");
+            $("#updateSpace").append(
+                `
+                <h4 align="center"><b><a href="/assets/pages/log.html">Login for use it.</a></b> </h4>
+                `
+            );
             $("#order").hide();
         }
     });

@@ -2,23 +2,23 @@ $(document).ready(function(){
 
 	$.get("https://hypermedia19.herokuapp.com/artist", function(data, status){
 
-		var jsonArtists=JSON.parse(data);
+		var Artists=JSON.parse(data);
 
-		for(var i=0;i<jsonArtists.artists.length;i++){
+		for(var i=0;i<Artists.artists.length;i++){
 
-			var  text= jsonArtists.artists[i].photoGallery[0].filename;
+			var  text= Artists.artists[i].photoGallery[0].filename;
 
 			$("#performer").append(
 
 				`
 				<div class="col-sm-12 col-md-6 col-lg-4">
-					<a href="singleartist.html?id=${jsonArtists.artists[i]._id}">  
+					<a href="singleartist.html?id=${Artists.artists[i]._id}">  
 						<img src="../images/${text}"class="imagesArtist">                   
 					</a> 
 					<div>
-						<h5><b>${jsonArtists.artists[i].name}</b></h5>
+						<h5><b>${Artists.artists[i].name}</b></h5>
 					</div>
-					<h7><i><b>${jsonArtists.artists[i].type}</b></i></h7>
+					<h7><i><b>${Artists.artists[i].type}</b></i></h7>
 				</div>
 			
 				`

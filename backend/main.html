@@ -1,5 +1,152 @@
-<p># Documentation of the Backend part<br />&gt; Deliverable D1<br />## General group information<br />| Member n. | Role | First name | Last Name | Matricola | Email address | <br />|-----------|---------------|------------|-----------|-----------|-----------------| <br />| 1 | administrator | Foo | FooL | 123456 | foo@example.com |<br /> | 2 | member | Bar | BarL | 78982 | bar@example.com |<br /> | 2 | member | Bar | BarL | 78982 | bar@example.com |</p>
-<p>## Links to other deliverables<br />- Deliverable D0: the web application is accessible at [this address](https://example.com).<br />- Deliverable D2: the YAML or JSON file containing the specification of the app API can be found at [this address](https://example.com/backend/spec.yaml).<br />- Deliverable D3: the SwaggerUI page of the same API is available at [this address](https://example.com/backend/swaggerui).<br />- Deliverable D4: the source code of D0 is available as a zip file at [this address](https://example.com/backend/app.zip).<br />- Deliverable D5: the address of the online source control repository is available [this address](https://examplegit.com). We hereby declare that this is a private repository and, upon request, we will give access to the instructors.<br />## Specification<br />### Web Architecture<br />Describe here, with a diagram, the components of your web application and how they interact. Highlight which parts belong to the application layer, data layer or presentation layer. How did you ensure that HTML is not rendered server side?<br />### API<br />#### REST compliance<br />Describe here to what extent did you follow REST principles and what are the reasons for which you might have decided to diverge. Note, you must not describe the whole API here, just the design decisions.<br />#### OpenAPI Resource models<br />Describe here synthetically, which models you have introduced for resources.<br />### Data model<br />Describe with an ER diagram the model used in the data layer of your web application. How these map to the OpenAPI data model?<br />## Implementation<br />### Tools used<br />Describe here which tools, languages and frameworks did you use for the backend of the application.</p>
-<p>### Discussion<br />Describe here:<br />- How did you make sure your web application adheres to the provided OpenAPI specification? Which method did you use to test all APIs endpoints against the expected response?<br />- Why do you think your web application adheres to common practices to partition a REST-based web application (static assets vs. application data)<br />- Describe synthetically why and how did you manage session state, what are the state change triggering actions (e.g., POST to login etc..).<br />- Which technology did you use (relational or a no-SQL database) for managing the data model?<br />## Other information<br />### Task assignment<br />Describe here how development tasks have been subdivided among members of the group, e.g.:<br />&gt; - Foo worked on front end (80%) and OpenAPI Spec (20% of the time) &gt; - Bar worked on ....<br />### Analysis of existing API<br />Describe here the research of (full or part of) existing APIs that are similar in objectives and scope to the one implemented, that have possibly guided implementation choices (these should not be necessarily OpenAPI implementations). Toy APIs (such as the Swagger's Pet Store) or the example shown during lectures are not a valid response.<br />Use TWO or more items of the form:<br />&gt; We took (full/partial) inspiration from API &lt;XYZ&gt;(link) for the part of the &gt; API that manages &lt;ABC&gt; because of &lt;REASON&gt;.<br />Or<br />&gt; For the part of the API that manages &lt;ABC&gt; we considered/studied &lt;XYZ&gt;(link) &gt; because of &lt;REASON&gt; but wasn't completely fitting to our purpose because of &gt; &lt;REASON&gt;.<br />### Learning outcome<br />What was the most important thing all the members have learned while developing this part of the project, what questions remained unanswered, how you will use what you've learned in your everyday life?</p>
-<p>Examples:<br />- Foo learned to write SQL queries and Javascript but wanted to know more about caching, he's probably going to create his own startup with what she has learned - Bar learned how to deploy on a cloud platform, he would have liked to know more about promises for asynchronous code..</p>
-<p>&nbsp;</p>
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="https://stackedit.io/style.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></head>
+
+<body >
+    <div class="container" >
+        <div class="col text-justify"> 
+            </hr>
+            <h1 class="mt-5 mb-2" >Documentation of the Backend part</h1>
+            </hr>
+            <h2 class="mt-3 mb-3">Deliverable D1</h2>
+            </hr>
+            <h2 >General group information</h2>
+            <div class="col">
+                <p>| Member n. | Role | First name | Last Name | Matricola | Email address |</p>
+                <p>| --------- | ------------- | ---------- | --------- | --------- | --------------- |</p>
+                <p>| 1 | member | Marco | Selva | 847171 | <a href="mailto:marco3.selva@mail.polimi.it">marco3.selva@mail.polimi.it</a> |</p>
+                <p>| 2 | team admin | Andrea | Tresoldi | 847387 | <a href="mailto:@mail.polimi.it"></a> |</p>
+                <p>| 3 | member | Zani | Simone | 846664 | <a href="mailto:@mail.polimi.it"></a> |</p>
+            </div>
+            <h2 class="mt-3 mb-3">Links to other deliverables</h2>
+            <div class="col">
+                <ul>
+                    <li>Deliverable D0: the web application is accessible at</li>
+                </ul>
+                <p><a href="http://hypermedia19.herokuapp.com/">this address</a>. The backend application is accessible at <a href="http://hypermedia19.herokuapp.com/documentation">this address</a>.</p>
+                <ul>
+                    <li>Deliverable D2: the YAML or JSON file containing the specification of the app</li>
+                </ul>
+                <p>API can be found at <a href="http://hypermedia19.herokuapp.com/backend/spec.yaml">this address</a>.</p>
+                <ul>
+                    <li>Deliverable D3: the SwaggerUI page of the same API is available at</li>
+                </ul>
+                <p><a href="http://hypermedia19.herokuapp.com/backend/swaggerui">this address</a>.</p>
+                <ul>
+                    <li>Deliverable D4: the source code of the web application at D0 is available as a zip file at</li>
+                </ul>
+                <p><a href="http://hypermedia19.herokuapp.com/frontend/app.zip">this address</a>. The source code of the backend application is accessible at <a href="https://bookstore-hypermedia-be.herokuapp.com/backend/app.zip">this address</a>.</p>
+                <ul>
+                    <li>Deliverable D5: the address of the online source control repository is</li>
+                </ul>
+                <p>available at <a href="https://github.com/marcoselva/hypermedia19">this address</a> We hereby declare that both are private repositories and we will give access to the instructors.</p>
+            </div>
+            <h2 class="mt-3 mb-3" >Specification</h2>
+            <div class="col">
+                <h3 id="web-architecture">Web Architecture</h3>
+                <p>We created a clear separation between the presentation (browser) layer and the application layer (client). 
+                    The first one is handled by the browser that requests page assets, sends HTTP requests, and then renders the results on the client-side. 
+                    The application layer instead is composed by a frontend server and a backend server. 
+                    <br>
+                    <br>
+                    The backend server is responsible of the communication with the data layer to perform NOSQL request on MongoDB with Mongoose dependenciese database requested through the exposed API. 
+                    The frontend server invokes this API to get the data needed in the pages and to perform actions on data generated by user interaction on the pages.
+                    A diagram of the architecture is available at this address</p>
+            </div>
+            <h3 class="mt-3 mb-3">API</h3>
+            <div class="col">
+                <h4 id="rest-compliance">REST compliance</h4>
+                <p>We respect the REST principles to create an API that allows client and server to grow independently, and that provides a uniform interface where everything related to event is under the path /event and same goes for artist, seminar, user and cart.
+                    We use REST principles for authentication requests too, usign a JSON Token, saving this client-side and adding this in the Authorization Header for authenticated request to server. </p>
+                <h4 id="openapi-resource-models">OpenAPI Resource models</h4>
+                <p>The main entities involved in our festival web site are Artist, Event, Seminar, User and here cart. Artist, Event and Seminar contain the attributes requested in the specification by the instructors.
+                    The event  also contains a list of Artist’ IDs to quickly access the Artist information, and Seminar'IDs.
+                    For each of them we created a resource model. In these models all the properties are mandatory except for the ones that can be absent in creation phase:</p>
+                <ul>
+                    <li>We first create Artist and Seminar that have no relation in their table</li>
+                    <li>Second we created Event's table with ID reference from the previus created</li>
+                    <li>User send Name, Surname, Email and password  (the last in BASE64 encode) for register.</li>
+                    <li>For login if the request was accepted by server, we save this data pluss JWT token in localStorage of the Browser.</li>
+                </ul>
+                <p>All single path have specific request, params and body to improve for correct request and interation, tht can be found in API documentation</p>
+            </div>
+            <h3  >Data model</h3>
+            <div class="col">
+                <p>
+                    An ER diagram of the data model is available at this address: 
+                    The tables here represented are mapped into the resource models shown before. 
+                    Some information about the relationships are:
+                </p>
+                <ul>
+                    <li>Events are created for the last, cause they need artist and seminar IDs</li>
+                    <li>Server when user register, create a order record instead, when user create or modify order client perform POST request and server update the user cart</li>
+                    <li>Photo gallery for Event, Seminar and Artist are popultaed from databse too.</li>
+                </ul>
+            </div>
+            <h2 class="mt-3 mb-3">Implementation</h2>
+            <div class="col">
+                <h3 >Tools used</h3>
+                <div class="col">
+                    <p>
+                        We developed our NoSQL database with MongoDb Atlas for cloud integration. 
+                        We use POSTMAN tool to set it up, and interact with API for initial testin and for populate DB throght the API path.
+                        The integration with the MongoDB database was made possible by the Atlas feature, and Mongoose dependenciese js side, that permit to create a cloud and managed database.
+                        
+                        <br>
+                        <br>
+                        We used the framework Express.js to handle the routing of all the deliverables, including this one.
+                        Express.js perform all server funtionality in integration with other depencendencis for utils such as body JSON parser, JWT token for authentication and MULTER for photo gallery uploads
+                        We used Heroku to deploy our applications in the cloud platform. We used to deploy our applications (both the frontend and the backend) and setup a continuous delivery mechanism linked with GitHub master branch.
+                        We also used SwaggerUI for create OpenAPI documentation in yaml format.
+                    </p>
+                </div>
+                <h3 id="discussion">Discussion</h3>
+                <div class="col">
+                    <p></p>
+                </div>
+            </div>
+            <h2>Other information</h2>
+            <div class="col">
+                <h3 >Task assignment</h3>
+                <div class="col">
+                    <p>
+                        For working we used an Agile approach to the development of the project, with weekly meetings where we divided our tasks and checked the progresses of the previous week.
+                        In the start of the project all the members were involved in every decision  started from the development of the OpenAPI spec, C-IDM and L-IDM schema, ER and ER logic schemas. 
+                        After all this prepartion  time we separate pur work in BackEnd + API, FrontEnd, and linking the two.
+                        <br>
+                        <br>
+                        From there on Marco worked mainly on the backend, Simone on the presentation layer of the frontend and Andrea on the application layer of the frontend. 
+                        At the end of the development we reviewed together the two implemented applications and we fix all problem and eventualy bugs for perfect integration Back-Front End.
+                    </p>
+                </div>
+                <h3 >Analysis of existing API</h3>
+                <div class="col">
+                    <p>To follow in a proper way the principles of RESTful APIs we used as main inspiration APIs developed for projects in internet and youtube.
+                        For BackEnd side we follow a youtube guide that use Express.js and MongoDB atlas, one of the videos was  matching our needs, so we just start from a basic scath and we improve our BackEnd with all requested Specification
+                        This analysis was usefull for understand all technology used now for web development, starting from the fundamental HTML CSS and JS, but also Boostarp framework and other js plugin such as FullCalendar we used for our calendar implementation,  and to find the defacto standard to deploy our web site.
+                    </p>
+                </div>
+                <h3>Learning outcome</h3>
+                <div class="col">
+                    <p>
+                        Marco learned how to interface a backend with a relational database through NoSQL queries, that they never used before. He also learned how to setup continuous delivery on a cloud platform and difference betwen server static and dynamic content.
+                        They learn to use Node.Js local and remote, and how to create OpenAPI spec.
+                        <br>
+                        <br>
+                        Andrea learned how to connect BackEnd to FrontEnd code throght a OpenAPI and AJAX request and integrate it in application layer side project.
+                        <br>
+                        <br>
+                        Simone learned how to create structured FrontEnd starting from  initial Schemas and Database schemas. they learned Boostarp too such a prncipal framework at the time in internet.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

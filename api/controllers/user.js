@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const User = require("../models/user");
+const Order = require("../models/orders");
 
 
 //OK
@@ -21,8 +22,9 @@ exports.user_signup = (req, res, next) => {
               error: err
             }));
           } else {
+            var usId = new mongoose.Types.ObjectId()
             const user = new User({
-              _id: new mongoose.Types.ObjectId(),
+              _id: usId,
               email: req.body.email,
               password: hash,
               name: req.body.name,
@@ -31,7 +33,6 @@ exports.user_signup = (req, res, next) => {
             user
               .save()
               .then(result => {
-                console.log(result);
                 res.status(201).json(JSON.stringify({
                   message: "User created"
                 }));
@@ -42,6 +43,18 @@ exports.user_signup = (req, res, next) => {
                   error: err
                 }));
               });
+
+              const order = new Order({
+                _id: new mongoose.Types.ObjectId(),
+                userId: usId,
+                order: [],
+                totalPrice: 0
+              });
+              order
+              .save()
+              .catch(err =>{
+                console.log("ERROR:\n" + err);
+              })
           }
         });
       }
@@ -73,11 +86,14 @@ exports.user_login = (req, res, next) => {
             },
             process.env.JWT_KEY,
             {
-              expiresIn: "1h"
+              expiresIn: "12h"
             }
           );
           return res.status(200).json(JSON.stringify({
             message: "Auth successful",
+            userId: user[0]._id,
+            userName: user[0].name,
+            userSurname: user[0].surname,
             token: token
           }));
         }

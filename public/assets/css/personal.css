@@ -26,35 +26,6 @@
 	color: white;
 }
 
-.img_container{
-	background-image: url("../images/public/b.png");
-	height: 650px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
-}
-
-.inner_container{
-	text-align: right;
-	position: absolute;
-	width: 100%;
-	color: white;
-	height: auto;
-	margin-top: 200px;
-}
-
-.btn{
-	width: 100px;
-	padding: 5px;
-	color: white;
-	border: 2px solid white;
-}
-
-.marginR{
-	margin-right: 10px;
-}
-
 .subtitle{
 	margin-left: 50px;
 	padding-top: 10px;
@@ -100,6 +71,10 @@ body {
 	margin-right: 50px;
 	margin-bottom: 0px;
 	padding: 10px;
+}
+
+.mapsPhoto{
+	max-height: 350px
 }
 
 .icon{
@@ -208,6 +183,19 @@ body {
 
 .card{
 	border: none !important;
+}
+
+.cont_calendario{
+	background-color: blanchedalmond;
+	border-radius: 30px;
+}
+
+.sfondo_orario_cal{
+	background-color: crimson;
+	color: white;
+	border-radius: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 /* il carrello si deve vedere solo dopo aver fatto il login

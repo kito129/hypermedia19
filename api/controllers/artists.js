@@ -99,7 +99,7 @@ exports.artists_create_artist = (req, res, next) => {
   };
 
 
-  //OK
+//OK
 exports.artists_get_artist = (req, res, next) => {
   const id = req.params.artistId;
   Artist.findById(id)

@@ -27,7 +27,7 @@ $(document).ready(function(){
                     </li>				
                     <li class="nav-item"><a class="nav-link performers" href="/assets/pages/artists.html"><h7><b>Artists</b></h7></a></li>
                     <li class="nav-item"><a class="nav-link calendar" href="/assets/pages/calendar.html"><h7><b>Calendar</b></h7></a></li>
-                    <li class="nav-item"><a class="nav-link about" href="/assets/pages/about.html"><h7><b>About</b></h7></a></li>
+                    <li class="nav-item"><a class="nav-link about" href="/assets/pages/about.html"><h7><b>Contact Us</b></h7></a></li>
                     <li class="nav-item"><a class="nav-link infoticket" href="/assets/pages/infoticket.html"><h7><b>Info T&S</b></h7></a></li>
                     <li class="nav-item"><a class="nav-link login" href="/assets/pages/log.html"><h7><b>Log In</b></h7></a></li>
                     <li class="nav-item"><a class="nav-link signup" href="/assets/pages/registration.html"><h7><b>Sign Up</b></h7></a></li>
@@ -48,14 +48,14 @@ $(document).ready(function(){
 				<h5>Features</h5>
 				<ul class="list-unstyled text-small">
 				  <li><a class="text-muted" href="/assets/pages/events.html">Events</a></li>
-				  <li><a class="text-muted" href="/assets/artists.html">Artists</a></li>
-				  <li><a class="text-muted" href="/assets/calendar.html">Calendar</a></li>
+				  <li><a class="text-muted" href="/assets/pages/artists.html">Artists</a></li>
+				  <li><a class="text-muted" href="/assets/pages/calendar.html">Calendar</a></li>
 				</ul>
 			  </div>
 			  <div class="col-6 col-md">
 				<h5>About</h5>
 				<ul class="list-unstyled text-small">
-				  <li><a class="text-muted" href="/assets/infoticket.html">Info Ticket and Shipping</a></li>
+				  <li><a class="text-muted" href="/assets/pages/infoticket.html">Info Ticket and Shipping</a></li>
 				  <li><a class="text-muted" href="/assets/pages/about.html">Contact and How to Reach Us</a></li>
 				</ul>
 			  </div>

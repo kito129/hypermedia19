@@ -1235,7 +1235,7 @@
 					"name": "PIANO & MUSIC SEMINAR",
 					"date": "12/06/2020 - 15.00",
 					"place": "Pavilion 2",
-					"abstract": "",
+					"abstract": "Ludovico Einaudi tells us about his experience with the piano that began 50 years ago through small demonstrations of some of his compositions.",
 					"photoGallery": "public\\assets\\images\\2019-12-23T23-12-51.670Z2.jpg",
 					"request": {
 						"type": "GET",
@@ -1247,7 +1247,7 @@
 					"name": "DANCING IN NEW YORK SEMINAR",
 					"date": "12/06/2020 - 18.00",
 					"place": "Pavilion 2",
-					"abstract": "",
+					"abstract": "Roberto Bolle takes us into his world telling us what it feels like to be the most important dancer in Italy and the United States through special anecdotes.",
 					"photoGallery": "public\\assets\\images\\2019-12-23T23-13-17.950Z2.jpg",
 					"request": {
 						"type": "GET",
@@ -1259,7 +1259,7 @@
 					"name": "MODERN MUSICALS SEMINAR",
 					"date": "12/06/2020 - 21.00",
 					"place": "Pavilion 2",
-					"abstract": "",
+					"abstract": "Riccardo Cocciante talks about how the concept of musical has evolved over the years, comparing his works with those of the past.",
 					"photoGallery": "public\\assets\\images\\2019-12-23T23-13-35.397Z2.jpg",
 					"request": {
 						"type": "GET",

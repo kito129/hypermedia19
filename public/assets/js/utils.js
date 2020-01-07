@@ -89,7 +89,17 @@ $(document).ready(function(){
       `
 	);
 
-	console.log(self.location.href);
+	//append actie link 
+	var localPage = self.location.href.split("/")[5].split("?")[0];
+
+	switch (localPage) {
+		case "singleEvent.html":
+		
+			break;
+	
+		default:
+			break;
+	}
 
 
 	

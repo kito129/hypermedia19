@@ -54,7 +54,7 @@
 					"_id": "5e01390e6c63bc0714704366",
 					"request": {
 						"type": "GET",
-						"url": "https://http://hypermedia19.herokuapp.com/artist/5e01390e6c63bc0714704366"
+						"url": "https://hypermedia19.herokuapp.com/artist/5e01390e6c63bc0714704366"
 					}
 				},
 				{
@@ -110,7 +110,7 @@
 					"_id": "5e013a606c63bc0714704367",
 					"request": {
 						"type": "GET",
-						"url": "https://http://hypermedia19.herokuapp.com/artist/5e013a606c63bc0714704367"
+						"url": "https://hypermedia19.herokuapp.com/artist/5e013a606c63bc0714704367"
 					}
 				},
 				{
@@ -158,7 +158,7 @@
 					"_id": "5e013aae6c63bc0714704368",
 					"request": {
 						"type": "GET",
-						"url": "https://http://hypermedia19.herokuapp.com/artist/5e013aae6c63bc0714704368"
+						"url": "https://hypermedia19.herokuapp.com/artist/5e013aae6c63bc0714704368"
 					}
 				},
 				{
@@ -207,7 +207,7 @@
 					"_id": "5e013bad6c63bc071470436b",
 					"request": {
 						"type": "GET",
-						"url": "https://http://hypermedia19.herokuapp.com/artist/5e013bad6c63bc071470436b"
+						"url": "https://hypermedia19.herokuapp.com/artist/5e013bad6c63bc071470436b"
 					}
 				},
 				{
@@ -255,7 +255,7 @@
 					"_id": "5e013be36c63bc071470436c",
 					"request": {
 						"type": "GET",
-						"url": "https://http://hypermedia19.herokuapp.com/artist/5e013be36c63bc071470436c"
+						"url": "https://hypermedia19.herokuapp.com/artist/5e013be36c63bc071470436c"
 					}
 				},
 				{
@@ -303,7 +303,7 @@
 					"_id": "5e013c076c63bc071470436d",
 					"request": {
 						"type": "GET",
-						"url": "https://http://hypermedia19.herokuapp.com/artist/5e013c076c63bc071470436d"
+						"url": "https://hypermedia19.herokuapp.com/artist/5e013c076c63bc071470436d"
 					}
 				},
 				{
@@ -356,7 +356,7 @@
 					"_id": "5e013c4c6c63bc071470436e",
 					"request": {
 						"type": "GET",
-						"url": "https://http://hypermedia19.herokuapp.com/artist/5e013c4c6c63bc071470436e"
+						"url": "https://hypermedia19.herokuapp.com/artist/5e013c4c6c63bc071470436e"
 					}
 				},
 				{
@@ -410,7 +410,7 @@
 					"_id": "5e013c996c63bc071470436f",
 					"request": {
 						"type": "GET",
-						"url": "https://http://hypermedia19.herokuapp.com/artist/5e013c996c63bc071470436f"
+						"url": "https://hypermedia19.herokuapp.com/artist/5e013c996c63bc071470436f"
 					}
 				},
 				{
@@ -460,7 +460,7 @@
 					"_id": "5e013cbd6c63bc0714704370",
 					"request": {
 						"type": "GET",
-						"url": "https://http://hypermedia19.herokuapp.com/artist/5e013cbd6c63bc0714704370"
+						"url": "https://hypermedia19.herokuapp.com/artist/5e013cbd6c63bc0714704370"
 					}
 				},
 				{
@@ -508,7 +508,7 @@
 					"_id": "5e013cf76c63bc0714704371",
 					"request": {
 						"type": "GET",
-						"url": "https://http://hypermedia19.herokuapp.com/artist/5e013cf76c63bc0714704371"
+						"url": "https://hypermedia19.herokuapp.com/artist/5e013cf76c63bc0714704371"
 					}
 				},
 				{
@@ -556,7 +556,7 @@
 					"_id": "5e013d1b6c63bc0714704372",
 					"request": {
 						"type": "GET",
-						"url": "https://http://hypermedia19.herokuapp.com/artist/5e013d1b6c63bc0714704372"
+						"url": "https://hypermedia19.herokuapp.com/artist/5e013d1b6c63bc0714704372"
 					}
 				},
 				{
@@ -608,7 +608,7 @@
 					"_id": "5e013d586c63bc0714704373",
 					"request": {
 						"type": "GET",
-						"url": "https://http://hypermedia19.herokuapp.com/artist/5e013d586c63bc0714704373"
+						"url": "https://hypermedia19.herokuapp.com/artist/5e013d586c63bc0714704373"
 					}
 				}
 			]
@@ -635,7 +635,7 @@
 			},
 			"request": {
 				"type": "GET",
-				"url": "https://http://hypermedia19.herokuapp.com/artist/"
+				"url": "https://hypermedia19.herokuapp.com/artist/"
 			}
 		}
 
@@ -690,7 +690,7 @@
 				],
 				"request": {
 					"type": "GET",
-					"url": "https://http://hypermedia19.herokuapp.com/event/5e014bc93d52a2457429c198"
+					"url": "https://hypermedia19.herokuapp.com/event/5e014bc93d52a2457429c198"
 				}
 			},
 			{
@@ -738,7 +738,7 @@
 				],
 				"request": {
 					"type": "GET",
-					"url": "https://http://hypermedia19.herokuapp.com/event/5e014c583d52a2457429c199"
+					"url": "https://hypermedia19.herokuapp.com/event/5e014c583d52a2457429c199"
 				}
 			},
 			{
@@ -786,7 +786,7 @@
 				],
 				"request": {
 					"type": "GET",
-					"url": "https://http://hypermedia19.herokuapp.com/event/5e014ccf3d52a2457429c19a"
+					"url": "https://hypermedia19.herokuapp.com/event/5e014ccf3d52a2457429c19a"
 				}
 			},
 			{
@@ -834,7 +834,7 @@
 				],
 				"request": {
 					"type": "GET",
-					"url": "https://http://hypermedia19.herokuapp.com/event/5e014d263d52a2457429c19b"
+					"url": "https://hypermedia19.herokuapp.com/event/5e014d263d52a2457429c19b"
 				}
 			},
 			{
@@ -882,7 +882,7 @@
 				],
 				"request": {
 					"type": "GET",
-					"url": "https://http://hypermedia19.herokuapp.com/event/5e014d753d52a2457429c19c"
+					"url": "https://hypermedia19.herokuapp.com/event/5e014d753d52a2457429c19c"
 				}
 			},
 			{
@@ -930,7 +930,7 @@
 				],
 				"request": {
 					"type": "GET",
-					"url": "https://http://hypermedia19.herokuapp.com/event/5e014da93d52a2457429c19d"
+					"url": "https://hypermedia19.herokuapp.com/event/5e014da93d52a2457429c19d"
 				}
 			},
 			{
@@ -978,7 +978,7 @@
 				],
 				"request": {
 					"type": "GET",
-					"url": "https://http://hypermedia19.herokuapp.com/event/5e014ddb3d52a2457429c19e"
+					"url": "https://hypermedia19.herokuapp.com/event/5e014ddb3d52a2457429c19e"
 				}
 			},
 			{
@@ -1026,7 +1026,7 @@
 				],
 				"request": {
 					"type": "GET",
-					"url": "https://http://hypermedia19.herokuapp.com/event/5e014e2c3d52a2457429c19f"
+					"url": "https://hypermedia19.herokuapp.com/event/5e014e2c3d52a2457429c19f"
 				}
 			},
 			{
@@ -1074,7 +1074,7 @@
 				],
 				"request": {
 					"type": "GET",
-					"url": "https://http://hypermedia19.herokuapp.com/event/5e014e5c3d52a2457429c1a0"
+					"url": "https://hypermedia19.herokuapp.com/event/5e014e5c3d52a2457429c1a0"
 				}
 			},
 			{
@@ -1122,7 +1122,7 @@
 				],
 				"request": {
 					"type": "GET",
-					"url": "https://http://hypermedia19.herokuapp.com/event/5e014e863d52a2457429c1a1"
+					"url": "https://hypermedia19.herokuapp.com/event/5e014e863d52a2457429c1a1"
 				}
 			},
 			{
@@ -1170,7 +1170,7 @@
 				],
 				"request": {
 					"type": "GET",
-					"url": "https://http://hypermedia19.herokuapp.com/event/5e014eb03d52a2457429c1a2"
+					"url": "https://hypermedia19.herokuapp.com/event/5e014eb03d52a2457429c1a2"
 				}
 			},
 			{
@@ -1218,7 +1218,7 @@
 				],
 				"request": {
 					"type": "GET",
-					"url": "https://http://hypermedia19.herokuapp.com/event/5e014edd3d52a2457429c1a3"
+					"url": "https://hypermedia19.herokuapp.com/event/5e014edd3d52a2457429c1a3"
 				}
 			}
 		]
@@ -1239,7 +1239,7 @@
 					"photoGallery": "public\\assets\\images\\2019-12-23T23-12-51.670Z2.jpg",
 					"request": {
 						"type": "GET",
-						"url": "https://http://hypermedia19.herokuapp.com/seminar/5e0149f3446771464ca6230a"
+						"url": "https://hypermedia19.herokuapp.com/seminar/5e0149f3446771464ca6230a"
 					}
 				},
 				{
@@ -1251,7 +1251,7 @@
 					"photoGallery": "public\\assets\\images\\2019-12-23T23-13-17.950Z2.jpg",
 					"request": {
 						"type": "GET",
-						"url": "https://http://hypermedia19.herokuapp.com/seminar/5e014a0e446771464ca6230b"
+						"url": "https://hypermedia19.herokuapp.com/seminar/5e014a0e446771464ca6230b"
 					}
 				},
 				{
@@ -1263,7 +1263,7 @@
 					"photoGallery": "public\\assets\\images\\2019-12-23T23-13-35.397Z2.jpg",
 					"request": {
 						"type": "GET",
-						"url": "https://http://hypermedia19.herokuapp.com/seminar/5e014a1f446771464ca6230c"
+						"url": "https://hypermedia19.herokuapp.com/seminar/5e014a1f446771464ca6230c"
 					}
 				}
 			]
@@ -1281,6 +1281,6 @@
 			},
 			"request": {
 				"type": "GET",
-				"url": "https://http://hypermedia19.herokuapp.com/seminar/"
+				"url": "https://hypermedia19.herokuapp.com/seminar/"
 			}
 		}

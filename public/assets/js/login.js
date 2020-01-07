@@ -6,7 +6,7 @@ $( "form" ).submit(function( event ) {
     var pass = dataFrom[1].value;
 
     $.ajax({
-        url : "https://http://hypermedia19.herokuapp.com/user/login",
+        url : "https://hypermedia19.herokuapp.com/user/login",
         type: "POST",
         data: JSON.stringify(
             {

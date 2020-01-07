@@ -23,7 +23,7 @@ exports.artists_get_all = (req, res, next) => {
             _id: doc._id,
             request: {
               type: "GET",
-              url: "https://http://hypermedia19.herokuapp.com/artist/" + doc._id
+              url: "https://hypermedia19.herokuapp.com/artist/" + doc._id
             }
           };
         })
@@ -83,7 +83,7 @@ exports.artists_create_artist = (req, res, next) => {
                 photoGallery: result.photoGallery,
                 request: {
                   type: "GET",
-                  url: "https://http://hypermedia19.herokuapp.com/artist/" + result._id
+                  url: "https://hypermedia19.herokuapp.com/artist/" + result._id
                 }
               }
             }));
@@ -111,7 +111,7 @@ exports.artists_get_artist = (req, res, next) => {
           artist: doc,
           request: {
             type: "GET",
-            url: "https://http://hypermedia19.herokuapp.com/artist/"+ doc._id
+            url: "https://hypermedia19.herokuapp.com/artist/"+ doc._id
           }
         }));
       } else {
@@ -144,7 +144,7 @@ exports.artists_update_artist = (req, res, next) => {
         message: "Artist updated",
         request: {
           type: "GET",
-          url: "https://http://hypermedia19.herokuapp.com/artist/" + id
+          url: "https://hypermedia19.herokuapp.com/artist/" + id
         }
       }));
     })
@@ -174,7 +174,7 @@ exports.artists_delete = (req, res, next) => {
         message: "Artist deleted",
         request: {
           type: "POST",
-          url: "https://http://hypermedia19.herokuapp.com/artist/",
+          url: "https://hypermedia19.herokuapp.com/artist/",
           body: { name: "String",}
         }
       }));

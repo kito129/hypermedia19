@@ -32,7 +32,7 @@ $(document).ready(function(){
     var Artist;
     var Events;
 
-    $.get("https://http://hypermedia19.herokuapp.com/artist/"+idArtist, function(data, status){
+    $.get("https://hypermedia19.herokuapp.com/artist/"+idArtist, function(data, status){
 
         Artist=JSON.parse(data);
         var photo1=Artist.artist.photoGallery[0].filename;
@@ -86,7 +86,7 @@ $(document).ready(function(){
 
 
         //RELATIVE EVENT
-        $.get("https://http://hypermedia19.herokuapp.com/event/", function(data, status){
+        $.get("https://hypermedia19.herokuapp.com/event/", function(data, status){
 
             Events=JSON.parse(data);
 

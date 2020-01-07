@@ -44,7 +44,7 @@ $(document).ready(function(){
 			<div class="row" align="center">
 			  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
 				<h5>Features</h5>
-				<ul class="list-unstyled text-small">
+				<ul class="list-unstyled text-small" id="dinPage">
 				  <li><a class="text-muted" href="/assets/pages/events.html">Events</a></li>
 				  <li><a class="text-muted" href="/assets/pages/artists.html">Artists</a></li>
 				  <li><a class="text-muted" href="/assets/pages/calendar.html">Calendar</a></li>
@@ -52,7 +52,7 @@ $(document).ready(function(){
 			  </div>
 			  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
 				<h5>About</h5>
-				<ul class="list-unstyled text-small">
+				<ul class="list-unstyled text-small" id="statPage">
 				  <li><a class="text-muted" href="/assets/pages/infoticket.html">Info Ticket and Shipping</a></li>
 				  <li><a class="text-muted" href="/assets/pages/about.html">Contact and How to Reach Us</a></li>
 				</ul>
@@ -88,6 +88,10 @@ $(document).ready(function(){
       </footer>
       `
 	);
+
+	console.log(self.location.href);
+
+
 	
 	//utils check if logged
 	if (localStorage.getItem("userId")==null || localStorage.getItem("token")==null) {

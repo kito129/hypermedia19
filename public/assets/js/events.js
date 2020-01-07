@@ -273,15 +273,15 @@ $(document).ready(function(){
 	var Events;
 	var Seminars;
 
-	$.get("https://http://hypermedia19.herokuapp.com/event", function(data, status){
+	$.get("https://hypermedia19.herokuapp.com/event", function(data, status){
 
 		Events=JSON.parse(data);
 
-		$.get("https://http://hypermedia19.herokuapp.com/artist",function(data,status){
+		$.get("https://hypermedia19.herokuapp.com/artist",function(data,status){
 
 			Artists=JSON.parse(data);
 
-			$.get("https://http://hypermedia19.herokuapp.com/seminar",function(data,status){
+			$.get("https://hypermedia19.herokuapp.com/seminar",function(data,status){
 
 				Seminars=JSON.parse(data);
 

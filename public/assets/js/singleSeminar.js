@@ -33,7 +33,7 @@ $(document).ready(function(){
     var Seminars;
     var SeminarId;
 
-    $.get("https://http://hypermedia19.herokuapp.com/seminar/"+idSeminar, function(data, status){
+    $.get("https://hypermedia19.herokuapp.com/seminar/"+idSeminar, function(data, status){
 
         Seminar=JSON.parse(data);   
         SeminarId = Seminar.seminar._id;
@@ -65,7 +65,7 @@ $(document).ready(function(){
    
 
         //relative event
-        $.get("https://http://hypermedia19.herokuapp.com/event", function(data, status){
+        $.get("https://hypermedia19.herokuapp.com/event", function(data, status){
 
             Events=JSON.parse(data);
             for (let h = 0; h < Events.events.length; h++) {

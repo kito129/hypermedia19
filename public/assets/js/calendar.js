@@ -2,11 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	var calendarEl = document.getElementById('calendar');
 
-    $.get("https://http://hypermedia19.herokuapp.com/event", function(data, status){
+    $.get("https://hypermedia19.herokuapp.com/event", function(data, status){
 
 	  Events=JSON.parse(data);
 
-	  $.get("https://http://hypermedia19.herokuapp.com/seminar",function(data,status){
+	  $.get("https://hypermedia19.herokuapp.com/seminar",function(data,status){
 
 		Seminars=JSON.parse(data);
 

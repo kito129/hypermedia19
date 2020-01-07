@@ -273,15 +273,15 @@ $(document).ready(function(){
 	var Events;
 	var Seminars;
 
-	$.get("https://hypermedia19.herokuapp.com/event", function(data, status){
+	$.get("https://http://hypermedia19.herokuapp.com/event", function(data, status){
 
 		Events=JSON.parse(data);
 
-		$.get("https://hypermedia19.herokuapp.com/artist",function(data,status){
+		$.get("https://http://hypermedia19.herokuapp.com/artist",function(data,status){
 
 			Artists=JSON.parse(data);
 
-			$.get("https://hypermedia19.herokuapp.com/seminar",function(data,status){
+			$.get("https://http://hypermedia19.herokuapp.com/seminar",function(data,status){
 
 				Seminars=JSON.parse(data);
 
@@ -298,7 +298,7 @@ $(document).ready(function(){
 					$("#events").append(
 						`
 						<div class="col-sm-12 col-md-6 col-lg-4 events " type="${Events.events[i].type}" date="${dateTxt}" >
-							<a href="singleevent.html?id=${Events.events[i]._id}">  
+							<a href="singleEvent.html?id=${Events.events[i]._id}">  
 								<img src="../images/${Events.events[i].photoGallery[0].filename}"class="imagesArtist">                   
 							</a> 
 							<div>
@@ -327,7 +327,7 @@ $(document).ready(function(){
 					$("#events").append(
 						`
 						<div class="col-sm-12 col-md-6 col-lg-4 seminars" date="${dateTxt}">
-							<a href="singleseminar.html?id=${Seminars.seminars[k]._id}">  
+							<a href="singleSeminar.html?id=${Seminars.seminars[k]._id}">  
 								<img src="../${url}"class="imagesArtist">                   
 							</a> 
 							<div>

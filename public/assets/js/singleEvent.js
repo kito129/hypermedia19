@@ -27,7 +27,7 @@ function getUrlParameterValue(url, parameter) {
 let eventInCart=false;
 let quantity=0;
 let idEvent;
-let eVprice;
+let evPrice;
 
 $(document).ready(function(){
 
@@ -36,11 +36,11 @@ $(document).ready(function(){
     var Events;
     var Seminars;
     var Artist;
-    var Artist;
     
-    $.get("https://hypermedia19.herokuapp.com/event/"+idEvent, function(data, status){
+    $.get("https://http://hypermedia19.herokuapp.com/event/"+idEvent, function(data, status){
 
         Event=JSON.parse(data);
+        evPrice=Event.event.price
         let thisEventDataAndHour= new Date (Event.event.date.split("-")[0].replace(/\s+/g, '').split("/")[2],
                 Event.event.date.split("-")[0].replace(/\s+/g, '').split("/")[1],
                 Event.event.date.split("-")[0].replace(/\s+/g, '').split("/")[0],
@@ -84,30 +84,39 @@ $(document).ready(function(){
 
         
         //relative artist
-        $.get("https://hypermedia19.herokuapp.com/artist/"+Event.event.artistId, function(data, status){
+        var relArtist = Event.event.artistId;
+        console.log(Event.event);
+        console.log(relArtist);
 
-            Artist=JSON.parse(data);
+        for (let g = 0; g < relArtist.length; g++) {
+            const el = relArtist[g];
 
-            $("#relArtist").append(
-                `
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <a href="singleartist.html?id=${Artist.artist._id}">  
-                        <img src="../images/${Artist.artist.photoGallery[0].filename}"class="imagesArtist">                   
-                    </a> 
-                    <div>
-                        <h5><b>${Artist.artist.name}</b></h5>
+            $.get("https://http://hypermedia19.herokuapp.com/artist/"+el, function(data, status){
+
+                Artist=JSON.parse(data);
+
+                $("#relArtist").append(
+                    `
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="singleArtist.html?id=${Artist.artist._id}">  
+                            <img src="../images/${Artist.artist.photoGallery[0].filename}"class="imagesArtist">                   
+                        </a> 
+                        <div>
+                            <h5><b>${Artist.artist.name}</b></h5>
+                        </div>
+                        <div>
+                            <h7><i><b>${Artist.artist.type}</b></i></h7>
+                        </div>
                     </div>
-                    <div>
-                        <h7><i><b>${Artist.artist.type}</b></i></h7>
-                    </div>
-                </div>
-                `
-            );
-        });
+                    `
+                );
+            });
+        }
+
 
         //relative seminar
         if(Event.event.relSeminar!=undefined){
-            $.get("https://hypermedia19.herokuapp.com/seminar/"+Event.event.relSeminar, function(data, status){
+            $.get("https://http://hypermedia19.herokuapp.com/seminar/"+Event.event.relSeminar, function(data, status){
 
                 Seminar=JSON.parse(data);
 
@@ -119,7 +128,7 @@ $(document).ready(function(){
                     
                         `
                         <div class="col-sm-12 col-md-6 col-lg-4" >
-                            <a href="singleseminar.html?id=${Seminar.seminar._id}">  
+                            <a href="singleSeminar.html?id=${Seminar.seminar._id}">  
                                 <img src="../${url}"class="imagesArtist">                   
                             </a> 
                             <div>
@@ -139,11 +148,11 @@ $(document).ready(function(){
         }
 
         //relative same day events + seminars
-        $.get("https://hypermedia19.herokuapp.com/event/", function(data, status){
+        $.get("https://http://hypermedia19.herokuapp.com/event/", function(data, status){
             
         Events=JSON.parse(data);
 
-            $.get("https://hypermedia19.herokuapp.com/seminar/", function(data, status){
+            $.get("https://http://hypermedia19.herokuapp.com/seminar/", function(data, status){
 
                 Seminars=JSON.parse(data);
                 var iSem;
@@ -164,14 +173,14 @@ $(document).ready(function(){
                     && Events.events[i]._id!=idEvent){
 
                         test=true;
-                        $.get("https://hypermedia19.herokuapp.com/artist/"+Events.events[i].artistId, function(data, status){
+                        $.get("https://http://hypermedia19.herokuapp.com/artist/"+Events.events[i].artistId, function(data, status){
 
                             Artist=JSON.parse(data);
 
                             $("#relSameDay").append(
                                 `
                                 <div class="col-sm-12 col-md-6 col-lg-4">
-                                    <a href="singleevent.html?id=${Events.events[i]._id}">  
+                                    <a href="singleEvent.html?id=${Events.events[i]._id}">  
                                         <img src="../images/${Events.events[i].photoGallery[0].filename}"class="imagesArtist">                   
                                     </a> 
                                     <div>
@@ -194,50 +203,8 @@ $(document).ready(function(){
                 }
 
                 if(test){
-                    $("#sameTitle").text("RELATIVE SAME DAY");
+                    $("#sameTitle").text("Same day Event");
                 }
-
-                //to remove
-                var phSplit;
-                var phurl;
-                var iSeminarDate;
-
-                    for(let j=0;j<Seminars.seminars.length;j++){
-                        
-                        iSem = Seminars.seminars[j];
-                        iSeminarDate = new Date (iSem.date.split("-")[0].replace(/\s+/g, '').split("/")[2],
-                            iSem.date.split("-")[0].replace(/\s+/g, '').split("/")[1],
-                            iSem.date.split("-")[0].replace(/\s+/g, '').split("/")[0],
-                            iSem.date.split("-")[1].replace(/\s+/g, '').split(".")[0],
-                            iSem.date.split("-")[1].replace(/\s+/g, '').split(".")[1],0);
-                        
-                        if(thisEventDataAndHour.getFullYear() == iSeminarDate.getFullYear() 
-                        && thisEventDataAndHour.getMonth() == iSeminarDate.getMonth()
-                        && thisEventDataAndHour.getDate() == iSeminarDate.getDate()
-                        ){
-            
-                        phSplit= Seminars.seminars[j].photoGallery.split("\\");
-                        phurl= phSplit[2]+ "\\"+phSplit[3];
-
-                        $("#relSameDay").append(
-                        `
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <a href="singleseminar.html?id=${Seminars.seminars[j]._id}">         
-
-                                    <img src="../${phurl}"class="imagesArtist">                   
-
-                                </a> 
-                                <div>
-                                    <h5><b>${Seminars.seminars[j].name}</b></h5>
-                                </div>
-                                <h7><i><b>seminar</b></i></h7>        <br>
-                                <h7><i><b>${Seminars.seminars[j].date}</b></i></h7>
-                            </div>
-                            `
-                        );
-                    }
-                }
-                //to remove
             });
         });
    
@@ -247,7 +214,7 @@ $(document).ready(function(){
             var userId=localStorage.getItem("userId");
             //call to torder api
             $.ajax({
-                url : "https://hypermedia19.herokuapp.com/order/" + localStorage.getItem("userId") +  "/" + idEvent,
+                url : "https://http://hypermedia19.herokuapp.com/order/" + localStorage.getItem("userId") +  "/" + idEvent,
                 type: "GET",
                 contentType: "application/json; carset=utf-8",
                 dataType   : "json",
@@ -261,7 +228,7 @@ $(document).ready(function(){
                     var qua = or.order.quantity;
                     quantity = qua;
                     eventInCart=true;
-                    $("#orderTitle").text("Order");
+                    $("#orderTitle").text("Order:");
                     $('div').find("input[type=text]").each(function(ev)
                     {
                         if(!$(this).val()) { 
@@ -272,18 +239,22 @@ $(document).ready(function(){
                 error       : function (err) {
                     eventInCart=false;
                     quantity =0;
-                    $("#orderTitle").text("Order");
+                    $("#orderTitle").text("Order:");
                 }
             });
         } else{
             //if not logged
-            $("#orderTitle").text("You are not logged, can't use order feature");
-            $("#updateSpace").append(
+            $("#ord").empty();
+            $("#ord").append(
                 `
-                <h4 align="center"><b><a href="/assets/pages/log.html">Login for use it.</a></b> </h4>
+                <div class="col-12 " align="ceter">
+                    <h4><b>You are not logged, can't use order feature.</b></h4>
+                    <h5><b><a href="/assets/pages/log.html">Login for use it.</a></b></h5>
+                    <h5><b><a href="/assets/pages/registration.html">Or register.</a></b></h5>
+                </div>
                 `
             );
-            $("#order").hide();
+            
         }
     });
     
@@ -346,25 +317,22 @@ $( "#updateSpace").on("click",'#updateBtn' , function() {
 
 
 function order(newQuantity) {
-
     $.ajax({
 
-        url : "https://hypermedia19.herokuapp.com/order/" + localStorage.getItem("userId"),
+        url : "https://http://hypermedia19.herokuapp.com/order/" + localStorage.getItem("userId"),
         type: "POST",
         contentType: "application/json; carset=utf-8",
         dataType   : "json",
         data: JSON.stringify(
-            [
-                {		
-                    "propName":"eventId"  ,"value":idEvent,
-                    "propName":"price"  ,"value":evPrice,
-                    "propName":"quantity"  ,"value":newQuantity,
+            {		
+                "eventId":idEvent,
+                "price": evPrice,
+                "quantity":newQuantity,
 
-                }
-            ]
+            }
         ),
         beforeSend: function (xhr) {
-
+    
             xhr.setRequestHeader ("Authorization",localStorage.getItem("token"));
         },
         success    : function(data,status,xrh){

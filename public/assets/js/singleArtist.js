@@ -32,7 +32,7 @@ $(document).ready(function(){
     var Artist;
     var Events;
 
-    $.get("https://hypermedia19.herokuapp.com/artist/"+idArtist, function(data, status){
+    $.get("https://http://hypermedia19.herokuapp.com/artist/"+idArtist, function(data, status){
 
         Artist=JSON.parse(data);
         var photo1=Artist.artist.photoGallery[0].filename;
@@ -86,7 +86,7 @@ $(document).ready(function(){
 
 
         //RELATIVE EVENT
-        $.get("https://hypermedia19.herokuapp.com/event/", function(data, status){
+        $.get("https://http://hypermedia19.herokuapp.com/event/", function(data, status){
 
             Events=JSON.parse(data);
 
@@ -95,7 +95,7 @@ $(document).ready(function(){
                     $("#event").append(
                         `
                         <div class="col-sm-12 col-md-6 col-lg-4">
-                            <a href="singleevent.html?id=${Events.events[i]._id}">  
+                            <a href="singleEvent.html?id=${Events.events[i]._id}">  
                                 <img src="../images/${Events.events[i].photoGallery[0].filename}"class="imagesArtist">                   
                             </a> 
                             <div>

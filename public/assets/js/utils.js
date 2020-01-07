@@ -1,19 +1,20 @@
+
 $(document).ready(function(){
 	
     $('#navbar').append(
 
         `
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark pl-5 navbarmy>
+        <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark pl-5 navbarmy>
             <div class="navbar-header">
                 <span>
-                    <a class="navbar-brand" href="/index.html"><b>MILAN BY NIGHT 2020</b></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarItems" aria-controls="navbarItems" aria-expanded="false" aria-label="Toggle navigation"> 
+                    <a class="navbar-brand" href="/index.html"><b>MBN2020</b></a>
+                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarItems" aria-controls="navbarItems" aria-expanded="false" aria-label="Toggle navigation"> 
                         <span class="navbar-toggler-icon"></span> 
                     </button>
                 </span>
             </div>
             <div class="collapse navbar-collapse" id="navbarItems">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto" id ="Btn">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="/assets/pages/events.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <h7><b>Events</b></h7>
@@ -25,13 +26,10 @@ $(document).ready(function(){
                             <a class="dropdown-item" href="/assets/pages/events.html"><b>All</b></a>
                         </div>
                     </li>				
-                    <li class="nav-item"><a class="nav-link performers" href="/assets/pages/artists.html"><h7><b>Artists</b></h7></a></li>
-                    <li class="nav-item"><a class="nav-link calendar" href="/assets/pages/calendar.html"><h7><b>Calendar</b></h7></a></li>
-                    <li class="nav-item"><a class="nav-link about" href="/assets/pages/about.html"><h7><b>Contact Us</b></h7></a></li>
-                    <li class="nav-item"><a class="nav-link infoticket" href="/assets/pages/infoticket.html"><h7><b>Info T&S</b></h7></a></li>
-                    <li class="nav-item"><a class="nav-link login" href="/assets/pages/log.html"><h7><b>Log In</b></h7></a></li>
-                    <li class="nav-item"><a class="nav-link signup" href="/assets/pages/registration.html"><h7><b>Sign Up</b></h7></a></li>
-                    <li class="nav-item"><a class="nav-link cart" href="/assets/pages/cart.html"><h7><b>Cart</b></h7></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/assets/pages/artists.html"><h7><b>Artists</b></h7></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/assets/pages/calendar.html"><h7><b>Calendar</b></h7></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/assets/pages/about.html"><h7><b>Contact Us</b></h7></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/assets/pages/infoticket.html"><h7><b>Info T&S</b></h7></a></li>
                 </ul>
             </div>
         </nav>
@@ -89,5 +87,36 @@ $(document).ready(function(){
 		</div>	
       </footer>
       `
-    );
+	);
+	
+	//utils check if logged
+	if (localStorage.getItem("userId")==null || localStorage.getItem("token")==null) {
+		//not authnticated
+		localStorage.clear();
+		$('#Btn').append(
+			`
+			<li class="nav-item" id ="registerBtn"><a class="nav-link signup" href="/assets/pages/registration.html"><h7><b>Sign Up</b></h7></a></li>
+			<li class="nav-item" id ="logInBtn"><a class="nav-link login" href="/assets/pages/log.html"><h7><b>Log In</b></h7></a></li>
+			`
+		);
+	} else {
+		// authnticated
+		$('#Btn').append(
+			`
+			<li class="nav-item" id ="cartBtn"><a class="nav-link cart" href="/assets/pages/cart.html"><h7><b>Cart</b></h7></a></li>
+			<li class="nav-item" id ="logOutBtn"><a class="nav-link login"><h7><b>Log Out</b></h7></a></li>
+
+			`
+		);
+	}
+
+	//log out function
+	$("#logOutBtn").on("click", function () {
+		localStorage.clear();
+		location.reload();
+	});
+
+
+
+
 });

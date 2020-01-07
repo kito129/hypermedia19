@@ -2,11 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	var calendarEl = document.getElementById('calendar');
 
-    $.get("https://hypermedia19.herokuapp.com/event", function(data, status){
+    $.get("https://http://hypermedia19.herokuapp.com/event", function(data, status){
 
 	  Events=JSON.parse(data);
 
-	  $.get("https://hypermedia19.herokuapp.com/seminar",function(data,status){
+	  $.get("https://http://hypermedia19.herokuapp.com/seminar",function(data,status){
 
 		Seminars=JSON.parse(data);
 
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				id: el._id,
 				title: el.name,
 				start: dateTxt,
-				url:   '../pages/singleevent.html?id='+ el._id,
+				url:   '../pages/singleEvent.html?id='+ el._id,
 				color: col
 			};
 			event.push(text);
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				id: el._id,
 				title: el.name,
 				start: dateTxt,
-				url:   '../pages/singleseminar.html?id='+ el._id,
+				url:   '../pages/singleSeminar.html?id='+ el._id,
 				color: 'green'
 			};
 			event.push(text);

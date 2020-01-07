@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Order = require("../models/orders");
 const Event = require("../models/event");
-//const SingleOrder = require("../models/singleOrder");
+const SingleOrder = require("../models/singleOrder");
 
 //OK
 exports.orders_get_all = (req, res, next) => {
@@ -14,12 +14,12 @@ exports.orders_get_all = (req, res, next) => {
         orders: docs.map(doc => {
           return {
             userId: doc.userId,
-            order: doc.order[0],
+            singleOrder: doc.singleOrder,
             totalPrice: doc.totalPrice,
             _id: doc._id,
             request: {
               type: "GET",
-              url: "https://hypermedia19.herokuapp.com/order/" + doc._id,
+              url: "https://http://hypermedia19.herokuapp.com/order/" + doc._id,
             }
           };
         })
@@ -42,23 +42,56 @@ exports.orders_get_all = (req, res, next) => {
 
 //OK
 exports.orders_create_order = (req, res, next) => {
-  const body = req.body;
-  console.log(body);
-  const evId = req.body.eventId;
-  const qua = req.body.quantity;
-  const pri = req.body.price;
-  const userId=  req.params.userId;
-  const updateOps = {};
-  for (const ops of req.body ) {
-    updateOps[ops.propName] = ops.value;
-  }
+  let body = req.body;
+  let evId = body.eventId;
+  let qua = body.quantity;
+  let pri = body.price;
+  let userId=  req.params.userId;
+  const sub = qua*pri;
+  let newId = new mongoose.Types.ObjectId;
+  const singOr = new SingleOrder({
+    _id: newId,
+    eventId: evId,
+    quantity: qua,
+    price: pri,
+    subTotal: sub
+  });
 
-  Order.findOneAndUpdate({ userId:userId }, { $set: updateOps },{new: true}) 
+  singOr
+    .save()
+    .catch(err =>{
+      console.log("ERROR:\n" + err);
+    })
+
+  Order.findOne({ userId:userId },)
+  .exec()
+  .then(order =>{
+    console.log(order);
+    SingleOrder.findOne({ _id:order.singleOrder},)
+      .exec()
+      .then(single =>{
+        console.log(single);
+      })
+
+
+  })
+  .catch(err=>{
+    console.log("ERROR");
+    console.log(err);
+
+  }) 
+
+
+  //se esite o meno
+  
+
+  /*
+  Order.findOneAndUpdate({ userId:userId }, { $set: singOr },{new: true}) 
   .exec()
   .then(ord => {
 
     console.log(ord);
-    /*
+    
     for (let k = 0; k < ord[0].order.length; k++) {
       const element = ord[0].order[k];
       
@@ -80,7 +113,7 @@ exports.orders_create_order = (req, res, next) => {
         console.log("not");
       }
     }
-    */
+   
   })
   .catch(err => {
     console.log("ERROR:\n" + err);
@@ -88,6 +121,7 @@ exports.orders_create_order = (req, res, next) => {
         error: err
       }));
   });
+   */
 };
 
 
@@ -126,7 +160,7 @@ if (user.length >= 1) {
               totalPrice: result.totalPrice,
               requestCart: {
                 type: "GET",
-                url: "https://hypermedia19.herokuapp.com/order/" + result._id
+                url: "https://http://hypermedia19.herokuapp.com/order/" + result._id
               }
             }
           }));
@@ -152,13 +186,12 @@ if (user.length >= 1) {
 
 */
 
-
-
 //OK
 exports.orders_get_order = (req, res, next) => {
   const id = req.params.userId;
   Order.find({ userId: id})
-    .select("_id userId order totalPrice")
+    .select("_id userId singleOrder totalPrice")
+    .populate("singleOrder")
     .exec()
     .then(doc => {
       console.log(doc);
@@ -166,7 +199,7 @@ exports.orders_get_order = (req, res, next) => {
         order: doc,
         request: {
           type: "GET",
-          url: "https://hypermedia19.herokuapp.com/order/" + id
+          url: "https://http://hypermedia19.herokuapp.com/order/" + id
         }
       }));
     })
@@ -207,7 +240,7 @@ exports.orders_get_order_get_event = (req, res, next) => {
           order: el,
           request: {
             type: "GET",
-            url: "https://hypermedia19.herokuapp.com/order/" + id + "/" + evId
+            url: "https://http://hypermedia19.herokuapp.com/order/" + id + "/" + evId
           }
         }));
       }
@@ -263,7 +296,7 @@ exports.orders_update_order = (req, res, next) => {
           message: "Order updated",
           request: {
             type: "GET",
-            url: "https://hypermedia19.herokuapp.com/order/" + id
+            url: "https://http://hypermedia19.herokuapp.com/order/" + id
           }
         }));
       })
@@ -292,7 +325,7 @@ exports.orders_delete = (req, res, next) => {
         message: "Order deleted",
         request: {
           type: "POST",
-          url: "https://hypermedia19.herokuapp.com/order/",
+          url: "https://http://hypermedia19.herokuapp.com/order/",
           body: { userId: "Number",}
         }
       }));

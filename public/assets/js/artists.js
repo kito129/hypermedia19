@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	$.get("https://hypermedia19.herokuapp.com/artist", function(data, status){
+	$.get("https://http://hypermedia19.herokuapp.com/artist", function(data, status){
 
 		var Artists=JSON.parse(data);
 
@@ -12,7 +12,7 @@ $(document).ready(function(){
 
 				`
 				<div class="col-sm-12 col-md-6 col-lg-4">
-					<a href="singleartist.html?id=${Artists.artists[i]._id}">  
+					<a href="singleArtist.html?id=${Artists.artists[i]._id}">  
 						<img src="../images/${text}"class="imagesArtist">                   
 					</a> 
 					<div>

@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 
 const User = require("../models/user");
 const Order = require("../models/orders");
+const SingleOrder = require("../models/singleOrder");
 
 
 //OK
@@ -47,7 +48,7 @@ exports.user_signup = (req, res, next) => {
               const order = new Order({
                 _id: new mongoose.Types.ObjectId(),
                 userId: usId,
-                order: [],
+                SingleOrder: new SingleOrder(),
                 totalPrice: 0
               });
               order
@@ -148,7 +149,7 @@ exports.user_getId = (req, res, next) => {
               surname: doc.surname,
               request: {
                 type: "GET",
-                url: "https://hypermedia19.herokuapp.com/user/"
+                url: "https://http://hypermedia19.herokuapp.com/user/"
               }
             };
           })

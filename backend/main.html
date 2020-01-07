@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://stackedit.io/style.css" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></head>
-
 <body >
     <div class="container mt-4 mb-4" >
         <div class="col text-justify"> 
@@ -26,66 +25,74 @@
             </div>
             <h2 class="mt-3 mb-3">Links to other deliverables</h2>
             <div class="col">
-                <ul>
-                    <li>Deliverable D0: the web application is accessible at 
-                        <a href="http://hypermedia19.herokuapp.com/">this address</a>. 
-                    </li>
-                </ul>
-                <ul>
-                    <li>Deliverable D1: The backend documentation is accessible at <a href="http://hypermedia19.herokuapp.com/documentation">this address</a>.</li>
-                </ul>
-                <ul>
-                    <li>Deliverable D2: the YAML or JSON file containing the specification of the app API can be found at 
-                        <a href="http://hypermedia19.herokuapp.com/backend/spec.yaml">this address</a>.</li>
-                </ul>
-                <ul>
-                    <li>Deliverable D3: the SwaggerUI page of the same API is available at 
-                        <a href="http://hypermedia19.herokuapp.com/backend/swaggerui">this address</a>.
-                    </li>
-                </ul>
-        
-                <ul>
-                    <li>Deliverable D4: the source code of the web application at D0 is available as a zip file at
-                        <a href="http://hypermedia19.herokuapp.com//backend/app.zip">this address</a>.
-                    </li>
-                </ul>
-                <ul>
-                    <li>Deliverable D5: the address of the online source control repository is
-                        available at <a href="https://github.com/marcoselva/hypermedia19">this address.</a> 
-                        We declare that are private repository and we gave access to the instructors.
-                    </li>
-                </ul>
+                <p>
+                    <ul>
+                        <li>Deliverable D0: the web application is accessible at 
+                            <a href="http://hypermedia19.herokuapp.com/">this address</a>. 
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>Deliverable D1: The backend documentation (this file) is accessible at <a href="http://hypermedia19.herokuapp.com/documentation">this address</a>.</li>
+                    </ul>
+                    <ul>
+                        <li>Deliverable D2: the YAML or JSON file containing the specification of the app API can be found at 
+                            <a href="http://hypermedia19.herokuapp.com/backend/spec.yaml">this address</a>.</li>
+                    </ul>
+                    <ul>
+                        <li>Deliverable D3: the SwaggerUI page of the same API is available at 
+                            <a href="http://hypermedia19.herokuapp.com/backend/swaggerui">this address</a>.
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>Deliverable D4: the source code of the web application at D0 is available as a zip file at
+                            <a href="http://hypermedia19.herokuapp.com//backend/app.zip">this address</a>.
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>Deliverable D5: the address of the online source control repository is
+                            available at <a href="https://github.com/marcoselva/hypermedia19">this address.</a> 
+                            We declare that are private repository and we gave access to the instructors.
+                        </li>
+                    </ul>
+                </p>
             </div>
             <h2 class="mt-3 mb-3" >Specification</h2>
             <h3 id="web-architecture">Web Architecture</h3>
             <div class="col">
                 <p>We created a clear separation between the presentation layer and the application layer. 
-                    The first one is handled by the browser that requests page assets, sends HTTP requests, and then renders the results on the client-side. 
-                    The application layer instead is composed by a backend server and all DOM manipualtion functionality. 
-                    <br>
-                    <br>
-                    The backend server is responsible of the communication with the data layer to perform NoSQL request on MongoDB using Mongoose.js dependencie requested through the exposed API. 
-                    The frontend server invokes this API to get the data needed in the pages and to perform actions on data generated by user interaction on the pages.
-                    <br>
-                    <br>
-                    A diagram of the architecture is available at  <a href="../">this address.</a></p>
+                    <ul>
+                        <li>
+                            The Presentation layer is handled by the browser that requests page assets, sends HTTP requests (also AJAX calls), and then renders the results on the client-side. 
+                        </li>
+                        <li >
+                            The Application layer, that is in the backend server, is responsible of the communication with the data layer to perform request on NoSQL DB and exposed it in form of REST API. 
+                        </li>
+                        <br>
+                            The js frontend invokes this API to get the data needed in the pages and to perform actions on it to serve dynamically the user requested page.
+                    </ul>
+                    A diagram of the architecture is available at  <a href="../">this address.</a>
+                </p>
             </div>
             <h3 class="mt-3 mb-3">API</h3>
             <div class="col">
                 <h4 id="rest-compliance">REST compliance</h4>
-                <p>We respect the REST principles to create an API that allows client and server to grow independently, and that provides a uniform interface where everything related to event is under the path /event and same goes for artist, seminar, user and cart.
-                    We use REST principles for authentication requests too, usign a JSON Token, saving this client-side and adding this in the Authorization Header for authenticated request to server. </p>
+                <p>
+                    We respect the REST principles to create an API that allows client and server to grow independently, and that provides a uniform interface where everything related to event is under the path /event and same goes for artist, seminar, user and cart.
+                    We use REST principles for authentication requests too, soo we implement stateless server about client information (Cookie), usign a JSON Web Token, saving this client-side and adding this in the Authorization Header for authenticated request to server. 
+                </p>
                 <h4 id="openapi-resource-models">OpenAPI Resource models</h4>
-                <p>The main entities involved in our festival web site are Artist, Event, Seminar, User and Order. Artist, Event and Seminar contain the attributes requested in the specification by the instructors.
+                <p>
+                    The main entities involved in our festival web site are Artist, Event, Seminar, User and Order. Artist, Event and Seminar contain the attributes requested in the specification by the instructors.
                     The event  also contains a list of Artist’ IDs to quickly access the Artist information, and Seminar'IDs.
-                    For each of them we created a resource model. In these models all the properties are mandatory, so we first create artists and seminars and then with their id's we populate events</p>
+                    For each of them we created a resource model. In these models all the properties are mandatory, so we first create artists and seminars and then with their id's we populate events
+                </p>
                 <ul>
                     <li>We first create Artist and Seminar that have no relation in their table</li>
                     <li>Second we created Event's table with ID reference from the previus created</li>
-                    <li>User send Name, Surname, Email and password  (the last in BASE64 encode) for register.</li>
+                    <li>For registration user send Name, Surname, Email and password  (the last in BASE64 encode) for register.</li>
                     <li>For login, if the request was accepted by server, we response with JWT token that saved in localStorage of the Browser.</li>
                 </ul>
-                <p>All single path have specific request, params and body to improve for correct request and interation, they can be found in API documentation.</p>
+                <p>All single path have specific request, and Resource model, params and body to use for correct request and interation.Their documentation can be found in API docs (D1 or D2).</p>
                 <h4 id="openapi-resource-models">Note about POST method for Populate DB</h4>
                 <p>For semplicity,  we authorize root user same as normal client user. So the post method for /artist /seminar and /event are accesible for all user authenticated.
                     We don't introduct double level of security because is not the main topic of this course, but we are informated that is not the best practice in web site development. </p>
@@ -94,19 +101,20 @@
             <div class="col">
                 <p>
                     An ER diagram of the data model is available at <a href="../">this addres.</a> 
-                    <br>
-                    <br>
+                </p>
+                <p>
                     The tables here represented are mapped into the resource models shown before. 
                     <br>
                     Some information about the relationships are:
                 </p>
-                <ul>
-                    <li>Events are created for the last, cause they need artist and seminar IDs</li>
-                    <li>Server when user register, create a order record instead, when user create or modify order client perform POST request and server update the user cart</li>
-                    <li>Photo gallery for Event, Seminar and Artist are populated from databse too.</li>
-                </ul>
                 <p>
-                    Database was populated using API instead. We used POST request for push in cloud DB (you have to add in authorize header a bearer JWT token).
+                    <ul>
+                        <li>Events are created for the last, cause they need artist and seminar IDs</li>
+                        <li>Server when user register, create a order record instead, when user create or modify order client perform POST request and server update the user cart</li>
+                        <li>Photo gallery for Event, Seminar and Artist are populated from databse too.</li>
+                    </ul>
+                <p>
+                    Database was populated using API instead. We used POST request for push in cloud DB .
                 </p>
             </div>
             <h2 class="mt-3 mb-3">Implementation</h2>
@@ -115,27 +123,51 @@
                 <div class="col">
                     <p>
                         We developed our NoSQL database with MongoDb Atlas for cloud integration. 
-                        We use POSTMAN tool to set it up, and interact with API for initial testin and for populate DB throght the API path.
-                        The integration with the MongoDB database was made possible by the Atlas feature, and Mongoose dependenciese js side, that permit to create a cloud and managed database.
+                        We use POSTMAN tool for interact with API, for initial testing and for populate DB throght the POST path.
+                        The integration with the MongoDB database was made possible by the Mongoose.js dependencies, that permit to create and manage a cloud-based database.
+                        We  our DB passsword in heroku process.env for security reason.
                         As Code editor we all used VSCode and Chrome as a browser using their console for debug and test.
-                        <br>
-                        <br>
+                    </p>
+                    <p>
                         We used the framework Express.js to handle the routing of all the deliverables, including this one.
-                        Express.js perform all server funtionality in integration with other depencendencis for utils such as body JSON parser, JWT token for authentication and MULTER for photo gallery uploads
+                        Express.js perform all server funtionality in integration with other depencendencis for utils such as body JSON parser, JWT token for authentication and MULTER for photo gallery uploads.
                         <br>
+                        <ul>
+                            For our backend side we use this js dependencies:
+                            <br>
+                            <br>
+                            <li>"@fullcalendar/core</li> 
+                            <li>"@fullcalendar/daygrid</li>
+                            <li>bcrypt3</li> 
+                            <li>body-parser</li> 
+                            <li>express</li> 
+                            <li>jsonwebtoken</li> 
+                            <li>mongoose</li> 
+                            <li>morgan</li> 
+                            <li>multer</li> 
+                        </ul>
                         <br>
                         For implementation of calendar, because Boostarp not serve native, we used FullCalendar.js plugin. <a href="https://fullcalendar.io/docs">Here is their documentation.</a>
-                        <br>
-                        <br>
+                    </p>
+                    <p>
                         We use GitHub as version control support.
-                        <br>
-                        We used Heroku to deploy our applications in the cloud platform. We used to deploy our applications (both the frontend and the backend) and setup a continuous delivery mechanism linked with GitHub master branch.
-                        We also used SwaggerUI for create OpenAPI documentation in yaml format.
+                        We used Heroku to deploy our applications in the cloud platform, where we setup a continuous delivery mechanism linked with GitHub master branch.
+                        We also used Swagger for create OpenAPI documentation in YAML format and generate SwaggerUI.
                     </p>
                 </div>
                 <h3 id="discussion">Discussion</h3>
                 <div class="col">
-                    <p></p>
+                    <p>
+                        The backend server that is the only one interfacing the DB and that provides a RESTful API to operate on it, 
+                        the frontend application client request REST resources, show pages and invoke the APIs in response to user interaction with the page.
+                        In the frontend there is a separation between the provided pages and static assets like stylesheets, scripts and static images.
+                    </p>
+                    <p>
+                        For Session state we choose for JWT for their semplicity and for respect REST API principles, the statless server, so when user perform login request, server not store any client information, but they generate a JWT token.
+                        This one will be store in localSotrage of the browser and used client side for authenticated request such as cart and order funtionality.
+                        Information about user will deleted client side when customer close the broswer or when they clic Log Out.
+                        Server will accept token for 12h and then though the client don't close browser they will be logged out. 
+                    </p>
                 </div>
             </div>
             <h2>Other information</h2>
@@ -146,30 +178,36 @@
                         For working we used an Agile approach to the development of the project, with weekly meetings where we divided our tasks and checked the progresses of the previous week.
                         In the start of the project all the members were involved in every decision started from the development of the OpenAPI spec, C-IDM and L-IDM schema, ER and ER logic schemas. 
                         After all this prepartion time we separate our work in BackEnd + API, FrontEnd, and linking the two (DOM manipualtion with data retrived from API).
-                        <br>
-                        <br>
+                    </p>
+                    <p>
                         From there on Marco worked mainly on the backend, Simone on the presentation layer of the frontend and Andrea on the application layer of the frontend. 
                         At the end of the development we reviewed together the two implemented applications and we fix all problem and eventualy bugs for perfect integration Back-Front End.
                     </p>
                 </div>
-                <h3 >Analysis of existing API</h3>
+                <h3 >Analysis of existing Project</h3>
                 <div class="col">
-                    <p>To follow in a proper way the principles of RESTful APIs we used as main inspiration APIs developed for projects in internet and youtube.
+                    <p>
+                        To follow in a proper way the principles of RESTful APIs we used as main inspiration APIs developed for projects in internet and youtube.
                         For BackEnd side we follow a youtube guide that use Express.js and MongoDB atlas, so we just start from a basic scratch and we improve our BackEnd with all requested Specification.
-                        This analysis was usefull for understand all technology used now for web development, starting from the fundamental HTML CSS and JS, but also Boostarp framework and other js plugin such as FullCalendar we used for our calendar implementation,  and to find the defacto standard to deploy our web site.
+                    </p>
+                    <p>
+                        This analysis was also usefull for understand all technology used now for web development, starting from the fundamental HTML CSS and JS, but also Boostarp framework and other js plugin such as FullCalendar we used for our calendar implementation,  and to find the defacto standard to deploy our web site.
+                        We use the common rule used in web develope and we try to create the prototype of web site that can be used in different situation and with the 2020 internet starndard. 
                     </p>
                 </div>
                 <h3>Learning outcome</h3>
                 <div class="col">
                     <p>
-                        Marco learned how to interface a backend with a relational database through NoSQL queries, that they never used before. He also learned how to setup continuous delivery on a cloud platform and difference betwen server static and dynamic content.
-                        They learn to use Node.Js local and remote, and how to create OpenAPI spec.
-                        <br>
-                        <br>
-                        Andrea learned how to connect BackEnd to FrontEnd throght OpenAPI and AJAX request and Jqury for manipulating the DOM, he integrate it in application layer side project.
-                        <br>
-                        <br>
-                        Simone learned how to create structured FrontEnd starting from initial Schemas and Database schemas.He learned Boostarp too taht is a one of principals framework at the time in web site development.
+                        <p>
+                            Marco learned how to interface a backend with a relational database through NoSQL queries, that they never used before. He also learned how to setup continuous delivery on a cloud platform and difference betwen server static and dynamic content.
+                            They learned to use Node.Js local and remote, and how to create OpenAPI spec.
+                        </p>
+                        <p>
+                            Andrea learned how to connect BackEnd to FrontEnd throght OpenAPI and AJAX request and Jqury for manipulating the DOM, he integrate it in application layer side project.
+                        </p>
+                        <p>          
+                            Simone learned how to create structured FrontEnd starting from initial Schemas and Database schemas.He learned Boostarp too taht is a one of principals framework at the time in web site development.
+                        </p>
                     </p>
                 </div>
             </div>

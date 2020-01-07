@@ -1,7 +1,7 @@
 if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null) {
 
     $.ajax({
-        url : "http://localhost:5000/order/" + localStorage.getItem("userId"),
+        url : "https://hypermedia19.herokuapp.com/order/" + localStorage.getItem("userId"),
         type: "GET",
         contentType: "application/json; carset=utf-8",
         dataType   : "json",
@@ -24,7 +24,7 @@ if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null)
                 for (let i = 0; i < res.order[0].order.length; i++) {
                     const element =  res.order[0].order[i];
             
-                    $.get("http://localhost:5000/event" + , function(data, status){
+                    $.get("https://hypermedia19.herokuapp.com/event" + , function(data, status){
                         var name = element.
                     });
 

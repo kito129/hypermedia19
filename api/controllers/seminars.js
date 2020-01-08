@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const Seminar = require("../models/seminar");
 
-
 //OK
 exports.seminars_get_all = (req, res, next) => {
   Seminar.find()
@@ -16,11 +15,11 @@ exports.seminars_get_all = (req, res, next) => {
             name: doc.name,
             date: doc.date,
             place: doc.place,
-            abatract: doc.abatract,
+            abstract: doc.abstract,
             photoGallery: doc.photoGallery,
             request: {
               type: "GET",
-              url: "http://localhost:5000/seminar/" + doc._id
+              url: "https://hypermedia19.herokuapp.com/seminar/" + doc._id
             }
           };
         })
@@ -73,7 +72,7 @@ exports.seminars_create_seminar = (req, res, next) => {
                 photoGallery: result.photoGallery,
                 request: {
                   type: "GET",
-                  url: "http://localhost:5000/seminar/" + result._id
+                  url: "https://hypermedia19.herokuapp.com/seminar/" + result._id
                 }
               }
             }));
@@ -100,7 +99,7 @@ exports.seminars_get_seminar = (req, res, next) => {
           seminar: doc,
           request: {
             type: "GET",
-            url: "http://localhost:5000/seminar/"
+            url: "https://hypermedia19.herokuapp.com/seminar/"
           }
         }));
       } else {
@@ -126,7 +125,7 @@ exports.seminars_delete_seminar = (req, res, next) => {
         message: "Seminar deleted",
         request: {
           type: "POST",
-          url: "http://localhost:5000/seminar",
+          url: "https://hypermedia19.herokuapp.com/seminar",
           body: { seminarId: "ID", name: "Name" }
         }
       }));

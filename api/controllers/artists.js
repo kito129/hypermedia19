@@ -23,7 +23,7 @@ exports.artists_get_all = (req, res, next) => {
             _id: doc._id,
             request: {
               type: "GET",
-              url: "http://localhost:5000/artist/" + doc._id
+              url: "https://hypermedia19.herokuapp.com/artist/" + doc._id
             }
           };
         })
@@ -55,7 +55,7 @@ exports.artists_create_artist = (req, res, next) => {
           message: "Artist already exists"
         }));
       } else {
-        console.log(req.files);
+  
         const artist = new Artist({
           _id: new mongoose.Types.ObjectId(),
           name: req.body.name,
@@ -83,7 +83,7 @@ exports.artists_create_artist = (req, res, next) => {
                 photoGallery: result.photoGallery,
                 request: {
                   type: "GET",
-                  url: "http://localhost:5000/artist/" + result._id
+                  url: "https://hypermedia19.herokuapp.com/artist/" + result._id
                 }
               }
             }));
@@ -111,7 +111,7 @@ exports.artists_get_artist = (req, res, next) => {
           artist: doc,
           request: {
             type: "GET",
-            url: "http://localhost:5000/artist/"+ doc._id
+            url: "https://hypermedia19.herokuapp.com/artist/"+ doc._id
           }
         }));
       } else {
@@ -139,12 +139,11 @@ exports.artists_update_artist = (req, res, next) => {
   })
     .exec()
     .then(result => {
-      console.log(result);
       res.status(200).json(JSON.stringify({
         message: "Artist updated",
         request: {
           type: "GET",
-          url: "http://localhost:5000/artist/" + id
+          url: "https://hypermedia19.herokuapp.com/artist/" + id
         }
       }));
     })
@@ -174,7 +173,7 @@ exports.artists_delete = (req, res, next) => {
         message: "Artist deleted",
         request: {
           type: "POST",
-          url: "http://localhost:5000/artist/",
+          url: "https://hypermedia19.herokuapp.com/artist/",
           body: { name: "String",}
         }
       }));

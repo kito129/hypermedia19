@@ -19,7 +19,7 @@ exports.orders_get_all = (req, res, next) => {
             _id: doc._id,
             request: {
               type: "GET",
-              url: "http://localhost:5000/order/" + doc._id,
+              url: "https://hypermedia19.herokuapp.com/order/" + doc._id,
             }
           };
         })
@@ -67,8 +67,7 @@ exports.orders_create_order = (req, res, next) => {
     Order.findOneAndUpdate({userId: userId}, 
       {$pull:{singleOrder: { _id: newId }}},{new: true}, (err, result) => {
       // Rest of the action goes here
-      console.log("rimosso");
-      console.log(result);
+
      })
   } else {
     SingleOrder.findOne({eventId:evId})
@@ -84,7 +83,7 @@ exports.orders_create_order = (req, res, next) => {
               price: pri,
               subTotal: sub}},{new: true}, (err, result) => {
             // Rest of the action goes here
-            console.log(result);
+    
           })
 
 
@@ -105,7 +104,7 @@ exports.orders_create_order = (req, res, next) => {
           Order.findOneAndUpdate({userId: userId}, 
                         {$push: {singleOrder: newId}},{new: true}, (err, result) => {
                         // Rest of the action goes here
-                        console.log(result);
+           
                       })
           res.status(404).json(JSON.stringify({
             error: "not"
@@ -140,12 +139,12 @@ exports.orders_get_order = (req, res, next) => {
     .populate("SingleOrder")
     .exec()
     .then(doc => {
-      console.log(doc);
+    
       res.status(200).json(JSON.stringify({
         order: doc,
         request: {
           type: "GET",
-          url: "http://localhost:5000/order/" + id
+          url: "https://hypermedia19.herokuapp.com/order/" + id
         }
       }));
     })
@@ -162,7 +161,7 @@ exports.orders_get_order = (req, res, next) => {
 
 exports.orders_get_order_single = (req, res, next) => {
   const id = req.params.singleId;
-  console.log(id);
+
   SingleOrder.findById(id)
       .select("_id eventId price quantity subTotal")
       .then(doc => {
@@ -170,7 +169,7 @@ exports.orders_get_order_single = (req, res, next) => {
           single: doc,
           request: {
             type: "GET",
-            url: "http://localhost:5000/single/" + id 
+            url: "https://hypermedia19.herokuapp.com/single/" + id 
           }
         }));
       })
@@ -203,7 +202,7 @@ exports.orders_get_order_get_event = (req, res, next) => {
             order: doc,
             request: {
               type: "GET",
-              url: "http://localhost:5000/order/" + id + "/" + evId
+              url: "https://hypermedia19.herokuapp.com/order/" + id + "/" + evId
             }
           }));
         } else {
@@ -246,7 +245,7 @@ exports.orders_update_order = (req, res, next) => {
   const id = req.params.userId;
   const type = req.params.update;
   const body = req.body;
-  console.log(body);
+
   if(type==="true"){
     //type true se c'e gia evento e evi aggioranre quantita 
 
@@ -261,12 +260,12 @@ exports.orders_update_order = (req, res, next) => {
     Order.findOneAndUpdate({ userId: id }, { $set: updateOps },options,function (err, doc) {})
       .exec()
       .then(result => {
-        console.log(result);
+  
         res.status(200).json(JSON.stringify({
           message: "Order updated",
           request: {
             type: "GET",
-            url: "http://localhost:5000/order/" + id
+            url: "https://hypermedia19.herokuapp.com/order/" + id
           }
         }));
       })
@@ -295,7 +294,7 @@ exports.orders_delete = (req, res, next) => {
         message: "Order deleted",
         request: {
           type: "POST",
-          url: "http://localhost:5000/order/",
+          url: "https://hypermedia19.herokuapp.com/order/",
           body: { userId: "Number",}
         }
       }));

@@ -33,10 +33,12 @@ $(document).ready(function(){
     var Seminars;
     var SeminarId;
 
-    $.get("http://localhost:5000/seminar/"+idSeminar, function(data, status){
+    $.get("https://hypermedia19.herokuapp.com/seminar/"+idSeminar, function(data, status){
 
         Seminar=JSON.parse(data);   
         SeminarId = Seminar.seminar._id;
+
+        console.log(Seminar);
 
         let thisSeminarDataAndHour= new Date (Seminar.seminar.date.split("-")[0].replace(/\s+/g, '').split("/")[2],
                 Seminar.seminar.date.split("-")[0].replace(/\s+/g, '').split("/")[1],
@@ -61,11 +63,12 @@ $(document).ready(function(){
         $("#date").text(Seminar.seminar.date);
         $("#locationTitle").text("Location: ")
         $("#location").text(Seminar.seminar.place);
+        $("#abstract").text(Seminar.seminar.abstract);
         
    
 
         //relative event
-        $.get("http://localhost:5000/event", function(data, status){
+        $.get("https://hypermedia19.herokuapp.com/event", function(data, status){
 
             Events=JSON.parse(data);
             for (let h = 0; h < Events.events.length; h++) {

@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
       cb(null, './public/assets/images');
   },
   filename: function(req, file, cb) {
-      console.log("sono qui");
+
       const now = new Date().toISOString(); const date = now.replace(/:/g, '-'); cb(null, date + file.originalname);
   }
 });

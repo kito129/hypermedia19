@@ -230,7 +230,7 @@ function updateFilter(params) {
 				}
 			break;
 			}
-	console.log(counter[8]);
+
 	return counter[params];
 }
 
@@ -273,15 +273,15 @@ $(document).ready(function(){
 	var Events;
 	var Seminars;
 
-	$.get("http://localhost:5000/event", function(data, status){
+	$.get("https://hypermedia19.herokuapp.com/event", function(data, status){
 
 		Events=JSON.parse(data);
 
-		$.get("http://localhost:5000/artist",function(data,status){
+		$.get("https://hypermedia19.herokuapp.com/artist",function(data,status){
 
 			Artists=JSON.parse(data);
 
-			$.get("http://localhost:5000/seminar",function(data,status){
+			$.get("https://hypermedia19.herokuapp.com/seminar",function(data,status){
 
 				Seminars=JSON.parse(data);
 

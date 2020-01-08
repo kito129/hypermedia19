@@ -7,7 +7,7 @@ function isEmpty( el ){
 function emptyOrder(eventId,price) {
     $.ajax({
 
-        url : "http://localhost:5000/order/" + localStorage.getItem("userId"),
+        url : "https://hypermedia19.herokuapp.com/order/" + localStorage.getItem("userId"),
         type: "POST",
         contentType: "application/json; carset=utf-8",
         dataType   : "json",
@@ -37,7 +37,7 @@ if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null)
     let count=0;
     
     $.ajax({
-        url : "http://localhost:5000/order/" + localStorage.getItem("userId"),
+        url : "https://hypermedia19.herokuapp.com/order/" + localStorage.getItem("userId"),
         type: "GET",
         contentType: "application/json; carset=utf-8",
         dataType   : "json",
@@ -51,7 +51,7 @@ if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null)
                 const element =  res.order[0].singleOrder[i];
 
                 $.ajax({
-                    url : "http://localhost:5000/order/single/" + element,
+                    url : "https://hypermedia19.herokuapp.com/order/single/" + element,
                     type: "GET",
                     contentType: "application/json; carset=utf-8",
                     dataType   : "json",
@@ -65,7 +65,7 @@ if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null)
                             var sub = sing.single.subTotal;
                             total=total + sub;
                             $.ajax({
-                                url : "http://localhost:5000/event/" + sing.single.eventId,
+                                url : "https://hypermedia19.herokuapp.com/event/" + sing.single.eventId,
                                 type: "GET",
                                 contentType: "application/json; carset=utf-8",
                                 dataType   : "json",
@@ -175,7 +175,7 @@ $(document).ready(function(){
     $( "#cart").on('click','.btn btn-danger' , function() {
         console.log( $( this ));
         var evId = $(this).attr("id");
-        console.log(evId);
+      
 
     });
 });

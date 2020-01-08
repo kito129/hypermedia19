@@ -121,7 +121,7 @@ $(document).ready(function(){
 	if(self.location.href.search("index")!=-1){
 
 	} else {
-		console.log("not in hom");
+	
 		var localPage = self.location.href.split("/")[5].split("?")[0];
 
 		switch (localPage) {

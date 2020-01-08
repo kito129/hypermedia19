@@ -1,5 +1,40 @@
+//utli funtion
+function isEmpty( el ){
+    return !$.trim(el.html())
+}
+
+//empty order
+function emptyOrder(eventId,price) {
+    $.ajax({
+
+        url : "https://hypermedia19.herokuapp.com/order/" + localStorage.getItem("userId"),
+        type: "POST",
+        contentType: "application/json; carset=utf-8",
+        dataType   : "json",
+        data: JSON.stringify(
+            {		
+                "eventId":eventId,
+                "price": price,
+                "quantity":0,
+
+            }
+        ),
+        beforeSend: function (xhr) {
+    
+            xhr.setRequestHeader ("Authorization",localStorage.getItem("token"));
+        },
+        success    : function(data,status,xrh){
+        },
+        error      : function (err) {
+            console.log(err);
+        }
+    
+    });
+}
+
 if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null) {
     let total =0;
+    let count=0;
     
     $.ajax({
         url : "https://hypermedia19.herokuapp.com/order/" + localStorage.getItem("userId"),
@@ -11,31 +46,21 @@ if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null)
         },
         success    : function(data,status,xrh){
             var res = JSON.parse(data);
-            console.log(res);
-            if(res.order[0].singleOrder.length==0){
-                $("#allert").empty();
-                $("#allert").append(
-                    `
-                    <h4 class="text-center mt-4 mb-4">Your cart are Empty. Add Ticket to cart for puchase here.</h4>
-                    `
-                );
-            } else {
+            
+            for (let i = 0; i < res.order[0].singleOrder.length; i++) {
+                const element =  res.order[0].singleOrder[i];
 
-               
-
-                for (let i = 0; i < res.order[0].singleOrder.length; i++) {
-                    const element =  res.order[0].singleOrder[i];
-
-                    $.ajax({
-                        url : "https://hypermedia19.herokuapp.com/order/single/" + element,
-                        type: "GET",
-                        contentType: "application/json; carset=utf-8",
-                        dataType   : "json",
-                        beforeSend: function (xhr) {
-                            xhr.setRequestHeader ("Authorization",localStorage.getItem("token"));
-                        },
-                        success    : function(data,status,xrh){
-                            var sing = JSON.parse(data);
+                $.ajax({
+                    url : "https://hypermedia19.herokuapp.com/order/single/" + element,
+                    type: "GET",
+                    contentType: "application/json; carset=utf-8",
+                    dataType   : "json",
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader ("Authorization",localStorage.getItem("token"));
+                    },
+                    success    : function(data,status,xrh){
+                        var sing = JSON.parse(data);
+                        if(!(sing.single==null)){
                             var quantity = sing.single.quantity;
                             var sub = sing.single.subTotal;
                             total=total + sub;
@@ -48,7 +73,7 @@ if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null)
                                     var event = JSON.parse(data);
                                     var el = event.event;
                                 
-                                    console.log(el);
+                                    count=count+1;
                                     $("#cart").append(
                                         `
                                         <div class="row mt-2 mb-2">
@@ -59,7 +84,9 @@ if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null)
                                             </div>
                                             <div class="col-8">
                                                 <div>
-                                                    <h5><b>${el.name}</b></h5>
+                                                    <a href="singleEvent.html?id=${el._id}">
+                                                        <h5><b>${el.name}</b></h5>
+                                                    </a> 
                                                 </div>
                                                 <div>                         
                                                     <h7><i><b>Price: ${el.price}.00€</b></i></h7>
@@ -71,13 +98,13 @@ if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null)
                                                     <h7><i><b>SubTotale: ${sub}.00€</b></i></h7>
                                                 </div>
                                                 <div>        
-                                                    <button type="button" class="btn btn-danger"> x</button>    
+                                                    <button type="button" class="btn btn-danger" id="${sing.single._id}+${el._id}+${el.price}"> x</button>    
                                                 </div>                                           
                                             </div>
                                         </div>
                                         `
                                     );
-
+    
                                     $("#cartTotal").empty();
                                     $("#cartTotal").append(
                                         `
@@ -89,19 +116,16 @@ if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null)
                                         </div>
                                         `
                                     );
-                              
-                                    
                                 },
                                 error      :function (err) {
-                                    
                                 }
                             });
-                        },
-                        error      : function (err) {
-                            
                         }
-                    });                          
-                }
+                        
+                    },
+                    error      : function (err) {
+                    }
+                });                          
             }
         },
         error       : function (err) {
@@ -113,10 +137,26 @@ if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null)
                 <h4 class="text-center mt-4 mb-4">You are not Logged in. Cart feauture is not enabled for not logged user.</h4>
                 `
             );
-                
-         
+        },
+        complete    :function(){
+            //check if carty is empty
+
+            setTimeout(function(){
+                if (isEmpty($('#cart'))) {
+                    // do something
+                    $("#allert").append(
+                        `
+                        <h4 class="text-center mt-4 mb-4">Your cart is empty.. go  <a href="http://hypermedia19.herokuapp.com/assets/pages/events.html?value=event">events</a>  , find one to buy and add it into the cart.</h4>
+                        `
+                    );
+                }
+            }, 5000);
+            
+            
         }
     });
+
+    
 
 } else {
 
@@ -128,5 +168,16 @@ if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null)
     );
 
 }
+
+
+$(document).ready(function(){
+
+    $( "#cart").on('click','.btn btn-danger' , function() {
+        console.log( $( this ));
+        var evId = $(this).attr("id");
+        console.log(evId);
+
+    });
+});
 
 

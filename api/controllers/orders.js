@@ -61,84 +61,76 @@ exports.orders_create_order = (req, res, next) => {
     subTotal: sub
   });
 
-  var found = false;
-
-
   if(qua==0){
-
     //delete order
     SingleOrder.deleteOne({eventId:evId}).exec();
     Order.findOneAndUpdate({userId: userId}, 
-      {$pull: {singleOrder: newId}},{new: true}, (err, result) => {
+      {$pull:{singleOrder: { _id: newId }}},{new: true}, (err, result) => {
       // Rest of the action goes here
+      console.log("rimosso");
       console.log(result);
      })
   } else {
     SingleOrder.findOne({eventId:evId})
-  .exec()
-  .then(sing => {
-    if (sing!=null) {
-      // cè modifica
-      var singId = sing._id;
+      .exec()
+      .then(sing => {
+        if (sing!=null) {
+          // cè modifica
+          var singId = sing._id;
 
-      SingleOrder.findOneAndUpdate({eventId: evId}, 
-        {$set: {
-          quantity: qua,
-          price: pri,
-          subTotal: sub}},{new: true}, (err, result) => {
-        // Rest of the action goes here
-        console.log(result);
-       })
+          SingleOrder.findOneAndUpdate({eventId: evId}, 
+            {$set: {
+              quantity: qua,
+              price: pri,
+              subTotal: sub}},{new: true}, (err, result) => {
+            // Rest of the action goes here
+            console.log(result);
+          })
 
 
-      res.status(201).json(JSON.stringify({
-        message: "found"
-      }));
-     
-    } else{
-      //non cèe crea a aggungi
-      singOr
-      .save()
-      .catch(err =>{
-        res.status(500).json(JSON.stringify({
-          error: "Internal Error"
-        }));
+          res.status(201).json(JSON.stringify({
+            message: "found"
+          }));
+        
+        } else{
+          //non cèe crea a aggungi
+          singOr
+          .save()
+          .catch(err =>{
+            res.status(500).json(JSON.stringify({
+              error: "Internal Error"
+            }));
+          })
+
+          Order.findOneAndUpdate({userId: userId}, 
+                        {$push: {singleOrder: newId}},{new: true}, (err, result) => {
+                        // Rest of the action goes here
+                        console.log(result);
+                      })
+          res.status(404).json(JSON.stringify({
+            error: "not"
+          }));
+
+        }
+        
       })
-
-      Order.findOneAndUpdate({userId: userId}, 
-                    {$push: {singleOrder: newId}},{new: true}, (err, result) => {
-                    // Rest of the action goes here
-                    console.log(result);
-                   })
-      res.status(404).json(JSON.stringify({
-        error: "not"
-      }));
-
+      .catch(err => {
+        
+          if(err.name="CastError"){
+            console.log("Event ID not valid");
+            console.log(err);
+            res.status(404).json(JSON.stringify({
+              error: "Event ID not valid"
+            }));
+          } else{
+            console.log("ERROR:\n" + err);
+            res.status(500).json(JSON.stringify({
+              error: err
+            }));
+          }
+      });    
     }
-    
-  })
-  .catch(err => {
-     
-      if(err.name="CastError"){
-        console.log("Event ID not valid");
-        console.log(err);
-        res.status(404).json(JSON.stringify({
-          error: "Event ID not valid"
-        }));
-      } else{
-        console.log("ERROR:\n" + err);
-        res.status(500).json(JSON.stringify({
-          error: err
-        }));
-      }
-  });    
-
-  }
-
-  
 };
-
-
 
 //OK
 exports.orders_get_order = (req, res, next) => {

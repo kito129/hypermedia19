@@ -273,7 +273,7 @@ function addUpdateBtn() {
     $("#updateSpace").empty();
     $("#updateSpace").append(
         `
-        <button type="button" class="btn btn-success m-1" id="updateBtn">Update</button>
+        <button type="button" class="btn btn-success" id="updateBtn">Update</button>
         `
     );
 }

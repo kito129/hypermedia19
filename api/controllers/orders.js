@@ -40,14 +40,18 @@ exports.orders_get_all = (req, res, next) => {
     });
 };
 
-//OK
+
 exports.orders_create_order = (req, res, next) => {
+
+  let userId=  req.params.userId;
+
+  //create new sing order
   let body = req.body;
   let evId = body.eventId;
   let qua = body.quantity;
   let pri = body.price;
-  let userId=  req.params.userId;
   const sub = qua*pri;
+
   let newId = new mongoose.Types.ObjectId;
   const singOr = new SingleOrder({
     _id: newId,
@@ -57,141 +61,91 @@ exports.orders_create_order = (req, res, next) => {
     subTotal: sub
   });
 
-  singOr
-    .save()
-    .catch(err =>{
-      console.log("ERROR:\n" + err);
-    })
+  var found = false;
 
-  Order.findOne({ userId:userId },)
+
+  if(qua==0){
+
+    //delete order
+    SingleOrder.deleteOne({eventId:evId}).exec();
+    Order.findOneAndUpdate({userId: userId}, 
+      {$pull: {singleOrder: newId}},{new: true}, (err, result) => {
+      // Rest of the action goes here
+      console.log(result);
+     })
+  } else {
+    SingleOrder.findOne({eventId:evId})
   .exec()
-  .then(order =>{
-    console.log(order);
-    SingleOrder.findOne({ _id:order.singleOrder},)
-      .exec()
-      .then(single =>{
-        console.log(single);
+  .then(sing => {
+    if (sing!=null) {
+      // cè modifica
+      var singId = sing._id;
+
+      SingleOrder.findOneAndUpdate({eventId: evId}, 
+        {$set: {
+          quantity: qua,
+          price: pri,
+          subTotal: sub}},{new: true}, (err, result) => {
+        // Rest of the action goes here
+        console.log(result);
+       })
+
+
+      res.status(201).json(JSON.stringify({
+        message: "found"
+      }));
+     
+    } else{
+      //non cèe crea a aggungi
+      singOr
+      .save()
+      .catch(err =>{
+        res.status(500).json(JSON.stringify({
+          error: "Internal Error"
+        }));
       })
 
+      Order.findOneAndUpdate({userId: userId}, 
+                    {$push: {singleOrder: newId}},{new: true}, (err, result) => {
+                    // Rest of the action goes here
+                    console.log(result);
+                   })
+      res.status(404).json(JSON.stringify({
+        error: "not"
+      }));
 
-  })
-  .catch(err=>{
-    console.log("ERROR");
-    console.log(err);
-
-  }) 
-
-
-  //se esite o meno
-  
-
-  /*
-  Order.findOneAndUpdate({ userId:userId }, { $set: singOr },{new: true}) 
-  .exec()
-  .then(ord => {
-
-    console.log(ord);
-    
-    for (let k = 0; k < ord[0].order.length; k++) {
-      const element = ord[0].order[k];
-      
-      if (element.eventId==evId) {
-
-        var update = 
-        [
-          {
-            eventId: evId,
-            quantity: qua,
-            price: pri,
-            subTotal: pri*qua
-          }
-        ];
-        console.log(update);
-
-      
-      } else {
-        console.log("not");
-      }
     }
-   
+    
   })
   .catch(err => {
-    console.log("ERROR:\n" + err);
-      res.status(500).json(JSON.stringify({
-        error: err
-      }));
-  });
-   */
-};
-
-
-/*
-
-if (user.length >= 1) {
-  return res.status(409).json(JSON.stringify({
-    message: "Order with this userId already exists. Update this order"
-  }));
-} else {
-    Event.find({_id: req.body.order[0].eventId })
-    .exec()
-    .then(event =>{
-      const singlePrice =  Number(event[0].price);
-      const quant =  Number(bodyOrder[0].quantity);
-      const order = new Order({
-        _id: new mongoose.Types.ObjectId(),
-        order: 
-        [
-          {
-            eventId: req.body.order[0].eventId,
-            quantity: req.body.order[0].quantity,
-            subTotal: singlePrice*quant
-          }
-        ],
-        totalPrice: singlePrice*quant
-      });
-      order
-        .save()
-        .then(result => {
-          res.status(201).json(JSON.stringify({
-            message: "Created Order Created",
-            createdOrder: {
-              userId: result.userId,
-              order: result.order,
-              totalPrice: result.totalPrice,
-              requestCart: {
-                type: "GET",
-                url: "https://hypermedia19.herokuapp.com/order/" + result._id
-              }
-            }
-          }));
-        })
-    })
-    .catch(err => {
+     
       if(err.name="CastError"){
-        console.log("Invalid eventId input:\n" + err);
-        res.status(400).json(JSON.stringify({
-          message: "Invalid eventId input",
-          error: err
+        console.log("Event ID not valid");
+        console.log(err);
+        res.status(404).json(JSON.stringify({
+          error: "Event ID not valid"
         }));
-      } else {
+      } else{
         console.log("ERROR:\n" + err);
         res.status(500).json(JSON.stringify({
           error: err
         }));
       }
-    });
+  });    
+
   }
-})   
+
+  
+};
 
 
-*/
 
 //OK
 exports.orders_get_order = (req, res, next) => {
   const id = req.params.userId;
   Order.find({ userId: id})
     .select("_id userId singleOrder totalPrice")
-    .populate("singleOrder")
+    .populate("SingleOrder")
     .exec()
     .then(doc => {
       console.log(doc);
@@ -214,37 +168,61 @@ exports.orders_get_order = (req, res, next) => {
     });
 };
 
+exports.orders_get_order_single = (req, res, next) => {
+  const id = req.params.singleId;
+  console.log(id);
+  SingleOrder.findById(id)
+      .select("_id eventId price quantity subTotal")
+      .then(doc => {
+        res.status(200).json(JSON.stringify({
+          single: doc,
+          request: {
+            type: "GET",
+            url: "https://hypermedia19.herokuapp.com/single/" + id 
+          }
+        }));
+      })
+      .catch(err => {
+          console.log("ERROR:\n" + err);
+          res.status(500).json(JSON.stringify({ error: err }));
+      });  
+
+};
+
+
+
+
+
 //OK
 exports.orders_get_order_get_event = (req, res, next) => {
   const id = req.params.userId;
   const evId= req.params.eventId;
-  Order.find({ userId: id},{ eventId: evId} )
+
+  Order.find({ userId:id})
     .select("_id userId order eventId subTotale totalPrice")
     .exec()
     .then(doc => {
-      let el;
-
-      for (let k = 0; k < doc[0].order.length; k++) {
-        const element = doc[0].order[k];
-        if(element.eventId==evId){
-          el =element;
-        }
-      }
-
-      if (el==undefined) {
-        console.log("ERROR:\n" + "provided eventID NOT FOUND\n");
-        res.status(404).json(JSON.stringify({ message: "provided eventID NOT FOUND" }));
-
-      } else{
-        res.status(200).json(JSON.stringify({
-          order: el,
-          request: {
-            type: "GET",
-            url: "https://hypermedia19.herokuapp.com/order/" + id + "/" + evId
-          }
-        }));
-      }
       
+      SingleOrder.find({ eventId: evId})
+      .select("_id eventId price quantity subTotal")
+      .then(doc => {
+        if(!doc.length==0){
+          res.status(200).json(JSON.stringify({
+            order: doc,
+            request: {
+              type: "GET",
+              url: "https://hypermedia19.herokuapp.com/order/" + id + "/" + evId
+            }
+          }));
+        } else {
+          res.status(404).json(JSON.stringify({ message: "provided user + event  NOT FOUND" }));
+        }
+        
+      })
+      .catch(err => {
+          console.log("ERROR:\n" + err);
+          res.status(500).json(JSON.stringify({ error: err }));
+      });      
     })
     .catch(err => {
       if(err.name="CastError"){

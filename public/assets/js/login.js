@@ -31,6 +31,11 @@ $( "form" ).submit(function( event ) {
                 <h4 class="text-center mt-4 mb-4">Welome back ${string}.</h4>
                 `
             );
+
+            setTimeout(function(){
+                window.location.href = "https://hypermedia19.herokuapp.com/assets/pages/cart.html";
+            }, 1500);
+            
         
         },
         error       : function (err) {

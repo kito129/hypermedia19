@@ -179,7 +179,7 @@ $(document).ready(function(){
 
                             $("#relSameDay").append(
                                 `
-                                <div class="col-sm-12 col-md-6 col-lg-4">
+                                <div class="col-sm-12 col-md-6 col-lg-4" >
                                     <a href="singleEvent.html?id=${Events.events[i]._id}">  
                                         <img src="../images/${Events.events[i].photoGallery[0].filename}"class="imagesArtist">                   
                                     </a> 
@@ -210,6 +210,7 @@ $(document).ready(function(){
    
         //check for order
         if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null) {
+            
 
             var userId=localStorage.getItem("userId");
             //call to torder api
@@ -225,8 +226,10 @@ $(document).ready(function(){
                 success    : function(data,status,xrh){
 
                     var or =  JSON.parse(data);
-                    var qua = or.order.quantity;
+                    console.log(or);
+                    var qua = or.order[0].quantity;
                     quantity = qua;
+                    console.log(quantity);
                     eventInCart=true;
                     $("#orderTitle").text("Order:");
                     $('div').find("input[type=text]").each(function(ev)

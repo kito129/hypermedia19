@@ -15,7 +15,7 @@ $(document).ready(function(){
             </div>
             <div class="collapse navbar-collapse" id="navbarItems">
                 <ul class="navbar-nav ml-auto" id ="Btn">
-                    <li class="nav-item dropdown" id="event">
+                    <li class="nav-item dropdown" id="eventBtn">
                         <a class="nav-link dropdown-toggle" href="/assets/pages/events.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <h7><b>Events</b></h7>
                         </a>
@@ -26,10 +26,10 @@ $(document).ready(function(){
                             <a class="dropdown-item" href="/assets/pages/events.html"><b>All</b></a>
                         </div>
                     </li>				
-                    <li class="nav-item"><a class="nav-link" id="artist" href="/assets/pages/artists.html"><h7><b>Artists</b></h7></a></li>
-                    <li class="nav-item"><a class="nav-link" id="calendar" href="/assets/pages/calendar.html"><h7><b>Calendar</b></h7></a></li>
-                    <li class="nav-item"><a class="nav-link" id="contact" href="/assets/pages/about.html"><h7><b>Contact Us</b></h7></a></li>
-                    <li class="nav-item"><a class="nav-link"  id="info" href="/assets/pages/infoticket.html"><h7><b>Info T&S</b></h7></a></li>
+                    <li class="nav-item"><a class="nav-link" id="artistBtn" href="/assets/pages/artists.html"><h7><b>Artists</b></h7></a></li>
+                    <li class="nav-item"><a class="nav-link" id="calendarBtn" href="/assets/pages/calendar.html"><h7><b>Calendar</b></h7></a></li>
+                    <li class="nav-item"><a class="nav-link" id="contactBtn" href="/assets/pages/about.html"><h7><b>Contact Us</b></h7></a></li>
+                    <li class="nav-item"><a class="nav-link"  id="infoBtn" href="/assets/pages/infoticket.html"><h7><b>Info T&S</b></h7></a></li>
                 </ul>
             </div>
         </nav>
@@ -127,51 +127,51 @@ $(document).ready(function(){
 		switch (localPage) {
 			case "events.html":
 
-				$("#event").removeClass('nav-item dropdown').addClass('nav-item dropdown active');
+				$("#eventBtn").removeClass('nav-item dropdown').addClass('nav-item dropdown active');
 			
 				break;
 			case "singleEvent.html":
 
-				$("#event").removeClass('nav-item dropdown').addClass('nav-item dropdown active');
+				$("#eventBtn").removeClass('nav-item dropdown').addClass('nav-item dropdown active');
 			
 				break;
 
 			case "artists.html":
 
-				$("#artist").removeClass('nav-link').addClass('nav-link active');
+				$("#artistBtn").removeClass('nav-link').addClass('nav-link active');
 			
 				break;
 			case "singleSrtists.html":
 
-				$("#artist").removeClass('nav-link').addClass('nav-link active');
+				$("#artistBtn").removeClass('nav-link').addClass('nav-link active');
 			
 				break;
 
 			case "calendar.html":
 
-				$("#calendar").removeClass('nav-link').addClass('nav-link active');
+				$("#calendarBtn").removeClass('nav-link').addClass('nav-link active');
 			
 				break;
 		
 			case "about.html":
 
-				$("#contact").removeClass('nav-link').addClass('nav-link active');
+				$("#contactBtn").removeClass('nav-link').addClass('nav-link active');
 			
 				break;
 			case "infoticket.html":
 
-				$("#info").removeClass('nav-link').addClass('nav-link active');
+				$("#infoBtn").removeClass('nav-link').addClass('nav-link active');
 			
 				break;
 			case "calendar.html":
 
-				$("#calendar").removeClass('nav-link').addClass('nav-link active');
+				$("#calendarBtn").removeClass('nav-link').addClass('nav-link active');
 			
 				break;
 
 			case "cart.html":
 
-				$("#cart").removeClass('nav-link').addClass('nav-link active');
+				$("#cartBtn").removeClass('nav-link').addClass('nav-link active');
 			
 				break;
 			default:

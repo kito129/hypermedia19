@@ -70,7 +70,9 @@ if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null)
                                                 <div>        
                                                     <h7><i><b>SubTotale: ${sub}.00€</b></i></h7>
                                                 </div>
-                                                
+                                                <div>        
+                                                    <button type="button" class="btn btn-danger"> x</button>    
+                                                </div>                                           
                                             </div>
                                         </div>
                                         `

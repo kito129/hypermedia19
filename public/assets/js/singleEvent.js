@@ -123,7 +123,7 @@ $(document).ready(function(){
                 var splitte= Seminar.seminar.photoGallery.split("\\");
                 var url= splitte[2]+ "\\"+splitte[3];
                 
-                $("#relativeTitle").text("RELATIVE SEMINAR")
+                $("#relativeTitle").text("Realtive Seminar")
                 $("#relSeminar").append(
                     
                         `

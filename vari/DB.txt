@@ -6,614 +6,609 @@
 		GET /artist
 
 		{
-			"artists": [
-				{
-					"name": "ROBERTO BOLLE",
-					"currentAffiliattion": "American Ballet Theatre",
-					"achivements": [
-						"Étoile and Principal Dancer"
-					],
-					"isCompany": false,
-					"type": "dancer",
-					"companyMembers": [
-						""
-					],
-					"abstract": "Roberto Bolle (born March 26, 1975 in Casale Monferrato) is an Italian danseur. He is currently a principal dancer with the American Ballet Theatre and a principal dancer étoile at La Scala Theatre Ballet. Bolle also dances regularly as a guest artist with the world’s leading companies, including The Royal Ballet, the Mariinsky Ballet, the Bolshoi Ballet and the Paris Opera Ballet.",
-					"photoGallery": [
-						{
-							"fieldname": "photoGallery",
-							"originalname": "2.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-00-46.040Z2.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-00-46.040Z2.jpg",
-							"size": 69401
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "3.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-00-46.045Z3.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-00-46.045Z3.jpg",
-							"size": 137380
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "2019-12-16T16-31-44.266Zbolle.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-00-46.064Z2019-12-16T16-31-44.266Zbolle.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-00-46.064Z2019-12-16T16-31-44.266Zbolle.jpg",
-							"size": 91149
-						}
-					],
-					"_id": "5e01390e6c63bc0714704366",
-					"request": {
-						"type": "GET",
-						"url": "http://localhost:5000/artist/5e01390e6c63bc0714704366"
-					}
-				},
-				{
-					"name": "CIRQUE DU SOLEIL",
-					"currentAffiliattion": "DL Circus",
-					"achivements": [
-						"Theater company of the year 2012",
-						"Theater company of the year 2015",
-						"Theater company of the year 2016",
-						"Theater company of the year 2019"
-					],
-					"isCompany": false,
-					"type": "circus",
-					"companyMembers": [
-						"Guy Laliberté",
-						"Gilles Ste-Croix",
-						"Daniel Gauthier",
-						"Rachel Vertus"
-					],
-					"abstract": "Cirque du Soleil is a Canadian entertainment company and the largest contemporary circus producer in the world. Based in Montreal, Quebec, Canada, and located in the inner-city area of Saint-Michel, it was founded in Baie-Saint-Paul on 7 July 1984, by two former street performers, Guy Laliberté and Gilles Ste-Croix.",
-					"photoGallery": [
-						{
-							"fieldname": "photoGallery",
-							"originalname": "2.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-06-23.774Z2.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-06-23.774Z2.jpg",
-							"size": 226725
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "3.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-06-23.800Z3.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-06-23.800Z3.jpg",
-							"size": 224455
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "2019-12-16T16-33-24.288Zcirque.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-06-23.812Z2019-12-16T16-33-24.288Zcirque.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-06-23.812Z2019-12-16T16-33-24.288Zcirque.jpg",
-							"size": 109948
-						}
-					],
-					"_id": "5e013a606c63bc0714704367",
-					"request": {
-						"type": "GET",
-						"url": "http://localhost:5000/artist/5e013a606c63bc0714704367"
-					}
-				},
-				{
-					"name": "LUDOVICO EINAUDI",
-					"currentAffiliattion": "Decca Records",
-					"achivements": [
-						"Best European composer 2008"
-					],
-					"isCompany": false,
-					"type": "pianist",
-					"companyMembers": [],
-					"abstract": "Ludovico Maria Enrico Einaudi (born November 23, 1955 in Turin) is an Italian pianist and composer. Trained at the Conservatorio Verdi in Milan, Einaudi began his career as a classical composer, later incorporating other styles and genres such as pop, rock, folk, and world music. Einaudi has composed the scores for a number of films and television productions. He has also released a number of solo albums for piano and other instruments. On 1 March 2019, Einaudi announced a seven-part project named Seven Days Walking, which is to be released over the course of seven months in 2019.",
-					"photoGallery": [
-						{
-							"fieldname": "photoGallery",
-							"originalname": "2.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-07-42.166Z2.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-07-42.166Z2.jpg",
-							"size": 129615
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "3.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-07-42.169Z3.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-07-42.169Z3.jpg",
-							"size": 71656
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "2019-12-16T16-36-46.357Zeinaudi.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-07-42.172Z2019-12-16T16-36-46.357Zeinaudi.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-07-42.172Z2019-12-16T16-36-46.357Zeinaudi.jpg",
-							"size": 1047369
-						}
-					],
-					"_id": "5e013aae6c63bc0714704368",
-					"request": {
-						"type": "GET",
-						"url": "http://localhost:5000/artist/5e013aae6c63bc0714704368"
-					}
-				},
-				{
-					"name": "VASCO ROSSI",
-					"currentAffiliattion": "EMI Italiana",
-					"achivements": [
-						"Disco di diamante 2014",
-						"Disco di diamante 2003"
-					],
-					"isCompany": false,
-					"type": "singer",
-					"companyMembers": [],
-					"abstract": "Vasco Rossi (born February 7, 1952 in Zocca) is an Italian singer-songwriter. During his career, he has published 30 albums and has written over 250 songs, as well as lyrics for other artists. He calls himself a provocautore (an Italian portmanteau for provoking author) as throughout his career he has been regularly criticized over his choice of lifestyle and the lyrics in his songs. With more than 35 millions of copies sold, he is one of the best-selling Italian singers.",
-					"photoGallery": [
-						{
-							"fieldname": "photoGallery",
-							"originalname": "1.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-11-57.600Z1.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-11-57.600Z1.jpg",
-							"size": 141549
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "2.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-11-57.603Z2.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-11-57.603Z2.jpg",
-							"size": 143364
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "3.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-11-57.606Z3.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-11-57.606Z3.jpg",
-							"size": 93777
-						}
-					],
-					"_id": "5e013bad6c63bc071470436b",
-					"request": {
-						"type": "GET",
-						"url": "http://localhost:5000/artist/5e013bad6c63bc071470436b"
-					}
-				},
-				{
-					"name": "MAX PEZZALI",
-					"currentAffiliattion": "Warner Music Italy",
-					"achivements": [
-						"Disco di platino 2006"
-					],
-					"isCompany": false,
-					"type": "singer",
-					"companyMembers": [],
-					"abstract": "Massimo Pezzali (born November 14, 1967 in Pavia), commonly known as Max Pezzali, is an Italian singer-songwriter. He was the principal singer and song writer of the pop rock group 883. In 2004, he released his first solo album Il mondo insieme a te. The album was successful in Italy and since then Pezzali has remained a solo artist. Taking into account his solo work, as well as his work dating back to the 883 period, Max Pezzali has sold over 10 million albums, thereby becoming one of the most popular singers in the history of Italian music.",
-					"photoGallery": [
-						{
-							"fieldname": "photoGallery",
-							"originalname": "1.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-12-51.150Z1.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-12-51.150Z1.jpg",
-							"size": 90740
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "2.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-12-51.153Z2.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-12-51.153Z2.jpg",
-							"size": 213613
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "3.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-12-51.156Z3.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-12-51.156Z3.jpg",
-							"size": 163112
-						}
-					],
-					"_id": "5e013be36c63bc071470436c",
-					"request": {
-						"type": "GET",
-						"url": "http://localhost:5000/artist/5e013be36c63bc071470436c"
-					}
-				},
-				{
-					"name": "RICCARDO COCCIANTE",
-					"currentAffiliattion": "RCA Talent",
-					"achivements": [
-						"Sanremo 1991"
-					],
-					"isCompany": false,
-					"type": "composer",
-					"companyMembers": [],
-					"abstract": "Riccardo Vincent Cocciante (born Frebruary 20, 1946 in Saigon) is an Italian-French songwriter, composer and musician. In 1991, he won the Sanremo Festival with the song Se stiamo insieme. As of 2008, Cocciante has three musicals running, with Notre-Dame de Paris being the most known.",
-					"photoGallery": [
-						{
-							"fieldname": "photoGallery",
-							"originalname": "1.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-13-27.135Z1.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-13-27.135Z1.jpg",
-							"size": 150076
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "2.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-13-27.138Z2.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-13-27.138Z2.jpg",
-							"size": 233711
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "3.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-13-27.180Z3.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-13-27.180Z3.jpg",
-							"size": 96308
-						}
-					],
-					"_id": "5e013c076c63bc071470436d",
-					"request": {
-						"type": "GET",
-						"url": "http://localhost:5000/artist/5e013c076c63bc071470436d"
-					}
-				},
-				{
-					"name": "DREAMUSICAL",
-					"currentAffiliattion": "ACI Theater",
-					"achivements": [
-						"Theater company of the year 2010",
-						"Theater company of the year 2011",
-						"Theater company of the year 2014"
-					],
-					"isCompany": false,
-					"type": "musical",
-					"companyMembers": [
-						"Giò Di Tonno",
-						"Lola Ponce"
-					],
-					"abstract": "Dreamusical is a theater company born in france in 1995. At the moment it puts on 4 different shows, the most important of which is surely Notre Dame de Paris which has allowed it to become one of the most important companies in the world.",
-					"photoGallery": [
-						{
-							"fieldname": "photoGallery",
-							"originalname": "1.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-14-36.618Z1.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-14-36.618Z1.jpg",
-							"size": 149561
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "2.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-14-36.621Z2.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-14-36.621Z2.jpg",
-							"size": 39147
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "3.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-14-36.623Z3.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-14-36.623Z3.jpg",
-							"size": 161224
-						}
-					],
-					"_id": "5e013c4c6c63bc071470436e",
-					"request": {
-						"type": "GET",
-						"url": "http://localhost:5000/artist/5e013c4c6c63bc071470436e"
-					}
-				},
-				{
-					"name": "NEGRAMARO",
-					"currentAffiliattion": "Sugar Music",
-					"achivements": [
-						"Disco di platino 2010"
-					],
-					"isCompany": false,
-					"type": "group",
-					"companyMembers": [
-						"Giuliano Sangiorgi",
-						"Emanuele Lele Spedicato",
-						"Andrea Andro Mariano",
-						"Andrea Pupillo De Rocco",
-						"Danilo Tasco"
-					],
-					"abstract": "Negramaro is an Italian pop band formed in 1999 and successful since 2005. Their name stems from Negroamaro, a wine produced in their native district, Salento in Apulia. After years spent in the Italian alternative market, they finally became known more widely in 2005 thanks to the Sanremo Festival.",
-					"photoGallery": [
-						{
-							"fieldname": "photoGallery",
-							"originalname": "1.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-15-53.265Z1.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-15-53.265Z1.jpg",
-							"size": 71014
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "2.jpeg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-15-53.267Z2.jpeg",
-							"path": "public\\assets\\images\\2019-12-23T22-15-53.267Z2.jpeg",
-							"size": 107771
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "3.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-15-53.270Z3.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-15-53.270Z3.jpg",
-							"size": 141572
-						}
-					],
-					"_id": "5e013c996c63bc071470436f",
-					"request": {
-						"type": "GET",
-						"url": "http://localhost:5000/artist/5e013c996c63bc071470436f"
-					}
-				},
-				{
-					"name": "LAURA PAUSINI",
-					"currentAffiliattion": "Atlantic Records",
-					"achivements": [
-						"Grammy Award 2006"
-					],
-					"isCompany": false,
-					"type": "singer",
-					"companyMembers": [
-						""
-					],
-					"abstract": "Laura Pausini (born May 16, 1974 in Faenza) is an Italian singer-songwriter.In the first part of his career he mainly sang of adolescent problems and love stories. Beginning in 1998, with the album My Answer, Italian music critics began to consider her as a more mature singer, praising her simplicity and her powerful voice. His repertoire is mainly based on Italian melody, but his musical style has evolved over the course of his career with influences from Latin music, pop rock and dance pop.",
-					"photoGallery": [
-						{
-							"fieldname": "photoGallery",
-							"originalname": "1.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-16-29.530Z1.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-16-29.530Z1.jpg",
-							"size": 54901
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "2.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-16-29.533Z2.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-16-29.533Z2.jpg",
-							"size": 36372
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "3.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-16-29.537Z3.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-16-29.537Z3.jpg",
-							"size": 53735
-						}
-					],
-					"_id": "5e013cbd6c63bc0714704370",
-					"request": {
-						"type": "GET",
-						"url": "http://localhost:5000/artist/5e013cbd6c63bc0714704370"
-					}
-				},
-				{
-					"name": "EMMA MARRONE",
-					"currentAffiliattion": "Universal Music Group",
-					"achivements": [
-						"Amici 2010"
-					],
-					"isCompany": false,
-					"type": "singer",
-					"companyMembers": [],
-					"abstract": "Emma Marrone (born May 25, 1984 in Florence) is an Italian singer and record producer. After some musical experiences with different groups, she rose to prominence as a solo singer between 2009 and 2010, winning the ninth talent show Amici di Maria De Filippi and signing a contract with the Universal Music Group.",
-					"photoGallery": [
-						{
-							"fieldname": "photoGallery",
-							"originalname": "1.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-17-27.152Z1.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-17-27.152Z1.jpg",
-							"size": 70920
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "2.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-17-27.155Z2.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-17-27.155Z2.jpg",
-							"size": 66333
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "3.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-17-27.196Z3.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-17-27.196Z3.jpg",
-							"size": 369055
-						}
-					],
-					"_id": "5e013cf76c63bc0714704371",
-					"request": {
-						"type": "GET",
-						"url": "http://localhost:5000/artist/5e013cf76c63bc0714704371"
-					}
-				},
-				{
-					"name": "NEK",
-					"currentAffiliattion": "Warner Music Italy",
-					"achivements": [
-						"Disco di platino 2018"
-					],
-					"isCompany": false,
-					"type": "singer",
-					"companyMembers": [],
-					"abstract": "Nek, pseudonym of Filippo Neviani (born January 6, 1972 in Sassuolo), is an Italian singer-songwriter and multi-instrumentalist. According to data certified by the Italian Music Industry Federation, Nek has sold over 10 million records worldwide throughout his career.",
-					"photoGallery": [
-						{
-							"fieldname": "photoGallery",
-							"originalname": "1.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-18-02.913Z1.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-18-02.913Z1.jpg",
-							"size": 108929
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "2.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-18-02.916Z2.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-18-02.916Z2.jpg",
-							"size": 98380
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "3.jpeg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-18-02.919Z3.jpeg",
-							"path": "public\\assets\\images\\2019-12-23T22-18-02.919Z3.jpeg",
-							"size": 68130
-						}
-					],
-					"_id": "5e013d1b6c63bc0714704372",
-					"request": {
-						"type": "GET",
-						"url": "http://localhost:5000/artist/5e013d1b6c63bc0714704372"
-					}
-				},
-				{
-					"name": "IL VOLO",
-					"currentAffiliattion": "Sony Music",
-					"achivements": [
-						"Sanremo 2015"
-					],
-					"isCompany": false,
-					"type": "opera",
-					"companyMembers": [
-						"Gianluca Ginoble",
-						"Piero Barone",
-						"Ignazio Boschetto"
-					],
-					"abstract": "Il Volo is an Italian musical group consisting of two tenors and a baritone. When they were very young, they made themselves known for their great talent and their voices, so much so that they managed in a short time to sign a direct contract with a great American representative, Geffen, thus becoming a group appreciated worldwide. They are the first group to win the Sanremo Festival with a song tending to the opera; with the same piece he made Italy the Eurovision Song Contest 2015, finishing third.",
-					"photoGallery": [
-						{
-							"fieldname": "photoGallery",
-							"originalname": "1.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-19-04.129Z1.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-19-04.129Z1.jpg",
-							"size": 25025
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "2.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-19-04.131Z2.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-19-04.131Z2.jpg",
-							"size": 54641
-						},
-						{
-							"fieldname": "photoGallery",
-							"originalname": "3.jpg",
-							"encoding": "7bit",
-							"mimetype": "image/jpeg",
-							"destination": "./public/assets/images",
-							"filename": "2019-12-23T22-19-04.135Z3.jpg",
-							"path": "public\\assets\\images\\2019-12-23T22-19-04.135Z3.jpg",
-							"size": 71630
-						}
-					],
-					"_id": "5e013d586c63bc0714704373",
-					"request": {
-						"type": "GET",
-						"url": "http://localhost:5000/artist/5e013d586c63bc0714704373"
-					}
-				}
-			]
-		}
-
+    "artists": [
+        {
+            "name": "ROBERTO BOLLE",
+            "currentAffiliattion": "American Ballet Theatre",
+            "achivements": [
+                "Étoile and Principal Dancer"
+            ],
+            "isCompany": false,
+            "type": "dancer",
+            "companyMembers": [],
+            "abstract": "Roberto Bolle (born March 26, 1975 in Casale Monferrato) is an Italian danseur. He is currently a principal dancer with the American Ballet Theatre and a principal dancer étoile at La Scala Theatre Ballet. Bolle also dances regularly as a guest artist with the world’s leading companies, including The Royal Ballet, the Mariinsky Ballet, the Bolshoi Ballet and the Paris Opera Ballet.",
+            "photoGallery": [
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "1.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-13-24.674Z1.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-13-24.674Z1.jpg",
+                    "size": 91149
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "2.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-13-24.678Z2.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-13-24.678Z2.jpg",
+                    "size": 69401
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "3.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-13-24.680Z3.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-13-24.680Z3.jpg",
+                    "size": 137380
+                }
+            ],
+            "_id": "5e15ffa4dfcc821a14f20f22",
+            "request": {
+                "type": "GET",
+                "url": "http://localhost:5000/artist/5e15ffa4dfcc821a14f20f22"
+            }
+        },
+        {
+            "name": "CIRQUE DU SOLEIL",
+            "currentAffiliattion": "DL Circus",
+            "achivements": [
+                "Theater company of the year 2012",
+                "Theater company of the year 2015",
+                "Theater company of the year 2016",
+                "Theater company of the year 2019"
+            ],
+            "isCompany": false,
+            "type": "circus",
+            "companyMembers": [
+                "Guy Laliberté",
+                "Gilles Ste-Croix",
+                "Daniel Gauthier",
+                "Rachel Vertus"
+            ],
+            "abstract": "Cirque du Soleil is a Canadian entertainment company and the largest contemporary circus producer in the world. Based in Montreal, Quebec, Canada, and located in the inner-city area of Saint-Michel, it was founded in Baie-Saint-Paul on 7 July 1984, by two former street performers, Guy Laliberté and Gilles Ste-Croix.",
+            "photoGallery": [
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "1.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-15-39.627Z1.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-15-39.627Z1.jpg",
+                    "size": 109948
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "2.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-15-39.629Z2.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-15-39.629Z2.jpg",
+                    "size": 226725
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "3.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-15-39.633Z3.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-15-39.633Z3.jpg",
+                    "size": 224455
+                }
+            ],
+            "_id": "5e16002bdfcc821a14f20f23",
+            "request": {
+                "type": "GET",
+                "url": "http://localhost:5000/artist/5e16002bdfcc821a14f20f23"
+            }
+        },
+        {
+            "name": "LUDOVICO EINAUDI",
+            "currentAffiliattion": "Decca Records",
+            "achivements": [
+                "Best European composer 2008"
+            ],
+            "isCompany": false,
+            "type": "pianist",
+            "companyMembers": [],
+            "abstract": "Ludovico Maria Enrico Einaudi (born November 23, 1955 in Turin) is an Italian pianist and composer. Trained at the Conservatorio Verdi in Milan, Einaudi began his career as a classical composer, later incorporating other styles and genres such as pop, rock, folk, and world music. Einaudi has composed the scores for a number of films and television productions. He has also released a number of solo albums for piano and other instruments. On 1 March 2019, Einaudi announced a seven-part project named Seven Days Walking, which is to be released over the course of seven months in 2019.",
+            "photoGallery": [
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "1.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-16-36.667Z1.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-16-36.667Z1.jpg",
+                    "size": 1047369
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "2.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-16-36.676Z2.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-16-36.676Z2.jpg",
+                    "size": 129615
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "3.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-16-36.678Z3.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-16-36.678Z3.jpg",
+                    "size": 71656
+                }
+            ],
+            "_id": "5e160064dfcc821a14f20f24",
+            "request": {
+                "type": "GET",
+                "url": "http://localhost:5000/artist/5e160064dfcc821a14f20f24"
+            }
+        },
+        {
+            "name": "VASCO ROSSI",
+            "currentAffiliattion": "EMI Italiana",
+            "achivements": [
+                "Disco di diamante 2003",
+                "Disco di diamante 2014"
+            ],
+            "isCompany": false,
+            "type": "singer",
+            "companyMembers": [],
+            "abstract": "Vasco Rossi (born February 7, 1952 in Zocca) is an Italian singer-songwriter. During his career, he has published 30 albums and has written over 250 songs, as well as lyrics for other artists. He calls himself a provocautore (an Italian portmanteau for provoking author) as throughout his career he has been regularly criticized over his choice of lifestyle and the lyrics in his songs. With more than 35 millions of copies sold, he is one of the best-selling Italian singers.",
+            "photoGallery": [
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "1.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-17-19.927Z1.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-17-19.927Z1.jpg",
+                    "size": 141549
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "2.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-17-19.932Z2.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-17-19.932Z2.jpg",
+                    "size": 143364
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "3.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-17-19.934Z3.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-17-19.934Z3.jpg",
+                    "size": 93777
+                }
+            ],
+            "_id": "5e16008fdfcc821a14f20f25",
+            "request": {
+                "type": "GET",
+                "url": "http://localhost:5000/artist/5e16008fdfcc821a14f20f25"
+            }
+        },
+        {
+            "name": "MAX PEZZALI",
+            "currentAffiliattion": "Warner Music Italy",
+            "achivements": [
+                "Disco di platino 2006"
+            ],
+            "isCompany": false,
+            "type": "singer",
+            "companyMembers": [],
+            "abstract": "Massimo Pezzali (born November 14, 1967 in Pavia), commonly known as Max Pezzali, is an Italian singer-songwriter. He was the principal singer and song writer of the pop rock group 883. In 2004, he released his first solo album Il mondo insieme a te. The album was successful in Italy and since then Pezzali has remained a solo artist. Taking into account his solo work, as well as his work dating back to the 883 period, Max Pezzali has sold over 10 million albums, thereby becoming one of the most popular singers in the history of Italian music.",
+            "photoGallery": [
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "1.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-17-52.473Z1.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-17-52.473Z1.jpg",
+                    "size": 90740
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "2.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-17-52.476Z2.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-17-52.476Z2.jpg",
+                    "size": 213613
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "3.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-17-52.488Z3.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-17-52.488Z3.jpg",
+                    "size": 163112
+                }
+            ],
+            "_id": "5e1600b0dfcc821a14f20f26",
+            "request": {
+                "type": "GET",
+                "url": "http://localhost:5000/artist/5e1600b0dfcc821a14f20f26"
+            }
+        },
+        {
+            "name": "RICCARDO COCCIANTE",
+            "currentAffiliattion": "RCA Talent",
+            "achivements": [
+                "Sanremo 1991"
+            ],
+            "isCompany": false,
+            "type": "singer",
+            "companyMembers": [],
+            "abstract": "Riccardo Vincent Cocciante (born Frebruary 20, 1946 in Saigon) is an Italian-French songwriter, composer and musician. In 1991, he won the Sanremo Festival with the song Se stiamo insieme. As of 2008, Cocciante has three musicals running, with Notre-Dame de Paris being the most known.",
+            "photoGallery": [
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "1.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-18-28.960Z1.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-18-28.960Z1.jpg",
+                    "size": 150076
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "2.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-18-28.965Z2.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-18-28.965Z2.jpg",
+                    "size": 233711
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "3.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-18-28.970Z3.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-18-28.970Z3.jpg",
+                    "size": 96308
+                }
+            ],
+            "_id": "5e1600d5dfcc821a14f20f27",
+            "request": {
+                "type": "GET",
+                "url": "http://localhost:5000/artist/5e1600d5dfcc821a14f20f27"
+            }
+        },
+        {
+            "name": "DREAMUSICAL",
+            "currentAffiliattion": "ACI Theater",
+            "achivements": [
+                "Theater company of the year 2010",
+                "Theater company of the year 2011",
+                "Theater company of the year 2014"
+            ],
+            "isCompany": false,
+            "type": "singer",
+            "companyMembers": [
+                "Giò Di Tonno",
+                "Lola Ponce"
+            ],
+            "abstract": "Dreamusical is a theater company born in france in 1995. At the moment it puts on 4 different shows, the most important of which is surely Notre Dame de Paris which has allowed it to become one of the most important companies in the world.",
+            "photoGallery": [
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "1.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-19-25.392Z1.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-19-25.392Z1.jpg",
+                    "size": 149561
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "2.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-19-25.395Z2.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-19-25.395Z2.jpg",
+                    "size": 39147
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "3.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-19-25.397Z3.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-19-25.397Z3.jpg",
+                    "size": 161224
+                }
+            ],
+            "_id": "5e16010ddfcc821a14f20f28",
+            "request": {
+                "type": "GET",
+                "url": "http://localhost:5000/artist/5e16010ddfcc821a14f20f28"
+            }
+        },
+        {
+            "name": "NEGRAMARO",
+            "currentAffiliattion": "Sugar Music",
+            "achivements": [
+                "Disco di platino 2010"
+            ],
+            "isCompany": false,
+            "type": "group",
+            "companyMembers": [
+                "Giuliano Sangiorgi",
+                "Andrea Andro Mariano",
+                "Emanuele Lele Spedicato",
+                "Andrea Pupillo De Rocco",
+                "Danilo Tasco"
+            ],
+            "abstract": "Negramaro is an Italian pop band formed in 1999 and successful since 2005. Their name stems from Negroamaro, a wine produced in their native district, Salento in Apulia. After years spent in the Italian alternative market, they finally became known more widely in 2005 thanks to the Sanremo Festival.",
+            "photoGallery": [
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "1.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-20-26.924Z1.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-20-26.924Z1.jpg",
+                    "size": 71014
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "2.jpeg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-20-26.926Z2.jpeg",
+                    "path": "public\\assets\\images\\2020-01-08T16-20-26.926Z2.jpeg",
+                    "size": 107771
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "3.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-20-26.927Z3.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-20-26.927Z3.jpg",
+                    "size": 141572
+                }
+            ],
+            "_id": "5e16014adfcc821a14f20f29",
+            "request": {
+                "type": "GET",
+                "url": "http://localhost:5000/artist/5e16014adfcc821a14f20f29"
+            }
+        },
+        {
+            "name": "LAURA PAUSINI",
+            "currentAffiliattion": "Atlantic Records",
+            "achivements": [
+                "Grammy Award 2006"
+            ],
+            "isCompany": false,
+            "type": "singer",
+            "companyMembers": [],
+            "abstract": "Laura Pausini (born May 16, 1974 in Faenza) is an Italian singer-songwriter.In the first part of his career he mainly sang of adolescent problems and love stories. Beginning in 1998, with the album My Answer, Italian music critics began to consider her as a more mature singer, praising her simplicity and her powerful voice. His repertoire is mainly based on Italian melody, but his musical style has evolved over the course of his career with influences from Latin music, pop rock and dance pop.",
+            "photoGallery": [
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "1.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-21-06.223Z1.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-21-06.223Z1.jpg",
+                    "size": 54901
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "2.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-21-06.225Z2.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-21-06.225Z2.jpg",
+                    "size": 36372
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "3.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-21-06.227Z3.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-21-06.227Z3.jpg",
+                    "size": 53735
+                }
+            ],
+            "_id": "5e160172dfcc821a14f20f2a",
+            "request": {
+                "type": "GET",
+                "url": "http://localhost:5000/artist/5e160172dfcc821a14f20f2a"
+            }
+        },
+        {
+            "name": "NEK",
+            "currentAffiliattion": "Warner Music Italy",
+            "achivements": [
+                "Disco di platino 2018"
+            ],
+            "isCompany": false,
+            "type": "singer",
+            "companyMembers": [],
+            "abstract": "Nek, pseudonym of Filippo Neviani (born January 6, 1972 in Sassuolo), is an Italian singer-songwriter and multi-instrumentalist. According to data certified by the Italian Music Industry Federation, Nek has sold over 10 million records worldwide throughout his career.",
+            "photoGallery": [
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "1.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-22-10.045Z1.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-22-10.045Z1.jpg",
+                    "size": 108929
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "2.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-22-10.048Z2.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-22-10.048Z2.jpg",
+                    "size": 98380
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "3.jpeg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-22-10.052Z3.jpeg",
+                    "path": "public\\assets\\images\\2020-01-08T16-22-10.052Z3.jpeg",
+                    "size": 68130
+                }
+            ],
+            "_id": "5e1601b2dfcc821a14f20f2b",
+            "request": {
+                "type": "GET",
+                "url": "http://localhost:5000/artist/5e1601b2dfcc821a14f20f2b"
+            }
+        },
+        {
+            "name": "IL VOLO",
+            "currentAffiliattion": "Sony Music",
+            "achivements": [
+                "Sanremo 2015"
+            ],
+            "isCompany": false,
+            "type": "opera",
+            "companyMembers": [
+                "Gianluca Ginoble",
+                "Piero Barone",
+                "Emanuele Lele Spedicato"
+            ],
+            "abstract": "Il Volo is an Italian musical group consisting of two tenors and a baritone. When they were very young, they made themselves known for their great talent and their voices, so much so that they managed in a short time to sign a direct contract with a great American representative, Geffen, thus becoming a group appreciated worldwide. They are the first group to win the Sanremo Festival with a song tending to the opera; with the same piece he made Italy the Eurovision Song Contest 2015, finishing third.",
+            "photoGallery": [
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "1.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-23-04.973Z1.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-23-04.973Z1.jpg",
+                    "size": 25025
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "2.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-23-04.975Z2.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-23-04.975Z2.jpg",
+                    "size": 54641
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "3.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-23-04.977Z3.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-23-04.977Z3.jpg",
+                    "size": 71630
+                }
+            ],
+            "_id": "5e1601e9dfcc821a14f20f2c",
+            "request": {
+                "type": "GET",
+                "url": "http://localhost:5000/artist/5e1601e9dfcc821a14f20f2c"
+            }
+        },
+        {
+            "name": "EMMA MARRONE",
+            "currentAffiliattion": "Universal Music Group",
+            "achivements": [
+                "Amici 2010"
+            ],
+            "isCompany": false,
+            "type": "singer",
+            "companyMembers": [],
+            "abstract": "Emma Marrone (born May 25, 1984 in Florence) is an Italian singer and record producer. After some musical experiences with different groups, she rose to prominence as a solo singer between 2009 and 2010, winning the ninth talent show Amici di Maria De Filippi and signing a contract with the Universal Music Group.",
+            "photoGallery": [
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "1.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-24-57.796Z1.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-24-57.796Z1.jpg",
+                    "size": 70920
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "2.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-24-57.797Z2.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-24-57.797Z2.jpg",
+                    "size": 66333
+                },
+                {
+                    "fieldname": "photoGallery",
+                    "originalname": "3.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "./public/assets/images",
+                    "filename": "2020-01-08T16-24-57.799Z3.jpg",
+                    "path": "public\\assets\\images\\2020-01-08T16-24-57.799Z3.jpg",
+                    "size": 369055
+                }
+            ],
+            "_id": "5e160259dfcc821a14f20f2d",
+            "request": {
+                "type": "GET",
+                "url": "http://localhost:5000/artist/5e160259dfcc821a14f20f2d"
+            }
+        }
+    ]
+}
 
 		GET /artist/:id
 
@@ -646,15 +641,69 @@
 	{
 		"events": [
 			{
-				"_id": "5e014bc93d52a2457429c198",
-				"artistId": "5e01390e6c63bc0714704366",
+				"_id": "5e16059ca95e2f484c54c2c2",
+				"artistId": [
+					"5e1600b0dfcc821a14f20f26",
+					"5e160172dfcc821a14f20f2a",
+					"5e1601b2dfcc821a14f20f2b"
+				],
+				"name": "FINAL FESTIVAL CONCERT",
+				"date": "14/06/2020 - 21.00",
+				"place": "Place of Tree of Life",
+				"price": 50,
+				"isSoldOut": false,
+				"type": "concert",
+				"relSeminar": "undefined",
+				"abstract": "The last event of the festival will be a great opportunity to have a great party with US.  NEK, Laura Pausini and Max Pezzali will smash Place of Tree of Life, speciali decored for this concert. We will sance and sing with the best 2000' tack of the italian musci history",
+				"photoGallery": [
+					{
+						"fieldname": "photoGallery",
+						"originalname": "1.jpg",
+						"encoding": "7bit",
+						"mimetype": "image/jpeg",
+						"destination": "./public/assets/images",
+						"filename": "2020-01-08T16-38-52.360Z1.jpg",
+						"path": "public\\assets\\images\\2020-01-08T16-38-52.360Z1.jpg",
+						"size": 328234
+					},
+					{
+						"fieldname": "photoGallery",
+						"originalname": "2.png",
+						"encoding": "7bit",
+						"mimetype": "image/png",
+						"destination": "./public/assets/images",
+						"filename": "2020-01-08T16-38-52.368Z2.png",
+						"path": "public\\assets\\images\\2020-01-08T16-38-52.368Z2.png",
+						"size": 571378
+					},
+					{
+						"fieldname": "photoGallery",
+						"originalname": "3.png",
+						"encoding": "7bit",
+						"mimetype": "image/png",
+						"destination": "./public/assets/images",
+						"filename": "2020-01-08T16-38-52.381Z3.png",
+						"path": "public\\assets\\images\\2020-01-08T16-38-52.381Z3.png",
+						"size": 442345
+					}
+				],
+				"request": {
+					"type": "GET",
+					"url": "http://localhost:5000/event/5e16059ca95e2f484c54c2c2"
+				}
+			},
+			{
+				"_id": "5e160647a95e2f484c54c2c3",
+				"artistId": [
+					"5e15ffa4dfcc821a14f20f22"
+				],
 				"name": "ROBERTO BOLLE AND FRIENDS",
-				"date": "12/06/2020 - 15.00",
+				"date": "12/06/2020 - 18.00",
 				"place": "Pavilion 1",
 				"price": 35,
-				"isSoldOut": "false",
+				"isSoldOut": false,
 				"type": "dance",
-				"relSeminar": "5e014a0e446771464ca6230b",
+				"relSeminar": "5e1603c09480fe148049ddb9",
 				"abstract": "An unmissable opportunity to see on the same stage the Étoile of the two worlds Roberto Bolle with international dance stars, a real journey through the beauty and magic of this art form. Roberto Bolle, absolute protagonist of the dance, of these Gala is not only interpreter but also artistic director. His Gala have become an extraordinary tool for spreading dance and its excellence to a transversal audience, composed of thousands of fans and not only. Bolle, relying on his experience on the most important stages in the world, manages to make each of these shows unique in their kind by recreating a magical atmosphere that celebrates the beauty and elegance of dance. Next to him the most important dancers of the world to create a surprising program, able to fascinate an increasingly vast and heterogeneous number of spectators. The Roberto Bolle and Friends Gala represent a rare cultural opportunity of great prestige, a journey not to be missed through different styles and different schools that always arouse new emotions.",
 				"photoGallery": [
 					{
@@ -663,524 +712,546 @@
 						"encoding": "7bit",
 						"mimetype": "image/jpeg",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-20-41.315Z1.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-20-41.315Z1.jpg",
+						"filename": "2020-01-08T16-41-43.334Z1.jpg",
+						"path": "public\\assets\\images\\2020-01-08T16-41-43.334Z1.jpg",
 						"size": 28362
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "2.jpg",
+						"originalname": "2.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-20-41.317Z2.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-20-41.317Z2.jpg",
-						"size": 44428
+						"filename": "2020-01-08T16-41-43.335Z2.png",
+						"path": "public\\assets\\images\\2020-01-08T16-41-43.335Z2.png",
+						"size": 215549
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "3.jpg",
+						"originalname": "3.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-20-41.320Z3.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-20-41.320Z3.jpg",
-						"size": 87217
+						"filename": "2020-01-08T16-41-43.340Z3.png",
+						"path": "public\\assets\\images\\2020-01-08T16-41-43.340Z3.png",
+						"size": 482712
 					}
 				],
 				"request": {
 					"type": "GET",
-					"url": "http://localhost:5000/event/5e014bc93d52a2457429c198"
+					"url": "http://localhost:5000/event/5e160647a95e2f484c54c2c3"
 				}
 			},
 			{
-				"_id": "5e014c583d52a2457429c199",
-				"artistId": "5e013c076c63bc071470436d",
+				"_id": "5e1606ebfc7847372c3f7613",
+				"artistId": [
+					"5e1600d5dfcc821a14f20f27"
+				],
 				"name": "BEST OF COCCIANTE",
 				"date": "12/06/2020 - 18.00",
 				"place": "Place of Tree of Life",
 				"price": 50,
-				"isSoldOut": "false",
+				"isSoldOut": false,
 				"type": "concert",
 				"relSeminar": "undefined",
 				"abstract": "Best of Cocciante is a concert by Riccardo Cocciante where the best 20 songs of the artist are presented in a lyric key with a live orchestra.",
 				"photoGallery": [
 					{
 						"fieldname": "photoGallery",
-						"originalname": "1.jpg",
+						"originalname": "1.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-23-04.690Z1.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-23-04.690Z1.jpg",
-						"size": 50962
+						"filename": "2020-01-08T16-44-27.225Z1.png",
+						"path": "public\\assets\\images\\2020-01-08T16-44-27.225Z1.png",
+						"size": 210888
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "2.jpg",
+						"originalname": "2.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-23-04.691Z2.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-23-04.691Z2.jpg",
-						"size": 35593
+						"filename": "2020-01-08T16-44-27.234Z2.png",
+						"path": "public\\assets\\images\\2020-01-08T16-44-27.234Z2.png",
+						"size": 456913
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "3.jpg",
+						"originalname": "3.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-23-04.693Z3.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-23-04.693Z3.jpg",
-						"size": 61849
+						"filename": "2020-01-08T16-44-27.242Z3.png",
+						"path": "public\\assets\\images\\2020-01-08T16-44-27.242Z3.png",
+						"size": 428340
 					}
 				],
 				"request": {
 					"type": "GET",
-					"url": "http://localhost:5000/event/5e014c583d52a2457429c199"
+					"url": "http://localhost:5000/event/5e1606ebfc7847372c3f7613"
 				}
 			},
 			{
-				"_id": "5e014ccf3d52a2457429c19a",
-				"artistId": "5e013aae6c63bc0714704368",
+				"_id": "5e160730fc7847372c3f7614",
+				"artistId": [
+					"5e160064dfcc821a14f20f24"
+				],
 				"name": "SEVEN DAYS WALKING TOUR",
 				"date": "12/06/2020 - 21.00",
 				"place": "Place of Tree of Life",
 				"price": 50,
-				"isSoldOut": "true",
+				"isSoldOut": true,
 				"type": "concert",
-				"relSeminar": "5e0149f3446771464ca6230a",
+				"relSeminar": "undefined",
 				"abstract": "After the exciting American success, Ludovico Einaudi's Seven Days Walking tour arrives in Italy with five concerts in historic amphitheaters. London will follow with seven consecutive Barbican and Europe in the fall. The traditional Dieci Notti at the Teatro Dal Verme in Milan will close in December another year of extraordinary intensity for the iconic artist of international music.",
 				"photoGallery": [
 					{
 						"fieldname": "photoGallery",
-						"originalname": "1.jpg",
+						"originalname": "1.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-25-02.928Z1.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-25-02.928Z1.jpg",
-						"size": 26955
+						"filename": "2020-01-08T16-45-36.079Z1.png",
+						"path": "public\\assets\\images\\2020-01-08T16-45-36.079Z1.png",
+						"size": 139513
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "2.jpg",
+						"originalname": "2.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-25-02.929Z2.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-25-02.929Z2.jpg",
-						"size": 29704
+						"filename": "2020-01-08T16-45-36.087Z2.png",
+						"path": "public\\assets\\images\\2020-01-08T16-45-36.087Z2.png",
+						"size": 382827
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "3.jpg",
+						"originalname": "3.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-25-02.930Z3.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-25-02.930Z3.jpg",
-						"size": 32643
+						"filename": "2020-01-08T16-45-36.132Z3.png",
+						"path": "public\\assets\\images\\2020-01-08T16-45-36.132Z3.png",
+						"size": 283231
 					}
 				],
 				"request": {
 					"type": "GET",
-					"url": "http://localhost:5000/event/5e014ccf3d52a2457429c19a"
+					"url": "http://localhost:5000/event/5e160730fc7847372c3f7614"
 				}
 			},
 			{
-				"_id": "5e014d263d52a2457429c19b",
-				"artistId": "5e013c4c6c63bc071470436e",
+				"_id": "5e16081ffc7847372c3f7615",
+				"artistId": [
+					"5e16010ddfcc821a14f20f28"
+				],
 				"name": "NOTRE DAME DE PARIS",
-				"date": "12/06/2020 - 21.00",
-				"place": "Pavilion 1",
+				"date": "13/06/2020 - 21.00",
+				"place": "Pavilion 3",
 				"price": 35,
-				"isSoldOut": "false",
+				"isSoldOut": false,
 				"type": "theater",
 				"relSeminar": "undefined",
 				"abstract": "Notre Dame de Paris is a sung-through French musical which debuted on 16 September 1998 in Paris. It is based upon the novel Notre-Dame de Paris by the French novelist Victor Hugo. The music was composed by Riccardo Cocciante and the lyrics are by Luc Plamondon.",
 				"photoGallery": [
 					{
 						"fieldname": "photoGallery",
-						"originalname": "1.jpg",
+						"originalname": "1.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-26-29.867Z1.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-26-29.867Z1.jpg",
-						"size": 233284
+						"filename": "2020-01-08T16-49-34.989Z1.png",
+						"path": "public\\assets\\images\\2020-01-08T16-49-34.989Z1.png",
+						"size": 648015
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "2.jpeg",
+						"originalname": "2.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-26-29.872Z2.jpeg",
-						"path": "public\\assets\\images\\2019-12-23T23-26-29.872Z2.jpeg",
-						"size": 48746
+						"filename": "2020-01-08T16-49-35.003Z2.png",
+						"path": "public\\assets\\images\\2020-01-08T16-49-35.003Z2.png",
+						"size": 283874
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "3.jpg",
+						"originalname": "3.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-26-29.873Z3.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-26-29.873Z3.jpg",
-						"size": 22350
+						"filename": "2020-01-08T16-49-35.006Z3.png",
+						"path": "public\\assets\\images\\2020-01-08T16-49-35.006Z3.png",
+						"size": 248882
 					}
 				],
 				"request": {
 					"type": "GET",
-					"url": "http://localhost:5000/event/5e014d263d52a2457429c19b"
+					"url": "http://localhost:5000/event/5e16081ffc7847372c3f7615"
 				}
 			},
 			{
-				"_id": "5e014d753d52a2457429c19c",
-				"artistId": "5e013bad6c63bc071470436b",
+				"_id": "5e16086dfc7847372c3f7616",
+				"artistId": [
+					"5e16008fdfcc821a14f20f25"
+				],
 				"name": "VASCO NONSTOPLIVE FESTIVAL",
 				"date": "13/06/2020 - 15.00",
 				"place": "Place of Tree of Life",
 				"price": 50,
-				"isSoldOut": "true",
+				"isSoldOut": false,
 				"type": "concert",
 				"relSeminar": "undefined",
 				"abstract": "The Vasco NONSTOPLIVE Live Festival is a tour by the Italian singer Vasco Rossi started in May 2019, with a zero date organized in Lignano Sabbiadoro. It's a tour consisting of 10 stages, with 30 songs each.",
 				"photoGallery": [
 					{
 						"fieldname": "photoGallery",
-						"originalname": "1.jpg",
+						"originalname": "1.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-27-49.315Z1.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-27-49.315Z1.jpg",
-						"size": 85389
+						"filename": "2020-01-08T16-50-53.549Z1.png",
+						"path": "public\\assets\\images\\2020-01-08T16-50-53.549Z1.png",
+						"size": 398568
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "2.jpeg",
+						"originalname": "2.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-27-49.317Z2.jpeg",
-						"path": "public\\assets\\images\\2019-12-23T23-27-49.317Z2.jpeg",
-						"size": 64079
+						"filename": "2020-01-08T16-50-53.560Z2.png",
+						"path": "public\\assets\\images\\2020-01-08T16-50-53.560Z2.png",
+						"size": 589704
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "3.jpg",
+						"originalname": "3.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-27-49.319Z3.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-27-49.319Z3.jpg",
-						"size": 44475
+						"filename": "2020-01-08T16-50-53.567Z3.png",
+						"path": "public\\assets\\images\\2020-01-08T16-50-53.567Z3.png",
+						"size": 334276
 					}
 				],
 				"request": {
 					"type": "GET",
-					"url": "http://localhost:5000/event/5e014d753d52a2457429c19c"
+					"url": "http://localhost:5000/event/5e16086dfc7847372c3f7616"
 				}
 			},
 			{
-				"_id": "5e014da93d52a2457429c19d",
-				"artistId": "5e013be36c63bc071470436c",
+				"_id": "5e160897fc7847372c3f7617",
+				"artistId": [
+					"5e1600b0dfcc821a14f20f26"
+				],
 				"name": "CANTAMAX",
-				"date": "13/06/2020 - 18.00",
+				"date": "14/06/2020 - 18.00",
 				"place": "Place of Tree of Life",
 				"price": 50,
-				"isSoldOut": "false",
+				"isSoldOut": false,
 				"type": "concert",
 				"relSeminar": "undefined",
 				"abstract": "Max Pezzali, one of the Italian singer-songwriters capable of involving several generations, is ready to bring to the stage of MILAN BY NIGHT a special and unique concert scheduled for Saturday 13th June 2020.Moreover, just three days after the opening of sales, the show achieved great results totaling over 30,000 tickets sold.On stage, the artist will retrace, together with the fans, the greatest successes of his career, accompanying them on a journey back in time, to relive the emotions of a past that only he knows how to bring to light.",
 				"photoGallery": [
 					{
 						"fieldname": "photoGallery",
-						"originalname": "1.jpeg",
+						"originalname": "1.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-28-41.310Z1.jpeg",
-						"path": "public\\assets\\images\\2019-12-23T23-28-41.310Z1.jpeg",
-						"size": 35439
+						"filename": "2020-01-08T16-51-35.816Z1.png",
+						"path": "public\\assets\\images\\2020-01-08T16-51-35.816Z1.png",
+						"size": 450880
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "2.jpg",
+						"originalname": "2.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-28-41.311Z2.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-28-41.311Z2.jpg",
-						"size": 54436
+						"filename": "2020-01-08T16-51-35.832Z2.png",
+						"path": "public\\assets\\images\\2020-01-08T16-51-35.832Z2.png",
+						"size": 592654
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "3.jpg",
+						"originalname": "3.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-28-41.313Z3.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-28-41.313Z3.jpg",
-						"size": 608721
+						"filename": "2020-01-08T16-51-35.838Z3.png",
+						"path": "public\\assets\\images\\2020-01-08T16-51-35.838Z3.png",
+						"size": 274893
 					}
 				],
 				"request": {
 					"type": "GET",
-					"url": "http://localhost:5000/event/5e014da93d52a2457429c19d"
+					"url": "http://localhost:5000/event/5e160897fc7847372c3f7617"
 				}
 			},
 			{
-				"_id": "5e014ddb3d52a2457429c19e",
-				"artistId": "5e013c996c63bc071470436f",
+				"_id": "5e1608e7fc7847372c3f7618",
+				"artistId": [
+					"5e16014adfcc821a14f20f29"
+				],
 				"name": "AMORE CHE TORNI TOUR",
 				"date": "13/06/2020 - 21.00",
 				"place": "Place of Tree of Life",
 				"price": 50,
-				"isSoldOut": "false",
+				"isSoldOut": false,
 				"type": "concert",
 				"relSeminar": "undefined",
 				"abstract": "The band led by Giuliano Sangiorgio will perform live in the summer months. First stop at our festival on 13th June. To anticipate the summer tour, last November 20th, the band from salento posted on their Facebook page a video that contains the best moments of the live in stadiums this summer, complete with a caption that reads: We are preparing for another party together! And you?!?.",
 				"photoGallery": [
 					{
 						"fieldname": "photoGallery",
-						"originalname": "1.jpg",
+						"originalname": "1.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-29-31.088Z1.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-29-31.088Z1.jpg",
-						"size": 19329
+						"filename": "2020-01-08T16-52-55.698Z1.png",
+						"path": "public\\assets\\images\\2020-01-08T16-52-55.698Z1.png",
+						"size": 178373
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "2.jpg",
+						"originalname": "2.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-29-31.089Z2.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-29-31.089Z2.jpg",
-						"size": 59775
+						"filename": "2020-01-08T16-52-55.706Z2.png",
+						"path": "public\\assets\\images\\2020-01-08T16-52-55.706Z2.png",
+						"size": 642179
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "3.jpg",
+						"originalname": "3.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-29-31.091Z3.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-29-31.091Z3.jpg",
-						"size": 72542
+						"filename": "2020-01-08T16-52-55.716Z3.png",
+						"path": "public\\assets\\images\\2020-01-08T16-52-55.716Z3.png",
+						"size": 606665
 					}
 				],
 				"request": {
 					"type": "GET",
-					"url": "http://localhost:5000/event/5e014ddb3d52a2457429c19e"
+					"url": "http://localhost:5000/event/5e1608e7fc7847372c3f7618"
 				}
 			},
 			{
-				"_id": "5e014e2c3d52a2457429c19f",
-				"artistId": "5e013a606c63bc0714704367",
+				"_id": "5e160937fc7847372c3f7619",
+				"artistId": [
+					"5e16002bdfcc821a14f20f23"
+				],
 				"name": "TOTEM",
 				"date": "13/06/2020 - 21.00",
 				"place": "Pavilion 1",
 				"price": 35,
-				"isSoldOut": "false",
-				"type": "theater",
+				"isSoldOut": false,
+				"type": "concert",
 				"relSeminar": "undefined",
 				"abstract": "Totem is a touring show by Cirque du Soleil that premiered in Montréal on April 22, 2010. It was written and directed by previous collaborator Robert Lepage. Cirque du Soleil describes Totem's theme as the evolution of humanity from its primordial, amphibian state toward the aspiration of flight, taking inspiration from many of humanity's founding myths. The show was awarded the 2013 New York Drama Desk Award for Unique Theatrical Experience.",
 				"photoGallery": [
 					{
 						"fieldname": "photoGallery",
-						"originalname": "1.jpg",
+						"originalname": "1.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-30-52.058Z1.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-30-52.058Z1.jpg",
-						"size": 167602
+						"filename": "2020-01-08T16-54-15.592Z1.png",
+						"path": "public\\assets\\images\\2020-01-08T16-54-15.592Z1.png",
+						"size": 620869
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "2.jpg",
+						"originalname": "2.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-30-52.061Z2.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-30-52.061Z2.jpg",
-						"size": 108150
+						"filename": "2020-01-08T16-54-15.604Z2.png",
+						"path": "public\\assets\\images\\2020-01-08T16-54-15.604Z2.png",
+						"size": 402275
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "3.jpg",
+						"originalname": "3.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-30-52.063Z3.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-30-52.063Z3.jpg",
-						"size": 113818
+						"filename": "2020-01-08T16-54-15.607Z3.png",
+						"path": "public\\assets\\images\\2020-01-08T16-54-15.607Z3.png",
+						"size": 604066
 					}
 				],
 				"request": {
 					"type": "GET",
-					"url": "http://localhost:5000/event/5e014e2c3d52a2457429c19f"
+					"url": "http://localhost:5000/event/5e160937fc7847372c3f7619"
 				}
 			},
 			{
-				"_id": "5e014e5c3d52a2457429c1a0",
-				"artistId": "5e013cbd6c63bc0714704370",
+				"_id": "5e16097dfc7847372c3f761a",
+				"artistId": [
+					"5e160172dfcc821a14f20f2a"
+				],
 				"name": "FATTI SENTIRE WORLD TOUR",
 				"date": "14/06/2020 - 15.00",
 				"place": "Place of Tree of Life",
 				"price": 50,
-				"isSoldOut": "false",
+				"isSoldOut": false,
 				"type": "concert",
-				"relSeminar": "undefined",
+				"relSeminar": "5e1604609480fe148049ddbb",
 				"abstract": "The Fatti Sentire World Tour is the ninth concert tour by Italian recording artist Laura Pausini. The tour supports her thirteenth studio album, Fatti sentire. The singer will perform over 50 shows in Europe and the Americas.",
 				"photoGallery": [
 					{
 						"fieldname": "photoGallery",
-						"originalname": "1.jpg",
+						"originalname": "1.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-31-40.708Z1.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-31-40.708Z1.jpg",
-						"size": 120423
+						"filename": "2020-01-08T16-55-24.908Z1.png",
+						"path": "public\\assets\\images\\2020-01-08T16-55-24.908Z1.png",
+						"size": 237461
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "2.jpg",
+						"originalname": "2.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-31-40.709Z2.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-31-40.709Z2.jpg",
-						"size": 28226
+						"filename": "2020-01-08T16-55-24.920Z2.png",
+						"path": "public\\assets\\images\\2020-01-08T16-55-24.920Z2.png",
+						"size": 446538
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "3.jpg",
+						"originalname": "3.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-31-40.710Z3.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-31-40.710Z3.jpg",
-						"size": 157210
+						"filename": "2020-01-08T16-55-24.930Z3.png",
+						"path": "public\\assets\\images\\2020-01-08T16-55-24.930Z3.png",
+						"size": 442345
 					}
 				],
 				"request": {
 					"type": "GET",
-					"url": "http://localhost:5000/event/5e014e5c3d52a2457429c1a0"
+					"url": "http://localhost:5000/event/5e16097dfc7847372c3f761a"
 				}
 			},
 			{
-				"_id": "5e014e863d52a2457429c1a1",
-				"artistId": "5e013cf76c63bc0714704371",
+				"_id": "5e1609b4fc7847372c3f761b",
+				"artistId": [
+					"5e160259dfcc821a14f20f2d"
+				],
 				"name": "FORTUNA LIVE",
 				"date": "14/06/2020 - 18.00",
 				"place": "Place of Tree of Life",
 				"price": 50,
-				"isSoldOut": "true",
+				"isSoldOut": false,
 				"type": "concert",
-				"relSeminar": "undefined",
-				"abstract": "It is SOLD OUT, less than a month after the opening of the pre-sales, the big concert scheduled on June 14th on the stage of our Festival where Emma will present the new album of unpublished Fortuna live and celebrate together with the public the 10-year career !",
+				"relSeminar": "5e1604609480fe148049ddbb",
+				"abstract": "In less than a month after the opening of the pre-sales 10.000 ticket SOLD, the big concert scheduled on June 14th on the stage of our Festival where Emma will present the new album of unpublished Fortuna live and celebrate together with the public the 10-year career !",
 				"photoGallery": [
 					{
 						"fieldname": "photoGallery",
-						"originalname": "1.jpg",
+						"originalname": "1.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-32-22.371Z1.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-32-22.371Z1.jpg",
-						"size": 89371
+						"filename": "2020-01-08T16-56-20.112Z1.png",
+						"path": "public\\assets\\images\\2020-01-08T16-56-20.112Z1.png",
+						"size": 431694
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "2.jpg",
+						"originalname": "2.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-32-22.372Z2.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-32-22.372Z2.jpg",
-						"size": 94954
+						"filename": "2020-01-08T16-56-20.125Z2.png",
+						"path": "public\\assets\\images\\2020-01-08T16-56-20.125Z2.png",
+						"size": 370690
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "3.jpg",
+						"originalname": "3.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-32-22.373Z3.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-32-22.373Z3.jpg",
-						"size": 30420
+						"filename": "2020-01-08T16-56-20.131Z3.png",
+						"path": "public\\assets\\images\\2020-01-08T16-56-20.131Z3.png",
+						"size": 294458
 					}
 				],
 				"request": {
 					"type": "GET",
-					"url": "http://localhost:5000/event/5e014e863d52a2457429c1a1"
+					"url": "http://localhost:5000/event/5e1609b4fc7847372c3f761b"
 				}
 			},
 			{
-				"_id": "5e014eb03d52a2457429c1a2",
-				"artistId": "5e013d1b6c63bc0714704372",
+				"_id": "5e160a49fc7847372c3f761c",
+				"artistId": [
+					"5e1601b2dfcc821a14f20f2b"
+				],
 				"name": "NEK EUROPEAN TOUR",
 				"date": "14/06/2020 - 21.00",
 				"place": "Place of Tree of Life",
 				"price": 50,
-				"isSoldOut": "false",
+				"isSoldOut": false,
 				"type": "concert",
 				"relSeminar": "undefined",
 				"abstract": "NEK returns to Europe with a tour that will touch the main capitals of the old continent. To open the dances of this fantastic tour there could only be our beloved festival that will give the public an unforgettable evening.",
 				"photoGallery": [
 					{
 						"fieldname": "photoGallery",
-						"originalname": "1.jpg",
+						"originalname": "1.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-33-04.090Z1.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-33-04.090Z1.jpg",
-						"size": 43681
+						"filename": "2020-01-08T16-58-49.103Z1.png",
+						"path": "public\\assets\\images\\2020-01-08T16-58-49.103Z1.png",
+						"size": 292990
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "2.jpg",
+						"originalname": "2.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-33-04.091Z2.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-33-04.091Z2.jpg",
-						"size": 81043
+						"filename": "2020-01-08T16-58-49.112Z2.png",
+						"path": "public\\assets\\images\\2020-01-08T16-58-49.112Z2.png",
+						"size": 276280
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "3.jpg",
+						"originalname": "3.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-33-04.092Z3.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-33-04.092Z3.jpg",
-						"size": 34801
+						"filename": "2020-01-08T16-58-49.117Z3.png",
+						"path": "public\\assets\\images\\2020-01-08T16-58-49.117Z3.png",
+						"size": 571378
 					}
 				],
 				"request": {
 					"type": "GET",
-					"url": "http://localhost:5000/event/5e014eb03d52a2457429c1a2"
+					"url": "http://localhost:5000/event/5e160a49fc7847372c3f761c"
 				}
 			},
 			{
-				"_id": "5e014edd3d52a2457429c1a3",
-				"artistId": "5e013d586c63bc0714704373",
+				"_id": "5e160a91fc7847372c3f761d",
+				"artistId": [
+					"5e1601e9dfcc821a14f20f2c"
+				],
 				"name": "IL VOLO ON OPERA",
 				"date": "14/06/2020 - 21.00",
 				"place": "Pavilion 2",
-				"price": 50,
-				"isSoldOut": "false",
+				"price": 35,
+				"isSoldOut": false,
 				"type": "opera",
 				"relSeminar": "undefined",
 				"abstract": "This opera show will keep you company for two hours of pure magic. With their majestic voices, Il Volo will be able to close our Festival perfectly.",
@@ -1191,34 +1262,34 @@
 						"encoding": "7bit",
 						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-33-49.692Z1.png",
-						"path": "public\\assets\\images\\2019-12-23T23-33-49.692Z1.png",
-						"size": 283936
+						"filename": "2020-01-08T17-00-01.907Z1.png",
+						"path": "public\\assets\\images\\2020-01-08T17-00-01.907Z1.png",
+						"size": 233919
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "2.jpg",
+						"originalname": "2.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-33-49.699Z2.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-33-49.699Z2.jpg",
-						"size": 27045
+						"filename": "2020-01-08T17-00-01.910Z2.png",
+						"path": "public\\assets\\images\\2020-01-08T17-00-01.910Z2.png",
+						"size": 548984
 					},
 					{
 						"fieldname": "photoGallery",
-						"originalname": "3.jpg",
+						"originalname": "3.png",
 						"encoding": "7bit",
-						"mimetype": "image/jpeg",
+						"mimetype": "image/png",
 						"destination": "./public/assets/images",
-						"filename": "2019-12-23T23-33-49.700Z3.jpg",
-						"path": "public\\assets\\images\\2019-12-23T23-33-49.700Z3.jpg",
-						"size": 187151
+						"filename": "2020-01-08T17-00-01.915Z3.png",
+						"path": "public\\assets\\images\\2020-01-08T17-00-01.915Z3.png",
+						"size": 352650
 					}
 				],
 				"request": {
 					"type": "GET",
-					"url": "http://localhost:5000/event/5e014edd3d52a2457429c1a3"
+					"url": "http://localhost:5000/event/5e160a91fc7847372c3f761d"
 				}
 			}
 		]
@@ -1231,44 +1302,62 @@
 		{
 			"seminars": [
 				{
-					"_id": "5e0149f3446771464ca6230a",
+					"_id": "5e1602d19480fe148049ddb8",
 					"name": "PIANO & MUSIC SEMINAR",
 					"date": "12/06/2020 - 15.00",
 					"place": "Pavilion 2",
-					"abstract": "Ludovico Einaudi tells us about his experience with the piano that began 50 years ago through small demonstrations of some of his compositions.",
-					"photoGallery": "public\\assets\\images\\2019-12-23T23-12-51.670Z2.jpg",
+					"photoGallery": "public\\assets\\images\\2020-01-08T16-26-57.160Z1.jpg",
 					"request": {
 						"type": "GET",
-						"url": "http://localhost:5000/seminar/5e0149f3446771464ca6230a"
+						"url": "http://localhost:5000/seminar/5e1602d19480fe148049ddb8"
 					}
 				},
 				{
-					"_id": "5e014a0e446771464ca6230b",
+					"_id": "5e1603c09480fe148049ddb9",
 					"name": "DANCING IN NEW YORK SEMINAR",
-					"date": "12/06/2020 - 18.00",
+					"date": "13/06/2020 - 15.00",
 					"place": "Pavilion 2",
-					"abstract": "Roberto Bolle takes us into his world telling us what it feels like to be the most important dancer in Italy and the United States through special anecdotes.",
-					"photoGallery": "public\\assets\\images\\2019-12-23T23-13-17.950Z2.jpg",
+					"photoGallery": "public\\assets\\images\\2020-01-08T16-30-56.888Z1.jpg",
 					"request": {
 						"type": "GET",
-						"url": "http://localhost:5000/seminar/5e014a0e446771464ca6230b"
+						"url": "http://localhost:5000/seminar/5e1603c09480fe148049ddb9"
 					}
 				},
 				{
-					"_id": "5e014a1f446771464ca6230c",
+					"_id": "5e1603d79480fe148049ddba",
 					"name": "MODERN MUSICALS SEMINAR",
-					"date": "12/06/2020 - 21.00",
+					"date": "14/06/2020 - 15.00",
 					"place": "Pavilion 2",
-					"abstract": "Riccardo Cocciante talks about how the concept of musical has evolved over the years, comparing his works with those of the past.",
-					"photoGallery": "public\\assets\\images\\2019-12-23T23-13-35.397Z2.jpg",
+					"photoGallery": "public\\assets\\images\\2020-01-08T16-31-19.065Z1.png",
 					"request": {
 						"type": "GET",
-						"url": "http://localhost:5000/seminar/5e014a1f446771464ca6230c"
+						"url": "http://localhost:5000/seminar/5e1603d79480fe148049ddba"
+					}
+				},
+				{
+					"_id": "5e1604609480fe148049ddbb",
+					"name": " WOMAN AND LOVE IN THE MUSIC",
+					"date": "13/06/2020 - 17.00",
+					"place": "Pavilion 3",
+					"photoGallery": "public\\assets\\images\\2020-01-08T16-33-36.310Z5.png",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:5000/seminar/5e1604609480fe148049ddbb"
+					}
+				},
+				{
+					"_id": "5e1604bc9480fe148049ddbc",
+					"name": "HOW BORN MUSICAL?",
+					"date": "14/06/2020 - 17.00",
+					"place": "Pavilion 3",
+					"photoGallery": "public\\assets\\images\\2020-01-08T16-35-08.614Z4.jpg",
+					"request": {
+						"type": "GET",
+						"url": "http://localhost:5000/seminar/5e1604bc9480fe148049ddbc"
 					}
 				}
 			]
 		}
-
 		GET /seminar/:id
 
 		{

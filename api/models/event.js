@@ -7,7 +7,7 @@ const eventSchema = mongoose.Schema({
     date: { type: String, required: true },
     place: { type: String, required: true },
     price: { type: Number, required: true },
-    isSoldOut: { type: String, required: true },
+    isSoldOut: { type: Boolean, required: true },
     type: { type: String, required: true },
     relSeminar: { type: mongoose.Schema.Types.ObjectId, ref: 'Seminar', required: false },
     abstract: { type: String, required: true },

@@ -149,7 +149,7 @@ exports.user_getId = (req, res, next) => {
               surname: doc.surname,
               request: {
                 type: "GET",
-                url: "https://hypermedia19.herokuapp.com/user/"
+                url: "http://localhost:5000/user/"
               }
             };
           })

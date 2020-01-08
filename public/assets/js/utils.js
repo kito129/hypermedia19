@@ -103,8 +103,8 @@ $(document).ready(function(){
 		// authnticated
 		$('#Btn').append(
 			`
-			<li class="nav-item" id ="cartBtn"><a class="nav-link cart" href="/assets/pages/cart.html"><h7><b>Cart</b></h7></a></li>
-			<li class="nav-item" id ="logOutBtn"><a class="nav-link login"><h7><b>Log Out</b></h7></a></li>
+			<li class="nav-item" id ="cartBtn"><a class="nav-link" href="/assets/pages/cart.html"><h7><b>Cart</b></h7></a></li>
+			<li class="nav-item" id ="logOutBtn"><a class="nav-link"><h7><b>Log Out</b></h7></a></li>
 
 			`
 		);
@@ -166,12 +166,6 @@ $(document).ready(function(){
 			case "calendar.html":
 
 				$("#calendarBtn").removeClass('nav-link').addClass('nav-link active');
-			
-				break;
-
-			case "cart.html":
-
-				$("#cartBtn").removeClass('nav-link').addClass('nav-link active');
 			
 				break;
 			default:

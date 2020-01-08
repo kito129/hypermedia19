@@ -34,7 +34,7 @@ $( "form" ).submit(function( event ) {
 
             setTimeout(function(){
                 window.location.href = "https://hypermedia19.herokuapp.com/assets/pages/cart.html";
-            }, 1500);
+            }, 6000);
             
         
         },

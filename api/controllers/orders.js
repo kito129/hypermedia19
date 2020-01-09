@@ -55,6 +55,7 @@ exports.orders_create_order = (req, res, next) => {
   let newId = new mongoose.Types.ObjectId;
   const singOr = new SingleOrder({
     _id: newId,
+    userId: userId,
     eventId: evId,
     quantity: qua,
     price: pri,
@@ -68,11 +69,11 @@ exports.orders_create_order = (req, res, next) => {
   if(qua==0){
     //delete order
 
-    SingleOrder.findOne({eventId:evId})
+    SingleOrder.findOne({eventId:evId ,userId:userId})
     .exec()
     .then(doc =>{
       semdId =doc._id;
-      SingleOrder.deleteOne({eventId:evId}).exec();
+      SingleOrder.deleteOne({eventId:evId ,userId:userId}).exec();
       Order.findOneAndUpdate({userId: userId}, 
         { $pullAll: {singleOrder: [semdId]}},{new: true}, (err, result) => {
         // Rest of the action goes here
@@ -94,14 +95,14 @@ exports.orders_create_order = (req, res, next) => {
     
     
   } else {
-    SingleOrder.findOne({eventId:evId})
+    SingleOrder.findOne({eventId:evId , userId:userId})
       .exec()
       .then(sing => {
         if (sing!=null) {
           // cè modifica
           var singId = sing._id;
 
-          SingleOrder.findOneAndUpdate({eventId: evId}, 
+          SingleOrder.findOneAndUpdate({eventId:evId ,userId:userId}, 
             {$set: {
               quantity: qua,
               price: pri,
@@ -211,11 +212,11 @@ exports.orders_get_order_get_event = (req, res, next) => {
   const evId= req.params.eventId;
 
   Order.find({ userId:id})
-    .select("_id userId order eventId subTotale totalPrice")
+    .select("_id userId order eventId singleOrder subTotale totalPrice")
     .exec()
     .then(doc => {
       
-      SingleOrder.find({ eventId: evId})
+      SingleOrder.find({ eventId: evId,userId:id})
       .select("_id eventId price quantity subTotal")
       .then(doc => {
         if(!doc.length==0){
@@ -246,50 +247,6 @@ exports.orders_get_order_get_event = (req, res, next) => {
       }
     });
   };
-
-
-exports.orders_update_order = (req, res, next) => {
-  const id = req.params.userId;
-  const type = req.params.update;
-  const body = req.body;
-
-  if(type==="true"){
-    //type true se c'e gia evento e evi aggioranre quantita 
-
-    const updateOps = {};
-    for (const ops of req.body ) {
-      updateOps[ops.propName] = ops.value;
-      console.log(updateOps[ops.propName]);
-      console.log(updateOps[ops.propName]);
-    }
-    var options = {new: true};
-
-    Order.findOneAndUpdate({ userId: id }, { $set: updateOps },options,function (err, doc) {})
-      .exec()
-      .then(result => {
-  
-        res.status(200).json(JSON.stringify({
-          message: "Order updated",
-          request: {
-            type: "GET",
-            url: "https://hypermedia19.herokuapp.com/order/" + id
-          }
-        }));
-      })
-      .catch(err => {
-        if(err.name="CastError"){
-          console.log("ERROR:\n" + "provided userID NOT FOUND");
-          res.status(404).json(JSON.stringify({ message: "provided urserID NOT FOUND" }));
-        } else{
-          console.log("ERROR:\n" + err);
-          res.status(500).json(JSON.stringify({ error: err }));
-        }
-      });
-  };
-  
-
-};
-
 
 //OK
 exports.orders_delete = (req, res, next) => {

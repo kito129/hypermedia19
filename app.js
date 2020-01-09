@@ -81,7 +81,7 @@ app.get('/backend/zip', function(req, res) {
 });
 //documenation part
 app.get('/erdiagram', function(req, res) {
-  res.sendFile(path.join(__dirname, '/backend/er.jpg'));
+  res.sendFile(path.join(__dirname, '/backend/er.png'));
 });
 //swaggerpart
 app.use("/backend/swaggerui", swaggerUi.serve, swaggerUi.setup(swaggerDocument));

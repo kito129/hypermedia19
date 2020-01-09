@@ -259,7 +259,6 @@ exports.orders_delete = (req, res, next) => {
         request: {
           type: "POST",
           url: "https://hypermedia19.herokuapp.com/order/",
-          body: { userId: "Number",}
         }
       }));
     })

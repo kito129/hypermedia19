@@ -30,9 +30,9 @@
     "/artist" : {
       "get" : {
         "tags" : [ "user" ],
-        "summary" : "searches all artist",
+        "summary" : "get all artist",
         "description" : "You can get all available artist in the system\n",
-        "operationId" : "searchArtist",
+        "operationId" : "getArtists",
         "responses" : {
           "200" : {
             "description" : "all artist in the DB",
@@ -72,6 +72,120 @@
           },
           "401" : {
             "description" : "authFailed"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/seminar" : {
+      "get" : {
+        "tags" : [ "user" ],
+        "summary" : "get all Seminar",
+        "description" : "You can get all available seminar in the system\n",
+        "operationId" : "getSeminar",
+        "responses" : {
+          "200" : {
+            "description" : "all seminar in the DB",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SeminarItem"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "bad input body"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "authenticatedUsers" ],
+        "summary" : "adds an seminar item",
+        "description" : "Adds an seminar to the system",
+        "operationId" : "addSeminar",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SeminarItem"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "item created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "401" : {
+            "description" : "authFailed"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/event" : {
+      "get" : {
+        "tags" : [ "user" ],
+        "summary" : "get all Events",
+        "description" : "You can get all available seminar in the system\n",
+        "operationId" : "getEvents",
+        "responses" : {
+          "200" : {
+            "description" : "all events in the DB",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/EventItem"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "internal error"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "authenticatedUsers" ],
+        "summary" : "adds an event item",
+        "description" : "Adds an event to the system",
+        "operationId" : "addEent",
+        "requestBody" : {
+          "description" : "Event item to add",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/EventItem"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "item created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "401" : {
+            "description" : "unauthorized"
+          },
+          "404" : {
+            "description" : "artist Id not found"
           },
           "409" : {
             "description" : "an existing item already exists"
@@ -136,14 +250,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "delete artist in the DB with id passed",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/ArtistItem"
-                }
-              }
-            }
+            "description" : "delete artist in the DB with id passed"
           },
           "401" : {
             "description" : "unauthorized"
@@ -154,15 +261,26 @@
         }
       }
     },
-    "/seminar" : {
+    "/seminar/{id}" : {
       "get" : {
         "tags" : [ "user" ],
-        "summary" : "searches all Seminar",
+        "summary" : "searches seminar with id passed in params",
         "description" : "You can get all available seminar in the system\n",
-        "operationId" : "searchSeminar",
+        "operationId" : "searchSeminarById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of seminar to fetch",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
         "responses" : {
           "200" : {
-            "description" : "all seminar in the DB",
+            "description" : "all seminar in the DB with id passed",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -171,47 +289,18 @@
               }
             }
           },
-          "400" : {
-            "description" : "bad input body"
+          "404" : {
+            "description" : "seminar not found"
+          },
+          "500" : {
+            "description" : "internal error"
           }
         }
-      },
-      "post" : {
-        "tags" : [ "authenticatedUsers" ],
-        "summary" : "adds an seminar item",
-        "description" : "Adds an seminar to the system",
-        "operationId" : "addSeminar",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/SeminarItem"
-              }
-            }
-          }
-        },
-        "responses" : {
-          "201" : {
-            "description" : "item created"
-          },
-          "400" : {
-            "description" : "invalid input, object invalid"
-          },
-          "401" : {
-            "description" : "authFailed"
-          },
-          "409" : {
-            "description" : "an existing item already exists"
-          }
-        },
-        "security" : [ {
-          "bearerAuth" : [ ]
-        } ]
       },
       "delete" : {
         "tags" : [ "authenticatedUsers" ],
         "summary" : "delete  seminar with id passed in params",
-        "description" : "You can delete  event with id passed in params\n",
+        "description" : "You can delete  seminar with id passed in params\n",
         "operationId" : "deleteSeminarById",
         "parameters" : [ {
           "name" : "id",
@@ -226,33 +315,37 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "delete seminar in the DB with id passed",
-            "content" : {
-              "application/x-www-form-urlencoded" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/SeminarItem"
-                }
-              }
-            }
+            "description" : "delete seminar in the DB with id passed"
           },
           "401" : {
             "description" : "unauthorized"
           },
           "500" : {
-            "description" : "internal error"
+            "description" : "Cast error, not valid ObjectId"
           }
         }
       }
     },
-    "/event" : {
+    "/event/{id}" : {
       "get" : {
         "tags" : [ "user" ],
-        "summary" : "searches all Events",
-        "description" : "You can get all available seminar in the system\n",
-        "operationId" : "searchEvents",
+        "summary" : "searches event with id passed in params",
+        "description" : "You can get all available event in the system\n",
+        "operationId" : "searchEventById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of event to fetch",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
         "responses" : {
           "200" : {
-            "description" : "all events in the DB",
+            "description" : "all event in the DB with id passed",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -261,52 +354,19 @@
               }
             }
           },
+          "404" : {
+            "description" : "eventId not found"
+          },
           "500" : {
             "description" : "internal error"
           }
         }
       },
-      "post" : {
-        "tags" : [ "authenticatedUsers" ],
-        "summary" : "adds an event item",
-        "description" : "Adds an event to the system",
-        "operationId" : "addEent",
-        "requestBody" : {
-          "description" : "Event item to add",
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/ArtistItem"
-              }
-            }
-          }
-        },
-        "responses" : {
-          "201" : {
-            "description" : "item created"
-          },
-          "400" : {
-            "description" : "invalid input, object invalid"
-          },
-          "401" : {
-            "description" : "unauthorized"
-          },
-          "404" : {
-            "description" : "artist Id not found"
-          },
-          "409" : {
-            "description" : "an existing item already exists"
-          }
-        },
-        "security" : [ {
-          "bearerAuth" : [ ]
-        } ]
-      },
       "delete" : {
         "tags" : [ "authenticatedUsers" ],
         "summary" : "delete  event with id passed in params",
-        "description" : "You can delete  event with id passed in params\n",
-        "operationId" : "delteEventById",
+        "description" : "You can delete  artist with id passed in params\n",
+        "operationId" : "deleteEventtById",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -320,11 +380,80 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "delete event in the DB with id passed",
+            "description" : "delete event in the DB with id passed"
+          },
+          "401" : {
+            "description" : "unauthorized"
+          },
+          "500" : {
+            "description" : "Cast error, not valid ObjectId"
+          }
+        }
+      }
+    },
+    "/order/{userId}" : {
+      "get" : {
+        "tags" : [ "authenticatedUsers" ],
+        "summary" : "get Cart (order) of the user passed by Id",
+        "description" : "You can get the  Cart (order) of the user passed by Id\n",
+        "operationId" : "getCattBySserId",
+        "parameters" : [ {
+          "name" : "userId",
+          "in" : "path",
+          "description" : "ID of user order",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "the  of the user passed by Id",
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/EventItem"
+                  "$ref" : "#/components/schemas/OrdersItem"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "eventId not found"
+          },
+          "500" : {
+            "description" : "internal error"
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "authenticatedUsers" ],
+        "summary" : "delete  order of userId passed in params",
+        "description" : "You can delete  artist with id passed in params\n",
+        "operationId" : "deleteCartById",
+        "parameters" : [ {
+          "name" : "userId",
+          "in" : "path",
+          "description" : "ID of userId that want to delete cart",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "delete event in the DB with id passed",
+            "content" : {
+              "application/json" : {
+                "example" : {
+                  "message" : "Order deleted",
+                  "request" : {
+                    "type" : "POST",
+                    "url" : "https://hypermedia19.herokuapp.com/order/"
+                  }
                 }
               }
             }
@@ -333,7 +462,7 @@
             "description" : "unauthorized"
           },
           "500" : {
-            "description" : "internal error"
+            "description" : "Cast error, not valid ObjectId"
           }
         }
       }
@@ -498,7 +627,7 @@
           }
         }
       },
-      "OrderdsItem" : {
+      "OrdersItem" : {
         "required" : [ "SingleOrder", "id", "totalPrice", "userId" ],
         "type" : "object",
         "properties" : {

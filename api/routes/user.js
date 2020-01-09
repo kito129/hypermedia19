@@ -7,9 +7,7 @@ const checkAuth = require('../middleware/check-auth');
 
 //CHECK FOR AUTORIZATION FOR POST
 
-router.get("/", UserController.user_getId);
-
-router.post("/signup", UserController.user_signup);
+router.post("/signup", UserController.user_signup);//
 
 router.post("/login", UserController.user_login);
 

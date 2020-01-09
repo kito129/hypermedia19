@@ -609,10 +609,142 @@
           }
         }
       }
+    },
+    "/user/signup/" : {
+      "post" : {
+        "tags" : [ "user" ],
+        "summary" : "register user in or DB, create order associate of this user",
+        "description" : "register user in or DB, create order associate of this user \n",
+        "operationId" : "register",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegisterItem"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "user creted"
+          },
+          "404" : {
+            "description" : "eventId not found"
+          },
+          "409" : {
+            "description" : "Mail exists"
+          },
+          "500" : {
+            "description" : "internal error"
+          }
+        }
+      }
+    },
+    "/user/login/" : {
+      "post" : {
+        "tags" : [ "user" ],
+        "summary" : "login user",
+        "description" : "login user\n",
+        "operationId" : "login",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/LogItem"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "auth successful"
+          },
+          "401" : {
+            "description" : "auth failde"
+          },
+          "500" : {
+            "description" : "internal error"
+          }
+        }
+      }
+    },
+    "/user/{userId}" : {
+      "delete" : {
+        "tags" : [ "authenticatedUsers" ],
+        "summary" : "delete  user of userId passed in params",
+        "description" : "You can delete  user with id passed in params\n",
+        "operationId" : "deleteuserById",
+        "parameters" : [ {
+          "name" : "userId",
+          "in" : "path",
+          "description" : "ID of userId that want to delete",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "delete user in the DB with id passed",
+            "content" : {
+              "application/json" : {
+                "example" : {
+                  "message" : "User deleted"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          },
+          "500" : {
+            "description" : "Cast error, not valid ObjectId"
+          }
+        }
+      }
     }
   },
   "components" : {
     "schemas" : {
+      "LogItem" : {
+        "required" : [ "email", "password" ],
+        "type" : "object",
+        "properties" : {
+          "email" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "password" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        }
+      },
+      "RegisterItem" : {
+        "required" : [ "email", "name", "password", "surname" ],
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "surname" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "email" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "password" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        }
+      },
       "SingleOrderPost" : {
         "required" : [ "eventId", "price", "quantity" ],
         "type" : "object",

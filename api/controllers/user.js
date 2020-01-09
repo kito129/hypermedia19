@@ -55,6 +55,9 @@ exports.user_signup = (req, res, next) => {
               .save()
               .catch(err =>{
                 console.log("ERROR:\n" + err);
+                res.status(500).json(JSON.stringify({
+                  error: err
+                }));
               })
           }
         });
@@ -129,32 +132,3 @@ exports.user_delete = (req, res, next) => {
     });
 };
 
-
-//CHECK
-exports.user_getId = (req, res, next) => {
-  User.find({ email: req.body.email })
-    .exec()
-    .then(user => {
-      if (user.length < 1) {
-        return res.status(401).json(JSON.stringify({
-           message: "provided mail NOT FOUND" 
-        }));
-      } else {
-        console.log("Request for ID: "  + user.email);
-        const response = {
-          mail :user.map(doc => {
-            return {
-              userId: doc._id,
-              name:  doc.name,
-              surname: doc.surname,
-              request: {
-                type: "GET",
-                url: "https://hypermedia19.herokuapp.com/user/"
-              }
-            };
-          })
-        }
-        res.status(200).json(JSON.stringify(response));    
-      }
-    });
-};

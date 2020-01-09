@@ -9,7 +9,7 @@ $( "form" ).submit(function( event ) {
     var pass = dataFrom[3].value;
 
     $.ajax({
-        url : "https://hypermedia19.herokuapp.com/user/signup",
+        url : "http://localhost:5000/user/signup",
         type: "POST",
         data: JSON.stringify(
             {

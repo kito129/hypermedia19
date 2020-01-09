@@ -12,6 +12,8 @@ const eventRoutes = require("./api/routes/events");
 const seminarRoutes = require("./api/routes/seminars");
 const orderRoutes = require('./api/routes/orders');
 const userRoutes = require('./api/routes/user');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./backend/swagger.json');
 
 //database setting
 const CONNECTION_URL = 
@@ -65,6 +67,27 @@ app.use((req, res, next) => {
   next();
 });
 
+//documenation part
+app.get('/documentation', function(req, res) {
+  res.sendFile(path.join(__dirname, '/backend/main.html'));
+});
+//documenation part
+app.get('/backend', function(req, res) {
+  res.sendFile(path.join(__dirname, '/backend/swagger.json'));
+});
+//documenation part
+app.get('/backend/zip', function(req, res) {
+  res.sendFile(path.join(__dirname, '/backend/app.zip'));
+});
+//documenation part
+app.get('/erdiagram', function(req, res) {
+  res.sendFile(path.join(__dirname, '/backend/er.jpg'));
+});
+//swaggerpart
+app.use("/backend/swaggerui", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+
+
 // Routes which should handle requests
 app.use("/artist", artistRoutes);
 app.use("/event", eventRoutes);
@@ -72,7 +95,6 @@ app.use("/seminar", seminarRoutes);
 app.use("/order", orderRoutes);
 app.use("/user", userRoutes);
 //public router
-app.use("/docs",express.static(path.join(__dirname, './backend')));
 app.use(express.static(path.join(__dirname, './public')));
 
 //error 404 for not found routers

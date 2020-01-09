@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	$.get("https://hypermedia19.herokuapp.com/artist", function(data, status){
+	$.get("http://localhost:5000/artist", function(data, status){
 
 		var Artists=JSON.parse(data);
 

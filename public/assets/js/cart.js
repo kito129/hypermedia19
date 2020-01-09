@@ -7,7 +7,7 @@ function isEmpty( el ){
 function emptyOrder(eventId,price) {
     $.ajax({
 
-        url : "https://hypermedia19.herokuapp.com/order/" + localStorage.getItem("userId"),
+        url : "http://localhost:5000/order/" + localStorage.getItem("userId"),
         type: "POST",
         contentType: "application/json; carset=utf-8",
         dataType   : "json",
@@ -37,7 +37,7 @@ if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null)
     let count=0;
     
     $.ajax({
-        url : "https://hypermedia19.herokuapp.com/order/" + localStorage.getItem("userId"),
+        url : "http://localhost:5000/order/" + localStorage.getItem("userId"),
         type: "GET",
         contentType: "application/json; carset=utf-8",
         dataType   : "json",
@@ -51,7 +51,7 @@ if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null)
                 const element =  res.order[0].singleOrder[i];
 
                 $.ajax({
-                    url : "https://hypermedia19.herokuapp.com/order/single/" + element,
+                    url : "http://localhost:5000/order/single/" + element,
                     type: "GET",
                     contentType: "application/json; carset=utf-8",
                     dataType   : "json",
@@ -65,7 +65,7 @@ if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null)
                             var sub = sing.single.subTotal;
                             total=total + sub;
                             $.ajax({
-                                url : "https://hypermedia19.herokuapp.com/event/" + sing.single.eventId,
+                                url : "http://localhost:5000/event/" + sing.single.eventId,
                                 type: "GET",
                                 contentType: "application/json; carset=utf-8",
                                 dataType   : "json",
@@ -148,7 +148,7 @@ if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null)
                     // do something
                     $("#allert").append(
                         `
-                        <h4 class="text-center mt-4 mb-4">Your cart is empty.. go  <a href="https://hypermedia19.herokuapp.com/assets/pages/events.html?value=event">events</a>  , find one to buy and add it into the cart.</h4>
+                        <h4 class="text-center mt-4 mb-4">Your cart is empty.. go  <a href="http://localhost:5000/assets/pages/events.html?value=event">events</a>  , find one to buy and add it into the cart.</h4>
                         `
                     );
                 }

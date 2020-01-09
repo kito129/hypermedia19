@@ -11,3 +11,7 @@ Zani Simone - 846664 - 10502938
 
 
 git Repository - https://github.com/marcoselva/hypermedia19
+
+
+to start: node app.js
+to start continuos server: npm start

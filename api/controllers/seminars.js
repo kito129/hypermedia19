@@ -91,10 +91,11 @@ exports.seminars_create_seminar = (req, res, next) => {
 //OK
 exports.seminars_get_seminar = (req, res, next) => {
   Seminar.findById(req.params.seminarId)
-    .select("name date place abstarct photoGallery _id")
+    .select("name date place abstract photoGallery _id")
     .exec()
     .then(doc => {
       if (doc) {
+  
         res.status(200).json(JSON.stringify({
           seminar: doc,
           request: {

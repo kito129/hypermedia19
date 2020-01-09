@@ -63,6 +63,7 @@ $(document).ready(function(){
         $("#date").text(Seminar.seminar.date);
         $("#locationTitle").text("Location: ")
         $("#location").text(Seminar.seminar.place);
+        console.log(Seminar.seminar.abstract);
         $("#abstract").text(Seminar.seminar.abstract);
         
    

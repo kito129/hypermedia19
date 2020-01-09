@@ -91,20 +91,24 @@ $(document).ready(function(){
             Events=JSON.parse(data);
 
             for(var i=0;i<Events.events.length;i++){
-                if(Events.events[i].artistId==idArtist){
-                    $("#event").append(
-                        `
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <a href="singleEvent.html?id=${Events.events[i]._id}">  
-                                <img src="../images/${Events.events[i].photoGallery[0].filename}"class="imagesArtist">                   
-                            </a> 
-                            <div>
-                                <h5><b>${Events.events[i].name}</b></h5>
+                var el = Events.events[i];
+                for (let k = 0; k < el.artistId.length; k++) {
+                    const element =  el.artistId[k];
+                    if (element==idArtist) {
+                        $("#event").append(
+                            `
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <a href="singleEvent.html?id=${el._id}">  
+                                    <img src="../images/${el.photoGallery[0].filename}"class="imagesArtist">                   
+                                </a> 
+                                <div>
+                                    <h5><b>${el.name}</b></h5>
+                                </div>
+                                <h7><i><b>${el.date}</b></i></h7>
                             </div>
-                            <h7><i><b>${Events.events[i].date}</b></i></h7>
-                        </div>
-                        `
-                    );
+                            `
+                        );
+                    }
                 }
             }
         });

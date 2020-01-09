@@ -13,7 +13,7 @@
     "version" : "1.0.0"
   },
   "servers" : [ {
-    "url" : "http://hypermedia19.herokuapp.com",
+    "url" : "https://hypermedia19.herokuapp.com",
     "description" : "API use in project of hypermedia 19 in Politecnico di Milano. Gruop Selva, Tresoldi, Zani"
   } ],
   "security" : [ {

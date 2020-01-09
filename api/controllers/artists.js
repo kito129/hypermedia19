@@ -126,43 +126,6 @@ exports.artists_get_artist = (req, res, next) => {
     });
 };
 
-
-//CHECK
-exports.artists_update_artist = (req, res, next) => {
-  const id = req.params.artistId;
-  const updateOps = {};
-  for (const ops of req.body ) {
-    updateOps[ops.propName] = ops.value;
-  }
-  var options = {new: true};
-  Artist.findOneAndUpdate({ _id: id }, { $set: updateOps },options,function (err, doc) {  
-  })
-    .exec()
-    .then(result => {
-      res.status(200).json(JSON.stringify({
-        message: "Artist updated",
-        request: {
-          type: "GET",
-          url: "https://hypermedia19.herokuapp.com/artist/" + id
-        }
-      }));
-    })
-    .catch(err => {
-      if(err.name="CastError"){
-        console.log("Artist ID not found");
-        res.status(404).json(JSON.stringify({
-          error: "Artist ID not found"
-        }));
-      } else{
-        console.log("ERROR:\n" + err);
-        res.status(500).json(JSON.stringify({
-          error: err
-        }));
-      }
-    });
-};
-
-
 //OK
 exports.artists_delete = (req, res, next) => {
   const id = req.params.artistId;

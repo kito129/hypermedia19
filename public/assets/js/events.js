@@ -309,7 +309,7 @@ $(document).ready(function(){
 					var dateTxt = arr[0] + arr[1] +arr[2];
 					$("#events").append(
 						`
-						<div class="col-sm-12 col-md-6 col-lg-4 events " type="${Events.events[i].type}" date="${dateTxt}" >
+						<div class="col-sm-12 col-md-6 col-lg-4 events mt-3 mb-3 " type="${Events.events[i].type}" date="${dateTxt}" >
 							<a href="singleEvent.html?id=${Events.events[i]._id}">  
 								<img src="../images/${Events.events[i].photoGallery[0].filename}"class="imagesArtist">                   
 							</a> 

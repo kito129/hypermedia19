@@ -41,8 +41,6 @@ router.post("/", checkAuth, upload.array('photoGallery', 3), ArtistsController.a
 
 router.get("/:artistId", ArtistsController.artists_get_artist);
 
-router.patch("/:artistId", checkAuth, ArtistsController.artists_update_artist);
-
 router.delete("/:artistId", checkAuth, ArtistsController.artists_delete);
 
 module.exports = router;

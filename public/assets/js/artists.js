@@ -11,7 +11,7 @@ $(document).ready(function(){
 			$("#performer").append(
 
 				`
-				<div class="col-sm-12 col-md-6 col-lg-4">
+				<div class="col-sm-12 col-md-6 col-lg-4 mt-2 mb-2">
 					<a href="singleArtist.html?id=${Artists.artists[i]._id}">  
 						<img src="../images/${text}"class="imagesArtist">                   
 					</a> 

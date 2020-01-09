@@ -14,7 +14,7 @@ $(document).ready(function(){
                 </span>
             </div>
             <div class="collapse navbar-collapse ml-auto" id="navbarItems">
-                <ul class="navbar-nav " id ="Btn">
+                <ul class="navbar-nav ml-auto" id ="Btn">
                     <li class="nav-item dropdown" id="eventBtn">
                         <a class="nav-link dropdown-toggle" href="/assets/pages/events.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <h7><b>Events</b></h7>

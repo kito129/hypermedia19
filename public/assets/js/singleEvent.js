@@ -228,11 +228,11 @@ $(document).ready(function(){
                     quantity = qua;
                     eventInCart=true;
                     $("#orderTitle").text("Order:");
-                    $('div').find("input[type=text]").each(function(ev)
-                    {
-                        if(!$(this).val()) { 
-                       $(this).attr("placeholder", quantity);
-                    }
+                    $('div').find("#quant").each(function(ev)
+                        {
+                            if(!$(this).val()) { 
+                            $(this).text(quantity) ;
+                        }
                     });
                 },
                 error       : function (err) {
@@ -279,10 +279,10 @@ $( "#increment" ).click(function() {
     quantity=quantity+1;
     if(quantity<6){
         addUpdateBtn();
-        $('div').find("input[type=text]").each(function(ev)
+        $('div').find("#quant").each(function(ev)
             {
                 if(!$(this).val()) { 
-                $(this).attr("placeholder", quantity);
+                $(this).text(quantity);
             }
         });
     } else {
@@ -295,11 +295,11 @@ $( "#decrement" ).click(function() {
     quantity=quantity-1;
     if(quantity>-1){
         addUpdateBtn();
-        $('div').find("input[type=text]").each(function(ev)
+        $('div').find("#quant").each(function(ev)
             {
                 if(!$(this).val()) { 
-                $(this).attr("placeholder", quantity);
-            }
+                    $(this).text(quantity);
+                }
         });
     } else {
         quantity=quantity+1;

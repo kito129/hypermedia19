@@ -28,7 +28,7 @@ exports.events_get_all = (req, res, next) => {
             photoGallery: doc.photoGallery,
             request: {
               type: "GET",
-              url: "http://localhost:5000/event/" + doc._id
+              url: "https://hypermedia19.herokuapp.com/event/" + doc._id
             }
           };
         })
@@ -95,7 +95,7 @@ exports.events_create_event = (req, res, next) => {
               photoGallery: result.photoGallery,
               request: {
                 type: "GET",
-                url: "http://localhost:5000/event/" + result._id
+                url: "https://hypermedia19.herokuapp.com/event/" + result._id
               } 
             }
           }));
@@ -124,7 +124,7 @@ exports.events_get_event = (req, res, next) => {
           event: doc,
           request: {
             type: "GET",
-            url: "http://localhost:5000/event/"
+            url: "https://hypermedia19.herokuapp.com/event/"
           }
         }));
       } else {
@@ -149,7 +149,7 @@ exports.events_delete_event = (req, res, next) => {
         message: "Event deleted",
         request: {
           type: "POST",
-          url: "http://localhost:5000/event",
+          url: "https://hypermedia19.herokuapp.com/event",
           body: { eventId: "ID", name: "Name" }
         }
       }));

@@ -37,7 +37,7 @@ $(document).ready(function(){
     var Seminars;
     var Artist;
     
-    $.get("http://localhost:5000/event/"+idEvent, function(data, status){
+    $.get("https://hypermedia19.herokuapp.com/event/"+idEvent, function(data, status){
 
         Event=JSON.parse(data);
         evPrice=Event.event.price
@@ -89,7 +89,7 @@ $(document).ready(function(){
         for (let g = 0; g < relArtist.length; g++) {
             const el = relArtist[g];
 
-            $.get("http://localhost:5000/artist/"+el, function(data, status){
+            $.get("https://hypermedia19.herokuapp.com/artist/"+el, function(data, status){
 
                 Artist=JSON.parse(data);
 
@@ -114,7 +114,7 @@ $(document).ready(function(){
 
         //relative seminar
         if(Event.event.relSeminar!=undefined){
-            $.get("http://localhost:5000/seminar/"+Event.event.relSeminar, function(data, status){
+            $.get("https://hypermedia19.herokuapp.com/seminar/"+Event.event.relSeminar, function(data, status){
 
                 Seminar=JSON.parse(data);
 
@@ -146,11 +146,11 @@ $(document).ready(function(){
         }
 
         //relative same day events + seminars
-        $.get("http://localhost:5000/event/", function(data, status){
+        $.get("https://hypermedia19.herokuapp.com/event/", function(data, status){
             
         Events=JSON.parse(data);
 
-            $.get("http://localhost:5000/seminar/", function(data, status){
+            $.get("https://hypermedia19.herokuapp.com/seminar/", function(data, status){
 
                 Seminars=JSON.parse(data);
                 var iSem;
@@ -171,7 +171,7 @@ $(document).ready(function(){
                     && Events.events[i]._id!=idEvent){
 
                         test=true;
-                        $.get("http://localhost:5000/artist/"+Events.events[i].artistId, function(data, status){
+                        $.get("https://hypermedia19.herokuapp.com/artist/"+Events.events[i].artistId, function(data, status){
 
                             Artist=JSON.parse(data);
 
@@ -213,7 +213,7 @@ $(document).ready(function(){
             var userId=localStorage.getItem("userId");
             //call to torder api
             $.ajax({
-                url : "http://localhost:5000/order/" + localStorage.getItem("userId") +  "/" + idEvent,
+                url : "https://hypermedia19.herokuapp.com/order/" + localStorage.getItem("userId") +  "/" + idEvent,
                 type: "GET",
                 contentType: "application/json; carset=utf-8",
                 dataType   : "json",
@@ -318,7 +318,7 @@ $( "#updateSpace").on("click",'#updateBtn' , function() {
 function order(newQuantity) {
     $.ajax({
 
-        url : "http://localhost:5000/order/" + localStorage.getItem("userId"),
+        url : "https://hypermedia19.herokuapp.com/order/" + localStorage.getItem("userId"),
         type: "POST",
         contentType: "application/json; carset=utf-8",
         dataType   : "json",

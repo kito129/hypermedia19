@@ -41,6 +41,7 @@
                     <ul>
                         <li>Deliverable D3: the SwaggerUI page of the same API is available at 
                             <a href="https://hypermedia19.herokuapp.com/backend/swaggerui">this address</a>.
+                            plese read above note about API docuemntation.
                         </li>
                     </ul>
                     <ul>
@@ -92,10 +93,19 @@
                     <li>For login, if the request was accepted by server, we responsed with JWT token that saves in localStorage of the Browser.</li>
                 </ul>
                 <p>All single path have specific request, and Resource model, params and body to use for correct request and interation.Their documentation can be found in API docs (D1 or D2).</p>
-                <h4 id="openapi-resource-models">Note about POST method for Populate DB</h4>
+                <h4 id="openapi-resource-models">Note about API docuemntation and USe</h4>
                 <p>
                     For semplicity, we authorize root user same as normal client user. So the post method for /artist /seminar and /event are accesible for all user authenticated. 
                     We did not introduce double level of security because it is not the main topic of this course, but we are well aware that is not the best practice in web site development.
+                </p>
+                <p>
+                    For testing, debug and population of the  DB we use tool POSTAM, so for the POST method of /event /seminar and /artist we have POSTAMAN specification that is was diffucult to trasport in OPENAPi.
+                    <br>
+                    <br>
+                    So for this resources in API we created this document with POSTAMAN POST request with an example of population in cURL.
+                    <br>
+                    <br>
+                    The documentation about that is at <a href="https://hypermedia19.herokuapp.com/backend/post">this address</a>.
                 </p>
             </div>
             <h3  >Data model</h3>

@@ -1,0 +1,43 @@
+/artist 
+
+    POST
+        curl --location --request POST http://hypermedia19.herokuapp.com/artist' \
+        --header 'Content-Type: application/x-www-form-urlencoded' \
+        --header 'Authorization: bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjFAMS5jb20iLCJ1c2VySWQiOiI1ZTE1ZmMzYmRmY2M4MjFhMTRmMjBmMjAiLCJpYXQiOjE1Nzg0OTkxNDMsImV4cCI6MTU3ODU0MjM0M30.5wkNNaCWyZDIbz043IZL9dXPl0h7Yk14_lo4d9vMlBE' \
+        --form 'name=EMMA MARRONE' \
+        --form 'currentAffiliattion=Universal Music Group' \
+        --form 'achivements=Amici 2010' \
+        --form 'type=singer' \
+        --form 'IsCompany=false' \
+        --form 'abstract=Emma Marrone (born May 25, 1984 in Florence) is an Italian singer and record producer. After some musical experiences with different groups, she rose to prominence as a solo singer between 2009 and 2010, winning the ninth talent show Amici di Maria De Filippi and signing a contract with the Universal Music Group.' \
+        --form 'photoGallery=@/D:/00_PROJECTs/22_hypermedia19/hypermedia19/public/assets/images/private/artisti/EMMA MARRONE/1.jpg' \
+        --form 'photoGallery=@/D:/00_PROJECTs/22_hypermedia19/hypermedia19/public/assets/images/private/artisti/EMMA MARRONE/2.jpg' \
+        --form 'photoGallery=@/D:/00_PROJECTs/22_hypermedia19/hypermedia19/public/assets/images/private/artisti/EMMA MARRONE/3.jpg'
+
+/event 
+
+    POST
+        curl --location --request GET 'http://hypermedia19.herokuapp.com/event' \
+        --header 'Authorization: bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjFAMS5jb20iLCJ1c2VySWQiOiI1ZTE1ZmMzYmRmY2M4MjFhMTRmMjBmMjAiLCJpYXQiOjE1Nzg0OTkxNDMsImV4cCI6MTU3ODU0MjM0M30.5wkNNaCWyZDIbz043IZL9dXPl0h7Yk14_lo4d9vMlBE' \
+        --form 'artistId=5e1601e9dfcc821a14f20f2c' \
+        --form 'name=IL VOLO ON OPERA' \
+        --form 'date=14/06/2020 - 21.00' \
+        --form 'place=Pavilion 2' \
+        --form 'price=35' \
+        --form 'abstract=This opera show will keep you company for two hours of pure magic. With their majestic voices, Il Volo will be able to close our Festival perfectly.' \
+        --form 'isSoldOut=false' \
+        --form 'type=opera' \
+        --form 'photoGallery=@/D:/00_PROJECTs/22_hypermedia19/hypermedia19/public/assets/images/private/eventi/IL VOLO ON OPERA/1.png' \
+        --form 'photoGallery=@/D:/00_PROJECTs/22_hypermedia19/hypermedia19/public/assets/images/private/eventi/IL VOLO ON OPERA/2.png' \
+        --form 'photoGallery=@/D:/00_PROJECTs/22_hypermedia19/hypermedia19/public/assets/images/private/eventi/IL VOLO ON OPERA/3.png'
+
+/seminar 
+
+    POST
+        curl --location --request GET 'http://hypermedia19.herokuapp.com/seminar' \
+        --header 'Authorization: bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjFAMS5jb20iLCJ1c2VySWQiOiI1ZTE1ZmMzYmRmY2M4MjFhMTRmMjBmMjAiLCJpYXQiOjE1Nzg0OTkxNDMsImV4cCI6MTU3ODU0MjM0M30.5wkNNaCWyZDIbz043IZL9dXPl0h7Yk14_lo4d9vMlBE' \
+        --form 'name=HOW BORN MUSICAL?' \
+        --form 'date=14/06/2020 - 17.00' \
+        --form 'place=Pavilion 3' \
+        --form 'abstract=Form experencies of Totem and Notredam creator'\''s we will travel in a musical creation and rappresentaion, from start ideas to the final event.' \
+        --form 'photoGallery=@/D:/00_PROJECTs/22_hypermedia19/hypermedia19/public/assets/images/private/seminari/4.jpg'

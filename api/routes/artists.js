@@ -35,12 +35,12 @@ const upload = multer({
 
 
 // Handle incoming requests to /artist
-router.get("/", ArtistsController.artists_get_all);
+router.get("/", ArtistsController.artists_get_all);//
 
-router.post("/", checkAuth, upload.array('photoGallery', 3), ArtistsController.artists_create_artist);
+router.post("/", checkAuth, upload.array('photoGallery', 3), ArtistsController.artists_create_artist);//
 
-router.get("/:artistId", ArtistsController.artists_get_artist);
+router.get("/:artistId", ArtistsController.artists_get_artist);//
 
-router.delete("/:artistId", checkAuth, ArtistsController.artists_delete);
+router.delete("/:artistId", checkAuth, ArtistsController.artists_delete);//
 
 module.exports = router;

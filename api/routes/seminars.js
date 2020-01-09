@@ -32,12 +32,12 @@ const storage = multer.diskStorage({
   });
 
 // Handle incoming requests to /seminar
-router.get("/", SeminarsController.seminars_get_all);
+router.get("/", SeminarsController.seminars_get_all);//
 
-router.post("/", checkAuth, upload.single('photoGallery'), SeminarsController.seminars_create_seminar);
+router.post("/", checkAuth, upload.single('photoGallery'), SeminarsController.seminars_create_seminar);//
 
-router.get("/:seminarId", SeminarsController.seminars_get_seminar);
+router.get("/:seminarId", SeminarsController.seminars_get_seminar);//
 
-router.delete("/:seminarId", checkAuth, SeminarsController.seminars_delete_seminar);
+router.delete("/:seminarId", checkAuth, SeminarsController.seminars_delete_seminar);//
 
 module.exports = router;

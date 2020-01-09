@@ -75,11 +75,12 @@ app.get('/documentation', function(req, res) {
 app.get('/backend', function(req, res) {
   res.sendFile(path.join(__dirname, '/backend/swagger.json'));
 });
-//documenation part
 app.get('/backend/zip', function(req, res) {
   res.sendFile(path.join(__dirname, '/backend/app.zip'));
 });
-//documenation part
+app.get('/backend/post', function(req, res) {
+  res.sendFile(path.join(__dirname, '/backend/post.txt'));
+});
 app.get('/erdiagram', function(req, res) {
   res.sendFile(path.join(__dirname, '/backend/er.png'));
 });

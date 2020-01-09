@@ -38,6 +38,11 @@ body {
 	margin-bottom: 15px;
 }
 
+.img-fluid{
+	max-height: 100%;
+  	max-width: 100%;
+}
+
 
 
 

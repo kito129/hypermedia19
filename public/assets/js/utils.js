@@ -7,7 +7,7 @@ $(document).ready(function(){
         <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark pl-5 navbarmy>
             <div class="navbar-header">
                 <span>
-                    <a class="navbar-brand" href="/index.html"><b>MBN2020</b></a>
+                    <a class="navbar-brand" href="/index.html"><b>Milan By Night</b></a>
                     <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarItems" aria-controls="navbarItems" aria-expanded="false" aria-label="Toggle navigation"> 
                         <span class="navbar-toggler-icon"></span> 
                     </button>

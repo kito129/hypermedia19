@@ -51,7 +51,7 @@ exports.orders_create_order = (req, res, next) => {
   let qua = body.quantity;
   let pri = body.price;
   const sub = qua*pri;
-
+  
   let newId = new mongoose.Types.ObjectId;
   const singOr = new SingleOrder({
     _id: newId,
@@ -61,14 +61,38 @@ exports.orders_create_order = (req, res, next) => {
     subTotal: sub
   });
 
+  let semdId;
+
+ 
+
   if(qua==0){
     //delete order
-    SingleOrder.deleteOne({eventId:evId}).exec();
-    Order.findOneAndUpdate({userId: userId}, 
-      {$pull:{singleOrder: { _id: newId }}},{new: true}, (err, result) => {
-      // Rest of the action goes here
 
-     })
+    SingleOrder.findOne({eventId:evId})
+    .exec()
+    .then(doc =>{
+      semdId =doc._id;
+      SingleOrder.deleteOne({eventId:evId}).exec();
+      Order.findOneAndUpdate({userId: userId}, 
+        { $pullAll: {singleOrder: [semdId]}},{new: true}, (err, result) => {
+        // Rest of the action goes here
+        console.log(err);
+        
+      });
+      res.status(201).json(JSON.stringify({
+        message: "succes deleted"
+      }));
+  
+    })
+    .catch(err =>{
+      console.log(err);
+      res.status(500).json(JSON.stringify({
+        error: "interal error"
+      }));
+    });
+    
+    
+    
   } else {
     SingleOrder.findOne({eventId:evId})
       .exec()
@@ -83,31 +107,32 @@ exports.orders_create_order = (req, res, next) => {
               price: pri,
               subTotal: sub}},{new: true}, (err, result) => {
             // Rest of the action goes here
-    
+                console.log(result);
+                console.log(err);
           })
-
-
           res.status(201).json(JSON.stringify({
-            message: "found"
+            message: "order updated"
           }));
         
         } else{
           //non cèe crea a aggungi
           singOr
-          .save()
-          .catch(err =>{
-            res.status(500).json(JSON.stringify({
-              error: "Internal Error"
-            }));
-          })
+            .save()
+            .catch(err =>{
+              console.log(err);
+              res.status(500).json(JSON.stringify({
+                error: "Internal Error"
+              }));
+            })
 
           Order.findOneAndUpdate({userId: userId}, 
                         {$push: {singleOrder: newId}},{new: true}, (err, result) => {
                         // Rest of the action goes here
-           
+                        console.log(result);
+                        console.log(err);
                       })
-          res.status(404).json(JSON.stringify({
-            error: "not"
+          res.status(201).json(JSON.stringify({
+            message: "order created"
           }));
 
         }
@@ -180,10 +205,6 @@ exports.orders_get_order_single = (req, res, next) => {
 
 };
 
-
-
-
-
 //OK
 exports.orders_get_order_get_event = (req, res, next) => {
   const id = req.params.userId;
@@ -225,20 +246,6 @@ exports.orders_get_order_get_event = (req, res, next) => {
       }
     });
   };
-
-
-
-
-//TODO
-//inserimento nuoi biglietti o modifca dal carrello
-
-//se get:id da 404 allora creo il carrello con il primo ordine CON LA POST.
-//nel se restituisce 200 allora 
-  //mi da parametro lui se esiste evento 
-    //controllo se c'e gia event ID
-          //if yes => aggiorno quantità * sub e totale (se nuova=0 allora cancello ordine (se size==0 allora cancello l'rodine completo pure))
-          //if no => aggiungo ad arrraya nuovo elemento con evento e quantita
-              //calcolo sub e nuovo totale
 
 
 exports.orders_update_order = (req, res, next) => {

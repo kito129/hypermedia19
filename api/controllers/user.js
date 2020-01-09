@@ -48,7 +48,7 @@ exports.user_signup = (req, res, next) => {
               const order = new Order({
                 _id: new mongoose.Types.ObjectId(),
                 userId: usId,
-                SingleOrder: new SingleOrder(),
+                SingleOrder: [],
                 totalPrice: 0
               });
               order

@@ -287,12 +287,24 @@ $(document).ready(function(){
 
 				//append event
 				for(var i=0;i<Events.events.length;i++){
-					var nameArtist;
-					for(var j=0;j<Artists.artists.length;j++){
-						if(Artists.artists[j]._id==Events.events[i].artistId){
-							nameArtist=Artists.artists[j].name;
+
+					var nameArtist ="";
+
+					for (let k = 0; k < Events.events[i].artistId.length; k++) {
+						const evLe = Events.events[i].artistId[k];
+				
+						for (let l = 0; l < Artists.artists.length; l++) {
+							const arEl = Artists.artists[l];
+					
+							if(arEl._id==evLe){
+							
+								nameArtist +="  " +arEl.name;
+							}
 						}
-					};
+					}
+	
+
+
 					var arr = Events.events[i].date.split("-")[0].replace(/\s+/g, '').split("/");
 					var dateTxt = arr[0] + arr[1] +arr[2];
 					$("#events").append(

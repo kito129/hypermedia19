@@ -97,9 +97,11 @@ if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null)
                                                 <div>        
                                                     <h7><i><b>SubTotale: ${sub}.00€</b></i></h7>
                                                 </div>
+                                                <!--
                                                 <div>        
                                                     <button type="button" class="btn btn-danger" id="${sing.single._id}+${el._id}+${el.price}"> x</button>    
-                                                </div>                                           
+                                                </div>  
+                                                -->                                        
                                             </div>
                                         </div>
                                         `
@@ -146,11 +148,11 @@ if (localStorage.getItem("userId")!=null && localStorage.getItem("token")!=null)
                     // do something
                     $("#allert").append(
                         `
-                        <h4 class="text-center mt-4 mb-4">Your cart is empty.. go  <a href="http://hypermedia19.herokuapp.com/assets/pages/events.html?value=event">events</a>  , find one to buy and add it into the cart.</h4>
+                        <h4 class="text-center mt-4 mb-4">Your cart is empty.. go  <a href="https://hypermedia19.herokuapp.com/assets/pages/events.html?value=event">events</a>  , find one to buy and add it into the cart.</h4>
                         `
                     );
                 }
-            }, 5000);
+            }, 3500);
             
             
         }

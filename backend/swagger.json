@@ -13,6 +13,9 @@
     "version" : "1.0.0"
   },
   "servers" : [ {
+    "url" : "https://virtserver.swaggerhub.com/narcos9612/Hypermedia2019Festival/1.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  }, {
     "url" : "https://hypermedia19.herokuapp.com",
     "description" : "API use in project of hypermedia 19 in Politecnico di Milano. Gruop Selva, Tresoldi, Zani"
   } ],
@@ -621,6 +624,12 @@
             "application/json" : {
               "schema" : {
                 "$ref" : "#/components/schemas/RegisterItem"
+              },
+              "example" : {
+                "name" : "marco",
+                "surname" : "selva",
+                "email" : "marco@polimi.it",
+                "password" : "milano19"
               }
             }
           }
@@ -652,6 +661,10 @@
             "application/json" : {
               "schema" : {
                 "$ref" : "#/components/schemas/LogItem"
+              },
+              "example" : {
+                "email" : "marco@polimi.it",
+                "password" : "milano19"
               }
             }
           }

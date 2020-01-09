@@ -55,10 +55,16 @@
         "description" : "Adds an item to the system",
         "operationId" : "addArtist",
         "requestBody" : {
+          "description" : "As wite in D1 delivery, documentation about for can be found at http://hypermedia19.herokuapp.com/backend/post",
           "content" : {
-            "multipart/form-data" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/body"
+            "application/json" : {
+              "example" : {
+                "name" : "EMMA MARRONE",
+                "currentAffiliattion" : "Universal Music Group",
+                "achivements" : "Amici 2010",
+                "type" : "singer",
+                "IsCompany" : false,
+                "abstract" : "Emma Marrone (born May 25, 1984 in Florence) is an Italian singer and record producer. After some musical experiences with different groups, she rose to prominence as a solo singer between 2009 and 2010, winning the ninth talent show Amici di Maria De Filippi and signing a contract with the Universal Music Group."
               }
             }
           }
@@ -110,10 +116,14 @@
         "description" : "Adds an seminar to the system",
         "operationId" : "addSeminar",
         "requestBody" : {
+          "description" : "As wite in D1 delivery, documentation about for can be found at http://hypermedia19.herokuapp.com/backend/post",
           "content" : {
             "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/SeminarItem"
+              "example" : {
+                "name" : "HOW BORN MUSICAL?",
+                "date" : "14/06/2020 - 17.00",
+                "place" : "Pavilion 3",
+                "abstract" : "Form experencies of Totem and Notredam creator s we will travel in a musical creation and rappresentaion, from start ideas to the final event."
               }
             }
           }
@@ -165,11 +175,18 @@
         "description" : "Adds an event to the system",
         "operationId" : "addEent",
         "requestBody" : {
-          "description" : "Event item to add",
+          "description" : "As wite in D1 delivery, documentation about for can be found at http://hypermedia19.herokuapp.com/backend/post",
           "content" : {
             "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/EventItem"
+              "example" : {
+                "artistId" : "5e1601e9dfcc821a14f20f2c",
+                "name" : "IL VOLO ON OPERA",
+                "date" : "14/06/2020 - 21.00",
+                "place" : "Pavilion 2",
+                "price" : "35",
+                "abstract" : "This opera show will keep you company for two hours of pure magic. With their majestic voices, Il Volo will be able to close our Festival perfectly.",
+                "isSoldOut" : "false",
+                "type" : "opera"
               }
             }
           }
@@ -366,7 +383,7 @@
         "tags" : [ "authenticatedUsers" ],
         "summary" : "delete  event with id passed in params",
         "description" : "You can delete  artist with id passed in params\n",
-        "operationId" : "deleteEventtById",
+        "operationId" : "deleteEventById",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -391,12 +408,89 @@
         }
       }
     },
-    "/order/{userId}" : {
+    "/order/single/{userId}" : {
+      "get" : {
+        "tags" : [ "authenticatedUsers" ],
+        "summary" : "get Cart (order) of the user passed by Id",
+        "description" : "You can get the  Cart (order) of the user passed by Id\n",
+        "operationId" : "getSingleByUserId",
+        "parameters" : [ {
+          "name" : "userId",
+          "in" : "path",
+          "description" : "ID of user order",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "the  of the user passed by Id",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SingleOrderItem"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "single order not found"
+          },
+          "500" : {
+            "description" : "internal error"
+          }
+        }
+      }
+    },
+    "/order/{userId}/{eventId}" : {
       "get" : {
         "tags" : [ "authenticatedUsers" ],
         "summary" : "get Cart (order) of the user passed by Id",
         "description" : "You can get the  Cart (order) of the user passed by Id\n",
         "operationId" : "getCattBySserId",
+        "parameters" : [ {
+          "name" : "userId",
+          "in" : "path",
+          "description" : "ID of user order",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "eventId",
+          "in" : "path",
+          "description" : "ID of event order",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "returnt the Single Order of the event and user passed by Id"
+          },
+          "404" : {
+            "description" : "not found"
+          },
+          "500" : {
+            "description" : "internal error"
+          }
+        }
+      }
+    },
+    "/order/{userId}" : {
+      "get" : {
+        "tags" : [ "authenticatedUsers" ],
+        "summary" : "get Cart (order) of the user passed by Id",
+        "description" : "You can get the  Cart (order) of the user passed by Id\n",
+        "operationId" : "getCartByUserId",
         "parameters" : [ {
           "name" : "userId",
           "in" : "path",
@@ -415,6 +509,55 @@
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/OrdersItem"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "eventId not found"
+          },
+          "500" : {
+            "description" : "internal error"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "authenticatedUsers" ],
+        "summary" : "post single order of the user passed by Id",
+        "description" : "posting single order (new or update) and save in userId cart\n",
+        "operationId" : "postOrderByUserId",
+        "parameters" : [ {
+          "name" : "userId",
+          "in" : "path",
+          "description" : "ID of user order",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SingleOrderItem"
+              },
+              "example" : {
+                "eventId" : "d290f1ee-6c54-4b01-90e6-d701748f0851",
+                "price" : 50,
+                "quantity" : 2
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "succes of update or create single order",
+            "content" : {
+              "application/json" : {
+                "example" : {
+                  "message" : "order created"
                 }
               }
             }
@@ -470,14 +613,33 @@
   },
   "components" : {
     "schemas" : {
+      "SingleOrderPost" : {
+        "required" : [ "eventId", "price", "quantity" ],
+        "type" : "object",
+        "properties" : {
+          "eventId" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "price" : {
+            "type" : "number",
+            "format" : "int32",
+            "example" : 50
+          },
+          "quantity" : {
+            "type" : "number",
+            "format" : "int32",
+            "example" : 2
+          }
+        }
+      },
       "ArtistItem" : {
         "required" : [ "abstract", "achivements", "companyMembers", "currentAffiliattion", "id", "isCompany", "name", "photoGallery" ],
         "type" : "object",
         "properties" : {
           "id" : {
             "type" : "string",
-            "format" : "uuid",
-            "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
+            "format" : "uuid"
           },
           "name" : {
             "type" : "string",
@@ -523,8 +685,7 @@
         "properties" : {
           "id" : {
             "type" : "string",
-            "format" : "uuid",
-            "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
+            "format" : "uuid"
           },
           "name" : {
             "type" : "string",
@@ -557,13 +718,12 @@
         "properties" : {
           "id" : {
             "type" : "string",
-            "format" : "uuid",
-            "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
+            "format" : "uuid"
           },
           "artistId" : {
             "type" : "array",
             "format" : "uuid",
-            "example" : [ "d290f1ee-6c54-4b01-90e6-d701748f0851", "d290f1ee-6c54-4b01-90e6-d701748f0852" ],
+            "example" : [ "5e16081ffc7847372c3f7615", "5e16081ffc7847372c3f7615" ],
             "items" : {
               "type" : "string"
             }
@@ -591,7 +751,7 @@
           "relSeminar" : {
             "type" : "array",
             "format" : "uuid",
-            "example" : [ "d290f1ee-6c54-4b01-90e6-d701748f0851", "d290f1ee-6c54-4b01-90e6-d701748f0852" ],
+            "example" : [ "5e16081ffc7847372c3f7615", "5e16081ffc7847372c3f7615" ],
             "items" : {
               "type" : "string"
             }
@@ -610,8 +770,7 @@
         "properties" : {
           "id" : {
             "type" : "string",
-            "format" : "uuid",
-            "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
+            "format" : "uuid"
           },
           "name" : {
             "type" : "string",
@@ -633,13 +792,11 @@
         "properties" : {
           "id" : {
             "type" : "string",
-            "format" : "uuid",
-            "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
+            "format" : "uuid"
           },
           "userId" : {
             "type" : "string",
-            "format" : "uuid",
-            "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
+            "format" : "uuid"
           },
           "SingleOrder" : {
             "type" : "array",
@@ -659,18 +816,15 @@
         "properties" : {
           "id" : {
             "type" : "string",
-            "format" : "uuid",
-            "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
+            "format" : "uuid"
           },
           "userId" : {
             "type" : "string",
-            "format" : "uuid",
-            "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
+            "format" : "uuid"
           },
           "eventId" : {
             "type" : "string",
-            "format" : "uuid",
-            "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
+            "format" : "uuid"
           },
           "quantity" : {
             "type" : "number",
@@ -679,14 +833,6 @@
           "subTotal" : {
             "type" : "number",
             "example" : 50
-          }
-        }
-      },
-      "body" : {
-        "type" : "object",
-        "properties" : {
-          "param" : {
-            "$ref" : "#/components/schemas/ArtistItem"
           }
         }
       }

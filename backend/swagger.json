@@ -20,7 +20,7 @@
     "bearerAuth" : [ ]
   } ],
   "tags" : [ {
-    "name" : "admins",
+    "name" : "authenticatedUsers",
     "description" : "Secured Admin-only calls"
   }, {
     "name" : "user",
@@ -50,7 +50,7 @@
         }
       },
       "post" : {
-        "tags" : [ "admins" ],
+        "tags" : [ "authenticatedUsers" ],
         "summary" : "adds an artist item",
         "description" : "Adds an item to the system",
         "operationId" : "addArtist",
@@ -96,8 +96,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
-            "type" : "integer",
-            "format" : "int64"
+            "type" : "string"
           }
         } ],
         "responses" : {
@@ -120,10 +119,10 @@
         }
       },
       "delete" : {
-        "tags" : [ "user" ],
+        "tags" : [ "authenticatedUsers" ],
         "summary" : "delete  artist with id passed in params",
-        "description" : "You can get all available artist in the system\n",
-        "operationId" : "delteArtistById",
+        "description" : "You can delete  artist with id passed in params\n",
+        "operationId" : "deleteArtistById",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -132,8 +131,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
-            "type" : "integer",
-            "format" : "int64"
+            "type" : "string"
           }
         } ],
         "responses" : {
@@ -147,8 +145,11 @@
               }
             }
           },
+          "401" : {
+            "description" : "unauthorized"
+          },
           "500" : {
-            "description" : "internal error"
+            "description" : "Cast error, not valid ObjectId"
           }
         }
       }
@@ -176,16 +177,15 @@
         }
       },
       "post" : {
-        "tags" : [ "admins" ],
+        "tags" : [ "authenticatedUsers" ],
         "summary" : "adds an seminar item",
         "description" : "Adds an seminar to the system",
         "operationId" : "addSeminar",
         "requestBody" : {
-          "description" : "Seminar item to add",
           "content" : {
             "application/json" : {
               "schema" : {
-                "$ref" : "#/components/schemas/ArtistItem"
+                "$ref" : "#/components/schemas/SeminarItem"
               }
             }
           }
@@ -207,6 +207,41 @@
         "security" : [ {
           "bearerAuth" : [ ]
         } ]
+      },
+      "delete" : {
+        "tags" : [ "authenticatedUsers" ],
+        "summary" : "delete  seminar with id passed in params",
+        "description" : "You can delete  event with id passed in params\n",
+        "operationId" : "deleteSeminarById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of seminar to delete",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "delete seminar in the DB with id passed",
+            "content" : {
+              "application/x-www-form-urlencoded" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SeminarItem"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          },
+          "500" : {
+            "description" : "internal error"
+          }
+        }
       }
     },
     "/event" : {
@@ -226,13 +261,13 @@
               }
             }
           },
-          "400" : {
-            "description" : "bad input body"
+          "500" : {
+            "description" : "internal error"
           }
         }
       },
       "post" : {
-        "tags" : [ "admins" ],
+        "tags" : [ "authenticatedUsers" ],
         "summary" : "adds an event item",
         "description" : "Adds an event to the system",
         "operationId" : "addEent",
@@ -254,7 +289,10 @@
             "description" : "invalid input, object invalid"
           },
           "401" : {
-            "description" : "authFailed"
+            "description" : "unauthorized"
+          },
+          "404" : {
+            "description" : "artist Id not found"
           },
           "409" : {
             "description" : "an existing item already exists"
@@ -263,6 +301,41 @@
         "security" : [ {
           "bearerAuth" : [ ]
         } ]
+      },
+      "delete" : {
+        "tags" : [ "authenticatedUsers" ],
+        "summary" : "delete  event with id passed in params",
+        "description" : "You can delete  event with id passed in params\n",
+        "operationId" : "delteEventById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of event to delete",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "delete event in the DB with id passed",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/EventItem"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          },
+          "500" : {
+            "description" : "internal error"
+          }
+        }
       }
     }
   },
@@ -343,7 +416,8 @@
           "photoGallery" : {
             "type" : "array",
             "items" : {
-              "type" : "object"
+              "type" : "string",
+              "format" : "binary"
             }
           }
         }

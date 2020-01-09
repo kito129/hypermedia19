@@ -240,7 +240,9 @@ components:
           type: string
           example: Born in 1993 for USA, he lived in a family..
         photoGallery:
-          type: object
+          type: array
+          items:
+            type: object
     SeminarItem:
       required:
       - abstract
@@ -268,7 +270,9 @@ components:
           type: string
           example: Born in 1993 for USA, he lived in a family..
         photoGallery:
-          type: string
+          type: array
+          items:
+            type: object
     EventItem:
       required:
       - abstract
@@ -374,6 +378,7 @@ components:
       - id
       - quantity
       - subTotal
+      - userId
       type: object
       properties:
         id:
@@ -381,6 +386,10 @@ components:
           format: uuid
           example: d290f1ee-6c54-4b01-90e6-d701748f0851
         userId:
+          type: string
+          format: uuid
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        eventId:
           type: string
           format: uuid
           example: d290f1ee-6c54-4b01-90e6-d701748f0851

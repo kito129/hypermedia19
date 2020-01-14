@@ -38,8 +38,6 @@ $(document).ready(function(){
         Seminar=JSON.parse(data);   
         SeminarId = Seminar.seminar._id;
 
-        console.log(Seminar);
-
         let thisSeminarDataAndHour= new Date (Seminar.seminar.date.split("-")[0].replace(/\s+/g, '').split("/")[2],
                 Seminar.seminar.date.split("-")[0].replace(/\s+/g, '').split("/")[1],
                 Seminar.seminar.date.split("-")[0].replace(/\s+/g, '').split("/")[0],

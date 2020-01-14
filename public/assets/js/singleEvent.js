@@ -28,6 +28,7 @@ let eventInCart=false;
 let quantity=0;
 let idEvent;
 let evPrice;
+let nameArtist;
 
 $(document).ready(function(){
 
@@ -36,6 +37,7 @@ $(document).ready(function(){
     var Events;
     var Seminars;
     var Artist;
+    var Artists;
     
     $.get("https://hypermedia19.herokuapp.com/event/"+idEvent, function(data, status){
 
@@ -171,9 +173,24 @@ $(document).ready(function(){
                     && Events.events[i]._id!=idEvent){
 
                         test=true;
-                        $.get("https://hypermedia19.herokuapp.com/artist/"+Events.events[i].artistId, function(data, status){
 
-                            Artist=JSON.parse(data);
+                        nameArtist ="";
+
+                        $.get("https://hypermedia19.herokuapp.com/artist/", function(data, status){
+                            Artists = JSON.parse(data);
+
+                            for (let k = 0; k < Events.events[i].artistId.length; k++) {
+                                var evLe = Events.events[i].artistId[k];
+                        
+                                for (let l = 0; l < Artists.artists.length; l++) {
+                                    var arEl = Artists.artists[l];
+                            
+                                    if(arEl._id==evLe){
+                                    
+                                        nameArtist +="  " +arEl.name;
+                                    }
+                                }
+                            }
 
                             $("#relSameDay").append(
                                 `
@@ -185,7 +202,7 @@ $(document).ready(function(){
                                         <h5><b>${Events.events[i].name}</b></h5>
                                     </div>
                                     <div>
-                                        <h7><i><b>${Artist.artist.name}</b></i></h7>
+                                        <h7><i><b>${nameArtist}</b></i></h7>
                                     </div>
                                     <div>                         
                                         <h7><i><b>${Events.events[i].type}</b></i></h7>
@@ -196,6 +213,7 @@ $(document).ready(function(){
                                 </div>
                                 `
                             );
+                            nameArtist ="";
                         });
                     }
                 }

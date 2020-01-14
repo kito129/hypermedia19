@@ -119,57 +119,60 @@ $(document).ready(function(){
 	//append actie link 
 	
 	if(self.location.href.search("index")!=-1){
-
+		
 	} else {
 	
-		var localPage = self.location.href.split("/")[5].split("?")[0];
+		if(self.location.href.search("assets")!=-1){
 
-		switch (localPage) {
-			case "events.html":
+			var localPage = self.location.href.split("/")[5].split("?")[0];
 
-				$("#eventBtn").removeClass('nav-item dropdown').addClass('nav-item dropdown active');
+			switch (localPage) {
+				case "events.html":
+
+					$("#eventBtn").removeClass('nav-item dropdown').addClass('nav-item dropdown active');
+				
+					break;
+				case "singleEvent.html":
+
+					$("#eventBtn").removeClass('nav-item dropdown').addClass('nav-item dropdown active');
+				
+					break;
+
+				case "artists.html":
+
+					$("#artistBtn").removeClass('nav-link').addClass('nav-link active');
+				
+					break;
+				case "singleSrtists.html":
+
+					$("#artistBtn").removeClass('nav-link').addClass('nav-link active');
+				
+					break;
+
+				case "calendar.html":
+
+					$("#calendarBtn").removeClass('nav-link').addClass('nav-link active');
+				
+					break;
 			
-				break;
-			case "singleEvent.html":
+				case "about.html":
 
-				$("#eventBtn").removeClass('nav-item dropdown').addClass('nav-item dropdown active');
-			
-				break;
+					$("#contactBtn").removeClass('nav-link').addClass('nav-link active');
+				
+					break;
+				case "infoticket.html":
 
-			case "artists.html":
+					$("#infoBtn").removeClass('nav-link').addClass('nav-link active');
+				
+					break;
+				case "calendar.html":
 
-				$("#artistBtn").removeClass('nav-link').addClass('nav-link active');
-			
-				break;
-			case "singleSrtists.html":
-
-				$("#artistBtn").removeClass('nav-link').addClass('nav-link active');
-			
-				break;
-
-			case "calendar.html":
-
-				$("#calendarBtn").removeClass('nav-link').addClass('nav-link active');
-			
-				break;
-		
-			case "about.html":
-
-				$("#contactBtn").removeClass('nav-link').addClass('nav-link active');
-			
-				break;
-			case "infoticket.html":
-
-				$("#infoBtn").removeClass('nav-link').addClass('nav-link active');
-			
-				break;
-			case "calendar.html":
-
-				$("#calendarBtn").removeClass('nav-link').addClass('nav-link active');
-			
-				break;
-			default:
-				break;
+					$("#calendarBtn").removeClass('nav-link').addClass('nav-link active');
+				
+					break;
+				default:
+					break;
+			}
 		}
 	}
 });

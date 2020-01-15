@@ -68,7 +68,7 @@ $(document).ready(function(){
         if(Artist.artist.achivements.length>0){
             var text="";
             for(var i=0;i<Artist.artist.achivements.length;i++){
-                text=text+Artist.artist.achivements[i]+"; ";
+                text=text+Artist.artist.achivements[i]+", ";
             }
     
             $("#achievementsTitle").text("Achievements: ");
@@ -78,7 +78,7 @@ $(document).ready(function(){
         if(Artist.artist.isCompany==true){
             var members="";
             for(var i=0;i<Artist.artist.companyMembers.length;i++){
-                members=members+Artist.artist.companyMembers[i]+"; ";
+                members=members+Artist.artist.companyMembers[i]+", ";
             }
             $("#memebersTitle").text("Members: ");
             $("#members").text(members);
